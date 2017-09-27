@@ -18,9 +18,7 @@ En détail :
 ## LIENS
 
 – Facebook : https://www.facebook.com/FormatCine/
-
 – youtube : https://www.youtube.com/user/collegeaucinema37
-
 – Mail : mailto > collegeaucinema37@free.fr
 
 
@@ -29,8 +27,10 @@ En détail :
 ÉVÉNEMENTS STYLE ET LONGUEUR DES TEXTES
 
 – Date : Akrobat semibold / taille 18px / interlettrage 0 / couleur #1e1e1e
+
 – Titre événement  : Akrobat extrabold / taille 25px / interlignage 30px / interlettrage 0 / couleur #1e1e1e
-> 75 signes max
+> 75 signes max  
+
 – Texte : Akrobat regular / taille 16px / interlignage 20px / interlettrage 0 / couleur #646464
 > 300 signes max
 
