@@ -1,0 +1,47 @@
+
+$color-variations: (
+	
+	black: #000000,
+
+	// blanc (fond1)
+	white: #ffffff,
+
+	blue: (
+		
+		// partie générale (accueil, mentions légales, partenaires) : bleu/violet
+		// violet clair (contour, picto, menu, footer, fond événement)
+		moderate: #6666d5,
+
+  		// violet foncé (baseline logo, fond photo d'accueil, fond événement)
+		very-dark-desaturated: #343471
+	),
+
+	cyan: (
+		// partie formations : turquoise
+		moderate: #55cdb9
+	),
+
+	gray: (
+		// gris clair (infos header, chapeaux)
+		dark: #969696,
+
+		// noir (titres)
+		very-dark-mostly-black: #1e1e1e,
+
+		// gris foncé (textes)
+		very-dark: #646464,
+		
+		// gris très clair (fond2)
+		very-light: #ebebeb
+	),
+
+	violet: (
+		// partie collège au cinéma : mauve
+		slightly-desaturated: #965fb4
+	),
+
+	yellow: (
+		// partie ateliers: jaune >  
+		vivid: #ffc80a
+	)
+);
