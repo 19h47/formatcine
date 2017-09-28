@@ -1,0 +1,219 @@
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+// 	This file contains all application-wide Sass variables.
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+/**
+ * Color variation
+ *
+ * Each colors used in the theme.
+ * 
+ * @uses the_color($key, $value) to retrieve color value
+ * @type nested map
+ * @see http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
+ * @see http://www.colorhexa.com/ to pickup color name
+ * @author Jérémy Levron levronjeremy@19h47.fr
+ */
+$color-variations: (
+	
+	black: #000000,
+
+	// blanc (fond1)
+	white: #ffffff,
+
+	blue: (
+		
+		// partie générale (accueil, mentions légales, partenaires) : bleu/violet
+		// violet clair (contour, picto, menu, footer, fond événement)
+		moderate: #6666d5,
+
+  		// violet foncé (baseline logo, fond photo d'accueil, fond événement)
+		very-dark-desaturated: #343471
+	),
+
+	cyan: (
+		// partie formations : turquoise
+		moderate: #55cdb9
+	),
+
+	gray: (
+		// gris clair (infos header, chapeaux)
+		dark: #969696,
+
+		// noir (titres)
+		very-dark-mostly-black: #1e1e1e,
+
+		// gris foncé (textes)
+		very-dark: #646464,
+		
+		// gris très clair (fond2)
+		very-light: #ebebeb
+	),
+
+	violet: (
+		// partie collège au cinéma : mauve
+		slightly-desaturated: #965fb4
+	),
+
+	yellow: (
+		// partie ateliers: jaune  
+		vivid: #ffc80a
+	)
+);
+
+
+
+/**
+ * Font
+ *
+ * All fonts found in the site are listed here
+ *
+ * @uses map-get( $font, $key ) to retrieve font value from map
+ * @type map
+ */
+$font-families: (
+	body: ( 'Playfair Display', serif ),
+	title: ( 'Roboto Condensed', sans-serif ),
+);
+
+
+/**
+ * Base
+ */
+$base-font-size: 16;
+$base-font-size-px: $base-font-size * 1px;
+$base-line-height: 24;
+
+
+/**
+ * Font weight
+ *
+ * Each font weight used in the theme.
+ * 
+ * @uses map-get( $font-weight, $key ) to retrieve font weight value
+ * @type map
+ * @author Levron Jérémy <jeremy@troa.fr>
+ */
+$font-weight: (
+	extralight: 100,
+	light: 200,
+	book: 300,
+	regular: 400,
+	medium: 500,
+	semibold: 600,
+	bold: 700,
+	extrabold: 800,
+	extrablack: 900
+);
+
+
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+//	Layout
+// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+$grid-columns: 12;
+
+
+/**
+ * Gutter width
+ * 
+ * Overall grid gutter size from Bootstrap
+ * 
+ * @see http://stackoverflow.com/a/28193872/5091221
+ */
+$grid-gutter-width: 40px;
+
+
+/**
+ * Outer gutter width
+ *
+ * (Most of the time it's the size of a gutter divide by 2.)
+ * Useful for the container.
+ */
+$grid-outer-gutter-width-unitless: 60;
+$grid-outer-gutter-width: $grid-outer-gutter-width-unitless * 1px;
+
+
+/**
+ * Prototype width
+ *
+ * From .psd obviously
+ */
+$psd-width-unitless: 1280;
+$psd-width: $psd-width-unitless * 1px;
+
+
+/**
+ * Container width
+ * 
+ * Width keep from .psd (grid + outer gutter)
+ */
+$container-width-unitless: 1280;
+$container-width: $container-width-unitless * 1px;
+
+
+/**
+ * Transitions
+ *
+ * @uses map-get( $transitions, $key ) to retrieve directory value from map
+ * @type map
+ * @author Levron Jérémy <jeremy@troa.fr>
+ * @see http://easings.net/
+ */
+$transitions: (
+	ease: .3s ease,
+	zoom-in: 1s cubic-bezier( 0.25, 0.46, 0.45, 0.94 )
+);
+
+/**
+ * Directories
+ *
+ * Each directories used in this theme.
+ * 
+ * @uses map-get( $directories, $key ) to retrieve directory value from map
+ * @type map
+ * @author Levron Jérémy <jeremy@troa.fr>
+ */
+$directories: (
+	fonts: "../fonts/",
+	img: "../img/",
+	svg: "../img/svg/",
+	jpg: "../img/jpg/",
+	png: "../../img/png/",
+	gif: "../../img/gif/",
+);
+
+
+/**
+ * Breakpoint slicer
+ *
+ * Setting up Breakpoint Slicer
+ * 
+ * @see https://github.com/lolmaus/breakpoint-slicer
+ */
+$slicer-breakpoints-settings: true;
+@if ( $slicer-breakpoints-settings == true ) {
+
+	$slicer-breakpoints:        0       768px       992px      1200px      1400px;
+
+	//                          └────┬────┘ └────┬────┘ └────┬────┘ └────┬────┘ └────┬────
+	// Slice numbers:                1           2           3           4           5
+	$slicer-breakpoint-names:       'xs'        'sm'        'md'        'lg'        'hd';
+
+	$slicer-anti-overlap-corrections: -1px;
+}
+
+
+/**
+ * State classes
+ *
+ * Each state class used in this theme.
+ * 
+ * @uses map-get( $state-classes, $key ) to retrieve class name from map
+ * @type map
+ * @author Levron Jérémy <jeremy@troa.fr>
+ */
+$state-classes: (
+	menu-open: menu--is-open,
+	search-open: search--is-open,
+	panel-open: panel--is-open,
+	submenu-open: submenu--is-open,
+);
