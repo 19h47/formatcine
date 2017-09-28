@@ -85,7 +85,7 @@ $font: (
 	 * 
 	 * @uses map-get( $font, weights ) to retrieve font weight value
 	 * @type map
-	 * @author Jérémy Levron levronjeremy@19h47.fr
+	 * @author Jérémy Levron <levronjeremy@19h47.fr>
 	 */
 	weights: (
 		extralight: 100,
@@ -110,6 +110,8 @@ $base-line-height: 29;
 
 
 /** 
+ * Grid columns number
+ *
  * Number of columns in the grid, it override `$grid-columns` from 
  * bootstrap-sass. It means, if you wish, that you can instantiate a grid of 8, 
  * for example.
@@ -174,8 +176,8 @@ $container-width: $container-width-unitless * 1px;
  *
  * @uses map-get( $transitions, $key ) to retrieve directory value from map
  * @type map
- * @author Jérémy Levron <levronjeremy@19h47.fr>
  * @see http://easings.net/
+ * @author Jérémy Levron <levronjeremy@19h47.fr>
  */
 $transitions: (
 	ease: .3s ease,
