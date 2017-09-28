@@ -1,6 +1,7 @@
-// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-// 	This file contains all application-wide Sass variables.
-// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
 
 /**
  * Color variation
@@ -29,31 +30,25 @@ $color-variations: (
   		// violet foncé (baseline logo, fond photo d'accueil, fond événement)
 		very-dark-desaturated: #343471
 	),
-
 	cyan: (
 		// partie formations : turquoise
 		moderate: #55cdb9
 	),
-
 	gray: (
 		// gris clair (infos header, chapeaux)
 		dark: #969696,
-
 		// noir (titres)
 		very-dark-mostly-black: #1e1e1e,
-
 		// gris foncé (textes)
 		very-dark: #646464,
 		
 		// gris très clair (fond2)
 		very-light: #ebebeb
 	),
-
 	violet: (
 		// partie collège au cinéma : mauve
 		slightly-desaturated: #965fb4
 	),
-
 	yellow: (
 		// partie ateliers: jaune  
 		vivid: #ffc80a
@@ -70,12 +65,12 @@ $color-variations: (
  */
 $font: (
 	/**
-	 * Font families
+	 * Font
 	 *
 	 * All fonts families found in the site are listed here
 	 *
 	 * @uses map-get( $font, $key ) to retrieve font value from map
-	 * @author Jérémy Levron <levronjeremy@19h47.fr>
+	 * @type map
 	 */
 	families: (
 		body: ( 'Lora', serif ),
@@ -90,7 +85,7 @@ $font: (
 	 * 
 	 * @uses map-get( $font, weights ) to retrieve font weight value
 	 * @type map
-	 * @author Jérémy Levron <levronjeremy@19h47.fr>
+	 * @author Jérémy Levron levronjeremy@19h47.fr
 	 */
 	weights: (
 		extralight: 100,
@@ -107,28 +102,34 @@ $font: (
 
 
 /**
- * Base
+ * Base font size and base line height
  */
 $base-font-size: 16;
 $base-font-size-px: $base-font-size * 1px;
-$base-line-height: 24;
+$base-line-height: 29;
 
 
-// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-//	Layout
-// –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+/** 
+ * Number of columns in the grid, it override `$grid-columns` from 
+ * bootstrap-sass. It means, if you wish, that you can instantiate a grid of 8, 
+ * for example.
+ *
+ * @see https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss#L329
+ */
 $grid-columns: 12;
 
 
 /**
  * Gutter width
  * 
- * Overall grid gutter size from Bootstrap
+ * Padding between columns. Gets divided in half for the left and right, it 
+ * overide `$grid-gutter-width` from bootstrap-sass
  * 
  * @see http://stackoverflow.com/a/28193872/5091221
- * @author Jérémy Levron <levronjeremy@19h47.fr>
+ * @see https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss#L331
  */
-$grid-gutter-width: 40px;
+$grid-gutter-width-unitless: 30;
+$grid-gutter-width: ( $grid-gutter-width-unitless * 1px );
 
 
 /**
@@ -136,10 +137,8 @@ $grid-gutter-width: 40px;
  *
  * (Most of the time it's the size of a gutter divide by 2.)
  * Useful for the container.
- *
- * @author Jérémy Levron <levronjeremy@19h47.fr>
  */
-$grid-outer-gutter-width-unitless: 60;
+$grid-outer-gutter-width-unitless: 100;
 $grid-outer-gutter-width: $grid-outer-gutter-width-unitless * 1px;
 
 
@@ -148,16 +147,25 @@ $grid-outer-gutter-width: $grid-outer-gutter-width-unitless * 1px;
  *
  * From Photoshop, Sketch, Illustrator, Paint maybe? 😝
  */
-$psd-width-unitless: 1280;
+$psd-width-unitless: 1440;
 $psd-width: $psd-width-unitless * 1px;
+
+
+/**
+ * Container width without grid outer gutter width
+ * 
+ * Width keep from prototype
+ */
+$container-width-without-outer-gutter-unitless: 1240;
+$container-width: $container-width-without-outer-gutter-unitless * 1px;
 
 
 /**
  * Container width
  * 
- * Width keep from prototype (grid + outer gutter)
+ * Width keep from prototype (grid + outer gutter * 2 )
  */
-$container-width-unitless: 1280;
+$container-width-unitless: $container-width-without-outer-gutter-unitless + ( $grid-outer-gutter-width-unitless * 2 );
 $container-width: $container-width-unitless * 1px;
 
 
@@ -171,7 +179,7 @@ $container-width: $container-width-unitless * 1px;
  */
 $transitions: (
 	ease: .3s ease,
-	zoom-in: 1s cubic-bezier( 0.25, 0.46, 0.45, 0.94 )
+	zoom-in: 1s cubic-bezier( 0.25, 0.46, 0.45, 0.94 ),
 );
 
 
@@ -184,11 +192,12 @@ $transitions: (
  * @type map
  * @author Jérémy Levron <levronjeremy@19h47.fr>
  */
-$directories: (
-	fonts: "../fonts/",
-	img: "../img/",
-	svg: "../img/svg/",
-	jpg: "../img/jpg/",
+$directories:
+(
+	fonts: "../../fonts/",
+	img: "../../img/",
+	svg: "../../img/svg/",
+	jpg: "../../img/jpg/",
 	png: "../../img/png/",
 	gif: "../../img/gif/",
 );
@@ -228,4 +237,6 @@ $state-classes: (
 	search-open: search--is-open,
 	panel-open: panel--is-open,
 	submenu-open: submenu--is-open,
+	single-menu-open: single-menu--is-open,
+	bottom: is-bottom,
 );
