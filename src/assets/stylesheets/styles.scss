@@ -1,4 +1,14 @@
-
+/**
+ * Color variation
+ *
+ * Each colors used in the theme.
+ * 
+ * @uses the_color($key, $value) to retrieve color value
+ * @type nested map
+ * @see http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
+ * @see http://www.colorhexa.com/ to pickup color name
+ * @author Jérémy Levron levronjeremy@19h47.fr
+ */
 $color-variations: (
 	
 	black: #000000,
@@ -41,7 +51,7 @@ $color-variations: (
 	),
 
 	yellow: (
-		// partie ateliers: jaune >  
+		// partie ateliers: jaune  
 		vivid: #ffc80a
 	)
 );
