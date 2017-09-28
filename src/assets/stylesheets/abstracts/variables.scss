@@ -11,7 +11,7 @@
  * @type nested map
  * @see http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
  * @see http://www.colorhexa.com/ to pickup color name
- * @author Jérémy Levron levronjeremy@19h47.fr
+ * @author Jérémy Levron <levronjeremy@19h47.fr>
  */
 $color-variations: (
 	
@@ -61,18 +61,48 @@ $color-variations: (
 );
 
 
-
 /**
  * Font
  *
- * All fonts found in the site are listed here
- *
- * @uses map-get( $font, $key ) to retrieve font value from map
+ * A map containing all information about fonts (families and weights)
+ * 
  * @type map
  */
-$font-families: (
-	body: ( 'Playfair Display', serif ),
-	title: ( 'Roboto Condensed', sans-serif ),
+$font: (
+	/**
+	 * Font
+	 *
+	 * All fonts found in the site are listed here
+	 *
+	 * @uses map-get( $font, $key ) to retrieve font value from map
+	 * @author Jérémy Levron <levronjeremy@19h47.fr>
+	 */
+	families: (
+		body: ( 'Lora', serif ),
+		title: ( 'Poppins', sans-serif ),
+	),
+
+
+	/**
+	 * Font weight
+	 *
+	 * Each font weight used in the theme.
+	 * 
+	 * @uses map-get( $font, weights ) to retrieve font weight value
+	 * @type map
+	 * @author Jérémy Levron <levronjeremy@19h47.fr>
+	 */
+	weights: (
+		extralight: 100,
+		light: 200,
+		book: 300,
+		regular: 400,
+		medium: 500,
+		semibold: 600,
+		bold: 700,
+		extrabold: 800,
+		extrablack: 900
+	)
 );
 
 
@@ -82,28 +112,6 @@ $font-families: (
 $base-font-size: 16;
 $base-font-size-px: $base-font-size * 1px;
 $base-line-height: 24;
-
-
-/**
- * Font weight
- *
- * Each font weight used in the theme.
- * 
- * @uses map-get( $font-weight, $key ) to retrieve font weight value
- * @type map
- * @author Levron Jérémy <jeremy@troa.fr>
- */
-$font-weight: (
-	extralight: 100,
-	light: 200,
-	book: 300,
-	regular: 400,
-	medium: 500,
-	semibold: 600,
-	bold: 700,
-	extrabold: 800,
-	extrablack: 900
-);
 
 
 // –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -118,6 +126,7 @@ $grid-columns: 12;
  * Overall grid gutter size from Bootstrap
  * 
  * @see http://stackoverflow.com/a/28193872/5091221
+ * @author Jérémy Levron <levronjeremy@19h47.fr>
  */
 $grid-gutter-width: 40px;
 
@@ -127,6 +136,8 @@ $grid-gutter-width: 40px;
  *
  * (Most of the time it's the size of a gutter divide by 2.)
  * Useful for the container.
+ *
+ * @author Jérémy Levron <levronjeremy@19h47.fr>
  */
 $grid-outer-gutter-width-unitless: 60;
 $grid-outer-gutter-width: $grid-outer-gutter-width-unitless * 1px;
@@ -135,7 +146,7 @@ $grid-outer-gutter-width: $grid-outer-gutter-width-unitless * 1px;
 /**
  * Prototype width
  *
- * From .psd obviously
+ * From Photoshop, Sketch, Illustrator, Paint maybe? 😝
  */
 $psd-width-unitless: 1280;
 $psd-width: $psd-width-unitless * 1px;
@@ -144,7 +155,7 @@ $psd-width: $psd-width-unitless * 1px;
 /**
  * Container width
  * 
- * Width keep from .psd (grid + outer gutter)
+ * Width keep from prototype (grid + outer gutter)
  */
 $container-width-unitless: 1280;
 $container-width: $container-width-unitless * 1px;
@@ -155,13 +166,14 @@ $container-width: $container-width-unitless * 1px;
  *
  * @uses map-get( $transitions, $key ) to retrieve directory value from map
  * @type map
- * @author Levron Jérémy <jeremy@troa.fr>
+ * @author Jérémy Levron <levronjeremy@19h47.fr>
  * @see http://easings.net/
  */
 $transitions: (
 	ease: .3s ease,
 	zoom-in: 1s cubic-bezier( 0.25, 0.46, 0.45, 0.94 )
 );
+
 
 /**
  * Directories
@@ -170,7 +182,7 @@ $transitions: (
  * 
  * @uses map-get( $directories, $key ) to retrieve directory value from map
  * @type map
- * @author Levron Jérémy <jeremy@troa.fr>
+ * @author Jérémy Levron <levronjeremy@19h47.fr>
  */
 $directories: (
 	fonts: "../fonts/",
@@ -209,7 +221,7 @@ $slicer-breakpoints-settings: true;
  * 
  * @uses map-get( $state-classes, $key ) to retrieve class name from map
  * @type map
- * @author Levron Jérémy <jeremy@troa.fr>
+ * @author Jérémy Levron <levronjeremy@19h47.fr>
  */
 $state-classes: (
 	menu-open: menu--is-open,
