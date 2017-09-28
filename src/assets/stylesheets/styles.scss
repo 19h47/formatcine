@@ -1,57 +1,103 @@
 /**
- * Color variation
+ * Main
  *
- * Each colors used in the theme.
- * 
- * @uses the_color($key, $value) to retrieve color value
- * @type nested map
- * @see http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
- * @see http://www.colorhexa.com/ to pickup color name
- * @author Jérémy Levron levronjeremy@19h47.fr
+ * @see https://sass-guidelin.es/#the-7-1-pattern
  */
-$color-variations: (
-	
-	black: #000000,
 
-	// blanc (fond1)
-	white: #ffffff,
 
-	blue: (
-		
-		// partie générale (accueil, mentions légales, partenaires) : bleu/violet
-		// violet clair (contour, picto, menu, footer, fond événement)
-		moderate: #6666d5,
+/**
+* Dependencies
+*/
+@import '~breakpoint-sass/stylesheets/breakpoint';
+@import '~breakpoint-slicer/stylesheets/breakpoint-slicer';
+@import 'abstracts/variables';
+@import 'base/fonts';
 
-  		// violet foncé (baseline logo, fond photo d'accueil, fond événement)
-		very-dark-desaturated: #343471
-	),
 
-	cyan: (
-		// partie formations : turquoise
-		moderate: #55cdb9
-	),
+/**
+ * Vendors
+ */
+@import 
+	'~ress/ress',
+	'vendors/bootstrap-custom',
+	'vendors/slick';
+	// 'vendors/slick-theme';
 
-	gray: (
-		// gris clair (infos header, chapeaux)
-		dark: #969696,
 
-		// noir (titres)
-		very-dark-mostly-black: #1e1e1e,
 
-		// gris foncé (textes)
-		very-dark: #646464,
-		
-		// gris très clair (fond2)
-		very-light: #ebebeb
-	),
+/**
+ * Abstracts
+ */
+@import 
+	'abstracts/functions',
+	'abstracts/mixins',
+	'abstracts/placeholders',
+	'abstracts/animations';
 
-	violet: (
-		// partie collège au cinéma : mauve
-		slightly-desaturated: #965fb4
-	),
 
-	yellow: (
-		// partie ateliers: jaune  
-		vivid: #ffc80a
-	)
-);
+/**
+ * Base
+ */
+@import 
+	'base/base',	
+	'base/typography';
+
+
+/**
+ * Layout
+ */
+@import 
+	'layout/site',
+	'layout/header',
+	'layout/footer';
+
+
+/**
+ * Pages
+ */
+@import 
+	// 'pages/page',
+	// 'pages/home/index'
+	'pages/cart/index',
+	'pages/product',
+	'pages/cms',
+	'pages/my-account',
+	'pages/addresses',
+	'pages/address',
+	'pages/email-alerts',
+	'pages/authentication',
+	'pages/contact',
+	'pages/not-found';
+
+
+/**
+ * Components
+ */
+@import 
+	'components/user-info',
+	'components/logo',
+	'components/search-widget',
+	'components/block/index',
+	'components/product',
+	'components/menu',
+	'components/homeslider',
+	'components/custom-banner',
+	'components/featured-products',
+	'components/advanced-wishlist',
+	'components/email-alerts',
+	'components/pagination',
+	'components/anis',
+	'components/form',
+	'components/mywishlist';
+
+
+/**
+ * Utilities
+ */
+@import 'Utilities/_settings';
+
+
+/**
+ * Shame
+ */
+// @import 'shame';
