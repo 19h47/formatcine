@@ -194,6 +194,18 @@ class FRMTCN extends TimberSite {
             $context['contact']['address'] = nl2br( get_option( 'address' ) );
         }
 
+        // Email address
+        if ( get_option( 'email_addresses' ) ) {
+
+            $context['contact']['email_addresses'] = array();
+            $email_addresses = explode( ', ', get_option( 'email_addresses' ) );
+
+            foreach ( $email_addresses as $email_address ) {
+
+                array_push( $context['contact']['email_addresses'], $email_address );
+            }
+        }
+
         // Phone
         if ( get_option( 'phone' ) ) {
 
