@@ -41,8 +41,10 @@ class Custom_Taxonomies {
      * @access public
      */
 	public function include_custom_taxonomies() {
-        // include __DIR__ . '/project-tag.php';
-		// include __DIR__ . '/link-category.php';
+        include __DIR__ . '/country.php';
+		include __DIR__ . '/director.php';
+        include __DIR__ . '/school-class.php';
+        include __DIR__ . '/season.php';
 	}
 
 	
@@ -50,7 +52,9 @@ class Custom_Taxonomies {
      * Instanciate all custom post types
      */
     public function instanciate_custom_taxonomies() {
-        // new ProjectClient( $this->theme_name, $this->theme_version );
-        // new Link_Category( $this->theme_name, $this->theme_version );      
+        new Country( $this->theme_name, $this->theme_version );
+        new SchoolClass( $this->theme_name, $this->theme_version );      
+        new Director( $this->theme_name, $this->theme_version );
+        new Season( $this->theme_name, $this->theme_version );      
     }
 }
