@@ -78,16 +78,16 @@ class FRMTCN extends TimberSite {
         $this->theme_version = $theme_version;
 
         // Prod
-        // $this->theme_manifest = json_decode( 
-        //     file_get_contents( __DIR__ . '/public/manifest.json' ), 
-        //     true
-        // );
+        $this->theme_manifest = json_decode( 
+            file_get_contents( __DIR__ . '/public/manifest.json' ), 
+            true
+        );
 
         // Dev
-        $this->theme_manifest = array(
-            'main.css'  => 'global.css',
-            'main.js'   => 'bundle.js'
-        );
+        // $this->theme_manifest = array(
+        //     'main.css'  => 'global.css',
+        //     'main.js'   => 'bundle.js'
+        // );
 
         $this->setup();
         $this->load_dependencies();
@@ -113,6 +113,7 @@ class FRMTCN extends TimberSite {
         require_once get_template_directory() . '/inc/post-template.php';
         require_once get_template_directory() . '/inc/reset.php';
         require_once get_template_directory() . '/inc/admin.php';
+        require_once get_template_directory() . '/inc/acf.php';
 
     
         new Custom_Post_Types( $this->get_theme_name(), $this->get_theme_version() );
@@ -303,7 +304,7 @@ class FRMTCN extends TimberSite {
         register_nav_menus( 
             array(
                 'main'          => __( 'Main' ),
-                'categories'    => __( 'Catégories' ),
+                // 'categories'    => __( 'Catégories' ),
             ) 
         );
 
