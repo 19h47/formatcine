@@ -1,8 +1,8 @@
 <?php
 /**
- * Post
+ * Page
  */
-class Post {
+class Page {
 	
     /**
      * The unique identifier of this theme.
@@ -32,9 +32,9 @@ class Post {
 	public function __construct( $theme_name, $theme_version ) {
 		$this->theme_name = $theme_name;
         $this->theme_version = $theme_version;
-        add_filter( 'manage_post_posts_columns', array( $this, 'add_custom_columns' ) );
+        add_filter( 'manage_page_posts_columns', array( $this, 'add_custom_columns' ) );
 
-        add_action( 'manage_post_posts_custom_column' , array( $this, 'render_custom_columns' ), 10, 2 );
+        add_action( 'manage_page_posts_custom_column' , array( $this, 'render_custom_columns' ), 10, 2 );
         add_action( 'admin_head', array( $this, 'css' ) );
     }
 
@@ -48,11 +48,16 @@ class Post {
 
     ?>
         <style>
-            .fixed .column-event_date { width: 160px; }
-            
-            .fixed .column-event_date:first-letter { text-transform: uppercase; }  
+            .fixed .column-page_color { text-align: center; }
 
-          	.acf-field-color-picker { min-height: 0!important; }
+            .column-page_color .color-indicator { 
+                border: none !important; 
+                border-radius: 50% !important; 
+                height: 40px !important; 
+                width: 40px !important; 
+                margin-left: auto; 
+                margin-right: auto;
+            }  
         </style>
     <?php
     }
@@ -69,13 +74,12 @@ class Post {
         unset( $columns['comments'] );
 
         $new_columns = array();
-        $keys = array_keys( $columns );
       	
       	foreach( $columns as $key => $value ) {
             
-            if ( $key === end( $keys ) ) {
+            if ( $key === 'author' ) {
          
-              	$new_columns['event_date'] = __( 'Date de l\'événement' );
+              	$new_columns['page_color'] = __( 'Couleur' );
             }
 
           	$new_columns[$key] = $value;
@@ -94,15 +98,20 @@ class Post {
 
         switch ( $column_name ) {
     	    
-    	    case 'event_date' :
+    	    case 'page_color' :
     	    	
-    	    	if ( get_field( 'event_date', $post_id ) ) {
-	   				
-			        the_field( 'event_date', $post_id );
-			        
-    	    	} else {
-    	    		echo '—';
-    	    	}
+    	    	$data = get_post_meta( $post_id, 'page_color', true );
+                            
+                if ( $data ) {
+                    echo '<div id="page_color-' . $post_id . '" ';
+                    echo 'title="' . $data . '" ';
+                    echo 'class="color-indicator" style="background-color:';
+                    echo $data;
+                    echo '"></div>';
+                } else {
+                    echo '—';
+                }
+                break;
 
     		break;
         }

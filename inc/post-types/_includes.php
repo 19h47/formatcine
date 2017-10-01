@@ -42,8 +42,9 @@ class Custom_Post_Types {
      */
 	public function include_custom_post_types() {
 		
-        include __DIR__ . '/movie.php';
         include __DIR__ . '/post.php';
+        include __DIR__ . '/page.php';
+        include __DIR__ . '/movie.php';
         include __DIR__ . '/programming.php';
         include __DIR__ . '/training.php';
 	}
@@ -55,6 +56,7 @@ class Custom_Post_Types {
     public function instanciate_custom_post_types() {
         new Movie( $this->theme_name, $this->theme_version );
         new Post( $this->theme_name, $this->theme_version );
+        new Page( $this->theme_name, $this->theme_version );
         new Programming( $this->theme_name, $this->theme_version );
         new Training( $this->theme_name, $this->theme_version );
     }
