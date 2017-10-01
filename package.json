@@ -1,7 +1,7 @@
 {
-  "name": "collegeaucinema37",
+  "name": "formatcine",
   "version": "1.0.0",
-  "description": "College au cinéma website ",
+  "description": "Format'ciné website ",
   "main": "index.js",
   "scripts": {
     "build": "./bin/build",
@@ -43,10 +43,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/19h47/collegeaucinema37.git"
+    "url": "git+https://github.com/19h47/formatcine.git"
   },
   "bugs": {
-    "url": "https://github.com/19h47/collegeaucinema37/issues"
+    "url": "https://github.com/19h47/formatcine/issues"
   },
-  "homepage": "https://github.com/19h47/collegeaucinema37#readme"
+  "homepage": "https://github.com/19h47/formatcine#readme"
 }
