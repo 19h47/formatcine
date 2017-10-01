@@ -36,6 +36,8 @@
 ehthumbs.db
 Thumbs.db
 
-/src/prototypes/
-/vendor/
+src/prototypes/
+vendor/
+node_modules/
+public/
 
