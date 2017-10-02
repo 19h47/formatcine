@@ -161,6 +161,6 @@ class Season {
 			'show_in_nav_menus'         	=> true,
 			'show_tagcloud'             	=> true,
 		);
-		register_taxonomy( 'season', array( 'programming', 'training' ), $args );
+		register_taxonomy( 'season', array( 'programming', 'school_training' ), $args );
 	}
 }

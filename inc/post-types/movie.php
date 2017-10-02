@@ -4,6 +4,7 @@
  * Movie class
  */
 class Movie {
+
 	/**
      * The unique identifier of this theme.
      *
@@ -12,6 +13,8 @@ class Movie {
      * @var      string    $plugin_name    The string used to uniquely identify this theme.
      */
     protected $theme_name;
+
+
     /**
      * The version of the theme.
      *
@@ -20,9 +23,13 @@ class Movie {
      * @var      string    $version    The current version of this theme.
      */
     private $theme_version;
+
+
 	/**
 	 * Construct function
 	 *
+	 * @param  $theme_name
+	 * @param  $theme_version
 	 * @access public
 	 */
 	public function __construct( $theme_name, $theme_version ) {
@@ -40,6 +47,9 @@ class Movie {
 	}
 
 
+	/**
+	 * CSS for movie CPT
+	 */
 	public function custom_post_type_css() {
 		global $pagenow, $typenow;
 
@@ -50,6 +60,7 @@ class Movie {
 		?><style>.acf-field-taxonomy { min-height: auto!important; }</style><?php
 	}
 	
+
 	/**
 	 * Register Custom Post Type
 	 */
@@ -151,7 +162,8 @@ class Movie {
 	/**
 	 * Add custom columns
 	 * 
-	 * @param $columns
+	 * @param 	$columns
+	 * @return  $new_columns
 	 */
 	public function add_custom_columns( $columns ) {
 	    
@@ -223,6 +235,9 @@ class Movie {
 
 	/**
 	 * "At a glance" items (dashboard widget): add the projects.
+	 *
+	 * @param 	$items
+	 * @return  $items
 	 */
 	public function at_a_glance( $items ) {
 	    $post_type = 'movie';
@@ -234,6 +249,7 @@ class Movie {
 	        
 	        return $items;
 	    }
+	    
 	    $text = sprintf(
 	        _n( '%1$s %4$s%2$s', '%1$s %4$s%3$s', $num_posts->{$post_status} ), 
 	        number_format_i18n( $num_posts->{$post_status} ), 
@@ -241,6 +257,7 @@ class Movie {
 	        strtolower( $object->labels->name ),
 	        'pending' === $post_status ? 'Pending ' : ''
 	    );
+
 	    if ( current_user_can( $object->cap->edit_posts ) ) {
 	        $items[] = sprintf( '<a class="%1$s-count" href="edit.php?post_status=%2$s&post_type=%1$s">%3$s</a>', $post_type, $post_status, $text );
 	    

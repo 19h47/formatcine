@@ -46,7 +46,8 @@ class Custom_Post_Types {
         include __DIR__ . '/page.php';
         include __DIR__ . '/movie.php';
         include __DIR__ . '/programming.php';
-        include __DIR__ . '/training.php';
+        include __DIR__ . '/school-training.php';
+        include __DIR__ . '/adult-training.php';
 	}
 
 	
@@ -58,6 +59,7 @@ class Custom_Post_Types {
         new Post( $this->theme_name, $this->theme_version );
         new Page( $this->theme_name, $this->theme_version );
         new Programming( $this->theme_name, $this->theme_version );
-        new Training( $this->theme_name, $this->theme_version );
+        new School_Training( $this->theme_name, $this->theme_version );
+        new Adult_Training( $this->theme_name, $this->theme_version );
     }
 }

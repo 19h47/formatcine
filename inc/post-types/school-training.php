@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Training class
+ * School Training class
  */
-class Training {
+class School_Training {
 	/**
      * The unique identifier of this theme.
      *
@@ -36,11 +36,11 @@ class Training {
         add_action( 'admin_head', array( $this, 'admin_css' ) );
         add_filter( 'dashboard_glance_items', array( $this, 'at_a_glance' ) );
 
-        add_filter( 'manage_training_posts_columns', array( $this, 'add_custom_columns' ) );
-        add_action( 'manage_training_posts_custom_column' , array( $this, 'render_custom_columns' ), 10, 2 );
+        add_filter( 'manage_school_training_posts_columns', array( $this, 'add_custom_columns' ) );
+        add_action( 'manage_school_training_posts_custom_column' , array( $this, 'render_custom_columns' ), 10, 2 );
 
 
-        add_filter( 'wp_insert_post_data', array($this, 'change_title' ), 99, 2 );
+        add_filter( 'wp_insert_post_data', array( $this, 'change_title' ), 99, 2 );
 	}
 
 	
@@ -49,41 +49,41 @@ class Training {
 	 */
 	public function register_post_type() {
 		$labels = array(
-			'name'                  => _x( 'Formations', 'Formation Nom pluriel', $this->theme_name ),
-	        'singular_name'         => _x( 'Formation', 'Formation Nom singulier', $this->theme_name ),
-	        'menu_name'             => __( 'Formations', $this->theme_name ),
+			'name'                  => _x( 'Formations scolaires', 'Formation Nom pluriel', $this->theme_name ),
+	        'singular_name'         => _x( 'Formation scolaire ', 'Formation Nom singulier', $this->theme_name ),
+	        'menu_name'             => __( 'Formations scolaires', $this->theme_name ),
 	        'name_admin_bar'        => __( 'Formation', $this->theme_name ),
 	        'parent_item_colon'     => __( '', $this->theme_name ),
-	        'all_items'             => __( 'Toutes les formations', $this->theme_name ),
-	        'add_new_item'          => __( 'Ajouter une nouvelle formation', $this->theme_name ),
+	        'all_items'             => __( 'Toutes les formations scolaires', $this->theme_name ),
+	        'add_new_item'          => __( 'Ajouter une nouvelle formation scolaire', $this->theme_name ),
 	        'add_new'               => __( 'Ajouter', $this->theme_name ),
-	        'new_item'              => __( 'Nouvelle formation', $this->theme_name ),
-	        'edit_item'             => __( 'Modifier la formation', $this->theme_name ),
-	        'update_item'           => __( 'Mettre à jour la formation', $this->theme_name ),
-	        'view_item'             => __( 'Voir la formation', $this->theme_name ),
-	        'view_items'            => __( 'Voir les formations', $this->theme_name ),
+	        'new_item'              => __( 'Nouvelle formation scolaire', $this->theme_name ),
+	        'edit_item'             => __( 'Modifier la formation scolaire', $this->theme_name ),
+	        'update_item'           => __( 'Mettre à jour la formation scolaire', $this->theme_name ),
+	        'view_item'             => __( 'Voir la formation scolaire', $this->theme_name ),
+	        'view_items'            => __( 'Voir les formations scolaires', $this->theme_name ),
 	        'search_items'          => __( 'Chercher parmi les formations', $this->theme_name ),
-	        'not_found'             => __( 'Aucune formation trouvée.', $this->theme_name ),
-	        'not_found_in_trash'    => __( 'Aucune formation trouvée dans la corbeille.', $this->theme_name ),
+	        'not_found'             => __( 'Aucune formation scolaire trouvée.', $this->theme_name ),
+	        'not_found_in_trash'    => __( 'Aucune formation scolaire trouvée dans la corbeille.', $this->theme_name ),
 	        'featured_image'        => __( 'Image à la une', $this->theme_name ),
 	        'set_featured_image'    => __( 'Mettre une image à la une', $this->theme_name ),
 	        'remove_featured_image' => __( 'Retirer l\'image mise en avant', $this->theme_name ),
 	        'use_featured_image'    => __( 'Mettre une image à la une', $this->theme_name ),
-	        'insert_into_item'      => __( 'Insérer dans la formation', $this->theme_name ),
-	        'uploaded_to_this_item' => __( 'Ajouter à cette formation', $this->theme_name ),
+	        'insert_into_item'      => __( 'Insérer dans la formation scolaire', $this->theme_name ),
+	        'uploaded_to_this_item' => __( 'Ajouter à cette formation scolaire', $this->theme_name ),
 	        'items_list'            => __( 'Liste des formations', $this->theme_name ),
-	        'items_list_navigation' => __( 'Navigation de liste des formations', $this->theme_name ),
-	        'filter_items_list'     => __( 'Filtrer la liste des formations', $this->theme_name ),
+	        'items_list_navigation' => __( 'Navigation de liste des formations scolaires', $this->theme_name ),
+	        'filter_items_list'     => __( 'Filtrer la liste des formations scolaires', $this->theme_name ),
 		);
 		$rewrite = array(
-	        'slug'                	=> 'formations',
+	        'slug'                	=> 'formations-scolaires',
 	        'with_front'          	=> true,
 	        'pages'               	=> true,
 	        'feeds'               	=> true,
 	    );
 		$args = array(
-			'label'               	=> 'formation',
-	        'description'         	=> __( 'Les programmations', $this->theme_name ),
+			'label'               	=> 'formation scolaire',
+	        'description'         	=> __( 'Les formations scolaires', $this->theme_name ),
 	        'labels'              	=> $labels,
 	        'supports'            	=> array( '' ),
 	        'taxonomies'          	=> array( 'school_tag', 'year' ),
@@ -103,7 +103,7 @@ class Training {
 	        'rewrite'             	=> $rewrite,
 	        'capability_type'     	=> 'post',
 		);
-		register_post_type( 'training', $args );
+		register_post_type( 'school_training', $args );
 	}
 
 
@@ -111,7 +111,7 @@ class Training {
 		
 		?>
 	    <style>
-	        #dashboard_right_now .training-count:before { content: "\f118"; }
+	        #dashboard_right_now .school_training-count:before { content: "\f118"; }
 	    </style>
 	<?php
 	}
@@ -121,7 +121,7 @@ class Training {
 
 		global $typenow;
 		
-		if ( 'training' !== $typenow ) {
+		if ( 'school_training' !== $typenow ) {
 			return;
 		}
 		
@@ -138,7 +138,8 @@ class Training {
 	        	width: 160px;
 	        }
 	        .fixed .column-taxonomy-season { width: 80px; }
-
+			
+			.acf-field-taxonomy,
 	        .acf-field-date-picker,
 	        .acf-field-post-object { 
 	        	min-height: 0!important; 
@@ -157,7 +158,7 @@ class Training {
 
 		global $typenow;
 		
-		if ( 'training' !== $typenow ) {
+		if ( 'school_training' !== $typenow ) {
 			return;
 		}
 
@@ -196,7 +197,7 @@ class Training {
 
     	global $typenow;
     	
-    	if ( 'training' !== $typenow ) {
+    	if ( 'school_training' !== $typenow ) {
     		return;
     	}
 
@@ -230,10 +231,10 @@ class Training {
 
 
 	/**
-	 * "At a glance" items (dashboard widget): add the training.
+	 * "At a glance" items (dashboard widget): add the school_training.
 	 */
 	public function at_a_glance( $items ) {
-	    $post_type = 'training';
+	    $post_type = 'school_training';
 	    $post_status = 'publish';
 	    $object = get_post_type_object( $post_type );
 	    
@@ -272,7 +273,7 @@ class Training {
     	
     	$screen = get_current_screen();
 
-    	if ( $screen->post_type !== 'training' ) {
+    	if ( $screen->post_type !== 'school_training' ) {
 
      		return $data;
     	}

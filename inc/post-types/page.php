@@ -51,6 +51,7 @@ class Page {
             .fixed .column-page_color { text-align: center; }
 
             .column-page_color .color-indicator { 
+                display: block;
                 border: none !important; 
                 border-radius: 50% !important; 
                 height: 40px !important; 
@@ -103,11 +104,12 @@ class Page {
     	    	$data = get_post_meta( $post_id, 'page_color', true );
                             
                 if ( $data ) {
-                    echo '<div id="page_color-' . $post_id . '" ';
+                    echo '<a id="page_color-' . $post_id . '" ';
                     echo 'title="' . $data . '" ';
+                    echo 'href="' . get_edit_post_link( $post_id ) . '"';
                     echo 'class="color-indicator" style="background-color:';
                     echo $data;
-                    echo '"></div>';
+                    echo '"></a>';
                 } else {
                     echo '—';
                 }

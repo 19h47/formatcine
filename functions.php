@@ -78,16 +78,16 @@ class FRMTCN extends TimberSite {
         $this->theme_version = $theme_version;
 
         // Prod
-        $this->theme_manifest = json_decode( 
-            file_get_contents( __DIR__ . '/public/manifest.json' ), 
-            true
-        );
+        // $this->theme_manifest = json_decode( 
+        //     file_get_contents( __DIR__ . '/public/manifest.json' ), 
+        //     true
+        // );
 
         // Dev
-        // $this->theme_manifest = array(
-        //     'main.css'  => 'global.css',
-        //     'main.js'   => 'bundle.js'
-        // );
+        $this->theme_manifest = array(
+            'main.css'  => 'global.css',
+            'main.js'   => 'bundle.js'
+        );
 
         $this->setup();
         $this->load_dependencies();

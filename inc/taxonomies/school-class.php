@@ -76,7 +76,7 @@ class SchoolClass {
 			'show_in_nav_menus'          	=> true,
 			'show_tagcloud'              	=> true,
 		);
-		register_taxonomy( 'school_class', array( 'programming', 'training' ), $args );
+		register_taxonomy( 'school_class', array( 'programming', 'school_training' ), $args );
 
 	}
 
