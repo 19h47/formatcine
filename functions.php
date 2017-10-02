@@ -1,6 +1,6 @@
 <?php
 /**
- * Format'Ciné functions and definitions
+ * Format'ciné functions and definitions
  *
  * @see https://developer.wordpress.org/themes/basics/theme-functions/
  *
@@ -60,7 +60,8 @@ class FRMTCN extends TimberSite {
 
     /**
      * Manifest
-     *)
+     *
+     * @access private
      */
     private $theme_manifest;
 
