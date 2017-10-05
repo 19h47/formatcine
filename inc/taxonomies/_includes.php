@@ -45,6 +45,7 @@ class Custom_Taxonomies {
 		include __DIR__ . '/director.php';
         include __DIR__ . '/school-class.php';
         include __DIR__ . '/season.php';
+        include __DIR__ . '/adult-training-category.php';
 	}
 
 	
@@ -56,5 +57,6 @@ class Custom_Taxonomies {
         new SchoolClass( $this->theme_name, $this->theme_version );      
         new Director( $this->theme_name, $this->theme_version );
         new Season( $this->theme_name, $this->theme_version );      
+        new AdultTrainingCategory( $this->theme_name, $this->theme_version );      
     }
 }

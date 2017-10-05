@@ -41,8 +41,8 @@ class Adult_Training {
         // add_action( 'admin_head', array( $this, 'admin_css' ) );
         add_filter( 'dashboard_glance_items', array( $this, 'at_a_glance' ) );
 
-        add_filter( 'manage_adult_training_posts_columns', array( $this, 'add_custom_columns' ) );
-        add_action( 'manage_adult_training_posts_custom_column' , array( $this, 'render_custom_columns' ), 10, 2 );
+        // add_filter( 'manage_adult_training_posts_columns', array( $this, 'add_custom_columns' ) );
+        // add_action( 'manage_adult_training_posts_custom_column' , array( $this, 'render_custom_columns' ), 10, 2 );
 	}
 
 	
@@ -88,7 +88,7 @@ class Adult_Training {
 	        'description'         	=> __( 'Les formations adultes', $this->theme_name ),
 	        'labels'              	=> $labels,
 	        'supports'            	=> array( 'title', 'editor', 'comments' ),
-	        'taxonomies'          	=> array( 'school_tag', 'year' ),
+	        'taxonomies'          	=> array( 'adult_training_category' ),
 	        'hierarchical'        	=> false,
 	        'public'              	=> true,
 	        'show_ui'             	=> true,
@@ -119,18 +119,14 @@ class Adult_Training {
 	}
 
 
-	public function admin_css() { 
+	// public function admin_css() { 
 
-		global $typenow;
+	// 	global $typenow;
 		
-		if ( 'adult_training' !== $typenow ) {
-			return;
-		}
-		
-		?>
-	    <style></style>
-	<?php
-	}
+	// 	if ( 'adult_training' !== $typenow ) {
+	// 		return;
+	// 	}
+	// }
 
 
 	/**
@@ -138,32 +134,32 @@ class Adult_Training {
 	 * 
 	 * @param $columns
 	 */
-	public function add_custom_columns( $columns ) {
+	// public function add_custom_columns( $columns ) {
 
-		global $typenow;
+	// 	global $typenow;
 		
-		if ( 'adult_training' !== $typenow ) {
-			return;
-		}
+	// 	if ( 'adult_training' !== $typenow ) {
+	// 		return;
+	// 	}
 
-		unset( $columns['date'] );
+	// 	unset( $columns['date'] );
 
 
-	    $new_columns = array();
+	//     $new_columns = array();
 	  	
-	  	foreach( $columns as $key => $value ) {
+	//   	foreach( $columns as $key => $value ) {
 
-      	  	if ( $key === 'title' ) {
-      	  		// Title
-      	  		$new_columns[$key] = $value;
-	      	  	$new_columns['type'] = 'Type de formation';
-      	  	}
+ //      	  	if ( $key === 'title' ) {
+ //      	  		// Title
+ //      	  		$new_columns[$key] = $value;
+	//       	  	$new_columns['type'] = 'Type de formation';
+ //      	  	}
 
-      		$new_columns[$key] = $value;
-	  	}
+ //      		$new_columns[$key] = $value;
+	//   	}
 
-	  	return $new_columns;
-	}
+	//   	return $new_columns;
+	// }
 
 
     /**
@@ -172,30 +168,30 @@ class Adult_Training {
      * @param $column_name 
      * @param $post_id     
      */
-    public function render_custom_columns( $column_name, $post_id ) {
+    // public function render_custom_columns( $column_name, $post_id ) {
 
-    	global $typenow;
+    // 	global $typenow;
     	
-    	if ( 'adult_training' !== $typenow ) {
-    		return;
-    	}
+    // 	if ( 'adult_training' !== $typenow ) {
+    // 		return;
+    // 	}
 
-        switch ( $column_name ) {
+    //     switch ( $column_name ) {
 
-    		case 'type' :
+    // 		case 'type' :
 				
-				$type = get_field( 'type', $post_id );
+				// $type = get_field( 'type', $post_id );
 
-    			if ( $type ) {
+    // 			if ( $type ) {
 
-    				echo $type['label'];
+    // 				echo $type['label'];
 
-    			} else {
-    				echo '—';
-    			}
-    			break;
-        }
-    }
+    // 			} else {
+    // 				echo '—';
+    // 			}
+    // 			break;
+    //     }
+    // }
 
 
 	/**

@@ -97,9 +97,13 @@ class Page {
      */
     public function render_custom_columns( $column_name, $post_id ) {
 
+        global $post;
+
         switch ( $column_name ) {
     	    
     	    case 'page_color' :
+
+                $parent_id = get_post_ancestors( $post );
     	    	
     	    	$data = get_post_meta( $post_id, 'page_color', true );
                             
@@ -110,6 +114,24 @@ class Page {
                     echo 'class="color-indicator" style="background-color:';
                     echo $data;
                     echo '"></a>';
+
+                } elseif ( $parent_id ) {
+                    // Retrieve parent color
+                    $data = get_field( 'page_color', $parent_id[0] ); 
+
+                    if ( $data ) {
+
+                        echo '<a id="page_color-' . $post_id . '" ';
+                        echo 'title="' . $data . '" ';
+                        echo 'href="' . get_edit_post_link( $post_id ) . '"';
+                        echo 'class="color-indicator" style="background-color:';
+                        echo $data;
+                        echo '"></a>';
+                    } else {
+                        echo '—';
+                    }
+
+
                 } else {
                     echo '—';
                 }
