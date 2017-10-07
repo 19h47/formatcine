@@ -1,0 +1,33 @@
+/**
+ * Discovery
+ *
+ * @uses .Discovery
+ */
+.Discovery {
+	@include margin( top 75px bottom 75px );
+
+	.title {
+		@extend 
+			%font-extrabold, 
+			%uppercase, 
+			%position-xs-relative, 
+			%display-xs-inline-block,
+			%margin-xs-y-0;
+		@include font( 30, 55, 50 );
+
+		&::after {
+			@include absolute( top 100% right 0 left 0 );
+
+			height: 3px;
+			background-color: currentColor;
+			content: '';
+		}
+	}
+
+	.description {
+		@extend %font-semibold, %uppercase;
+		@include font( 18.01, 30.02, 100 );
+
+		color: the_color( gray, dark );
+	}
+}

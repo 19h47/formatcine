@@ -32,7 +32,8 @@ $color-variations: (
 	),
 	cyan: (
 		// partie formations : turquoise
-		moderate: #55cdb9
+		moderate: #55cdb9,
+		dark: #009696
 	),
 	gray: (
 		// gris clair (infos header, chapeaux)
@@ -52,6 +53,12 @@ $color-variations: (
 	yellow: (
 		// partie ateliers: jaune  
 		vivid: #ffc80a
+	),
+	magenta: (
+		dark-moderate: #6E3278
+	),
+	orange: (
+		vivid: #FF960A
 	)
 );
 
@@ -73,8 +80,9 @@ $font: (
 	 * @type map
 	 */
 	families: (
-		body: ( 'Lora', serif ),
-		title: ( 'Poppins', sans-serif ),
+		body: ( 'Akrobat', serif ),
+		title: ( 'Akrobat', sans-serif ),
+		decor: ( 'Perfograma', sans-serif )
 	),
 
 
@@ -140,7 +148,7 @@ $grid-gutter-width: ( $grid-gutter-width-unitless * 1px );
  * (Most of the time it's the size of a gutter divide by 2.)
  * Useful for the container.
  */
-$grid-outer-gutter-width-unitless: 100;
+$grid-outer-gutter-width-unitless: 30;
 $grid-outer-gutter-width: $grid-outer-gutter-width-unitless * 1px;
 
 
@@ -158,7 +166,7 @@ $psd-width: $psd-width-unitless * 1px;
  * 
  * Width keep from prototype
  */
-$container-width-without-outer-gutter-unitless: 1240;
+$container-width-without-outer-gutter-unitless: 920;
 $container-width: $container-width-without-outer-gutter-unitless * 1px;
 
 

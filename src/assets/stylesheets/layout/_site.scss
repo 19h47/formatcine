@@ -1,0 +1,67 @@
+/**
+ * Site
+ *
+ * @uses .Site-{ property }
+ */
+.Site {
+
+	/**
+	 * Description
+	 *
+	 * @uses .Site-description
+	 */
+	&-description {
+		@include margin( top 7px );
+		@extend %uppercase, %margin-xs-bottom-0;
+		@include letter-spacing( 100 );
+
+		font-size: 18.01px;
+	}
+
+
+	/**
+	 * Site container
+	 *
+	 * The fluid container of the grid
+	 * 
+	 * @uses .Site-container
+	 */
+	&-container {
+		@extend %position-xs-relative;
+		@include padding( 
+			right $grid-gutter-width
+			left $grid-gutter-width
+		);
+		@include margin( top 0 right auto bottom 0 left auto );
+		
+		max-width: $container-width;
+	}
+
+
+	/**
+	 * Site header
+	 *
+	 * @uses .Site-header
+	 */
+	&-header {
+		@extend %text-xs-center;
+		@include margin( top 75px bottom 75px );
+	}
+
+
+	/**
+	 * Site footer
+	 *
+	 * @uses .Site-footer
+	 */
+	&-footer {
+		@extend %text-xs-center, %font-regular;
+		@include padding( top 22.5px bottom 22.5px );
+		
+		color: the_color( white );
+		font-size: 16px;
+		line-height: normal;
+
+		a:hover { text-decoration: underline; }
+	}
+}

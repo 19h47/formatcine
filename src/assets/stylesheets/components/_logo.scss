@@ -1,0 +1,12 @@
+/**
+ * Logo
+ *
+ * @uses .Logo
+ */
+.Logo {
+	@extend %display-xs-inline-block;
+
+	svg {
+		@extend %display-xs-inline-block, %vertical-align-middle;
+	}
+}

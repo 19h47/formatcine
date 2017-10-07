@@ -8,18 +8,18 @@
 /**
 * Dependencies
 */
-//@import '~breakpoint-sass/stylesheets/breakpoint';
-//@import '~breakpoint-slicer/stylesheets/breakpoint-slicer';
+@import '~breakpoint-sass/stylesheets/breakpoint';
+@import '~breakpoint-slicer/stylesheets/breakpoint-slicer';
 @import 'abstracts/variables';
-//@import 'base/fonts';
+@import 'base/fonts';
 
 
 /**
  * Vendors
  */
-//@import 
-	//'~ress/ress',
-	//'vendors/bootstrap-custom',
+@import 
+	'~ress/ress',
+	'vendors/bootstrap-custom';
 	//'vendors/slick';
 	// 'vendors/slick-theme';
 
@@ -28,26 +28,26 @@
 /**
  * Abstracts
  */
-//@import 
-	//'abstracts/functions',
-	//'abstracts/mixins',
-	//'abstracts/placeholders',
+@import 
+	'abstracts/functions',
+	'abstracts/mixins',
+	'abstracts/placeholders';
 	//'abstracts/animations';
 
 
 /**
  * Base
  */
-//@import 
-	//'base/base',	
-	//'base/typography';
+@import 
+	'base/base',	
+	'base/typography';
 
 
 /**
  * Layout
  */
-//@import 
-	//'layout/site',
+@import 
+	'layout/site';
 	//'layout/header',
 	//'layout/footer';
 
@@ -62,17 +62,19 @@
 /**
  * Components
  */
-//@import 
-	//'components/logo';
+@import 
+	'components/logo',
+	'components/slider',
+	'components/discovery';
 
 
 /**
  * Utilities
  */
-// @import 'Utilities/_settings';
+@import 'utilities/_settings';
 
 
 /**
  * Shame
  */
-// @import 'shame';
+@import 'shame';

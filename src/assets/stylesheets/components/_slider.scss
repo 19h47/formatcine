@@ -1,0 +1,53 @@
+/**
+ * Slider
+ */
+.Slider {
+
+	height: 550px;
+
+
+	/**
+	 * Title
+	 *
+	 * @uses .Slider .title
+	 */
+	.title {
+		@extend %margin-xs-y-0, %font-regular;
+		
+		color: the_color( white );
+		line-height: normal;
+
+		span:nth-child( 1 ) {
+			@extend %uppercase, %display-xs-block;
+			@include letter-spacing( 400 );
+			@include margin( bottom 20px );
+
+			font-size: 24.09px;
+		}
+		span:nth-child( 2 ) {
+			@extend %font-decor, %display-xs-block;
+			@include letter-spacing( 75 );
+			
+			font-size: 40.15px;
+		}
+	}
+
+	
+	/**
+	 * Image
+	 *
+	 * .Slider .image
+	 */
+	.image {
+		@extend 
+			%Position-absolute-center, 
+			%display-xs-inline-block, 
+			%vertical-align-middle,
+			%Pointer-events-none;
+		@include margin( top 64px right auto bottom 64px left auto );
+		max-width: 100%;
+		max-height: 100%;
+
+		object-fit: contain;
+	}
+}
