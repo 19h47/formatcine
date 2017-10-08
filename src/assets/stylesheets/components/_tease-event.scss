@@ -1,0 +1,92 @@
+/**
+ * Tease event
+ */
+.Tease-event {
+	@include padding( 
+		top $grid-gutter-width
+		right ( $grid-gutter-width / 2 )
+		bottom $grid-gutter-width
+		left ( $grid-gutter-width / 2 )
+	);
+	@include margin( 
+		right #{ ( $grid-gutter-width / 2 ) * -1 } 
+		left #{ $grid-gutter-width * -1 } 
+	);
+
+	width: calc( 100% + #{ $grid-gutter-width } );
+
+
+	&__date {
+		@extend %font-semibold, %margin-xs-y-0;
+
+		color: the_color( gray, very-dark-mostly-black );
+		font-size: 18px;
+		line-height: normal;
+
+		&:first-letter { text-transform: uppercase; }
+
+		@at-root .has-background-color & { color: the_color( white ); }
+	}
+
+	&__title {
+		@extend %font-extrabold;
+		@include font( 24.98, 29.97, 0 );
+
+		color: the_color( gray, very-dark-mostly-black );
+
+		@at-root .has-background-color & { color: the_color( white ); }
+	}
+
+	&__description {
+		@include font( 16.03, 20.03 );
+
+		color: the_color( gray, very-dark );
+		text-transform: none;
+
+		@at-root .has-background-color & { color: the_color( white ); }
+	}
+
+	&__read-more {
+		@extend %font-semibold, %Transition-ease;
+		@include font( 13.74, 29.45, 25 );
+		@include padding( top 5px right 5px bottom 5px left 5px );
+		
+		border: {
+			color: currentColor;
+			style: solid;
+			width: 1px;
+		}
+		color: the_color( gray, very-dark-mostly-black );
+
+		@at-root .has-background-color & { color: the_color( white ); }
+
+		&:hover {
+			background: { color: the_color( gray, very-dark-mostly-black ); }
+			border: { color: the_color( gray, very-dark-mostly-black ); }
+			color: the_color( white );
+
+			&::after { 
+				background: {
+					image: url('#{ map-get( $directories, svg ) }arrow-white.svg' );
+				}
+			}
+		}
+
+		&::after {
+			@extend %display-xs-inline-block;
+			@include margin( left 2px );
+			@include size( 10px );
+
+			background: {
+				image: url('#{ map-get( $directories, svg ) }arrow-black.svg' );
+				position: center;
+				size: 100%;
+			}
+			content: '';
+
+			@at-root .has-background-color & {
+				background-image: url('#{ map-get( $directories, svg ) }arrow-white.svg' );
+			}
+		}
+	}
+}

@@ -17,6 +17,18 @@ if ( ! class_exists( 'Timber' ) ) {
 $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
+$context['posts'] = Timber::get_posts(
+	array( 
+		'post_type' 	=> 'post', 
+		'post_status'	=> 'publish',
+		'meta_key'		=> 'event_date',
+		'orderby'		=> 'meta_value',
+		'order'			=> 'ASC',
+		'post_per_page'	=> 6
+	)
+);
+
+$context['events']['categories'] = get_terms( array( 'taxonomy' => 'category' ) );
 
 
 $templates = array( 'index.twig' );
