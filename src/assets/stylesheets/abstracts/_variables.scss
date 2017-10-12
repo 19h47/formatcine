@@ -21,8 +21,13 @@ $color-variations: (
 	// blanc (fond1)
 	white: #ffffff,
 
+	red: (
+		strong: #ff0000,
+	),
+
 	blue: (
-		
+		pure: #0075e3,
+
 		// partie générale (accueil, mentions légales, partenaires) : bleu/violet
 		// violet clair (contour, picto, menu, footer, fond événement)
 		moderate: #6666d5,
@@ -38,8 +43,10 @@ $color-variations: (
 	gray: (
 		// gris clair (infos header, chapeaux)
 		dark: #969696,
+		
 		// noir (titres)
 		very-dark-mostly-black: #1e1e1e,
+		
 		// gris foncé (textes)
 		very-dark: #646464,
 		
@@ -113,8 +120,9 @@ $font: (
  * Base font size and base line height
  */
 $base-font-size: 16;
-$base-font-size-px: $base-font-size * 1px;
+$base-font-size-px: #{ $base-font-size }px;
 $base-line-height: 29;
+$base-line-height-px: #{ $base-line-height }px;
 
 
 /** 
@@ -205,11 +213,11 @@ $transitions: (
 $directories:
 (
 	fonts: "../../fonts/",
-	img: "../../img/",
-	svg: "../../img/svg/",
-	jpg: "../../img/jpg/",
-	png: "../../img/png/",
-	gif: "../../img/gif/",
+	img: "../../../static/img/",
+	svg: "../../../static/img/svg/",
+	jpg: "../../../static/img/jpg/",
+	png: "../../../static/img/png/",
+	gif: "../../../static/img/gif/",
 );
 
 

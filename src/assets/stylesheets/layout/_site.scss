@@ -11,11 +11,37 @@
 	 * @uses .Site-description
 	 */
 	&-description {
-		@include margin( top 7px );
+		@include margin( top 7px bottom 0 );
 		@extend %uppercase, %margin-xs-bottom-0;
 		@include letter-spacing( 100 );
 
 		font-size: 18.01px;
+		line-height: normal;
+	}
+
+
+	/**
+	 * Title underline
+	 *
+	 * @uses .Site-title-underline
+	 */
+	&-title-underline { 
+		@extend 
+			%font-extrabold, 
+			%uppercase, 
+			%position-xs-relative, 
+			%display-xs-inline,
+			%margin-xs-y-0;
+		@include font( 30, 55, 50 );
+
+		color: the_color( gray, very-dark-mostly-black );
+		border: {
+			bottom: {
+				color: currentColor;
+				style: solid;
+				width: 3px;
+			}
+		}
 	}
 
 

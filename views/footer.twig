@@ -8,13 +8,33 @@
 	 */
 	
 #}	
-		<footer class="Site-footer">
-			<a href="http://www.mokacreation.com/" target="_blank">Moka Création</a>
-			<a href="http://19h47.fr" target="_blank">19h47</a>
+		<footer class="Site-footer background-color-main">
+			<div class="Site-container">
+				<div class="row">
+					<div class="col-xs-12">
+						{% spaceless %}
+							
+						© 2017 <a href="">Format’ciné</a>
+						&nbsp;—&nbsp;
+						Tous droits réservés&nbsp;&nbsp;|&nbsp;&nbsp;
+						<a href="">{{- __( 'Nos partenaires' ) }}</a>
+						&nbsp;&nbsp;|&nbsp;&nbsp;
+					  	<a href="">Mentions légales</a>
+					  	&nbsp;&nbsp;|&nbsp;&nbsp;
+						{{- __( 'Conception :' ) -}}
+						&nbsp;
+						<a href="http://www.mokacreation.com/" target="_blank">MOKA Création</a>
+						&nbsp;—&nbsp;
+						<a href="http://19h47.fr" target="_blank">19h47</a>
+
+						{% endspaceless %}
+					</div>
+				</div>
+			</div>
 		</footer>	
 
 		{{ wp_footer }}
-		{# {% include 'components/guid.twig' %} #}
+		{% include 'components/guid.twig' %}
 		
 	</body>
 </html>
