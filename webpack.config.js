@@ -12,12 +12,11 @@ const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 // "uglify" our output js code
 const UglifyJs = require('uglifyjs-webpack-plugin');
 
-// require webpack plugin
-// const OptimizeCSSAssets = require('optimize-css-assets-webpack-plugin');
-
 const Manifest = require('webpack-manifest-plugin');
 const Clean = require('clean-webpack-plugin');
 const Html = require('html-webpack-plugin');
+const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
+
 
 const production = process.env.NODE_ENV === 'production';
 
@@ -47,7 +46,7 @@ let config = {
 		alias: { 
 
 			// src/assets/images alias
-	      		images: path.resolve(__dirname, 'src/assets/images')
+	      		images: path.resolve(__dirname, 'src/assets/img/')
 	    	}
 	},
 	module: {
@@ -73,6 +72,10 @@ let config = {
 		      	 // use this (babel-core) loader
 		      	use: ['babel-loader']
 	    	},
+	    	{ 
+	    	    test: /\.svg$/, 
+	    	    loader: 'file-loader' 
+	 	 	},
 	    	{
 		    	// files ending with .scss
 		    	test: /\.scss$/, 
@@ -88,40 +91,9 @@ let config = {
 
 		    	})
 	    	},
-	    	{
-		    	// Don't forget to install libpng `brew install libpng`
-		    	// Homebrew is the package manager of MacOS
-		    	// Maybe you need to update Homebrew before installing libpng
-		    	// `brew update` (https://brew.sh/)
-	            	test: /\.(jpe?g|png|gif|svg)$/i,
-	            	loaders: [
-	            		'file-loader?context=src/assets/images/&name=images/[path][name].[ext]', 
-	            		{  
-			    		// images loader
-		              		loader: 'image-webpack-loader',
-		              		query: {
-						mozjpeg: {
-							progressive: true
-						},
-						gifsicle: {
-							interlaced: false
-						},
-						optipng: {
-							optimizationLevel: 4
-						},
-						pngquant: {
-							quality: '75-90',
-							speed: 3
-						},
-		              		},
-		            	}
-		        ],
-            		exclude: /node_modules/,
-            		include: __dirname
-          	},
           	{
-		        test: /\.(woff2?|eot|ttf|svg|otf|woff)?$/,
-		        loader: 'file-loader'
+		        test: /\.(woff2?|eot|ttf|otf|woff)?$/,
+		        loader: 'ignore-loader'
           	},
           	{	
           		// all files ending with .jsx
@@ -145,6 +117,13 @@ let config = {
   		}),
 
 		// new Html()
+		new SVGSpritemapPlugin({
+		   src: path.resolve(__dirname, 'src/assets/img/svg/icons/*.svg' ),
+		   filename : 'icons.svg',
+		   prefix : '',
+		   svgo : { removeTitle : true }
+		   // path: './resources/assets/svg/**/*.svg'
+		})
   	],
 
   	// devServer: {
