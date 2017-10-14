@@ -1,0 +1,35 @@
+/**
+ * Page
+ *
+ * @uses .Page
+ */
+.Page {
+	
+	&-post {
+
+		/**
+		 * Title
+		 *
+		 * @uses .Page-post-title
+		 */
+		&-title {
+			h1 {
+				@extend %uppercase, %margin-xs-y-0, %text-xs-center;
+				@include font( 50, normal, 50 );
+			}
+		}
+
+
+		/**
+		 * Content
+		 *
+		 * @uses .Page-post-content
+		 */
+		&-content {
+			@extend %font-semibold, %uppercase, %text-xs-center;
+			@include font( 18.01, 32.01, 100 );
+
+			color: the_color( gray, dark );
+		}
+	}
+}
