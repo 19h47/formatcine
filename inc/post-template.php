@@ -22,5 +22,10 @@ function custom_body_class( $classes ) {
 		$classes[] = 'Single';
 	}
 
+
+	if ( is_page() ) {
+		$classes[] = 'Page';
+	}
+
 	return $classes;
 }

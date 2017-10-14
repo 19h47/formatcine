@@ -36,6 +36,10 @@ class Post {
 
         add_action( 'manage_post_posts_custom_column' , array( $this, 'render_custom_columns' ), 10, 2 );
         add_action( 'admin_head', array( $this, 'css' ) );
+
+        // Ajax
+        add_action( 'wp_ajax_nopriv_ajax_load_events', array( $this, 'ajax_load_events' ) );
+        add_action( 'wp_ajax_ajax_load_events', array( $this, 'ajax_load_events' ) );
     }
 
 
@@ -106,5 +110,44 @@ class Post {
 
     		break;
         }
+    }
+
+
+    /**
+     * Load posts with AJAX request.     
+     */
+    public function ajax_load_events() {
+
+        $category = isset( $_GET['category'] ) ? $_GET['category'] : 0;
+        $offset = isset( $_GET['offset'] ) ? $_GET['offset'] : 0;
+        $posts_per_page = isset( $_GET['posts_per_page'] ) ? $_GET['posts_per_page'] : 6;
+        
+        $args = array(
+            'post_type'         => 'post',
+            'posts_per_page'    => (int) $posts_per_page,
+            // 'category'           => (int) $category,
+            'offset'            => (int) $offset,
+            'post_status'       => 'publish',
+            'meta_key'          => 'event_date',
+            'orderby'           => 'meta_value',
+            'order'             => 'ASC',
+        );
+
+        // var_dump($category);
+        if ( $category !== '0' ) {
+            $args['category'] = (int) $category;
+        }
+
+        // var_dump($args);
+
+        $context = Timber::get_context();
+
+        $context['posts'] = Timber::get_posts($args);
+
+        // var_dump($context['posts']['projects']);
+
+        Timber::render( 'partials/tease-event.twig', $context );
+        
+        wp_die();
     }
 }

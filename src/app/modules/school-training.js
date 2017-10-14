@@ -6,11 +6,11 @@ const classes = require('dom-classes');
 
 
 /**
- * Events
+ * SchoolTraining
  */
-function Events(element) {
-	if (!(this instanceof Events)) {
-		return new Events(element);
+function SchoolTraining(element) {
+	if (!(this instanceof SchoolTraining)) {
+		return new SchoolTraining(element);
 	}
 
 	this.element = document.querySelector(element);
@@ -19,11 +19,12 @@ function Events(element) {
 		return;
 	}
 
-	this.container = this.element.querySelectorAll('.js-events-container')[0];
-	this.buttonFilters = this.element.querySelectorAll('.js-events-button');
+	this.container = this.element.querySelector('.js-school-trainings-container');
+	this.buttonFilters = this.element.querySelectorAll('.js-school-trainings-button');
 
-	this.category = {};
-	this.category.id = 0;
+	this.school_class = {};
+	this.school_class.ids = [0];
+	this.season = null;
 
 	// this.count = parseInt(this.button.dataset.count, 0);
 	// this.offset = 0;
@@ -32,19 +33,19 @@ function Events(element) {
 }
 
 
-Events.prototype = {
+SchoolTraining.prototype = {
 
 	/**
-	 * Events.setupEvents
+	 * SchoolTraining.setupEvents
 	 */
 	setupEvents() {
 		this.element.addEventListener('click', (e) => {
-			if (e.target === this.category.button) {
+			if (e.target === this.school_class.button) {
 				return;
 			}
 
-			// If element hasn't 'js-events-button' class
-			if (!classes.has(e.target, 'js-events-button')) {
+			// If element hasn't 'js-school-trainings-button' class
+			if (!classes.has(e.target, 'js-school-trainings-button')) {
 				return;
 			}
 
@@ -53,14 +54,13 @@ Events.prototype = {
 				buttonFilter.classList.remove('is-active');
 			});
 
-			// Update count, offset
-			// this.count = e.target.dataset.count;
-			// this.offset = 0;
+			// Update season
+			this.season = e.target.dataset.season;
 
 			// Stock current term_id
-			this.category = {
+			this.school_class = {
 				button: e.target,
-				id: e.target.dataset.categoryId,
+				ids: e.target.dataset.schoolClassIds ? JSON.parse(e.target.dataset.schoolClassIds) : null,
 			};
 
 			this.filter();
@@ -69,7 +69,7 @@ Events.prototype = {
 
 
 	/**
-	 * Events.loadMore
+	 * SchoolTraining.loadMore
 	 */
 	loadMore() {
 		// load more projects with AJAX
@@ -82,7 +82,7 @@ Events.prototype = {
 
 
 	/**
-	 * Events.filter
+	 * SchoolTraining.filter
 	 */
 	filter() {
 		// load more projects with AJAX
@@ -95,16 +95,20 @@ Events.prototype = {
 
 
 	/**
-	 * Events.load
+	 * SchoolTraining.load
 	 */
 	load() {
 		const data = {
-			action: 'ajax_load_events',
+			action: 'ajax_load_school_trainings',
 			// offset: this.offset,
 		};
 
-		if (this.category) {
-			data.category = this.category.id;
+		if (this.school_class.ids) {
+			data.school_class = this.school_class.ids;
+		}
+
+		if (this.season) {
+			data.season = this.season;
 		}
 
 		// lock everything before the request
@@ -115,7 +119,7 @@ Events.prototype = {
 
 
 	/**
-	 * Events.append
+	 * SchoolTraining.append
 	 */
 	replace(html) {
 		if (!html) {
@@ -127,7 +131,7 @@ Events.prototype = {
 
 
 	/**
-	 * Events.append
+	 * SchoolTraining.append
 	 */
 	append(html) {
 		if (!html) {
@@ -139,7 +143,7 @@ Events.prototype = {
 
 
 	/**
-	 * Events.update
+	 * SchoolTraining.update
 	 */
 	update() {
 		// this.offset = this.container.children.length;
@@ -149,17 +153,17 @@ Events.prototype = {
 
 
 	/**
-	 * Events.lock
+	 * SchoolTraining.lock
 	 */
 	lock: {
 
 		/**
-		 * Events.lock.on
+		 * SchoolTraining.lock.on
 		 */
 		on() {
-			// console.log('Events.lock.on');
-			if (this.category.button) {
-				classes.add(this.category.button, 'is-active');
+			// console.log('SchoolTraining.lock.on');
+			if (this.school_class.button) {
+				classes.add(this.school_class.button, 'is-active');
 			}
 
 			// add loading state to ajax container if exists
@@ -170,10 +174,10 @@ Events.prototype = {
 
 
 		/**
-		 * Events.lock.off
+		 * SchoolTraining.lock.off
 		 */
 		off() {
-			// console.log('Events.lock.off');
+			// console.log('SchoolTraining.lock.off');
 			// remove loading state of ajax container if exists
 			if (this.container) {
 				classes.remove(this.container, 'is-loading');
@@ -183,4 +187,4 @@ Events.prototype = {
 };
 
 
-export default Events;
+export default SchoolTraining;

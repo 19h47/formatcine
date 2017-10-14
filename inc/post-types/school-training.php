@@ -39,6 +39,10 @@ class School_Training {
         add_filter( 'manage_school_training_posts_columns', array( $this, 'add_custom_columns' ) );
         add_action( 'manage_school_training_posts_custom_column' , array( $this, 'render_custom_columns' ), 10, 2 );
 
+        // Ajax
+        add_action( 'wp_ajax_nopriv_ajax_load_school_trainings', array( $this, 'ajax_load_school_trainings' ) );
+        add_action( 'wp_ajax_ajax_load_school_trainings', array( $this, 'ajax_load_school_trainings' ) );
+
 
         add_filter( 'wp_insert_post_data', array( $this, 'change_title' ), 99, 2 );
 	}
@@ -85,7 +89,7 @@ class School_Training {
 			'label'               	=> 'formation scolaire',
 	        'description'         	=> __( 'Les formations scolaires', $this->theme_name ),
 	        'labels'              	=> $labels,
-	        'supports'            	=> array( '' ),
+	        'supports'            	=> array( 'thumbnail' ),
 	        'taxonomies'          	=> array( 'school_tag', 'year' ),
 	        'hierarchical'        	=> false,
 	        'public'              	=> true,
@@ -300,5 +304,73 @@ class School_Training {
      
     	// Remember this is a "filter", need to return the data back!
     	return $data;
+  	}
+
+
+  	/**
+  	 * Load school training with AJAX request.     
+  	 */
+  	public function ajax_load_school_trainings() {
+
+  	    $school_class = isset( $_GET['school_class'] ) ? $_GET['school_class'] : 0;
+  	    $offset = isset( $_GET['offset'] ) ? $_GET['offset'] : 0;
+  	    $posts_per_page = isset( $_GET['posts_per_page'] ) ? $_GET['posts_per_page'] : -1;
+  	    $season = (int) $_GET['season'];
+  	    
+  	    $args = array(
+  	        'post_type'         => 'school_training',
+  	        'posts_per_page'    => (int) $posts_per_page,
+  	        // 'category'           => (int) $category,
+  	        'offset'            => (int) $offset,
+  	        'post_status'       => 'publish',
+  	        'meta_key'          => 'formation_date',
+  	        'orderby'           => 'meta_value',
+  	        'order'             => 'ASC',
+    		'tax_query' 	=> array(
+    			array(
+    				'taxonomy'	=> 'season',
+    				'field'    	=> 'term_id',
+    				'terms'    	=> $season
+    			)
+    		)
+  	    );
+  	    
+  	    if ( $school_class !== 0 ) {
+
+  	    	$args['tax_query'] = array(
+     			'relation'		=> 'AND',
+     			array(
+     				'taxonomy'	=> 'season',
+     				'field'    	=> 'term_id',
+     				'terms'    	=> $season,
+     				'operator' 	=> 'IN'
+     			),
+     		);
+  	    	
+  	    	$school_class_query = array( 'relation' => 'OR' );
+
+  	    	foreach ($school_class as $term_id) {
+  	    		array_push( $school_class_query,
+  	    			array(
+	        			'taxonomy'	=> 'school_class',
+						'field'    	=> 'term_id',
+						'terms'    	=> $term_id,
+        			)
+        		);
+  	    	}
+			
+			array_push($args['tax_query'], $school_class_query );
+
+  	    }
+
+  	    
+
+  	    $context = Timber::get_context();
+
+  	    $context['school_trainings'] = Timber::get_posts($args);
+
+  	    Timber::render( 'partials/tease-school-training.twig', $context );
+  	    
+  	    wp_die();
   	}
 }

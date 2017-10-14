@@ -35,7 +35,8 @@ class Admin {
         $this->theme_name = $theme_name;
         $this->theme_version = $theme_version;
         
-        add_filter( 'admin_footer_text', array( &$this, 'set_admin_footer_text' ) );
+        add_filter( 'admin_footer_text', array( $this, 'set_admin_footer_text' ) );
+        add_filter('upload_mimes', array( $this, 'upload_mimes_svg' ) );
     }
 	
 	/**
@@ -48,4 +49,11 @@ class Admin {
 	function set_admin_footer_text() {
 	    return __( 'Thank you for creating with <a href="http://www.19h47.fr/" target="_blank">19h47</a> and <a href="http://www.mokacreation.com/" target="_blank">Moka Création</a>. ✌️', $this->theme_name );
 	}
+
+
+    function upload_mimes_svg( $mimes ) {
+        $mimes['svg'] = 'image/svg+xml';
+        
+        return $mimes;
+    }
 }
