@@ -54,27 +54,27 @@
 @include font-face(
 	'Akrobat',
 	'akrobat',
-	'../fonts/',
+	map-get( $directories, fonts ),
 	800
 );
 
 @include font-face(
 	'Akrobat',
 	'akrobat',
-	'../fonts/',
+	map-get( $directories, fonts ),
 	600
 );
 
 @include font-face(
 	'Akrobat',
 	'akrobat',
-	'../fonts/',
+	map-get( $directories, fonts ),
 	400
 );
 
 @include font-face(
 	'Perfograma',
 	'perfograma',
-	'../fonts/',
+	map-get( $directories, fonts ),
 	400
 );

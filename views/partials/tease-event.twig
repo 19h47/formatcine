@@ -21,10 +21,17 @@
 			{% if post.event_read_more %}
 				<a class="Tease-event__read-more" href="{{ post.event_read_more }}" target="_blank">
 					{{- __( 'En savoir plus' ) -}}
+					<svg class="Tease-event__read-more__icon">
+					  	<use xlink:href="{{ theme.link }}/public/icons.svg#arrow"></use>
+					</svg>
 				</a>
 			{% endif %}
 
 		</article>
 	</div>	
+{% else %}
+	<div class="col-xs-12">
+		<p>Aucun événement à afficher</p>
+	</div>
 {% endfor %}
 </div>

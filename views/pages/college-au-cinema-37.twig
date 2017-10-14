@@ -58,25 +58,84 @@
 			</div>
 		</div> 
 	</section>
-	
 
-	{# Reports #}
-	<section class="Site-container">
-		<div class="Reports background-color-ternary">
+
+	<section class="School-trainings js-school-trainings">
+		<div class="Site-container">
 			<div class="row">
 				<div class="col-xs-12">
-					<h2 class="Reports__title">
-						{{ post.reports_title }}
-						<p class="Reports__subheading">{{ post.reports_subheading }}</p>
+					<ul class="School-trainings-filters">
+
+						<li class="item">
+							<button 
+								class="color-secondary is-active js-school-trainings-button"
+								data-season="{{ season.term_id }}"
+							>
+								{{- __( 'Toutes' ) -}}</button>
+						</li>
+
+						{% for school_class in school_classes %}
+						
+							<li class="item">
+								<button 
+									class="color-secondary js-school-trainings-button"
+									data-school-class-ids="[{{ school_class.term_ids | join( ',' ) }}]"
+									data-season="{{ season.term_id }}"
+								>
+									{{- school_class.names | join( ' | ' ) -}}
+								</button>
+							</li>
+
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12 col-md-4">
+					<h2 class="margin-xs-y-0">
+						<span class="Site-title-underline">
+							{{- __( 'Les\njournées de\nformation\n' )|nl2br -}}
+						</span>
+						<span class="Site-title-underline color-gray-dark">{{ season.name }}</span>
 					</h2>
-					<p class="Reports__content">{{ post.reports_content }}</p>
-					<a class="Reports__label background-color-secondary" href="{{ post.reports_document }}">
-						{{ post.reports_label }}
-					</a>
+					<p class="description">
+						{{- __( 'Au cours de chaque journée complète de formation (de 9 h à 17 h), il y a un temps de concertation (d\'une à deux heures selon la durée du film) qui permet aux stagiaires de travailler en interdisciplinarité (éventuellement sur les projets d\'EPI). Il est donc utile que les enseignants travaillant en binômes sur un film (dans le cadre d\'un EPI ou d\'une simple exploitation pédagogique) assistent ensemble à la même journée de stage.' ) -}}
+					</p>
+				</div>
+					
+				<div class="col-xs-12 col-md-8 School-trainings-tease-container js-school-trainings-container">
+					
+						
+					{% include 'partials/tease-school-training.twig' %}
+							
+					
 				</div>
 			</div>
 		</div>
+
+
+		{# Reports #}
+		<section class="Site-container">
+			<div class="Reports background-color-ternary">
+				<div class="row">
+					<div class="col-xs-12">
+						<h2 class="Reports__title">
+							{{ post.reports_title }}
+							<p class="Reports__subheading">{{ post.reports_subheading }}</p>
+						</h2>
+						<p class="Reports__content">{{ post.reports_content }}</p>
+						<a class="Reports__label background-color-secondary" href="{{ post.reports_document }}">
+							{{ post.reports_label }}
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		
 	</section>
+	
 
 {% endblock %}
 

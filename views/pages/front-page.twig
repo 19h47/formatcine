@@ -1,0 +1,114 @@
+{#
+/**
+ * /views/pages/front-page
+ *
+ * @package 	WordPress
+ * @subpackage 	19h47
+ * @author 		Jérémy Levron levronjeremy@19h47.fr
+ */
+#}
+{% extends 'index.twig' %}
+
+
+{% block header %}{% endblock %}
+
+
+{% block content %}
+	{# Introduction #}
+	<div class="Site-container Slider">
+		<div class="background-color-secondary h-xs-100">
+			<div class="row h-xs-100">
+				<div class="col-xs-12 h-xs-100">
+					<div class="display-xs-table w-xs-100 h-xs-100">
+						<div class="display-xs-table-cell vertical-align-middle text-xs-center">
+							<h1 class="title">
+								<span>De chaque côté de</span>
+								<span>L’écran</span>
+							</h1>
+						</div>
+					</div>
+
+					<img class="image" src="{{ theme.link }}/static/img/svg/home-slider-01.svg" alt="" />
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{# Discover #}
+	<div class="Site-container Discovery">
+		<div class="row">
+			<div class="col-xs-12 col-md-10 col-md-offset-1 text-xs-center">
+				<h2 class="Site-title-underline">{{- post.discovery_title -}}</h2>
+				<p class="description">{{- post.discovery_description -}}</p>
+			</div>
+		</div>
+		<div class="row">
+
+			{% for discovery in post.get_field('discoveries') %}
+				<div class="col-xs-4">
+					<article class="item">
+						{% spaceless %}
+							
+						<img class="pictogram" src="{{ Image( discovery.pictogram ).src }}" alt="" /><br>
+						<h3 class="title">{{- discovery.title -}}</h3><br>
+						<p class="description">{{- discovery.description -}}</p>
+
+						{% endspaceless %}
+					</article>
+				</div>
+			{% endfor %}
+
+			
+		</div>
+	</div>
+
+
+	{# Events #}
+	<div class="Events js-events">
+		<div class="Site-container">
+			<div class="row">
+				<div class="col-xs-12">
+					<ul class="Events-filters">
+						{% for category in events.categories %}
+							<li class="item">
+								<button 
+									class="color-secondary js-events-button"
+									data-category-id="{{ category.term_id }}"
+								>
+									{{- category.name -}}
+								</button>
+							</li>
+						{% endfor %}
+						<li class="item">
+							<button 
+								class="color-secondary is-active js-events-button"
+								data-category-id="0"
+							>
+								{{- __( 'Tout public' ) -}}</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12 col-md-4">
+					<h2 class="Site-title-underline">{{ __( 'Les\névénements' )|nl2br }}</h2>
+					<p class="description">
+						{{- __( 'Toute l’année, retrouvez des manifestations organisées avec nos partenaires sur différents thèmes.' ) -}}
+					</p>
+				</div>
+					
+				<div class="col-xs-12 col-md-8 Events-tease-container js-events-container">
+					
+						
+					{% include 'partials/tease-event.twig' %}
+							
+					
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+
+{% block footer %}{% endblock %}

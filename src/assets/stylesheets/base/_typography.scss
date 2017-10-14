@@ -16,7 +16,7 @@ body {
     font: {
         family: map-get( map-get( $font, families ), body );
         size: $base-font-size-px;
-        weight: map-get( map-get( $font, weights ), book );
+        weight: map-get( map-get( $font, weights ), regular );
     }
     line-height: ( ( $base-line-height / $base-font-size ) * 1em );
     text-rendering: optimizeLegibility;

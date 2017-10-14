@@ -1,55 +1,93 @@
 /**
- * Tease event
+ * Tease school-training
  */
-.Tease-event {
+.Tease-school-training {
 	@include padding( 
 		top $grid-gutter-width
-		right ( $grid-gutter-width / 2 )
+		// right ( $grid-gutter-width / 2 )
 		bottom $grid-gutter-width
-		left ( $grid-gutter-width / 2 )
+		// left ( $grid-gutter-width / 2 )
 	);
 	@include margin( 
-		right #{ ( $grid-gutter-width / 2 ) * -1 } 
-		left #{ $grid-gutter-width * -1 } 
+		// right #{ ( $grid-gutter-width / 2 ) * -1 } 
+		// left #{ $grid-gutter-width * -1 } 
 	);
 
-	width: calc( 100% + #{ $grid-gutter-width } );
+	width: /* calc( */ 100% /* + #{ $grid-gutter-width } ) */;
+	
 
+	/**
+	 * Thumbnail
+	 *
+	 * @uses .Tease-school-training__thumbnail
+	 */
+	&__thumbnail {
+		@include margin( bottom $grid-gutter-width );
 
+		height: 140px;
+		background: { color: the_color( gray, dark ); }
+
+		img {
+			@extend %display-xs-inline-block, %vertical-align-middle;
+			@include size( 100% );
+
+			object-fit: cover;
+		}
+	}
+
+	
+	/**
+	 * Date
+	 *
+	 * @uses .Tease-school-training__date
+	 */
 	&__date {
 		@extend %font-semibold, %margin-xs-y-0;
 
 		color: the_color( gray, very-dark-mostly-black );
-		font-size: 18px;
+		font-size: 17.96px;
 		line-height: normal;
 
 		&:first-letter { text-transform: uppercase; }
-
-		@at-root .has-background-color & { color: the_color( white ); }
 	}
+	
 
+	/**
+	 * Title
+	 *
+	 * @uses .Tease-school-training__title
+	 */
 	&__title {
 		@extend %font-extrabold;
-		@include font( 24.98, 29.97, 0 );
+		@include font( 24.94, 29.93, 0 );
+		@include margin( top 10px );
 
 		color: the_color( gray, very-dark-mostly-black );
-
-		@at-root .has-background-color & { color: the_color( white ); }
 	}
+
+	
+	/**
+	 * Director
+	 *
+	 * @uses .Tease-school-training__director
+	 */
+	&__director {
+		@include font( 16, 20 );
+	}
+
 
 	&__description {
 		@include font( 16.03, 20.03 );
 
 		color: the_color( gray, very-dark );
 		text-transform: none;
-
-		@at-root .has-background-color & { color: the_color( white ); }
 	}
 
 	&__read-more {
 		@extend %font-semibold, %Transition-ease, %display-xs-inline-block;
-		@include font( 13.74, 25, 25 );
+		@include font( 13.76, 25, 25 );
 		@include padding( right 5px left 5px );
+		@include margin( top 25px );
 		
 		border: {
 			color: currentColor;
@@ -58,13 +96,12 @@
 		}
 		color: the_color( gray, very-dark-mostly-black );
 
-		@at-root .has-background-color & { color: the_color( white ); }
-
 		&:hover {
 			background: { color: the_color( gray, very-dark-mostly-black ); }
 			border: { color: the_color( gray, very-dark-mostly-black ); }
 			color: the_color( white );
 		}
+
 
 		&__icon {
 			@extend %display-xs-inline-block, %vertical-align-middle;

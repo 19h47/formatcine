@@ -1,0 +1,63 @@
+/**
+ * School-trainings
+ *
+ * @uses .School-trainings
+ */
+.School-trainings {
+	@include padding( top 75px bottom 75px );
+
+
+	.description {
+		@include font( 16, 20 );
+
+		color: the_color( gray, dark );
+	}
+
+
+	/**
+	 * Tease container
+	 *
+	 * @uses School-trainings-tease-container
+	 */
+	&-tease-container {
+		@extend %Transition-ease;
+		@include margin( top 30px );
+		
+		opacity: 1;
+
+		.col-md-4:nth-child( 3n + 1 ) { clear:left; }
+
+		&.is-loading { opacity: .3; }
+	}
+
+
+	/**
+	 * Filters
+	 *
+	 * @uses .School-trainings-filters
+	 */
+	&-filters {
+		@extend %list-unstyled, %margin-xs-y-0, %text-xs-right;
+
+		.item {
+			@extend %display-xs-inline-block, %margin-xs-y-0;
+
+			&:first-child button { @include margin( left 0 ); }
+			&:last-child button { @include margin( right 0 ); }
+
+			button { 
+				@extend %font-extrabold, %uppercase, %Transition-ease;
+				@include font( 18, 30, 50 ); 
+				@include padding( right 10px left 10px );
+				@include margin( right 19px left 19px );
+
+				
+				&:hover,
+				&.is-active {
+					background: { color: the_color( gray, very-dark-mostly-black ); }
+					color: the_color( white );
+				}
+			}
+		}
+	}
+}

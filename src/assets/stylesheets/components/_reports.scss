@@ -6,8 +6,8 @@
 .Reports {
 	@extend %text-xs-center;
 	@include margin( 
-		top 70px + $grid-gutter-width / 2 
-		bottom 70px
+		top $grid-gutter-width * 2 
+		// bottom 70px
 	);
 	@include padding( 
 		right $grid-gutter-width

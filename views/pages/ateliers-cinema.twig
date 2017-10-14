@@ -1,0 +1,46 @@
+{#
+/**
+ * /views/pages/ateliers-cinema
+ *
+ * @package 	WordPress
+ * @subpackage 	19h47
+ * @author 		Jérémy Levron levronjeremy@19h47.fr
+ */
+#}
+{% extends 'index.twig' %}
+
+
+{% block header %}{% endblock %}
+
+
+{% block content %}
+	
+	{# Post title #}
+	{% if post.post_title %}
+		{% include 'components/post-title.twig' %}
+	{% endif %}
+	
+
+	{# Post content #}
+	{% if post.post_content %}
+		{% include 'components/post-content.twig' %}
+	{% endif %}
+	
+
+	{% for workshop in post.get_field( 'workshops' ) %}
+		{# <pre>{{ workshop.document|print_r }}</pre> #}
+
+		<a href="{{ workshop.document.url }}" title="{{ workshop.document.title }}">
+
+			{{ theme.link ~ '/static/img/svg/' ~ workshop.name | slugify ~ '.svg' }}
+			
+			
+			{{ workshop.name }}
+			
+		</a>
+
+	{% endfor %}
+{% endblock %}
+
+
+{% block footer %}{% endblock %}

@@ -210,9 +210,8 @@ $transitions: (
  * @type map
  * @author Jérémy Levron <levronjeremy@19h47.fr>
  */
-$directories:
-(
-	fonts: "../../fonts/",
+$directories: (
+	fonts: "../../../static/fonts/",
 	img: "../../../static/img/",
 	svg: "../../../static/img/svg/",
 	jpg: "../../../static/img/jpg/",
