@@ -1,0 +1,84 @@
+{#
+/**
+ * /views/pages/college-au-cinema-37
+ *
+ * @package 	WordPress
+ * @subpackage 	19h47
+ * @author 		Jérémy Levron levronjeremy@19h47.fr
+ */
+#}
+{% extends 'index.twig' %}
+
+
+{% block header %}{% endblock %}
+
+
+{% block content %}
+
+	{# Post title #}
+	{% if post.post_title %}
+		{% include 'components/post-title.twig' %}
+	{% endif %}
+	
+
+	{# Post content #}
+	{% if post.post_content %}
+		{% include 'components/post-content.twig' %}
+	{% endif %}
+
+	
+	{# Educational support #}
+	<section class="Educational-support">
+		<div class="Site-container">
+			<div class="row">
+				<div class="col-xs-12">
+					<h2 class="Site-title-underline color-secondary">{{ post.educational_support_title}}</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-md-6">
+					<p class="Educational-support__introduction">
+						{{ post.educational_support_introduction }}
+					</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12 col-md-8">
+					<p class="Educational-support__content">
+						{{ post.educational_support_content | nl2br }}
+					</p>
+				</div>
+				<div class="col-xs-12 col-md-4">
+					<div class="Educational-support__information color-main">
+						<p><span>&plus;</span></p>
+						<p>{{ post.educational_support_information}}</p>
+					</div>
+				</div>
+			</div>
+		</div> 
+	</section>
+	
+
+	{# Reports #}
+	<section class="Site-container">
+		<div class="Reports background-color-ternary">
+			<div class="row">
+				<div class="col-xs-12">
+					<h2 class="Reports__title">
+						{{ post.reports_title }}
+						<p class="Reports__subheading">{{ post.reports_subheading }}</p>
+					</h2>
+					<p class="Reports__content">{{ post.reports_content }}</p>
+					<a class="Reports__label background-color-secondary" href="{{ post.reports_document }}">
+						{{ post.reports_label }}
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% endblock %}
+
+
+{% block footer %}{% endblock %}
