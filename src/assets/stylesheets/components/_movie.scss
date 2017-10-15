@@ -1,0 +1,130 @@
+/**
+ * Movie
+ *
+ * @uses .Movie
+ */
+.Movie {
+	@extend %Transition-ease;
+
+	@at-root .slick-active & {
+
+		outline: {
+			style: solid;
+			width: $grid-gutter-width / 2;
+		}
+	}
+
+	/**
+	 * Content
+	 *
+	 * @uses .Movie__content
+	 */
+	&__content {
+		@include padding( 
+			top $grid-gutter-width / 2 
+			right $grid-gutter-width / 2 
+			bottom $grid-gutter-width / 2 
+			left $grid-gutter-width / 2 
+		);
+	}
+
+
+	/**
+	 * Quarter
+	 *
+	 * @uses .Movie__quarter
+	 */
+	&__quarter {
+		@extend %font-extrabold, %uppercase, %margin-xs-bottom-0, %Transition-ease;
+		@include absolute( top 0 left 0 );
+		@include autoAlpha( 0 );
+		@include font( 18.14, 40, 50 );
+		@include margin( 
+			top $grid-gutter-width / -2 
+			left $grid-gutter-width / -2 
+		);
+		@include padding( right $grid-gutter-width / 2 left $grid-gutter-width / 2 );
+
+		color: the_color( white );
+
+		@at-root .slick-active & { @include autoAlpha( 1 ); }
+	}
+
+
+	/**
+	 * Thumbnail
+	 *
+	 * @uses .Movie__thumbnail
+	 */
+	&__thumbnail {
+		@extend %position-xs-relative;
+		height: 250px;
+		background: { color: the_color( gray, dark); }
+
+		img {
+			@extend %display-xs-inline-block, %vertical-align-middle;
+			@include size( 100% );
+
+			object-fit: cover;
+		}
+	}
+	
+
+	/**
+	 * Title
+	 *
+	 * @uses .Movie__title
+	 */
+	&__title {
+		@extend %font-extrabold, %margin-xs-y-0;
+		@include font( 25, 30 );
+	}
+
+
+	/**
+	 * Directors
+	 *
+	 * @uses .Movie__directors
+	 */
+	&__directors {
+		@extend %font-semibold, %margin-xs-y-0; 
+		@include font( 20, 24 ); 
+	}
+
+
+	/**
+	 * Meta
+	 *
+	 * @uses .Movie__meta
+	 */
+	&__meta {
+		@extend %uppercase, %font-extrabold;
+		@include font( 15.99, 21.52, 100 );
+		@include margin( top $grid-gutter-width / 1.5 bottom 40px );
+
+		color: the_color( gray, very-dark-mostly-black );
+	}
+
+
+	/**
+	 * Summary
+	 *
+	 * @uses .Movie__summary
+	 */
+	&__summary {
+		@include font( 16.01, 20.01 );
+
+		color: the_color( gray, very-dark );
+	}
+
+
+	/**
+	 * Review
+	 *
+	 * @uses .Movie__review
+	 */
+	&__review {
+		@extend %font-extrabold;
+		@include font( 16.01, 20.01 );
+	}
+}

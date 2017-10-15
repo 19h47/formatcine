@@ -3,8 +3,8 @@
  */
 
 html {
-    @extend %w-xs-100;
-    overflow-y: visible; // reset value from ress.css
+    // @extend %w-xs-100;
+    overflow-x: hidden;
 }
 
 body {

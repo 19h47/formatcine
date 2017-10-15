@@ -1,0 +1,17 @@
+/**
+ * Programming
+ *
+ * @uses .Programming
+ */
+.Programming {
+	
+	/**
+	 * Movie container
+	 */
+	&__movie-container {
+		@include margin( 
+			top $grid-gutter-width / 2 
+			bottom $grid-gutter-width / 2 
+		);
+	}
+}

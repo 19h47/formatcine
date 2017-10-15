@@ -2,18 +2,24 @@
  * Tease event
  */
 .Tease-event {
+	
 	@include padding( 
 		top $grid-gutter-width
 		right ( $grid-gutter-width / 2 )
 		bottom $grid-gutter-width
 		left ( $grid-gutter-width / 2 )
 	);
-	@include margin( 
-		right #{ ( $grid-gutter-width / 2 ) * -1 } 
-		left #{ $grid-gutter-width * -1 } 
-	);
+	width: 100%;
 
-	width: calc( 100% + #{ $grid-gutter-width } );
+	@include from( 'md' ) {
+		@include margin( 
+			right #{ ( $grid-gutter-width / 2 ) * -1 } 
+			left #{ $grid-gutter-width * -1 } 
+		);
+		
+		width: calc( 100% + #{ $grid-gutter-width } );
+
+	}
 
 
 	&__date {

@@ -1,0 +1,90 @@
+{#
+	/**
+	 * /views/partials/programming
+	 * 
+	 * @package WordPress
+	 * @subpackage 19h47
+	 * @author Jérémy Levron levronjeremy@19h47.fr
+	 */
+	
+#}	
+<section class="Programming">
+	<div class="Site-container">
+		<div class="row">
+			<div class="col-xs-12">
+				
+				<h2 class="Site-title-underline">
+					{{- __( 'Programmation' ) -}}&nbsp;{{- season.name -}}
+				</h2>
+
+			</div>
+		</div>
+
+		
+		<div class="row">
+			<div class="col-xs-12">
+				{% for school_class in school_classes %}
+					<button data-school-class="[{{ school_class.term_ids | join( ',' ) }}]">
+						{{- school_class.names | join( ' | ' ) -}}
+					</button>
+				{% endfor %}
+			</div>
+		</div>
+
+		
+		<div class="Programming__movie-container">
+			<div class="row js-movie-slider">
+				{% for programming in programmings %}
+					
+					{% set directors = [] %}
+					{% set countries = [] %}
+					{% set school_classes = [] %}
+					{% set movie = programming.get_field( 'movie' ) %}
+
+					{% for director in movie.get_field( 'director' ) %}
+						{% if loop.last and not loop.first %}
+							{% set directors = directors | merge( [ 'et ' ~ director.name ] ) %}
+						{% else %}
+							{% set directors = directors | merge( [ director.name ] ) %}
+						{% endif %}
+					{% endfor %}
+
+					{% for country in movie.get_field( 'country' ) %}
+						{% set countries = countries | merge( [ country.name ] ) %}
+					{% endfor %}
+
+					{% for school_class in programming.get_field( 'school_class' ) %}
+						{% set school_classes = school_classes | merge( [ school_class.slug ] ) %}
+					{% endfor %}
+					
+
+					{# `Sixième` or `Cinquième` class #}
+					{% if 'sixieme' in school_classes or 'cinquieme' in school_classes %}
+						
+						<div class="col-xs-12 col-md-4">
+
+							{% include 'components/movie.twig' %}
+							
+						</div>
+
+					{% endif %}
+
+					
+
+					{# `Quatrième` or `Troisième` class #}
+					{% if 'quatrieme' in school_classes or 'troisieme' in school_classes %}
+							
+						<div class="col-xs-12 col-md-4">
+							{% include 'components/movie.twig' %}
+						</div>
+							
+					{% endif %}
+					
+					{{ loop.index is divisible by( 3 ) and not loop.last ? '</div><div class="row js-movie-slider">' : '' }}
+
+				{% endfor %}
+			</div>
+		</div>
+
+	</div>
+</section>

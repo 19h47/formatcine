@@ -19,8 +19,8 @@
  */
 @import 
 	'~ress/ress',
-	'vendors/bootstrap-custom';
-	//'vendors/slick';
+	'vendors/bootstrap-custom',
+	'vendors/slick';
 	// 'vendors/slick-theme';
 
 
@@ -72,7 +72,9 @@
 	'components/guid',
 	'components/educational-support',
 	'components/reports',
-	'components/school-trainings';
+	'components/school-trainings',
+	'components/programming',
+	'components/movie';
 
 
 /**
