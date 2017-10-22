@@ -1,0 +1,35 @@
+.Socials {
+	@extend %list-unstyled, %text-xs-center; 
+	
+	/**
+	 * Menu
+	 *
+	 * @uses .Socials--menu
+	 */
+	&--menu { 
+		@include margin( top 170px bottom 0 ); 
+
+		color: the_color( white );
+	}
+
+
+	/**
+	 * Item
+	 *
+	 * @uses .Socials-item
+	 */
+	&-item {
+		@extend %margin-xs-y-0, %display-xs-inline-block;
+		@include size( $grid-gutter-width );
+		@include margin( right 7.5px left 7.5px );
+
+		&:first-child { @extend %margin-xs-left-0; }
+		&:last-child { @extend %margin-xs-right-0; }
+
+		svg {
+			fill: currentColor;
+			max-width: $grid-gutter-width;
+			max-height: $grid-gutter-width;
+		}
+	}
+}

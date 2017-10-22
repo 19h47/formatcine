@@ -1,0 +1,33 @@
+{#
+	/**
+	 * views/components/socials
+	 *
+	 * @param 	str 	prefix
+	 * @author  		Levron Jérémy jeremy@19h47.fr
+	 */
+#}
+<ul class="{{ prefix ? 'Socials Socials--' ~ prefix : 'Socials' }}">
+						
+	{% spaceless %}
+		
+	{% for social in contact.socials | sort %}
+		<li class="Socials-item{{ social.name ? ' ' ~ social.name }}">
+			<a href="{{ social.url }}">
+				<svg class="">
+				  	<use xlink:href="{{ theme.link }}/public/icons.svg#{{ social.slug }}"></use>
+				</svg>
+			</a>
+		</li>
+	{% endfor %}
+
+	<li class="Socials-item">
+		<a href="mailto:{{ contact.email_addresses | first }}">
+			<svg class="">
+			  	<use xlink:href="{{ theme.link }}/public/icons.svg#envelope"></use>
+			</svg>
+		</a>
+	</li>
+
+	{% endspaceless %}
+
+</ul>
