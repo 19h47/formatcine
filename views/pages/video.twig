@@ -1,0 +1,46 @@
+{#
+/**
+ * /views/pages/front-page
+ *
+ * @package 	WordPress
+ * @subpackage 	19h47
+ * @author 		Jérémy Levron levronjeremy@19h47.fr
+ */
+#}
+{% extends 'index.twig' %}
+
+
+{% block header %}{% endblock %}
+
+
+{% block content %}
+	
+	{# Post title #}
+	{% if post.post_title %}
+		{% include 'components/post-title.twig' with { post_title: parent.post_title } %}
+	{% endif %}
+
+	{# Post content #}
+	{% if post.post_content %}
+		{% include 'components/post-content.twig' %}
+	{% endif %}
+
+	<div class="Site-container">
+	
+	{% for article in post.get_field( 'videos' ) %}
+		<article class="Video">
+			<header class="Video-header">
+				<h2 class="Video-title color-secondary">{{- article.title -}}{{- article.place ? ' —' : '' -}}</h2>
+				<p class="Video-date">{{- article.place -}}</p>
+			</header>
+			{# {{ article.level }} #}
+			{# {{ article.date }} #}
+			<div class="embed-container">{{- article.video -}}</div>
+		</article>
+	{% endfor %}
+
+	</div>
+{% endblock %}
+
+
+{% block footer %}{% endblock %}
