@@ -37,12 +37,12 @@
 
 
 	/**
-	 * Date
+	 * Meta
 	 *
-	 * @uses .Video-date
+	 * @uses .Video-meta
 	 */
-	&-date {
-		@extend %font-semibold, %margin-xs-0;
+	&-meta {
+		@extend %font-semibold, %margin-xs-0, %display-xs-inline-block;
 		@include font( 19.84, 23.81 );
 	}
 }

@@ -30,11 +30,20 @@
 	{% for article in post.get_field( 'videos' ) %}
 		<article class="Video">
 			<header class="Video-header">
-				<h2 class="Video-title color-secondary">{{- article.title -}}{{- article.place ? ' —' : '' -}}</h2>
-				<p class="Video-date">{{- article.place -}}</p>
+				<h2 class="Video-title color-secondary">{{- article.title -}}{{- article.place or article.level or article.date ? ' —' : '' -}}</h2>
+
+				{% if article.place or article.level or article.date %}
+				<div class="Video-meta">
+					<p class="margin-xs-0">
+						{{- article.place ? article.place : '' -}}
+						{{- article.level ? article.level : '' -}}
+						{{- article.level and article.date ? '&nbsp;-&nbsp;' : '' -}}
+						{{- article.date ? article.date : '' -}}
+					</p>
+				</div>
+				{% endif %}
+
 			</header>
-			{# {{ article.level }} #}
-			{# {{ article.date }} #}
 			<div class="embed-container">{{- article.video -}}</div>
 		</article>
 	{% endfor %}
