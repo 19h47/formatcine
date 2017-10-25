@@ -40,4 +40,6 @@ src/prototypes/
 vendor/
 node_modules/
 public/
+static/prototypes
+sftp-config.json
 
