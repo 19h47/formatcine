@@ -30,8 +30,31 @@
 	</head>
 
 	<body {{ body_class( 'border-color-main' ) }}>
+
+		{% include 'components/menu.twig' %}
+		
 		<div class="Site-container">
 			<header class="Site-header">
+				
+
+				{# Button #}
+				<button class="Site-header-button js-toggle-menu-button">
+					<svg class="fill-main">
+					  	<use xlink:href="{{ theme.link }}/public/icons.svg#open"></use>
+					</svg>
+				</button>
+				
+
+				{# Contact #}
+				<div class="Site-header-contact">
+					{% include 'components/socials.twig' with { prefix: 'header' } %}
+
+					<p class="Site-header-contact__address">{{- contact.address | nl2br -}}</p>
+					<p class="Site-header-contact__phone">{{- contact.phone -}}</p>
+				</div>
+				
+
+				{# Logo #}
 				<div class="row">
 					<div class="col-xs-3"></div>
 					<div class="col-xs-6">

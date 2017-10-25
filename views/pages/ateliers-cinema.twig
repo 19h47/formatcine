@@ -14,7 +14,7 @@
 
 
 {% block content %}
-	
+
 	{# Post title #}
 	{% if post.post_title %}
 		{% include 'components/post-title.twig' %}
@@ -26,20 +26,36 @@
 		{% include 'components/post-content.twig' %}
 	{% endif %}
 	
+	
+	<div class="Site-container">
+		<div class="row">
 
-	{% for workshop in post.get_field( 'workshops' ) %}
-		{# <pre>{{ workshop.document|print_r }}</pre> #}
+			{% for workshop in post.get_field( 'workshops' ) %}
+				{# <pre>{{ workshop.document|print_r }}</pre> #}
+				<div class="col-xs-12 col-md-4">
 
-		<a href="{{ workshop.document.url }}" title="{{ workshop.document.title }}">
+					<a class="Workshops-link" href="{{ workshop.document.url }}" title="{{ workshop.document.title }}">
 
-			{{ theme.link ~ '/static/img/svg/' ~ workshop.name | slugify ~ '.svg' }}
-			
-			
-			{{ workshop.name }}
-			
-		</a>
+						{# {{ theme.link ~ '/static/img/svg/' ~ workshop.name | slugify ~ '.svg' }} #}
+						<div>
+							<svg class="">
+							  	<use xlink:href="{{ theme.link }}/public/icons.svg#{{ workshop.name | slugify }}"></use>
+							</svg>
+						</div>
+						
+						
+						<p class="Workshops-link__label">{{- workshop.name -}}</p>
+						
+					</a>
 
-	{% endfor %}
+				</div>
+
+				{{ loop.index is divisible by( 3 ) and not loop.last ? '</div><div class="row">' }}
+
+			{% endfor %}
+
+		</div>				
+	</div>
 {% endblock %}
 
 

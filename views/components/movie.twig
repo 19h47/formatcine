@@ -47,7 +47,7 @@
 		<p class="Movie__review color-main">{{ movie.get_field( 'review' ) }}</p>
 
 		{% for document in movie.get_field( 'documents' ) %}
-			<a href="{{ document.link }}">{{ document.link }}</a>
+			<a href="{{ document.link }}">{{- document.link -}}</a>
 		{% endfor %}
 	</div>
 
