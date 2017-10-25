@@ -1,0 +1,131 @@
+/**
+ * Menu
+ *
+ * @uses .Menu
+ */
+.Menu {
+	@extend %Position-fixed-center, %Transition-ease;
+	@include autoAlpha( 0 );
+
+	overflow-y: auto;
+	z-index: 100;
+
+	@at-root .menu--is-open & {
+		@include autoAlpha( 1 );
+	}
+
+	&-inner {
+		
+		border: {
+			style: solid;
+			width: 25px 25px 0 25px;
+		}
+
+	}
+
+	/**
+	 * Button
+	 *
+	 * @uses .Menu-button
+	 */
+	&-button {
+		@include size( 50px );
+
+		svg {
+			@extend %display-xs-inline-block, %vertical-align-middle;
+
+			max-width: 50px;
+			max-height: 50px;
+		}
+	}
+	
+	/**
+	 * Items
+	 *
+	 * @uses .Menu-items
+	 */
+	&-items {
+		@extend %list-unstyled, %margin-xs-bottom-0, %text-xs-center;
+		@include margin( bottom 50px );
+	}
+
+
+	/**
+	 * Item
+	 *
+	 * @uses .Menu-item
+	 */
+	&-item {
+		@extend %font-extrabold, %uppercase, %margin-xs-top-0;
+		@include font( 29.99, 39.87, 50 );
+		@include margin( bottom $grid-gutter-width );
+
+		color: the_color( white );
+
+		&--is-current {}
+		&--has-children {
+			@include font( 29.98, 54.96, 50 );
+
+			color: the_color( gray, very-dark-mostly-black );
+		}
+	}
+
+
+	/**
+	 * Childrens
+	 *
+	 * @uses .Menu-childrens
+	 */
+	&-childrens {
+		@extend %list-unstyled, %margin-xs-top-0;
+	}
+
+
+	/**
+	 * Children
+	 *
+	 * @uses .Menu-children
+	 */
+	&-children {
+		@extend %margin-xs-y-0;
+		@include font( 30, 40, 50 );
+
+		color: the_color( white );
+	}
+
+
+	/**
+	 * Contact
+	 *
+	 * @uses .Menu-contact
+	 */
+	&-contact {
+		@extend %text-xs-center;
+		@include margin( top 90px );
+
+		color: the_color( gray, very-dark-mostly-black );
+
+		p { @extend %font-bold; }
+
+		&__title { 
+			@extend %uppercase, %margin-xs-y-0;
+			@include font( 18.05, 30.08, 100 ); 
+		}
+
+
+		&__content { @extend %margin-xs-y-0; }
+	}
+
+
+	/**
+	 * Footer
+	 *
+	 * @uses .Menu-footer
+	 */
+	&-footer {
+		@extend %text-xs-center;
+		@include margin( top 140px );
+
+		color: the_color( white );
+	}
+}
