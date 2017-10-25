@@ -87,7 +87,7 @@ class Adult_Training {
 			'label'               	=> 'formation adulte',
 	        'description'         	=> __( 'Les formations adultes', $this->theme_name ),
 	        'labels'              	=> $labels,
-	        'supports'            	=> array( 'title', 'editor', 'comments' ),
+	        'supports'            	=> array( 'title', 'editor', 'comments', 'thumbnail' ),
 	        'taxonomies'          	=> array( 'adult_training_category' ),
 	        'hierarchical'        	=> false,
 	        'public'              	=> true,

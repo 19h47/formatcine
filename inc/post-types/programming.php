@@ -172,7 +172,7 @@ class Programming {
 	        	$new_columns['taxonomy-season'] = $taxonomy_seasons;
 	        	$new_columns['quarter'] = __( 'Trimestres' );
 	        	$new_columns['taxonomy-school_class'] = $taxonomy_school_class;
-	          	$new_columns['movies'] = __( 'Films' );
+	          	$new_columns['movie'] = __( 'Film' );
 	        }
 
 	      	$new_columns[$key] = $value;
@@ -198,22 +198,16 @@ class Programming {
 
         switch ( $column_name ) {
 
-    	    case 'movies' :
+    	    case 'movie' :
     	    	
-    	    	if ( get_field( 'movies', $post_id ) ) {
+    	    	if ( get_field( 'movie', $post_id ) ) {
 
-    	    		$movies = get_field( 'movies', $post_id );
-    	    		$output = array();
-    	    		
-    	    		foreach ( $movies as $movie ) {
+    	    		$movie = get_field( 'movie', $post_id );
     	    			
-	   					$html = '<a href="' . get_edit_post_link( $movie->ID );
-	   					$html .= '">' . $movie->post_title . '</a>';
+   					$html = '<a href="' . get_edit_post_link( $post_id );
+   					$html .= '">' . $movie->post_title . '</a>';
 
-	   					array_push( $output, $html );
-    	    		}
-
-    	    		echo join( '<br>', $output );
+    	    		echo $html;
 
     	    	} else {
     	    		echo '—';
