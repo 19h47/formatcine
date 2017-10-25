@@ -8,192 +8,192 @@ add_action( 'customize_register', 'frmtcn_customize_contact' );
  * @param WP_Customize_Manager $wp_customize Customizer object.
  */
 function frmtcn_customize_contact( $wp_customize ) {
-    
-    /**
-     * Add contact section
-     */
-    $wp_customize->add_section( 
-    	'contact', 
-    	array(
-        	'title' 		=> __( 'Coordonnées', 'frmtcn' ),
-        	'description'	=> __( 'Réglages des coordonnées', 'frmtcn' ),
-    	) 
-    );
+	
+	/**
+	 * Add contact section
+	 */
+	$wp_customize->add_section( 
+		'contact', 
+		array(
+			'title' 		=> __( 'Coordonnées', 'frmtcn' ),
+			'description'	=> __( 'Réglages des coordonnées', 'frmtcn' ),
+		) 
+	);
 
 
-   	/**
-   	 * Add Contact settings and controls in related section
-   	 */
-   	$wp_customize->add_setting( 
-   		'address', 
-   		array(
-        	'type'      => 'option',
-        	'transport' => 'postMessage',
-    	) 
-    );
+	/**
+	 * Add Contact settings and controls in related section
+	 */
+	$wp_customize->add_setting( 
+		'address', 
+		array(
+			'type'      => 'option',
+			'transport' => 'postMessage',
+		) 
+	);
 
 
-    $wp_customize->add_control( 
-    	'address', 
-    	array(
-        	'label'     	=> __( 'Adresse', 'frmtcn' ),
-        	'description'	=> __( 'Indiquer l\'adresse postale', 'frmtcn'),
-        	'type'      	=> 'textarea',
-        	'section'   	=> 'contact',
-        	'settings'  	=> 'address',
-    	) 
-    );
+	$wp_customize->add_control( 
+		'address', 
+		array(
+			'label'     	=> __( 'Adresse', 'frmtcn' ),
+			'description'	=> __( 'Indiquer l\'adresse postale', 'frmtcn'),
+			'type'      	=> 'textarea',
+			'section'   	=> 'contact',
+			'settings'  	=> 'address',
+		) 
+	);
 
-    /**
-     * Email address
-     */
-    $wp_customize->add_setting( 
-           'email_addresses', 
-           array(
-           'type'      => 'option',
-           'transport' => 'postMessage',
-       ) 
-    );
+	/**
+	 * Email address
+	 */
+	$wp_customize->add_setting( 
+		   'email_addresses', 
+		   array(
+		   'type'      => 'option',
+		   'transport' => 'postMessage',
+	   ) 
+	);
 
-    $wp_customize->add_control( 
-        'email_addresses',
-        array(
-            'label'         => __( 'Adresses emails', 'frmtcn' ),
-            'description'   => __( 'Indiquer les adresses emails de contact du site séparées par des virgules', 'frmtcn'),
-            'section'       => 'contact',
-            'settings'      => 'email_addresses',
-       ) 
-    );
+	$wp_customize->add_control( 
+		'email_addresses',
+		array(
+			'label'         => __( 'Adresses emails', 'frmtcn' ),
+			'description'   => __( 'Indiquer les adresses emails de contact du site séparées par des virgules', 'frmtcn'),
+			'section'       => 'contact',
+			'settings'      => 'email_addresses',
+	   ) 
+	);
 
-    
-    /**
-     * Phone
-     */
-    $wp_customize->add_setting( 
-           'phone', 
-           array(
-           'type'      => 'option',
-           'transport' => 'postMessage',
-       ) 
-    );
-
-
-    $wp_customize->add_control( 
-       'phone', 
-       array(
-           'label'         => __( 'Numéro de téléphone', 'frmtcn' ),
-           'description'   => __( 'Indiquer le numéro de téléphone', 'frmtcn'),
-           'section'       => 'contact',
-           'settings'      => 'phone',
-       ) 
-    );
+	
+	/**
+	 * Phone
+	 */
+	$wp_customize->add_setting( 
+		   'phone', 
+		   array(
+		   'type'      => 'option',
+		   'transport' => 'postMessage',
+	   ) 
+	);
 
 
-    /**
-     * Facebook
-     */
-    $wp_customize->add_setting( 
-   		'facebook', 
-   		array(
-        	'type'      => 'option',
-        	'transport' => 'postMessage',
-    	) 
-    );
+	$wp_customize->add_control( 
+	   'phone', 
+	   array(
+		   'label'         => __( 'Numéro de téléphone', 'frmtcn' ),
+		   'description'   => __( 'Indiquer le numéro de téléphone', 'frmtcn'),
+		   'section'       => 'contact',
+		   'settings'      => 'phone',
+	   ) 
+	);
 
 
-    $wp_customize->add_control( 
-    	'facebook', 
-    	array(
-        	'label'     	=> __( 'Facebook', 'frmtcn' ),
-        	'description'	=> __( 'Indiquer l\'URL du compte Facebook', 'frmtcn'),
-        	'section'   	=> 'contact',
-        	'settings'  	=> 'facebook',
-    	) 
-    );
+	/**
+	 * Facebook
+	 */
+	$wp_customize->add_setting( 
+		'facebook', 
+		array(
+			'type'      => 'option',
+			'transport' => 'postMessage',
+		) 
+	);
 
 
-    /**
-     * Twitter
-     */
-    $wp_customize->add_setting( 
-   		'twitter', 
-   		array(
-        	'type'      => 'option',
-        	'transport' => 'postMessage',
-    	) 
-    );
+	$wp_customize->add_control( 
+		'facebook', 
+		array(
+			'label'     	=> __( 'Facebook', 'frmtcn' ),
+			'description'	=> __( 'Indiquer l\'URL du compte Facebook', 'frmtcn'),
+			'section'   	=> 'contact',
+			'settings'  	=> 'facebook',
+		) 
+	);
 
 
-    $wp_customize->add_control( 
-    	'twitter', 
-    	array(
-        	'label'     	=> __( 'Twitter', 'frmtcn' ),
-        	'description'	=> __( 'Indiquer l\'URL du compte Twitter', 'frmtcn'),
-        	'section'   	=> 'contact',
-        	'settings'  	=> 'twitter',
-    	) 
-    );
+	/**
+	 * Twitter
+	 */
+	$wp_customize->add_setting( 
+		'twitter', 
+		array(
+			'type'      => 'option',
+			'transport' => 'postMessage',
+		) 
+	);
 
 
-    /**
-     * Instagram
-     */
-    $wp_customize->add_setting( 
-        'instagram', 
-        array(
-            'type'      => 'option',
-            'transport' => 'postMessage',
-        ) 
-    );
-    $wp_customize->add_control( 
-        'instagram', 
-        array(
-            'label'         => __( 'Instagram', 'frmtcn' ),
-            'description'   => __( 'Indiquer l\'URL du compte Instagram', 'frmtcn'),
-            'section'       => 'contact',
-            'settings'      => 'instagram',
-        ) 
-    );
+	$wp_customize->add_control( 
+		'twitter', 
+		array(
+			'label'     	=> __( 'Twitter', 'frmtcn' ),
+			'description'	=> __( 'Indiquer l\'URL du compte Twitter', 'frmtcn'),
+			'section'   	=> 'contact',
+			'settings'  	=> 'twitter',
+		) 
+	);
 
 
-    /**
-     * Pinterest
-     */
-    $wp_customize->add_setting( 
-        'pinterest', 
-        array(
-            'type'      => 'option',
-            'transport' => 'postMessage',
-        ) 
-    );
-    $wp_customize->add_control( 
-        'pinterest', 
-        array(
-            'label'         => __( 'Pinterest', 'frmtcn' ),
-            'description'   => __( 'Indiquer l\'URL du compte Pinterest', 'frmtcn'),
-            'section'       => 'contact',
-            'settings'      => 'pinterest',
-        ) 
-    );
+	/**
+	 * Instagram
+	 */
+	$wp_customize->add_setting( 
+		'instagram', 
+		array(
+			'type'      => 'option',
+			'transport' => 'postMessage',
+		) 
+	);
+	$wp_customize->add_control( 
+		'instagram', 
+		array(
+			'label'         => __( 'Instagram', 'frmtcn' ),
+			'description'   => __( 'Indiquer l\'URL du compte Instagram', 'frmtcn'),
+			'section'       => 'contact',
+			'settings'      => 'instagram',
+		) 
+	);
 
 
-    /**
-     * YouTube
-     */
-    $wp_customize->add_setting( 
-        'youtube', 
-        array(
-            'type'      => 'option',
-            'transport' => 'postMessage',
-        ) 
-    );
-    $wp_customize->add_control( 
-        'youtube', 
-        array(
-            'label'         => __( 'YouTube', 'frmtcn' ),
-            'description'   => __( 'Indiquer l\'URL du compte YouTube', 'frmtcn'),
-            'section'       => 'contact',
-            'settings'      => 'youtube',
-        ) 
-    );
+	/**
+	 * Pinterest
+	 */
+	$wp_customize->add_setting( 
+		'pinterest', 
+		array(
+			'type'      => 'option',
+			'transport' => 'postMessage',
+		) 
+	);
+	$wp_customize->add_control( 
+		'pinterest', 
+		array(
+			'label'         => __( 'Pinterest', 'frmtcn' ),
+			'description'   => __( 'Indiquer l\'URL du compte Pinterest', 'frmtcn'),
+			'section'       => 'contact',
+			'settings'      => 'pinterest',
+		) 
+	);
+
+
+	/**
+	 * YouTube
+	 */
+	$wp_customize->add_setting( 
+		'youtube', 
+		array(
+			'type'      => 'option',
+			'transport' => 'postMessage',
+		) 
+	);
+	$wp_customize->add_control( 
+		'youtube', 
+		array(
+			'label'         => __( 'YouTube', 'frmtcn' ),
+			'description'   => __( 'Indiquer l\'URL du compte YouTube', 'frmtcn'),
+			'section'       => 'contact',
+			'settings'      => 'youtube',
+		) 
+	);
 }
