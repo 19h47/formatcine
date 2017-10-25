@@ -6,7 +6,9 @@
 .Movie {
 	@extend %Transition-ease;
 
-	@at-root .slick-active & {
+	@at-root 
+		.slick-active &,
+		.slick-center & {
 
 		outline: {
 			style: solid;
@@ -47,7 +49,9 @@
 
 		color: the_color( white );
 
-		@at-root .slick-active & { @include autoAlpha( 1 ); }
+		@at-root 
+				.slick-active &,
+				.slick-center & { @include autoAlpha( 1 ); }
 	}
 
 

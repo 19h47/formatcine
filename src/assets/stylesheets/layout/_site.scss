@@ -72,6 +72,52 @@
 	&-header {
 		@extend %text-xs-center;
 		@include margin( top 75px bottom 75px );
+
+		/**
+		 * Button
+		 *
+		 * @uses .Site-header-button
+		 */
+		&-button {
+			@include absolute( top 0 left 0 );
+			@include size( 50px );
+
+			svg {
+				@extend %display-xs-inline-block, %vertical-align-middle;
+
+				max-width: 50px;
+				max-height: 50px;
+			}
+		}
+
+
+		/**
+		 * Contact
+		 *
+		 * @uses .Site-header-contact
+		 */
+		&-contact {
+			@extend %text-xs-right;
+			@include absolute( top 0 right 0 );
+
+			color: the_color( gray, dark );
+
+			&__address {
+				@extend %font-semibold;
+				@include margin( bottom 0 );
+				
+				font-size: 16.01px;
+				line-height: normal;
+
+			}
+			&__phone {
+				@extend %font-bold;
+				@include margin( top $grid-gutter-width / 2 bottom 0 );
+
+				font-size: 20.01px;
+				line-height: normal;
+			}
+		}
 	}
 
 

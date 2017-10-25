@@ -1,0 +1,62 @@
+/**
+ * Workshops
+ *
+ * @uses .Workshops
+ */
+.Workshops {
+
+	&-link {
+		$this: &;
+		@extend %display-xs-inline-block, %text-xs-center, %w-xs-100;
+		@include margin( 
+			top 50px 
+			right $grid-gutter-width
+			bottom 50px 
+			left $grid-gutter-width
+		);
+
+		svg {
+			@extend %Transition-ease;
+			@include margin( bottom $grid-gutter-width );
+			
+			max-width: 90px;
+			max-height: 60px;
+
+			fill: the_color( gray, dark );
+		}
+
+		&:hover {
+
+			#{ $this }__label {
+				border: {
+					bottom: {
+						color: currentColor;
+					}
+				}
+			}
+
+			svg { fill: the_color( yellow, vivid ); }
+		}
+
+		&__label {
+			@extend 
+				%font-bold, 
+				%uppercase,
+				%position-xs-relative, 
+				%display-xs-inline,
+				%margin-xs-y-0,
+				%Transition-ease;
+			@include font( 20, 24 );
+
+			color: the_color( gray, very-dark-mostly-black );
+			border: {
+				bottom: {
+					color: transparent;
+					style: solid;
+					width: 2px;
+				}
+			}
+
+		}
+	}
+}

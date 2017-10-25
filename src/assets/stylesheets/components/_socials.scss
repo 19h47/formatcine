@@ -12,6 +12,17 @@
 		color: the_color( white );
 	}
 
+	
+	/**
+	 * Header
+	 *
+	 * @uses .Socials--header
+	 */
+	&--header { 
+		@include margin( top 0 );
+		
+		color: the_color( gray, dark ); }
+
 
 	/**
 	 * Item

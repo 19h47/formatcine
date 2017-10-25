@@ -1,0 +1,79 @@
+/**
+ * Adult training
+ *
+ * @uses .Adult-training
+ */
+.Adult-training {
+	@include margin( top 50px bottom 50px );
+	
+	/**
+	 * Adult training teachers
+	 *
+	 * @uses .Adult-training-teachers
+	 */
+	&-teachers {
+		@extend %text-xs-center;
+		@include padding( 
+			top 40px 
+			right $grid-gutter-width
+			bottom 50px 
+			left $grid-gutter-width
+		);
+		@include margin( 
+			bottom $grid-gutter-width 
+		);
+		background-color: the_color( gray, very-light );
+		
+		
+		/**
+		 * Thumbnail
+		 *
+		 * @uses .Adult-training-teachers__thumbnail
+		 */
+		&__thumbnail {
+			@extend %display-xs-inline, %vertical-align-middle;
+		}
+
+
+		/**
+		 * Title
+		 *
+		 * @uses .Adult-training-teachers__title
+		 */
+		&__title {
+			@include font( 25, 30 );
+			@include margin( 
+				top $grid-gutter-width 
+				bottom $grid-gutter-width 
+			);
+		}
+
+
+		/**
+		 * Content
+		 *
+		 * @uses .Adult-training-teachers__content
+		 */
+		&__content {
+			@include font( 16, 20 );
+			// @include margin( 
+			// 	top $grid-gutter-width 
+			// 	bottom $grid-gutter-width 
+			// );
+		}
+
+
+		/**
+		 * Link
+		 *
+		 * @uses .Adult-training-teachers__link
+		 */
+		&__link {
+			@extend %font-extrabold, %uppercase, %display-xs-inline-block;
+			@include padding( right 10px left 10px );
+			@include font( 18, 30, 50 );
+	
+			color: the_color( white );
+		}
+	}
+}

@@ -32,4 +32,48 @@
 			color: the_color( gray, dark );
 		}
 	}
+
+
+	/**
+	 * List adjacent
+	 *
+	 * @uses .Page-list-adjacent
+	 */
+	&-list-adjacent {
+		@include margin( bottom $grid-gutter-width * 2 );
+		&__item {
+			@extend %display-xs-inline-block, %uppercase, %font-extrabold, %Transition-ease;
+			@include margin( top 0 right 20px bottom 0 left 20px );
+			@include padding( right 10px left 10px );
+			@include font( 18, 30, 50 );
+
+			color: the_color( white );
+
+
+			
+			&:not(&--is-active) {
+				background: { color: transparent; }
+				color: the_color( gray, very-dark-mostly-black );
+			}
+
+			&:hover {
+				color: the_color( white );
+			}
+			
+			&:first-child { @include margin( left 0 ); }
+			&:last-child { @include margin( right 0 ); }
+		}
+	}
+
+
+
+	/**
+	 * Introduction
+	 *
+	 * @uses .Page-introduction
+	 */
+	&-introduction {
+		@extend %text-xs-center;
+		@include margin( top $grid-gutter-width * 2 bottom $grid-gutter-width * 2 );
+	}
 }
