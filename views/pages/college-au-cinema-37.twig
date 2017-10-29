@@ -49,7 +49,7 @@
 				</div>
 			</div>
 
-			<div class="row row-eq-height">
+			<div class="row is-flex">
 				<div class="col-xs-12 col-md-8 align-self-flex-end">
 					<p class="Educational-support__content">
 						{{- post.educational_support_content | nl2br -}}
@@ -106,8 +106,9 @@
 						</span>
 						<span class="Site-title-underline color-gray-dark">{{ season.name }}</span>
 					</h2>
-					<p class="description">
-						{{- __( 'Au cours de chaque journée complète de formation (de 9 h à 17 h), il y a un temps de concertation (d\'une à deux heures selon la durée du film) qui permet aux stagiaires de travailler en interdisciplinarité (éventuellement sur les projets d\'EPI). Il est donc utile que les enseignants travaillant en binômes sur un film (dans le cadre d\'un EPI ou d\'une simple exploitation pédagogique) assistent ensemble à la même journée de stage.' ) -}}
+					<p class="description font-semibold">
+						{{- post.get_field( 'school-trainings_description' ) -}}
+				
 					</p>
 				</div>
 					

@@ -40,8 +40,8 @@
 	<div class="Site-container">
 		<div class="row">
 			<div class="col-xs-12">
-				<p class="Page-introduction">
-					Notre association organise en Touraine depuis vingt cinq ans des stages de un à trois jours dans le domaine du cinéma et de l'audiovisuel. Les enseignants hors département de l'Indre-et-Loire peuvent s'y inscrire sous certaines conditions (nous contacter).
+				<p class="Page-introduction font-semibold">
+					{{- __( 'Notre association organise en Touraine depuis vingt cinq ans des stages de un à trois jours dans le domaine du cinéma et de l\'audiovisuel. Les enseignants hors département de l\'Indre-et-Loire peuvent s\'y inscrire sous certaines conditions (nous contacter).' ) -}}
 				</p>
 			</div>
 		</div>
@@ -60,11 +60,11 @@
 	</div>
 
 	<div class="Site-container Adult-training">
-		<div class="row row-eq-height">
+		<div class="row is-flex">
 			{% for adult_training in adult_trainings %}
 				<div class="col-xs-12 col-md-6">
 					<article class="Adult-training-teachers">
-						{# <pre>{{adult_training|print_r}}</pre> #}
+						{# <pre>{{ adult_training | print_r }}</pre> #}
 						{% if adult_training.thumbnail %}
 						
 						<img
@@ -77,10 +77,10 @@
 						{% endif %}
 
 						<h2 class="Adult-training-teachers__title">
-							{{ adult_training.post_title }}
+							{{- adult_training.post_title -}}
 						</h2>
 						<p class="Adult-training-teachers__content">
-							{{ adult_training.post_content }}
+							{{- adult_training.post_content -}}
 						</p>
 
 						{% if adult_training.get_field( 'document' ) %}

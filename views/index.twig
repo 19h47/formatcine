@@ -9,7 +9,22 @@
 
 
 {# Content #}
-{% block content %}{% endblock %}
+{% block content %}
+
+
+	{# Post title #}
+	{% if post.post_title %}
+		{% include 'components/post-title.twig' %}
+	{% endif %}
+	
+
+	{# Post content #}
+	{% if post.post_content %}
+		{% include 'components/post-content.twig' %}
+	{% endif %}
+
+	
+{% endblock %}
 
 
 {# Footer #}

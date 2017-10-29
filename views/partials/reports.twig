@@ -16,8 +16,13 @@
 					{{ post.reports_title }}
 					<p class="Reports__subheading">{{ post.reports_subheading }}</p>
 				</h2>
-				<p class="Reports__content">{{ post.reports_content }}</p>
-				<a class="Reports__label background-color-secondary" href="{{ post.reports_document }}">
+				
+				<p class="Reports__content">{{- post.reports_content -}}</p>
+				
+				<a 
+					class="Reports__label background-color-secondary color-secondary-hover border-color-secondary-hover" 
+					href="{{ post.reports_document }}"
+				>
 					{{ post.reports_label }}
 				</a>
 			</div>

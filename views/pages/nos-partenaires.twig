@@ -1,0 +1,35 @@
+{#
+/**
+ * /views/pages/nos-partenaires
+ *
+ * @package 	WordPress
+ * @subpackage 	19h47
+ * @author 		Jérémy Levron levronjeremy@19h47.fr
+ */
+#}
+{% extends 'index.twig' %}
+
+
+{% block header %}{% endblock %}
+
+
+{% block content %}
+
+	{{ parent() }}
+
+	<div class="Site-container Partners">
+		<div class="row">
+			<div class="col-xs-12 text-xs-center">
+				{% for partner in post.get_field( 'partners' ) %}
+					<a class="Partners-item" href="{{ partner.link }}" target="_blank">
+						{{- partner.name -}}
+					</a>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
+
+
+{% block footer %}{% endblock %}

@@ -19,7 +19,11 @@
 			<p class="Tease-event__description">{{- post.description -}}</p>
 			
 			{% if post.event_read_more %}
-				<a class="Tease-event__read-more" href="{{ post.event_read_more }}" target="_blank">
+				<a 
+					class="Tease-event__read-more background-color-main-hover border-color-main-hover" 
+					href="{{ post.event_read_more }}" 
+					target="_blank"
+				>
 					{{- __( 'En savoir plus' ) -}}
 					<svg class="Tease-event__read-more__icon">
 					  	<use xlink:href="{{ theme.link }}/public/icons.svg#arrow"></use>
