@@ -89,10 +89,10 @@ class FRMTCN extends TimberSite {
 		$this->theme_version = $theme_version;
 
 		// Prod
-		$this->theme_manifest = json_decode( 
-		    file_get_contents( __DIR__ . '/public/manifest.json' ), 
-		    true
-		);
+		// $this->theme_manifest = json_decode( 
+		//     file_get_contents( __DIR__ . '/public/manifest.json' ), 
+		//     true
+		// );
 
 		// Dev
 		$this->theme_manifest = array(
@@ -410,6 +410,7 @@ class FRMTCN extends TimberSite {
 			
 			/* Border */
 			.border-color-main { border-color: <?php echo $color_main ?>; }
+			.border-color-main-hover:hover { border-color: <?php echo $color_main ?>; }
 			.border-color-secondary { border-color: <?php echo $color_secondary ?>; }
 			.border-color-secondary-hover:hover { border-color: <?php echo $color_secondary ?>; }
 			
