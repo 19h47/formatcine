@@ -8,7 +8,8 @@
 
 <article class="Movie outline-color-secondary">
 
-	
+	{# <pre>{{- movie | print_r -}}</pre> #}
+
 	<div class="Movie__thumbnail">
 		
 		<p class="Movie__quarter background-color-secondary">{{ programming.get_field( 'quarter' ).label }}</p>
@@ -19,9 +20,11 @@
 	<div class="Movie__content">
 
 		{# Title #}
-		<h3 class="Movie__title color-secondary">{{- movie.title -}}</h3>
+		<h3 class="Movie__title color-secondary">
+			{{- movie.title -}}
+		</h3>
 		
-
+		{# Directors #}
 		{{ directors ? '<p class="Movie__directors">De&nbsp;' ~ directors | join(', ') ~ '</p>' : '' }}
 		
 
@@ -38,17 +41,37 @@
 			{{ meta | join( '&nbsp;|&nbsp;' ) }}
 		</div>
 
-		
+		{# Trailer #}
 		{% if movie.get_field( 'trailer' ) %}
-			<a href="{{ movie.get_field( 'trailer' ) }}">Visionner la bande annonce</a> 
+			<a
+				class="Movie__trailer" 
+				href="{{ movie.get_field( 'trailer' ) }}"
+			>
+				{{-__('Visionner la bande annonce' ) -}}
+			</a> 
 		{% endif %}
 
 		<p class="Movie__summary">{{ movie.get_field( 'summary' ) }}</p>
 		<p class="Movie__review color-main">{{ movie.get_field( 'review' ) }}</p>
+		
+		{% if movie.get_field( 'documents' ) %}
+		
+		<div class="Movie__documents">
+			{% spaceless %}
+				
+			{% for document in movie.get_field( 'documents' ) %}
+				<a 
+					class="Movie__document color-secondary background-color-secondary-hover border-color-secondary-hover" 
+					href="{{ document.link }}"
+				>
+					{{- document.label -}}
+				</a>
+			{% endfor %}
 
-		{% for document in movie.get_field( 'documents' ) %}
-			<a href="{{ document.link }}">{{- document.link -}}</a>
-		{% endfor %}
+			{% endspaceless %}
+		</div>	 
+
+		{% endif %}
 	</div>
 
 </article>

@@ -15,7 +15,8 @@
 	}
 
 	&-inner {
-		
+		@include padding( top 75px );
+
 		border: {
 			style: solid;
 			width: 25px 25px 0 25px;

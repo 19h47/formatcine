@@ -89,10 +89,10 @@ class FRMTCN extends TimberSite {
 		$this->theme_version = $theme_version;
 
 		// Prod
-		// $this->theme_manifest = json_decode( 
-		//     file_get_contents( __DIR__ . '/public/manifest.json' ), 
-		//     true
-		// );
+		$this->theme_manifest = json_decode( 
+		    file_get_contents( __DIR__ . '/public/manifest.json' ), 
+		    true
+		);
 
 		// Dev
 		$this->theme_manifest = array(
@@ -338,7 +338,7 @@ class FRMTCN extends TimberSite {
 		/**
 		 * Add favicons
 		 */
-		// add_action( 'wp_head', array( $this, 'favicons' ) );
+		add_action( 'wp_head', array( $this, 'favicons' ) );
 		
 		/**
 		 * Add main color in head
@@ -381,7 +381,7 @@ class FRMTCN extends TimberSite {
 
 		// Maybe it hasn't at all
 		if ( $color_secondary === NULL ) {
-			$color_secondary = '#FFFFFF';
+			$color_secondary = '#969696';
 		}
 
 
@@ -401,16 +401,30 @@ class FRMTCN extends TimberSite {
 
 		?>
 		<style>
+			/* Color */
 			.color-main { color: <?php echo $color_main ?>; }
 			.color-secondary { color: <?php echo $color_secondary ?>; }
 			.color-ternary { color: <?php echo $color_ternary ?>; }
+			.color-main-hover:hover { color: <?php echo $color_main ?>; }
+			.color-secondary-hover:hover { color: <?php echo $color_secondary ?>; }
+			
+			/* Border */
 			.border-color-main { border-color: <?php echo $color_main ?>; }
+			.border-color-secondary { border-color: <?php echo $color_secondary ?>; }
+			.border-color-secondary-hover:hover { border-color: <?php echo $color_secondary ?>; }
+			
+			/* Background */
 			.background-color-main { background-color: <?php echo $color_main ?>; }
 			.background-color-main-hover:hover { background-color: <?php echo $color_main ?>; }
 			.background-color-secondary { background-color: <?php echo $color_secondary ?>; }
+			.background-color-secondary-hover:hover { background-color: <?php echo $color_secondary ?>; }
 			.background-color-ternary { background-color: <?php echo $color_ternary ?>; }
+
+			/* Fill */
 			.fill-main { fill: <?php echo $color_main ?>; }
 			.fill-secondary { fill: <?php echo $color_secondary ?>; }
+
+			/* Outline */
 			.outline-color-secondary { outline-color: <?php echo $color_secondary ?>; }
 		</style>
 		<?php
@@ -528,23 +542,23 @@ class FRMTCN extends TimberSite {
 
 		?>
 
-		<link rel="apple-touch-icon" sizes="57x57" href="<?php echo get_template_directory_uri() ?>/img/favicons/apple-touch-icon-57x57.png">
-		<link rel="apple-touch-icon" sizes="60x60" href="<?php echo get_template_directory_uri() ?>/img/favicons/apple-touch-icon-60x60.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_template_directory_uri() ?>/img/favicons/apple-touch-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="<?php echo get_template_directory_uri() ?>/img/favicons/apple-touch-icon-76x76.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_template_directory_uri() ?>/img/favicons/apple-touch-icon-114x114.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="<?php echo get_template_directory_uri() ?>/img/favicons/apple-touch-icon-120x120.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="<?php echo get_template_directory_uri() ?>/img/favicons/apple-touch-icon-144x144.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="<?php echo get_template_directory_uri() ?>/img/favicons/apple-touch-icon-152x152.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri() ?>/img/favicons/apple-touch-icon-180x180.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri() ?>/img/favicons/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="194x194" href="<?php echo get_template_directory_uri() ?>/img/favicons/favicon-194x194.png">
-		<link rel="icon" type="image/png" sizes="192x192" href="<?php echo get_template_directory_uri() ?>/img/favicons/android-chrome-192x192.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri() ?>/img/favicons/favicon-16x16.png">
-		<link rel="manifest" href="<?php echo get_template_directory_uri() ?>/img/favicons/manifest.json">
-		<link rel="mask-icon" href="<?php echo get_template_directory_uri() ?>/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+		<link rel="apple-touch-icon" sizes="57x57" href="<?php echo get_template_directory_uri() ?>/static/img/favicons/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="<?php echo get_template_directory_uri() ?>/static/img/favicons/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_template_directory_uri() ?>/static/img/favicons/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="<?php echo get_template_directory_uri() ?>/static/img/favicons/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_template_directory_uri() ?>/static/img/favicons/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="<?php echo get_template_directory_uri() ?>/static/img/favicons/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="<?php echo get_template_directory_uri() ?>/static/img/favicons/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="<?php echo get_template_directory_uri() ?>/static/img/favicons/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri() ?>/static/img/favicons/apple-touch-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri() ?>/static/img/favicons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="194x194" href="<?php echo get_template_directory_uri() ?>/static/img/favicons/favicon-194x194.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="<?php echo get_template_directory_uri() ?>/static/img/favicons/android-chrome-192x192.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri() ?>/static/img/favicons/favicon-16x16.png">
+		<link rel="manifest" href="<?php echo get_template_directory_uri() ?>/static/img/favicons/manifest.json">
+		<link rel="mask-icon" href="<?php echo get_template_directory_uri() ?>/static/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
 		<meta name="msapplication-TileColor" content="#ffffff">
-		<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri() ?>/img/favicons/mstile-144x144.png">
+		<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri() ?>/static/img/favicons/mstile-144x144.png">
 		<meta name="theme-color" content="#ffffff">
 
 		<?php

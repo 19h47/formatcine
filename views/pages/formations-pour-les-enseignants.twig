@@ -53,16 +53,16 @@
 		<div class="row">
 			<div class="col-xs-12 text-xs-center">
 				<h2 class="Site-title-underline">
-					Stages et formations
+					{{- __( 'Stages et formations' ) }}
 				</h2>
 			</div>
 		</div>
 	</div>
 
 	<div class="Site-container Adult-training">
-		<div class="row">
+		<div class="row row-eq-height">
 			{% for adult_training in adult_trainings %}
-				<div class="col-xs-6">
+				<div class="col-xs-12 col-md-6">
 					<article class="Adult-training-teachers">
 						{# <pre>{{adult_training|print_r}}</pre> #}
 						{% if adult_training.thumbnail %}
@@ -99,6 +99,20 @@
 			{% endfor %}
 		</div>
 	</div>
+
+	<div class="Site-container Adult-training-conclusion">
+		<div class="row">
+			<div class="col-xs-12 color-main">
+				<p><span>+</span></p>
+				<p>
+					En plus de ces stages, l'association Format'Ciné offre la possibilité d'assister à la rencontre professionnelle organisée par la NEF Animation en octobre à l'abbaye de Fontevraud.
+				</p>
+			</div>
+		</div>
+	</div>
+	
+	{% include 'partials/adult-training-comments.twig' with { taxonomy: 35 } %}
+
 {% endblock %}
 
 

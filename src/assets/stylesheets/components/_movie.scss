@@ -104,7 +104,7 @@
 	&__meta {
 		@extend %uppercase, %font-extrabold;
 		@include font( 15.99, 21.52, 100 );
-		@include margin( top $grid-gutter-width / 1.5 bottom 40px );
+		@include margin( top $grid-gutter-width / 1.5 bottom $grid-gutter-width );
 
 		color: the_color( gray, very-dark-mostly-black );
 	}
@@ -117,6 +117,7 @@
 	 */
 	&__summary {
 		@include font( 16.01, 20.01 );
+		@include margin( top $grid-gutter-width );
 
 		color: the_color( gray, very-dark );
 	}
@@ -130,5 +131,78 @@
 	&__review {
 		@extend %font-extrabold;
 		@include font( 16.01, 20.01 );
+	}
+
+
+	/**
+	 * Document
+	 *
+	 * @uses .Movie__document
+	 */
+	&__document {
+		@extend %display-xs-inline-block, %font-semibold, %Transition-ease;
+		@include autoAlpha( 0 );
+		@include font( 13.74, 29.45, 25 );
+		@include margin( right 20px left 20 px );
+		@include padding( right 5px left 5px );
+
+		border: {
+			style: solid;
+			width: 1px;
+		}
+
+		&:hover {
+			color: the_color( white );
+		}
+
+		&:first-child { @include margin( left 0 ); }
+		&:last-child { @include margin( right 0 ); }
+
+		@at-root 
+				.slick-active &,
+				.slick-center & { @include autoAlpha( 1 ); }
+	}
+
+
+	/**
+	 * Documents
+	 *
+	 * @uses .Movie__documents
+	 */
+	&__documents {}
+
+
+
+	/**
+	 * Trailer
+	 *
+	 * @uses .Movie__trailer
+	 */
+	&__trailer {
+		@extend %Transition-ease;
+		@include autoAlpha( 0 );
+
+		font-size: 13.95px;
+		line-height: normal;
+		color: the_color( gray, dark );
+
+		&::before {
+			@extend %display-xs-inline-block;
+			@include margin( right 5px );
+			@include size( 15px, 10px );
+
+			background: {
+				image: url( '#{ map-get( $directories, svg ) }youtube.svg' );
+			}
+			content: '';
+		}
+		
+		&:hover {
+			text-decoration: underline;
+		}
+
+		@at-root 
+				.slick-active &,
+				.slick-center & { @include autoAlpha( 1 ); }
 	}
 }

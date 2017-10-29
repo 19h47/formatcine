@@ -12,7 +12,7 @@
 	 */
 	&-description {
 		@include margin( top 7px bottom 0 );
-		@extend %uppercase, %margin-xs-bottom-0;
+		@extend %uppercase, %margin-xs-bottom-0, %font-semibold;
 		@include letter-spacing( 100 );
 
 		font-size: 18.01px;
@@ -42,6 +42,8 @@
 				width: 3px;
 			}
 		}
+
+		br { @extend %display-xs-none, %display-md-inline; }
 	}
 
 
@@ -81,6 +83,7 @@
 		&-button {
 			@include absolute( top 0 left 0 );
 			@include size( 50px );
+			@include margin( left $grid-gutter-width );
 
 			svg {
 				@extend %display-xs-inline-block, %vertical-align-middle;
@@ -99,6 +102,7 @@
 		&-contact {
 			@extend %text-xs-right;
 			@include absolute( top 0 right 0 );
+			@include margin( right $grid-gutter-width );
 
 			color: the_color( gray, dark );
 
@@ -127,7 +131,7 @@
 	 * @uses .Site-footer
 	 */
 	&-footer {
-		@extend %text-xs-center, %font-regular;
+		@extend %text-xs-center, %font-semibold;
 		@include padding( top 22.5px bottom 22.5px );
 		
 		color: the_color( white );

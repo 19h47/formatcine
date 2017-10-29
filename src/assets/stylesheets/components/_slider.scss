@@ -44,7 +44,17 @@
 			%display-xs-inline-block, 
 			%vertical-align-middle,
 			%Pointer-events-none;
-		@include margin( top 64px right auto bottom 64px left auto );
+		@include margin( 
+			top 64px 
+			right auto 
+			bottom 64px 
+			left auto 
+		);
+		@include padding( 
+			right $grid-gutter-width / 2 
+			left $grid-gutter-width / 2 
+		);
+
 		max-width: 100%;
 		max-height: 100%;
 

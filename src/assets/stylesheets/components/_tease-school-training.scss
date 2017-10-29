@@ -84,7 +84,7 @@
 	}
 
 	&__read-more {
-		@extend %font-semibold, %Transition-ease, %display-xs-inline-block;
+		@extend %font-semibold, %Transition-ease, %display-xs-block, %display-md-inline-block, %text-xs-center;
 		@include font( 13.76, 25, 25 );
 		@include padding( right 5px left 5px );
 		@include margin( top 25px );
@@ -95,10 +95,15 @@
 			width: 1px;
 		}
 		color: the_color( gray, very-dark-mostly-black );
+		width: 100%;
+
+		@include from( 'md' ) {
+			width: auto;
+		}
 
 		&:hover {
-			background: { color: the_color( gray, very-dark-mostly-black ); }
-			border: { color: the_color( gray, very-dark-mostly-black ); }
+			// background: { color: the_color( gray, very-dark-mostly-black ); }
+			// border: { color: the_color( gray, very-dark-mostly-black ); }
 			color: the_color( white );
 		}
 

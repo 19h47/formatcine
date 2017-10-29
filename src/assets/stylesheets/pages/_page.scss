@@ -43,13 +43,20 @@
 		@include margin( bottom $grid-gutter-width * 2 );
 		&__item {
 			@extend %display-xs-inline-block, %uppercase, %font-extrabold, %Transition-ease;
-			@include margin( top 0 right 20px bottom 0 left 20px );
 			@include padding( right 10px left 10px );
 			@include font( 18, 30, 50 );
 
 			color: the_color( white );
+			width: 100%;
 
+			@include from( 'md' ) {
+				@include margin( top 0 right 20px bottom 0 left 20px );
+				
+				width: auto;
 
+				&:first-child { @include margin( left 0 ); }
+				&:last-child { @include margin( right 0 ); }
+			}
 			
 			&:not(&--is-active) {
 				background: { color: transparent; }
@@ -59,9 +66,6 @@
 			&:hover {
 				color: the_color( white );
 			}
-			
-			&:first-child { @include margin( left 0 ); }
-			&:last-child { @include margin( right 0 ); }
 		}
 	}
 
@@ -75,5 +79,28 @@
 	&-introduction {
 		@extend %text-xs-center;
 		@include margin( top $grid-gutter-width * 2 bottom $grid-gutter-width * 2 );
+	}
+
+
+	/**
+	 * Button
+	 *
+	 * @uses .Page-button
+	 */
+	&-button {
+		@extend %font-extrabold, %uppercase, %Transition-ease, %display-xs-inline-block;
+		@include font( 18, 30, 50 );
+		@include padding( top 3px right 10px bottom 3px left 10px );
+		@include margin( bottom 100px );
+
+		border: {
+			width: 2px;
+			style: solid;
+		}
+		color: the_color( white );
+
+		&:hover {
+			background: { color: transparent; }
+		}
 	}
 }

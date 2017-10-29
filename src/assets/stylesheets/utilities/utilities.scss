@@ -173,3 +173,18 @@
 .outline-none {
     outline: none;
 }
+
+
+.row-eq-height {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > [class*="col-"] {
+        display: flex;
+
+        &.align-self-flex-end {
+            
+            align-self: flex-end;
+        }
+    }
+}

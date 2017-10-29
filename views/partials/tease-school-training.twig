@@ -25,8 +25,11 @@
 				/>
 				{% endif %}
 			</div>
-
-			<p class="Tease-school-training__date">{{ school_training.formation_date|date( 'l j F Y' ) }}</p>
+			
+			{# Date #}
+			<p class="Tease-school-training__date">
+				{{- school_training.formation_date | date( 'l j F Y' ) -}}
+			</p>
 			
 			{% set movies = [] %}
 			{% set directors = [] %}
@@ -48,8 +51,11 @@
 			{{ movies ? '<h3 class="Tease-school-training__title">' ~ movies | join( ', ' ) ~ '</h3>' : '' }}
 			{{ directors ? '<p class="Tease-school-training__director">De&nbsp;' ~ directors | join(', ') ~ '</p>' : '' }}
 
-			<a href="" class="Tease-school-training__read-more color-secondary">
-				Programme
+			<a 
+				href="" 
+				class="Tease-school-training__read-more color-secondary background-color-secondary-hover border-color-secondary-hover"
+			>
+				{{- __( 'Programme' ) -}}
 				<svg class="Tease-school-training__read-more__icon">
 				  	<use xlink:href="{{ theme.link }}/public/icons.svg#arrow"></use>
 				</svg>
