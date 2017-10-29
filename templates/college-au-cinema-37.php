@@ -30,7 +30,13 @@ $context['school_trainings'] = Timber::get_posts(
 
 
 // School classes
-$school_classes = get_terms( array( 'taxonomy' => 'school_class', 'hide_empty' => false ) );
+$school_classes = get_terms( 
+	array( 
+		'taxonomy' 		=> 'school_class', 
+		'hide_empty' 	=> false,
+		'orderby'       => 'menu_order'
+	) 
+);
 
 $context['school_classes'] = array( 
 	'sixieme-cinquieme' 	=> array(
@@ -56,6 +62,8 @@ foreach ( $school_classes as $school_class) {
 		array_push($context['school_classes']['quatrieme-troisieme']['names'], $school_class->name);
 	}	
 }
+
+// var_dump($school_classes);
 
 
 // Programming
