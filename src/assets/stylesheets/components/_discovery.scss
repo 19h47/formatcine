@@ -41,6 +41,11 @@
 	 */
 	.item {
 		@extend %text-xs-center;
+		@include margin( top $grid-gutter-width bottom $grid-gutter-width );
+
+		@include from( 'md' ) {
+			@include margin( top 0 bottom 0 );
+		}
 
 		.pictogram {
 			@extend %display-xs-inline-block, %vertical-align-middle;

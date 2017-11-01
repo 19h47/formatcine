@@ -20,7 +20,15 @@
 
 	{# Post content #}
 	{% if post.post_content %}
-		{% include 'components/post-content.twig' %}
+		<div class="Page-post-content Site-container">
+			<div class="row">
+				<div class="col-xs-12 col-md-10 col-md-offset-1">
+					
+					{{- post.content -}}
+
+				</div>
+			</div>
+		</div>
 	{% endif %}
 
 	

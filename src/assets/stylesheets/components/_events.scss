@@ -42,7 +42,11 @@
 	&-filters {
 		@extend %list-unstyled, %margin-md-y-0, %text-md-right;
 
-		@include margin( top 0 bottom $grid-gutter-width );
+		@include margin( top $grid-gutter-width bottom $grid-gutter-width );
+
+		@include from( 'md' ) {
+			@include margin( top 0 );
+		}
 
 		.item {
 			@extend %display-xs-block, %display-md-inline-block, %margin-xs-y-0;

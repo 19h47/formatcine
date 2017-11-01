@@ -3,8 +3,12 @@
  */
 .Slider {
 
-	height: 550px;
+	// height: 225px;
+	
+	@include from( 'sm' ) {
 
+		height: 550px;	
+	}
 
 	/**
 	 * Title
@@ -40,24 +44,51 @@
 	 */
 	.image {
 		@extend 
-			%Position-absolute-center, 
-			%display-xs-inline-block, 
-			%vertical-align-middle,
+			// %Position-absolute-center, 
+			%display-xs-block,
 			%Pointer-events-none;
 		@include margin( 
-			top 64px 
 			right auto 
-			bottom 64px 
-			left auto 
-		);
-		@include padding( 
-			right $grid-gutter-width / 2 
-			left $grid-gutter-width / 2 
+			left auto
 		);
 
 		max-width: 100%;
 		max-height: 100%;
 
 		object-fit: contain;
+	}
+
+
+	&-images {
+		@extend %Position-absolute-center;
+		@include margin( 
+			top 64px 
+			bottom 64px  
+		);
+		@include padding( 
+			right $grid-gutter-width / 2 
+			left $grid-gutter-width / 2 
+		);
+
+		.slick-list {
+			height: 100%;
+		}
+	}
+
+
+	/**
+	 * Image moblile
+	 */
+	.image-mobile {
+		@extend %display-md-none;
+		@include margin( 
+			top $grid-gutter-width 
+			bottom $grid-gutter-width 
+		);
+		@include padding( 
+			right $grid-gutter-width 
+			left $grid-gutter-width 
+		);
+		@include size( 100%, auto );
 	}
 }

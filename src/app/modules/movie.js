@@ -1,6 +1,6 @@
 // Movies slider
 const sliders = document.querySelectorAll('.js-movie-slider');
-console.log(sliders);
+// console.log(sliders);
 sliders.forEach((slider) => {
 	const $slider = $(slider);
 
@@ -22,32 +22,36 @@ sliders.forEach((slider) => {
 	});
 });
 
+
 const filters = document.querySelectorAll('.js-movie-filter');
 const containers = document.querySelectorAll('.js-movie-slider');
 
-filters.forEach((filter) => {
-	filter.addEventListener('click', function () {
-		if (this.classList.contains('is-active')) {
-			return;
-		}
+function activeFilter() {
+	if (this.classList.contains('is-active')) {
+		return;
+	}
 
-		const schoolClasses = JSON.parse(this.dataset.schoolClass);
-		let currentContainer = null;
+	const schoolClasses = JSON.parse(this.dataset.schoolClass);
+	let currentContainer = null;
 
-		filters.forEach((e) => {
-			e.classList.remove('is-active');
-		});
+	filters.forEach((e) => {
+		e.classList.remove('is-active');
+	});
 
-		this.classList.add('is-active');
+	this.classList.add('is-active');
 
-		containers.forEach((e) => {
-			const categories = JSON.parse(e.dataset.schoolClass);
-			e.classList.remove('is-active');
+	containers.forEach((e) => {
+		const categories = JSON.parse(e.dataset.schoolClass);
+		e.classList.remove('is-active');
 
-			schoolClasses.some((el) => {
-				currentContainer = e;
-				return categories.indexOf(el) >= 0 ? currentContainer.classList.add('is-active') : '';
-			});
+		schoolClasses.some((el) => {
+			currentContainer = e;
+			return categories.indexOf(el) >= 0 ? currentContainer.classList.add('is-active') : '';
 		});
 	});
+}
+
+
+filters.forEach((filter) => {
+	filter.addEventListener('click', activeFilter);
 });

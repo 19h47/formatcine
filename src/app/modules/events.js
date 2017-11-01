@@ -16,7 +16,7 @@ function Events(element) {
 	this.element = document.querySelector(element);
 
 	if (!this.element) {
-		return;
+		return false;
 	}
 
 	this.container = this.element.querySelectorAll('.js-events-container')[0];

@@ -14,8 +14,22 @@
 		 */
 		&-title {
 			h1 {
-				@extend %uppercase, %margin-xs-y-0, %text-xs-center;
-				@include font( 50, normal, 50 );
+				@extend %uppercase, %margin-xs-top-0, %text-xs-center;
+				@include letter-spacing( 50 );
+				@include margin( bottom $grid-gutter-width * 2 );
+				font-size: 25px;
+
+				// @include responsive-font(
+				// 	( 50 * 100 ) / $psd-width-unitless, 
+				// 	10px,
+				// 	50px
+				// );
+
+				line-height: normal;
+
+				@include from( 'md' ) {
+					font-size: 50px;
+				}
 			}
 		}
 
@@ -30,6 +44,29 @@
 			@include font( 18.01, 32.01, 100 );
 
 			color: the_color( gray, dark );
+
+			@at-root .page-template-default & {
+				@include margin( bottom 90px );
+
+				p {
+					@extend %font-semibold;
+					@include font( 15.98, 19.98 );
+					@include letter-spacing( 0 );
+					
+					color: the_color( gray, very-dark );
+					text-transform: none;
+				}
+
+				h2 {
+					@extend %uppercase;
+					@include font( 17.99, 29.99, 100 );
+					@include margin( bottom 0 );
+
+					color: the_color( gray, dark );
+				}
+
+				h2 + p { @include margin( top 0 ); }
+			}
 		}
 	}
 

@@ -22,7 +22,9 @@
 		@include margin( 
 			bottom $grid-gutter-width 
 		);
+
 		background-color: the_color( gray, very-light );
+	    height: 100%;
 		
 		
 		/**

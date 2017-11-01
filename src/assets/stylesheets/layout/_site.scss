@@ -33,6 +33,7 @@
 			%display-xs-inline,
 			%margin-xs-y-0;
 		@include font( 30, 55, 50 );
+		
 
 		color: the_color( gray, very-dark-mostly-black );
 		border: {
@@ -42,6 +43,8 @@
 				width: 3px;
 			}
 		}
+
+		// @include from( 'md' ) {}
 
 		br { @extend %display-xs-none, %display-md-inline; }
 	}
@@ -82,14 +85,25 @@
 		 */
 		&-button {
 			@include absolute( top 0 left 0 );
-			@include size( 50px );
+			@include size( $grid-gutter-width );
 			@include margin( left $grid-gutter-width );
+
+			z-index: 1;
+
+			@include from( 'md' ) {
+				@include size( 50px );
+			}
 
 			svg {
 				@extend %display-xs-inline-block, %vertical-align-middle;
 
-				max-width: 50px;
-				max-height: 50px;
+				max-width: $grid-gutter-width;
+				max-height: $grid-gutter-width;
+
+				@include from( 'md' ) {
+					max-width: 50px;
+					max-height: 50px;					
+				}
 			}
 		}
 
@@ -100,11 +114,15 @@
 		 * @uses .Site-header-contact
 		 */
 		&-contact {
-			@extend %text-xs-right;
-			@include absolute( top 0 right 0 );
-			@include margin( right $grid-gutter-width );
+			@extend %text-xs-center, %text-md-right;
+			@include margin( top $grid-gutter-width );
 
 			color: the_color( gray, dark );
+
+			@include from( 'md' ) {
+				@include margin( top 0 right $grid-gutter-width );
+				@include absolute( top 0 right 0 );
+			}
 
 			&__address {
 				@extend %font-semibold;

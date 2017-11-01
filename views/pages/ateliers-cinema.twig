@@ -16,13 +16,6 @@
 {% block content %}
 	
 	{{ parent() }}
-
-	
-	{# Post content #}
-	{% if post.post_content %}
-		{% include 'components/post-content.twig' %}
-	{% endif %}
-	
 	
 	<div class="Site-container">
 		<div class="row">

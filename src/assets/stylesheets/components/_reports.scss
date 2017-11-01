@@ -72,9 +72,9 @@
 		}
 
 		&:hover {
-			color: the_color( gray, very-dark-mostly-black );
+			// color: the_color( gray, very-dark-mostly-black );
 			background: { color: transparent; }
-			border: { color: the_color( gray, very-dark-mostly-black ); }
+			// border: { color: the_color( gray, very-dark-mostly-black ); }
 		}
 	}
 }

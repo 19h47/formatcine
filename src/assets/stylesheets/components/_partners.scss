@@ -1,0 +1,20 @@
+/**
+ * Partners
+ *
+ * @uses .Partners
+ */
+.Partners {
+	@include margin( bottom 90px );
+	
+	/**
+	 * Partners-item
+	 *
+	 * @uses .Partners-item
+	 */
+	&-item {
+		@extend %uppercase, %font-semibold, %display-xs-block;
+		@include font( 18, 29.99, 100 );
+
+		color: the_color( gray, dark );
+	}
+}

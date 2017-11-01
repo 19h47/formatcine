@@ -17,10 +17,13 @@
 	&-inner {
 		@include padding( top 75px );
 
-		border: {
-			style: solid;
-			width: 25px 25px 0 25px;
+		@include from( 'md' ) {		
+			border: {
+				style: solid;
+				width: 25px 25px 0 25px;
+			}
 		}
+
 
 	}
 
@@ -30,13 +33,22 @@
 	 * @uses .Menu-button
 	 */
 	&-button {
-		@include size( 50px );
+		@include size( $grid-gutter-width );
+
+		@include from( 'md' ) {
+			@include size( 50px );
+		}
 
 		svg {
 			@extend %display-xs-inline-block, %vertical-align-middle;
 
-			max-width: 50px;
-			max-height: 50px;
+			max-width: $grid-gutter-width;
+			max-height: $grid-gutter-width;
+
+			@include from( 'md' ) {
+				max-width: 50px;
+				max-height: 50px;
+			}
 		}
 	}
 	
@@ -47,7 +59,11 @@
 	 */
 	&-items {
 		@extend %list-unstyled, %margin-xs-bottom-0, %text-xs-center;
-		@include margin( bottom 50px );
+		@include margin( bottom $grid-gutter-width );
+
+		@include from( 'md' ) {
+			@include margin( bottom 50px );			
+		}
 	}
 
 
@@ -58,16 +74,29 @@
 	 */
 	&-item {
 		@extend %font-extrabold, %uppercase, %margin-xs-top-0;
-		@include font( 29.99, 39.87, 50 );
-		@include margin( bottom $grid-gutter-width );
+		@include font( 16, 39.87, 50 );
+		@include margin( bottom $grid-gutter-width / 2 );
 
 		color: the_color( white );
 
+		@include from( 'md' ) {	
+			@include font( 29.99, 39.87, 50 );
+			@include margin( bottom $grid-gutter-width );
+		}
+
 		&--is-current {}
 		&--has-children {
-			@include font( 29.98, 54.96, 50 );
+			@include font( 16, 54.96, 50 );
 
+			@include from( 'md' ) {	
+				@include font( 29.98, 54.96, 50 );
+			}
+			
 			color: the_color( gray, very-dark-mostly-black );
+
+			.Site-title-underline {
+				@include between( 'xs', 'sm' ) { @include font( 16, 55, 50 ); }
+			}
 		}
 	}
 
@@ -89,9 +118,13 @@
 	 */
 	&-children {
 		@extend %margin-xs-y-0;
-		@include font( 30, 40, 50 );
+		@include font( 16, 40, 50 );
 
 		color: the_color( white );
+
+		@include from( 'md' ) {
+			@include font( 30, 40, 50 );
+		}
 	}
 
 
@@ -124,7 +157,7 @@
 	 * @uses .Menu-footer
 	 */
 	&-footer {
-		@extend %text-xs-center;
+		@extend %text-xs-center, %font-semibold;
 		@include margin( top 140px );
 
 		color: the_color( white );

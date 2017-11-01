@@ -10,10 +10,15 @@
 		@extend %display-xs-inline-block, %text-xs-center, %w-xs-100;
 		@include margin( 
 			top 50px 
-			right $grid-gutter-width
 			bottom 50px 
-			left $grid-gutter-width
 		);
+
+		@include from( 'md' ) {
+			@include margin( 
+				right $grid-gutter-width
+				left $grid-gutter-width
+			);			
+		}
 
 		svg {
 			@extend %Transition-ease;

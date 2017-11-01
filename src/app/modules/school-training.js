@@ -16,7 +16,7 @@ function SchoolTraining(element) {
 	this.element = document.querySelector(element);
 
 	if (!this.element) {
-		return;
+		return false;
 	}
 
 	this.container = this.element.querySelector('.js-school-trainings-container');
