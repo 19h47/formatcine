@@ -61,13 +61,26 @@
 			{% for discovery in post.get_field('discoveries') %}
 				<div class="col-xs-12 col-md-4">
 					<article class="item">
-						{% spaceless %}
-							
-						<img class="pictogram" src="{{ Image( discovery.pictogram ).src }}" alt="" /><br>
-						<h3 class="title">{{- discovery.title -}}</h3><br>
+						{# {% spaceless %} #}
+						
+						{{ discovery.link ? '<a href="' ~ discovery.link ~ '">' : '' }}
+						
+						<img class="pictogram" src="{{ Image( discovery.pictogram ).src }}" alt="" />
+						
+						{{ discovery.link ? '</a>' : '' }}
+
+						<br>
+
+						{{ discovery.link ? '<a href="' ~ discovery.link ~ '">' : '' }}
+						<h3 class="title">
+								{{- discovery.title -}}
+						</h3>
+						{{ discovery.link ? '</a>' : '' }}
+						<br>
+
 						<p class="description">{{- discovery.description -}}</p>
 
-						{% endspaceless %}
+						{# {% endspaceless %} #}
 					</article>
 				</div>
 			{% endfor %}
