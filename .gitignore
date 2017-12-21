@@ -37,6 +37,7 @@ ehthumbs.db
 Thumbs.db
 
 src/prototypes/
+static/prototypes/
 vendor/
 node_modules/
 public/
