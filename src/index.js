@@ -6,6 +6,7 @@ import guid from './app/modules/guid';
 import Menu from './app/modules/Menu';
 import './app/modules/movie';
 import './app/modules/adult-training';
+import './app/modules/home';
 
 window.app = new App();
 
