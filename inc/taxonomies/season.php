@@ -32,12 +32,12 @@ class Season {
 	 */
 	public function __construct( $theme_name, $theme_version ) {
 		$this->theme_name = $theme_name;
-        $this->theme_version = $theme_version;
+        	$this->theme_version = $theme_version;
 
-        add_action( 'init', array( $this, 'register_taxonomy' ) );
+        	add_action( 'init', array( $this, 'register_taxonomy' ) );
 
-        add_action( 'manage_edit-season_columns', array( $this, 'add_custom_columns' ) );
-        add_action( 'manage_season_custom_column', array( $this, 'render_custom_columns' ),  10, 3 );
+        	add_action( 'manage_edit-season_columns', array( $this, 'add_custom_columns' ) );
+        	add_action( 'manage_season_custom_column', array( $this, 'render_custom_columns' ),  10, 3 );
 	}
 
 
@@ -76,55 +76,55 @@ class Season {
     public function render_custom_columns( $content, $column_name, $term_id ) {
 
  
-        switch ( $column_name ) {
+	switch ( $column_name ) {
 
-    	    case 'training' :
+    		case 'training' :
 
-    	    	$query = new WP_Query( 
-    	    		array( 
-    	    			'post_type'	=> 'training',
-    	    			'tax_query' => array(
-	    					array(
+			$query = new WP_Query( 
+				array( 
+					'post_type'	=> 'training',
+					'tax_query' 	=> array(
+						array(
+							'taxonomy' => 'season',
+							'field'    => 'id',
+							'terms'    => $term_id
+						),
+					) 
+				) 
+			);
+
+			if ( $query ) {
+				echo (int) $query->post_count;
+			} else {
+				echo '—';
+			}
+
+			break;
+
+		case 'programming' :
+
+			$query = new WP_Query( 
+				array( 
+					'post_type'	=> 'programming',
+					'tax_query' => array(
+						array(
 	    						'taxonomy' => 'season',
 	    						'field'    => 'id',
 	    						'terms'    => $term_id
 	    					),
 	    				) 
-    	    		) 
-    	    	);
+				) 
+			);
 
-    	    	if ( $query ) {
-    	    		echo (int) $query->post_count;
-    	    	} else {
-    	    		echo '—';
-    	    	}
+			if ( $query ) {
+				echo (int) $query->post_count;
+			} else {
+				echo '—';
+			}
 
-    			break;
-
-		    case 'programming' :
-
-    	    	$query = new WP_Query( 
-    	    		array( 
-    	    			'post_type'	=> 'programming',
-    	    			'tax_query' => array(
-	    					array(
-	    						'taxonomy' => 'season',
-	    						'field'    => 'id',
-	    						'terms'    => $term_id
-	    					),
-	    				) 
-    	    		) 
-    	    	);
-
-    	    	if ( $query ) {
-    	    		echo (int) $query->post_count;
-    	    	} else {
-    	    		echo '—';
-    	    	}
-
-    			break;
-        }
-    }
+			break;
+		}
+	}
 	
 
 	// Register Custom Taxonomy
