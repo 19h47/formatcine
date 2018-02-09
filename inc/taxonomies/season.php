@@ -54,13 +54,13 @@ class Season {
 	  	
 	  	foreach( $columns as $key => $value ) {
 	        
-	        if ( $key === 'posts' ) {
-	          	$new_columns['programming'] = __( 'Programmation' );
-	          	$new_columns['training'] = __( 'Formation' );
-	        }
+			if ( $key === 'posts' ) {
+				$new_columns['programming'] = __( 'Programmation' );
+				$new_columns['training'] = __( 'Formation' );
+			}
 
 
-	      	$new_columns[$key] = $value;
+			$new_columns[$key] = $value;
 	  	}
 
 	  	return $new_columns;
