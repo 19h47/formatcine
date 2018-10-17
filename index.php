@@ -3,7 +3,7 @@
  * /index
  *
  * @package  	WordPress
- * @subpackage  jveb
+ * @subpackage  frmcn
  * @author   	Jérémy Levron levronjeremy@19h47.fr
  */
 
