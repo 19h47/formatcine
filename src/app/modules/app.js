@@ -35,7 +35,7 @@ class App {
 
 	/**
 	 * App.enableScroll
-	 * 
+	 *
 	 * @param  position
 	 */
 	static enableScroll(position) {
@@ -64,7 +64,7 @@ class App {
 
 	/**
 	 * App.resetScroll
-	 * 
+	 *
 	 * @param  positionX
 	 * @param  positionY
 	 */

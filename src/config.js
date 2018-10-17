@@ -1,7 +1,7 @@
 
 /**
  * Config object
- * 
+ *
  * global shared variables
  */
 export default {
