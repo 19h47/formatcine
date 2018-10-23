@@ -4,7 +4,7 @@
  *
  * @package 	WordPress
  * @subpackage 	19h47
- * @author 		Jérémy Levron levronjeremy@19h47.fr
+ * @author 		Jérémy Levron <jeremylevron@19h47.fr>
  */
 #}
 {% extends 'index.twig' %}
@@ -14,37 +14,36 @@
 
 
 {% block content %}
-	
-	{{ parent() }}
-	
+
+	{{- parent() -}}
+
 	<div class="Site-container">
 		<div class="row">
 
 			{% for workshop in post.get_field( 'workshops' ) %}
-				{# <pre>{{ workshop.document|print_r }}</pre> #}
+
 				<div class="col-xs-12 col-md-4">
 
-					<a class="Workshops-link" href="{{ workshop.document.url }}" title="{{ workshop.document.title }}">
+					<a class="Workshops-link" target="_blank" href="{{ workshop.document.url }}" title="{{ workshop.document.title }}">
 
-						{# {{ theme.link ~ '/static/img/svg/' ~ workshop.name | slugify ~ '.svg' }} #}
 						<div>
 							<svg class="">
-							  	<use xlink:href="{{ theme.link }}/public/icons.svg#{{ workshop.name | slugify }}"></use>
+								  <use xlink:href="{{ theme.link }}/public/icons.svg#{{ workshop.icon }}"></use>
 							</svg>
 						</div>
-						
-						
+
+
 						<p class="Workshops-link__label">{{- workshop.name -}}</p>
-						
+
 					</a>
 
 				</div>
 
-				{{ loop.index is divisible by( 3 ) and not loop.last ? '</div><div class="row">' }}
+				{{- loop.index is divisible by( 3 ) and not loop.last ? '</div><div class="row">' -}}
 
 			{% endfor %}
 
-		</div>				
+		</div>
 	</div>
 {% endblock %}
 

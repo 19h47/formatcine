@@ -1,10 +1,10 @@
 <?php
+
 /**
- * /index
- *
+ * @author   	Jérémy Levron <jeremylevron@19h47.fr> (http://19h47.fr)
+ * @file 		index.php
  * @package  	WordPress
- * @subpackage  frmcn
- * @author   	Jérémy Levron levronjeremy@19h47.fr
+ * @subpackage  frmtcn
  */
 
 

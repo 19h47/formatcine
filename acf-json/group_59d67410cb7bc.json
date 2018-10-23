@@ -1,0 +1,116 @@
+{
+    "key": "group_59d67410cb7bc",
+    "title": "Les ateliers",
+    "fields": [
+        {
+            "key": "field_59d67421481a8",
+            "label": "Ateliers",
+            "name": "workshops",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_59d67441481a9",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Ajouter un atelier",
+            "sub_fields": [
+                {
+                    "key": "field_59d67441481a9",
+                    "label": "Nom",
+                    "name": "name",
+                    "type": "text",
+                    "instructions": "Indiquer le nom de l'atelier",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Nom de l'atelier",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5bcef3acb5ac5",
+                    "label": "Icône",
+                    "name": "icon",
+                    "type": "select",
+                    "instructions": "Choisir l'icône",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "cine-gouter": "Ciné goûter",
+                        "cinema-d-animation-en-centre-de-loisir": "Cinéma d'animation en centre de loisir",
+                        "cinema-d-animation-en-famille": "Cinéma d'animation en famille",
+                        "cinema-d-animation-en-t-a-p": "Cinéma d'animation en TAP",
+                        "la-bande-son-au-college": "La bande son au collège",
+                        "la-table-mashup": "La table mashup",
+                        "le-documentaire-au-college": "Le documentaire au collège",
+                        "realisation-d-un-film-au-college": "Réalisation d'un film au collège"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "return_format": "value",
+                    "ajax": 0,
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_59d67460481aa",
+                    "label": "Document",
+                    "name": "document",
+                    "type": "file",
+                    "instructions": "Télécharger le document lié à l'atelier",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "157"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "featured_image"
+    ],
+    "active": 1,
+    "description": "Options de la page Ateliers cinéma",
+    "modified": 1540291457
+}

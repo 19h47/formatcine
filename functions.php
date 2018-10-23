@@ -4,13 +4,13 @@
  *
  * @see https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package WordPress
- * @subpackage pup
- * @since 1.0
+ * @package     WordPress
+ * @subpackage  frmtcn
+ * @since       1.0.0
  *
  * Functions'prefix is frmtcn_
  */
- 
+
 
 /**
  * Autoload
@@ -20,13 +20,13 @@ require_once( __DIR__ . '/vendor/autoload.php' );
 
 /**
  * Timber
- * 
+ *
  * Instanciate Timber
  *
  * @see         https://github.com/timber/timber
  * @version     1.3.0
  */
-$timber = new \Timber\Timber(); 
+$timber = new \Timber\Timber();
 
 
 
@@ -41,7 +41,7 @@ use Cocur\Slugify\Slugify;
 
 /**
  * Dirname
- * 
+ *
  * Tell Timber where are views
  */
 Timber::$dirname = array( 'views' );
@@ -84,13 +84,13 @@ class FRMTCN extends TimberSite {
 	 * @access public
 	 */
 	public function __construct( $theme_name, $theme_version ) {
-		
+
 		$this->theme_name = $theme_name;
 		$this->theme_version = $theme_version;
 
 		// Prod
-		// $this->theme_manifest = json_decode( 
-		//     file_get_contents( __DIR__ . '/public/manifest.json' ), 
+		// $this->theme_manifest = json_decode(
+		//     file_get_contents( __DIR__ . '/public/manifest.json' ),
 		//     true
 		// );
 
@@ -112,7 +112,7 @@ class FRMTCN extends TimberSite {
 
 	/**
 	 * Load dependencies description
-	 * 
+	 *
 	 * @access private
 	 */
 	private function load_dependencies() {
@@ -126,10 +126,10 @@ class FRMTCN extends TimberSite {
 		require_once get_template_directory() . '/inc/admin.php';
 		require_once get_template_directory() . '/inc/acf.php';
 
-	
+
 		new Custom_Post_Types( $this->get_theme_name(), $this->get_theme_version() );
 		new Custom_Taxonomies( $this->get_theme_name(), $this->get_theme_version() );
-		
+
 		if ( is_admin() ) new Admin( $this->get_theme_name(), $this->get_theme_version() );
 	}
 
@@ -200,7 +200,7 @@ class FRMTCN extends TimberSite {
 
 		// Add $socials to $context
 		$context['contact']['socials'] = $socials;
-		
+
 
 		// Address
 		if ( get_option( 'address' ) ) {
@@ -269,14 +269,14 @@ class FRMTCN extends TimberSite {
 			$context['contact']['shares'][$share['slug']] = $share;
 		}
 
-	   
+
 		return $context;
 	}
 
 
 	/**
 	 * Setup
-	 * 
+	 *
 	 * @access public
 	 */
 	public function setup() {
@@ -299,26 +299,26 @@ class FRMTCN extends TimberSite {
 		* Switch default core markup for search form, comment form, and comments
 		* to output valid HTML5.
 		*/
-		add_theme_support( 
-			'html5', 
+		add_theme_support(
+			'html5',
 			array(
 				'search-form',
 				'comment-form',
 				'comment-list',
 				'gallery',
 				'caption',
-			) 
+			)
 		);
 
 
 		/**
 		 * Register nav menus
 		 */
-		register_nav_menus( 
+		register_nav_menus(
 			array(
 				'main'          => __( 'Main' ),
 				// 'categories'    => __( 'Catégories' ),
-			) 
+			)
 		);
 
 
@@ -339,7 +339,7 @@ class FRMTCN extends TimberSite {
 		 * Add favicons
 		 */
 		add_action( 'wp_head', array( $this, 'favicons' ) );
-		
+
 		/**
 		 * Add main color in head
 		 */
@@ -350,7 +350,7 @@ class FRMTCN extends TimberSite {
 
 	/**
 	 * Main color CSS
-	 * 
+	 *
 	 */
 	function main_color() {
 		global $post;
@@ -358,12 +358,12 @@ class FRMTCN extends TimberSite {
 		// Just in case we need it later
 		$parent_id = get_post_ancestors( $post->ID );
 
-		$color_main = get_field( 'page_color_main', $post->ID ); 
+		$color_main = get_field( 'page_color_main', $post->ID );
 
 		// If page_color_main isn't set, maybe it has a parent ?
 		if ( $color_main === NULL && isset( $parent_id[0] ) ) {
-			
-			$color_main = get_field( 'page_color_main', $parent_id[0] );             
+
+			$color_main = get_field( 'page_color_main', $parent_id[0] );
 		}
 
 		// Maybe it hasn't at all
@@ -371,12 +371,12 @@ class FRMTCN extends TimberSite {
 			$color_main = '#000000';
 		}
 
-		$color_secondary = get_field( 'page_color_secondary', $post->ID ); 
+		$color_secondary = get_field( 'page_color_secondary', $post->ID );
 
 		// If page_color_secondary isn't set, maybe it has a parent ?
 		if ( $color_secondary === NULL && isset( $parent_id[0] ) ) {
-			
-			$color_secondary = get_field( 'page_color_secondary', $parent_id[0] );             
+
+			$color_secondary = get_field( 'page_color_secondary', $parent_id[0] );
 		}
 
 		// Maybe it hasn't at all
@@ -385,13 +385,13 @@ class FRMTCN extends TimberSite {
 		}
 
 
-		$color_ternary = get_field( 'page_color_ternary', $post->ID ); 
+		$color_ternary = get_field( 'page_color_ternary', $post->ID );
 
 
 		// If page_color_ternary isn't set, maybe it has a parent ?
 		if ( $color_ternary === NULL && isset( $parent_id[0] ) ) {
-			
-			$color_ternary = get_field( 'page_color_ternary', $parent_id[0] );             
+
+			$color_ternary = get_field( 'page_color_ternary', $parent_id[0] );
 		}
 
 		// Maybe it hasn't at all
@@ -407,13 +407,13 @@ class FRMTCN extends TimberSite {
 			.color-ternary { color: <?php echo $color_ternary ?>; }
 			.color-main-hover:hover { color: <?php echo $color_main ?>; }
 			.color-secondary-hover:hover { color: <?php echo $color_secondary ?>; }
-			
+
 			/* Border */
 			.border-color-main { border-color: <?php echo $color_main ?>; }
 			.border-color-main-hover:hover { border-color: <?php echo $color_main ?>; }
 			.border-color-secondary { border-color: <?php echo $color_secondary ?>; }
 			.border-color-secondary-hover:hover { border-color: <?php echo $color_secondary ?>; }
-			
+
 			/* Background */
 			.background-color-main { background-color: <?php echo $color_main ?>; }
 			.background-color-main-hover:hover { background-color: <?php echo $color_main ?>; }
@@ -434,7 +434,7 @@ class FRMTCN extends TimberSite {
 
 	/**
 	 * Enqueue styles.
-	 * 
+	 *
 	 * @access public
 	 */
 	public function enqueue_style() {
@@ -442,11 +442,11 @@ class FRMTCN extends TimberSite {
 		/**
 		 * Theme stylesheet
 		 */
-		wp_register_style(  
-			$this->theme_name . '-global', 
-			get_template_directory_uri() . '/public/' . $this->theme_manifest['main.css'], 
-			array(), 
-			null 
+		wp_register_style(
+			$this->theme_name . '-global',
+			get_template_directory_uri() . '/public/' . $this->theme_manifest['main.css'],
+			array(),
+			null
 		);
 
 
@@ -460,7 +460,7 @@ class FRMTCN extends TimberSite {
 	 * @access public
 	 */
 	public function enqueue_scripts() {
-		
+
 		/**
 		 * Remove wp-embed script from WordPress
 		 */
@@ -475,31 +475,31 @@ class FRMTCN extends TimberSite {
 
 
 		// Slick
-		
+
 		wp_register_script(
 			'slick',
 			'//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js',
 			array( 'jquery' ),
-			null, 
+			null,
 			true
 		);
-			
 
 
-		wp_register_script( 
-			$this->theme_name . '-main', 
-			get_template_directory_uri() . '/public/' . $this->theme_manifest['main.js'], 
-			array( 
+
+		wp_register_script(
+			$this->theme_name . '-main',
+			get_template_directory_uri() . '/public/' . $this->theme_manifest['main.js'],
+			array(
 				'jquery'
-			), 
-			null, 
-			true 
+			),
+			null,
+			true
 		);
 
 
-		wp_localize_script( 
-			$this->theme_name . '-main', 
-			'wp', 
+		wp_localize_script(
+			$this->theme_name . '-main',
+			'wp',
 			array(
 				'template_directory_uri'    => get_template_directory_uri(),
 				'base_url'                  => site_url(),
@@ -525,7 +525,7 @@ class FRMTCN extends TimberSite {
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/feature.js/1.0.1/feature.min.js"></script>
 		<script>
 			document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
-			
+
 			if (feature.touch && !navigator.userAgent.match(/Trident\/(6|7)\./)) {
 				document.documentElement.className = document.documentElement.className.replace('no-touch', 'touch');
 			}
@@ -564,7 +564,7 @@ class FRMTCN extends TimberSite {
 
 		<?php
 	}
-	
+
 
 
 	/**
