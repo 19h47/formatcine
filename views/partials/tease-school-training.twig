@@ -1,43 +1,43 @@
 {#
 	/**
 	 * /views/partials/tease-school-training
-	 * 
+	 *
 	 * @package WordPress
 	 * @subpackage 19h47
 	 * @author Jérémy Levron <jeremylevron@19h47.fr>
 	 */
-	
-#}	
+
+#}
 <div class="row">
 	{# <pre>{{school_trainings|print_r}}</pre> #}
 {% for school_training in school_trainings %}
-	
+
 	<div class="col-xs-12 col-md-4">
 		<article id="school_training-{{ school_training.id }}" class="Tease-school-training">
-			
+
 			<div class="Tease-school-training__thumbnail">
 				{% if school_training.thumbnail %}
-				<img 
-					src="{{ TimberImage( school_training ).src }}" 
-					alt="{{ TimberImage( school_training ).alt }}" 
+				<img
+					src="{{ TimberImage( school_training ).src }}"
+					alt="{{ TimberImage( school_training ).alt }}"
 					width="{{ TimberImage( school_training ).width }}"
-					height="{{ TimberImage( school_training ).height }}" 
+					height="{{ TimberImage( school_training ).height }}"
 				/>
 				{% endif %}
 			</div>
-			
+
 			{# Date #}
 			<p class="Tease-school-training__date">
 				{{- school_training.formation_date | date( 'l j F Y' ) -}}
 			</p>
-			
+
 			{% set movies = [] %}
 			{% set directors = [] %}
 
 			{% for movie in school_training.get_field( 'movies' ) %}
-				
+
 				{% set movies = movies | merge( [ movie.title ] ) %}
-				
+
 				{% for director in movie.get_field('director') %}
 					{% if loop.last and not loop.first %}
 						{% set directors = directors | merge( [ 'et ' ~ director.name ] ) %}
@@ -45,19 +45,19 @@
 						{% set directors = directors | merge( [ director.name ] ) %}
 					{% endif %}
 				{% endfor %}
-				
+
 			{% endfor %}
 
 			{{ movies ? '<h3 class="Tease-school-training__title">' ~ movies | join( ', ' ) ~ '</h3>' : '' }}
 			{{ directors ? '<p class="Tease-school-training__director">De&nbsp;' ~ directors | join(', ') ~ '</p>' : '' }}
 
-			<a 
-				href="{{ school_training.program }}" 
+			<a
+				href="{{ school_training.program }}"
 				class="Tease-school-training__read-more color-secondary background-color-secondary-hover border-color-secondary-hover"
 			>
 				{{- __( 'Programme' ) -}}
 				<svg class="Tease-school-training__read-more__icon">
-				  	<use xlink:href="{{ theme.link }}/public/icons.svg#arrow"></use>
+					<use xlink:href="{{ theme.link }}/dist/icons.svg#arrow"></use>
 				</svg>
 			</a>
 		</article>

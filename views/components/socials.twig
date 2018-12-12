@@ -7,14 +7,14 @@
 	 */
 #}
 <ul class="{{ prefix ? 'Socials Socials--' ~ prefix : 'Socials' }}">
-						
+
 	{% spaceless %}
-		
+
 	{% for social in contact.socials | sort %}
 		<li class="Socials-item{{ social.name ? ' ' ~ social.name }}">
 			<a href="{{ social.url }}">
 				<svg class="">
-				  	<use xlink:href="{{ theme.link }}/public/icons.svg#{{ social.slug }}"></use>
+					<use xlink:href="{{ theme.link }}/dist/icons.svg#{{ social.slug }}"></use>
 				</svg>
 			</a>
 		</li>
@@ -23,7 +23,7 @@
 	<li class="Socials-item">
 		<a href="mailto:{{ contact.email_addresses | first }}" target="_blank">
 			<svg class="">
-			  	<use xlink:href="{{ theme.link }}/public/icons.svg#envelope"></use>
+				  <use xlink:href="{{ theme.link }}/dist/icons.svg#envelope"></use>
 			</svg>
 		</a>
 	</li>

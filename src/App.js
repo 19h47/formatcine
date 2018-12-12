@@ -1,4 +1,4 @@
-import config from '../../config';
+import config from './config';
 
 
 /**
@@ -15,7 +15,9 @@ class App {
 	static disableScroll() {
 		const documentElementScrollLeft = document.documentElement.scrollLeft;
 		const documentElementScrollTop = document.documentElement.scrollTop;
+		// eslint-disable-next-line
 		const pageXOffset = self.pageXOffset;
+		// eslint-disable-next-line
 		const pageYOffset = self.pageYOffset;
 		const bodyScrollLeft = document.body.scrollLeft;
 		const bodyScrollTop = document.body.scrollTop;

@@ -7,7 +7,7 @@
  * Color variation
  *
  * Each colors used in the theme.
- * 
+ *
  * @uses the_color($key, $value) to retrieve color value
  * @type nested map
  * @see http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
@@ -15,7 +15,7 @@
  * @author Jérémy Levron <levronjeremy@19h47.fr>
  */
 $color-variations: (
-	
+
 	black: #000000,
 
 	// blanc (fond1)
@@ -32,7 +32,7 @@ $color-variations: (
 		// violet clair (contour, picto, menu, footer, fond événement)
 		moderate: #6666d5,
 
-  		// violet foncé (baseline logo, fond photo d'accueil, fond événement)
+		  // violet foncé (baseline logo, fond photo d'accueil, fond événement)
 		very-dark-desaturated: #343471
 	),
 	cyan: (
@@ -43,13 +43,13 @@ $color-variations: (
 	gray: (
 		// gris clair (infos header, chapeaux)
 		dark: #969696,
-		
+
 		// noir (titres)
 		very-dark-mostly-black: #1e1e1e,
-		
+
 		// gris foncé (textes)
 		very-dark: #646464,
-		
+
 		// gris très clair (fond2)
 		very-light: #ebebeb
 	),
@@ -58,7 +58,7 @@ $color-variations: (
 		slightly-desaturated: #965fb4
 	),
 	yellow: (
-		// partie ateliers: jaune  
+		// partie ateliers: jaune
 		vivid: #ffc80a
 	),
 	magenta: (
@@ -74,7 +74,7 @@ $color-variations: (
  * Font
  *
  * A map containing all information about fonts (families and weights)
- * 
+ *
  * @type map
  */
 $font: (
@@ -97,7 +97,7 @@ $font: (
 	 * Font weight
 	 *
 	 * Each font weight used in the theme.
-	 * 
+	 *
 	 * @uses map-get( $font, weights ) to retrieve font weight value
 	 * @type map
 	 * @author Jérémy Levron <levronjeremy@19h47.fr>
@@ -125,11 +125,11 @@ $base-line-height: 20;
 $base-line-height-px: #{ $base-line-height }px;
 
 
-/** 
+/**
  * Grid columns number
  *
- * Number of columns in the grid, it override `$grid-columns` from 
- * bootstrap-sass. It means, if you wish, that you can instantiate a grid of 8, 
+ * Number of columns in the grid, it override `$grid-columns` from
+ * bootstrap-sass. It means, if you wish, that you can instantiate a grid of 8,
  * for example.
  *
  * @see https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss#L329
@@ -139,10 +139,10 @@ $grid-columns: 12;
 
 /**
  * Gutter width
- * 
- * Padding between columns. Gets divided in half for the left and right, it 
+ *
+ * Padding between columns. Gets divided in half for the left and right, it
  * overide `$grid-gutter-width` from bootstrap-sass
- * 
+ *
  * @see http://stackoverflow.com/a/28193872/5091221
  * @see https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss#L331
  */
@@ -171,7 +171,7 @@ $psd-width: $psd-width-unitless * 1px;
 
 /**
  * Container width without grid outer gutter width
- * 
+ *
  * Width keep from prototype
  */
 $container-width-without-outer-gutter-unitless: 920;
@@ -180,7 +180,7 @@ $container-width: $container-width-without-outer-gutter-unitless * 1px;
 
 /**
  * Container width
- * 
+ *
  * Width keep from prototype (grid + outer gutter * 2 )
  */
 $container-width-unitless: $container-width-without-outer-gutter-unitless + ( $grid-outer-gutter-width-unitless * 2 );
@@ -205,18 +205,18 @@ $transitions: (
  * Directories
  *
  * Each directories used in this theme.
- * 
+ *
  * @uses map-get( $directories, $key ) to retrieve directory value from map
  * @type map
  * @author Jérémy Levron <levronjeremy@19h47.fr>
  */
 $directories: (
-	fonts: "../../../static/fonts/",
-	img: "../../../static/img/",
-	svg: "../../../static/img/svg/",
-	jpg: "../../../static/img/jpg/",
-	png: "../../../static/img/png/",
-	gif: "../../../static/img/gif/",
+	fonts: '../fonts/',
+	img: '../img/',
+	svg: '../img/svg/',
+	jpg: '../img/jpg/',
+	png: '../img/png/',
+	gif: '../img/gif/',
 );
 
 
@@ -224,7 +224,7 @@ $directories: (
  * Breakpoint slicer
  *
  * Setting up Breakpoint Slicer
- * 
+ *
  * @see https://github.com/lolmaus/breakpoint-slicer
  */
 $slicer-breakpoints-settings: true;
@@ -244,7 +244,7 @@ $slicer-breakpoints-settings: true;
  * State classes
  *
  * Each state class used in this theme.
- * 
+ *
  * @uses map-get( $state-classes, $key ) to retrieve class name from map
  * @type map
  * @author Jérémy Levron <levronjeremy@19h47.fr>

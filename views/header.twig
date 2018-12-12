@@ -10,18 +10,19 @@
 
 <!DOCTYPE html>
 <!--[if IE 9]>
-<html {{ html_class( 'ie9 no-js no-touch' ) }} {{ language_attributes }}>
+<html {{ html_class( 'ie9 no-js no-touch' ) }} {{ site.language_attributes }}>
 <![endif]-->
 <!--[if !(IE 9)]><!-->
-<html {{ language_attributes }} {{ html_class( 'no-js no-touch' ) }}>
+<html {{ site.language_attributes }} {{ html_class( 'no-js no-touch' ) }}>
 <!--<![endif]-->
-	
+
 	<head>
 
 		<meta charset="{{ site.charset }}">
 		<link rel="profile" href="http://gmpg.org/xfn/11">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+		<base href="{{ theme.path }}/dist/">
 
 		{{ wp_head }}
 
@@ -32,31 +33,31 @@
 	<body {{ body_class( 'border-color-main' ) }}>
 
 		{% include 'components/menu.twig' %}
-		
+
 		<div class="Site-container">
 			<header class="Site-header">
-				
+
 
 				{# Button #}
 				<button class="Site-header-button js-toggle-menu-button">
 					<svg class="fill-main">
-					  	<use xlink:href="{{ theme.link }}/public/icons.svg#open"></use>
+						<use xlink:href="{{ theme.link }}/dist/icons.svg#open"></use>
 					</svg>
 				</button>
-				
+
 
 				{# Logo #}
 				<div class="row">
-					
+
 					<div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
 						<a class="Logo" href="{{ site.url }}">
-							{% include 'logo.svg' %}		
+							{% include 'logo.svg' %}
 
 							{# Site description #}
 							<p class="color-secondary Site-description">{{- site.description -}}</p>
 						</a>
 					</div>
-					
+
 				</div>
 
 
@@ -67,7 +68,6 @@
 					<p class="Site-header-contact__address">{{- contact.address | nl2br -}}</p>
 					<p class="Site-header-contact__phone">{{- contact.phone -}}</p>
 				</div>
-				
-			</header>	
+
+			</header>
 		</div>
-		

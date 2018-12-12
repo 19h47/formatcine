@@ -8,18 +8,16 @@ const classes = require('dom-classes');
 /**
  * Events
  */
-function Events(element) {
+export default function Events(element) {
 	if (!(this instanceof Events)) {
 		return new Events(element);
 	}
 
 	this.element = document.querySelector(element);
 
-	if (!this.element) {
-		return false;
-	}
+	if (!this.element || this.element === undefined) return false;
 
-	this.container = this.element.querySelectorAll('.js-events-container')[0];
+	[this.container][0] = this.element.querySelectorAll('.js-events-container');
 	this.buttonFilters = this.element.querySelectorAll('.js-events-button');
 
 	this.category = {};
@@ -49,9 +47,9 @@ Events.prototype = {
 			}
 
 			// Remove all `is-active` classes
-			this.buttonFilters.forEach((buttonFilter) => {
-				buttonFilter.classList.remove('is-active');
-			});
+			for (let i = 0; i < this.buttonFilters.length; i += 1) {
+				this.buttonFilters[i].classList.remove('is-active');
+			}
 
 			// Update count, offset
 			// this.count = e.target.dataset.count;
@@ -181,6 +179,3 @@ Events.prototype = {
 		},
 	},
 };
-
-
-export default Events;

@@ -1,8 +1,8 @@
 {#
 	/**
 	 * views/components/menu
-	 * 
-	 * @author  Jérémy Levron <jeremylevron@19h47.fr>
+	 *
+	 * @author  Jérémy Levron <jeremylevron@19h47.fr> (http://19h47.fr)
 	 */
 #}
 
@@ -14,26 +14,26 @@
 				<div class="col-xs-12">
 					<button class="Menu-button js-toggle-menu-button">
 						<svg>
-						  	<use xlink:href="{{ theme.link }}/public/icons.svg#close"></use>
+							<use xlink:href="{{ theme.link }}/dist/icons.svg#close"></use>
 						</svg>
 					</button>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-xs-12">
-					
+
 					<ul class="Menu-items">
 					{# <pre>{{ menu.main|print_r }}</pre> #}
 					{% for item in menu.main.items %}
 						{# <pre>{{ item | print_r }}</pre> #}
-						<li 
-							id="menu-item-{{ item.id }}" 
+						<li
+							id="menu-item-{{ item.id }}"
 							class="Menu-item{{ item.classes ? ' ' ~ item.class }}{{ item.current ? ' Menu-item--is-current' }}{{ item.children ? ' Menu-item--has-children' }}"
 						>
 
 							{% if not item.children %}
-								
-								<a href="{{ item.url }}"{{ item.target ? ' target="_blank"' }}>
+
+								<a href="{{ item.link }}"{{ item.target ? ' target="_blank"' }}>
 									{{- item.children ? item.title : '• ' ~ item.title ~ ' •' -}}
 								</a>
 
@@ -42,7 +42,7 @@
 								<p class="Site-title-underline">
 									{{- item.title }}
 								</p>
-								
+
 								<ul class="Menu-childrens">
 								{% for children in item.children %}
 									<li class="Menu-children">
@@ -55,7 +55,7 @@
 
 							{% endif %}
 
-							
+
 							{# {% if item.children %}{% endif %} #}
 
 						</li>
@@ -65,7 +65,7 @@
 				</div>
 
 			</div>
-				
+
 
 			{# Socials #}
 			<div class="row">
@@ -81,7 +81,7 @@
 				<div class="col-xs-12">
 					<div class="Menu-contact">
 						{% spaceless %}
-						
+
 						<p class="Menu-contact__title">
 							Association {{site.name }}
 						</p>
@@ -91,12 +91,12 @@
 							&nbsp;•&nbsp;
 							<a class="font-extrabold" href="tel:{{ contact.phone | replace( { ' ' : '' } ) }}">{{ contact.phone }}</a>
 							&nbsp;•&nbsp;
-							
+
 							{% for email_address in contact.email_addresses %}
 								<a href="mailto:{{ email_address }}">{{- email_address -}}</a>
 								{{ not loop.last ? ' — ' }}
 							{% endfor %}
-						
+
 						</p>
 
 						{% endspaceless %}
@@ -113,5 +113,5 @@
 			</div>
 
 		</div>
-	</div>	
+	</div>
 </div>

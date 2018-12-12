@@ -1,21 +1,27 @@
-import './assets/stylesheets/styles.scss';
-import App from './app/modules/app';
-import Events from './app/modules/events';
-import SchoolTraining from './app/modules/school-training';
-import guid from './app/modules/guid';
-import Menu from './app/modules/Menu';
-import './app/modules/movie';
-import './app/modules/adult-training';
-import './app/modules/home';
+import 'src/stylesheets/styles.scss';
+
+import App from 'src/App';
+
+import Events from 'Blocks/events';
+import SchoolTraining from 'Blocks/school-training';
+
+import guid from 'Common/guid';
+import Menu from 'Common/Menu';
+
+import 'Blocks/movie';
+import 'Blocks/adult-training';
+import 'Blocks/home';
+
+require.context('svg/', true);
+require.context('icons/', true);
 
 window.app = new App();
 
 Events('.js-events');
 SchoolTraining('.js-school-trainings');
+
 guid();
 
 // Menu
-const MainMenu = new Menu();
-MainMenu.setupEvents();
-
-console.log('Yo!');
+const menu = new Menu();
+menu.setupEvents();
