@@ -17,7 +17,7 @@ export default function Events(element) {
 
 	if (!this.element || this.element === undefined) return false;
 
-	[this.container][0] = this.element.querySelectorAll('.js-events-container');
+	this.$cont = this.element.querySelector('.js-events-container');
 	this.buttonFilters = this.element.querySelectorAll('.js-events-button');
 
 	this.category = {};
@@ -120,7 +120,7 @@ Events.prototype = {
 			return;
 		}
 
-		this.container.innerHTML = html;
+		this.$cont.innerHTML = html;
 	},
 
 
@@ -132,7 +132,7 @@ Events.prototype = {
 			return;
 		}
 
-		$(this.container).append(html);
+		$(this.$cont).append(html);
 	},
 
 
@@ -140,7 +140,7 @@ Events.prototype = {
 	 * Events.update
 	 */
 	update() {
-		// this.offset = this.container.children.length;
+		// this.offset = this.$cont.children.length;
 		// ensure everything is unlocked
 		this.lock.off.call(this);
 	},
@@ -161,8 +161,8 @@ Events.prototype = {
 			}
 
 			// add loading state to ajax container if exists
-			if (this.container) {
-				classes.add(this.container, 'is-loading');
+			if (this.$cont) {
+				classes.add(this.$cont, 'is-loading');
 			}
 		},
 
@@ -173,8 +173,8 @@ Events.prototype = {
 		off() {
 			// console.log('Events.lock.off');
 			// remove loading state of ajax container if exists
-			if (this.container) {
-				classes.remove(this.container, 'is-loading');
+			if (this.$cont) {
+				classes.remove(this.$cont, 'is-loading');
 			}
 		},
 	},

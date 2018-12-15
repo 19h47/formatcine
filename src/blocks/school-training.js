@@ -19,7 +19,7 @@ function SchoolTraining(element) {
 		return false;
 	}
 
-	this.container = this.element.querySelector('.js-school-trainings-container');
+	this.$cont = this.element.querySelector('.js-school-trainings-container');
 	this.buttonFilters = this.element.querySelectorAll('.js-school-trainings-button');
 
 	this.school_class = {};
@@ -126,7 +126,7 @@ SchoolTraining.prototype = {
 			return;
 		}
 
-		this.container.innerHTML = html;
+		this.$cont.innerHTML = html;
 	},
 
 
@@ -138,7 +138,7 @@ SchoolTraining.prototype = {
 			return;
 		}
 
-		$(this.container).append(html);
+		$(this.$cont).append(html);
 	},
 
 
@@ -146,7 +146,7 @@ SchoolTraining.prototype = {
 	 * SchoolTraining.update
 	 */
 	update() {
-		// this.offset = this.container.children.length;
+		// this.offset = this.$cont.children.length;
 		// ensure everything is unlocked
 		this.lock.off.call(this);
 	},
@@ -167,8 +167,8 @@ SchoolTraining.prototype = {
 			}
 
 			// add loading state to ajax container if exists
-			if (this.container) {
-				classes.add(this.container, 'is-loading');
+			if (this.$cont) {
+				classes.add(this.$cont, 'is-loading');
 			}
 		},
 
@@ -179,8 +179,8 @@ SchoolTraining.prototype = {
 		off() {
 			// console.log('SchoolTraining.lock.off');
 			// remove loading state of ajax container if exists
-			if (this.container) {
-				classes.remove(this.container, 'is-loading');
+			if (this.$cont) {
+				classes.remove(this.$cont, 'is-loading');
 			}
 		},
 	},
