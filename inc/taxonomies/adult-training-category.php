@@ -6,23 +6,23 @@
 class AdultTrainingCategory {
 
 	/**
-     * The unique identifier of this theme.
-     *
-     * @since    1.0.0
-     * @access   protected
-     * @var      string    $plugin_name    The string used to uniquely identify this theme.
-     */
-    protected $theme_name;
+	 * The unique identifier of this theme.
+	 *
+	 * @since    1.0.0
+	 * @access   protected
+	 * @var      string    $plugin_name    The string used to uniquely identify this theme.
+	 */
+	protected $theme_name;
 
 
-    /**
-     * The version of the theme.
-     *
-     * @since    1.0.0
-     * @access   private
-     * @var      string    $version    The current version of this theme.
-     */
-    private $theme_version;
+	/**
+	 * The version of the theme.
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 * @var      string    $version    The current version of this theme.
+	 */
+	private $theme_version;
 
 
 	/**
@@ -32,14 +32,11 @@ class AdultTrainingCategory {
 	 */
 	public function __construct( $theme_name, $theme_version ) {
 		$this->theme_name = $theme_name;
-        $this->theme_version = $theme_version;
+		$this->theme_version = $theme_version;
 
-        add_action( 'init', array( $this, 'register_taxonomy' ) );
-
-        // add_action( 'manage_edit-adult_training_category_columns', array( $this, 'add_custom_columns' ) );
-        // add_action( 'manage_adult_training_category_custom_column', array( $this, 'render_custom_columns' ),  10, 3 );
+		add_action( 'init', array( $this, 'register_taxonomy' ) );
 	}
-	
+
 
 	// Register Custom Taxonomy
 	function register_taxonomy() {
