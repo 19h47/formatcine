@@ -1,11 +1,10 @@
 {#
-/**
- * /views/pages/formations-professionnelles
- *
- * @package 	WordPress
- * @subpackage 	19h47
- * @author 		Jérémy Levron <jeremylevron@19h47.fr>
- */
+
+@file /views/pages/formations-professionnelles
+@package 	WordPress
+@subpackage 	19h47
+@author 		Jérémy Levron <jeremylevron@19h47.fr> (http://19h47.fr)
+
 #}
 {% extends 'index.twig' %}
 
@@ -19,7 +18,7 @@
 	{% if post.post_title %}
 		{% include 'components/post-title.twig' with { post_title: parent.post_title } %}
 	{% endif %}
-	
+
 	<div class="Site-container">
 		<div class="row">
 			<div class="col-xs-12 text-xs-center">
@@ -73,42 +72,42 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="Site-container Adult-training">
 		<div class="row">
 			<div class="col-xs-12">
-				
+
 				{% for adult_training in adult_trainings %}
 					{# <pre>{{adult_training|print_r }}</pre> #}
 
 					<article class="Adult-training-professional">
-					
+
 						{% if adult_training.thumbnail %}
 							<img
-								class="Adult-training-professional__thumbnail" 
-								src="{{ TimberImage( adult_training.thumbnail ).src }}" 
-								alt="{{ adult_training.post_title }}" 
-								width="90" 
-								height="60" 
+								class="Adult-training-professional__thumbnail"
+								src="{{ TimberImage( adult_training.thumbnail ).src }}"
+								alt="{{ adult_training.post_title }}"
+								width="90"
+								height="60"
 							/>
 						{% endif %}
 
 						<h2 class="Adult-training-professional__title">
 							{{- adult_training.post_title -}}
 						</h2>
-						
+
 						{% if adult_training.number_days %}
 							<p class="Adult-training-professional__number-days">
 								({{- adult_training.number_days -}}&nbsp;jours)
 							</p>
 						{% endif %}
-						
+
 						{% if adult_training.post_content %}
 							<p class="Adult-training-professional__post-content">
 								{{- adult_training.post_content -}}
 							</p>
 						{% endif %}
-						
+
 						{% if adult_training.get_field( 'contents' ) %}
 							<h3 class="Adult-training-professional__contents__title">
 								{{- __( 'Contenu'  ) -}}
@@ -119,7 +118,7 @@
 										<span class="color-secondary">{{- loop.index -}}</span>
 										{{- content.title -}}
 									</h4>
-									
+
 									{# Description #}
 									<p class="margin-xs-0">
 										{{- content.description -}}
@@ -128,9 +127,9 @@
 								</div>
 							{% endfor %}
 						{% endif %}
-						
+
 						{% if adult_training.get_field('document') %}
-							
+
 							<a class="Adult-training-professional__document Page-button background-color-secondary border-color-secondary color-secondary-hover" href="{{ adult_training.get_field('document').url }}">
 								{{- __( 'Formulaire d\'inscription' ) -}}
 							</a>
@@ -138,12 +137,12 @@
 						{% endif %}
 
 					</article>
-					
+
 				{% endfor %}
 
 			</div>
 		</div>
-		
+
 	</div>
 
 
