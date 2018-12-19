@@ -1,4 +1,4 @@
-import App from 'src/App';
+import App from '../App';
 
 const $body = $('body');
 
