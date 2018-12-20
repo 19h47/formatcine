@@ -37,13 +37,6 @@ module.exports = merge(
 						}
 					},
 					{
-						loader: 'resolve-url-loader',
-						options: {
-							  debug: false,
-							  root: __dirname,
-						},
-					},
-					{
 						loader: 'sass-loader',
 						options: {
 							sourceMap: false

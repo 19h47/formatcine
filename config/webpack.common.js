@@ -125,8 +125,9 @@ module.exports = {
 				loader: 'file-loader',
 				options: {
 					outputPath: 'img/',
-					name: '[ext]/[hash].[ext]'
-				}
+					name: '[ext]/[hash].[ext]',
+					publicPath: '../img/',
+				},
 			},
 			{
 				loader: 'image-webpack-loader',
