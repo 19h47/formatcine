@@ -14,37 +14,45 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
 
+function resolve (dir) {
+	return path.join(__dirname, '..', dir)
+}
+
 module.exports = {
 	devServer: {
-		contentBase: path.resolve(__dirname, '../dist'),
+		contentBase: resolve('dist'),
 		compress: true,
 		port: 9000,
 		inline: true,
 	},
 	resolve: {
 		alias: {
-			'@': path.join(__dirname, '../src'),
+			'@': resolve('src'),
 
 			// js
-			Blocks: path.join(__dirname, '../src/blocks'),
-			Common: path.join(__dirname, '../src/common'),
-			Pages: path.join(__dirname, '../src/pages'),
-			Transitions: path.join(__dirname, '../src/transitions'),
-			Utils: path.join(__dirname, '../src/utils'),
+			Blocks: resolve('src/blocks'),
+			Common: resolve('src/common'),
+			Pages: resolve('src/pages'),
+			Transitions: resolve('src/transitions'),
+			Utils: resolve('src/utils'),
 
 			// img
-			png: path.join(__dirname, '../src/img/png'),
-			jpg: path.join(__dirname, '../src/img/jpg'),
-			svg: path.join(__dirname, '../src/img/svg'),
+			img: resolve('src/img'),
+			png: resolve('src/img/png'),
+			jpg: resolve('src/img/jpg'),
+			svg: resolve('src/img/svg'),
 
 			// videos
-			videos: path.join(__dirname, '../src/videos'),
+			videos: resolve('src/videos'),
 
 			// icons
-			icons: path.join(__dirname, '../src/icons'),
+			icons: resolve('src/icons'),
+
+			// fonts
+			fonts: resolve('src/fonts'),
 
 			// stylesheets
-			stylesheets: path.join(__dirname, '../src/stylesheets')
+			stylesheets: resolve('src/stylesheets')
 		}
 	},
 	module: {
@@ -66,7 +74,8 @@ module.exports = {
 				loader: 'file-loader',
 				options: {
 					name: '[name].[ext]',
-					outputPath: 'fonts'
+					outputPath: 'fonts/',
+					publicPath: '../fonts/',
 				},
 
 			}]
@@ -141,9 +150,11 @@ module.exports = {
 		}]
 	},
 	plugins: [
-		new CleanWebpackPlugin(['dist']),
+		new CleanWebpackPlugin(['dist'], {
+			root: resolve('')
+		}),
 		new CopyWebpackPlugin([{
-			from: path.resolve(__dirname, '../src/favicons' ),
+			from: resolve('src/favicons' ),
 			to: 'favicons'
 	   }]),
 

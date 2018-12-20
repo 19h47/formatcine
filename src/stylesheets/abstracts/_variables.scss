@@ -211,12 +211,12 @@ $transitions: (
  * @author Jérémy Levron <levronjeremy@19h47.fr>
  */
 $directories: (
-	fonts: '../fonts/',
-	img: '../img/',
-	svg: '../img/svg/',
-	jpg: '../img/jpg/',
-	png: '../img/png/',
-	gif: '../img/gif/',
+	fonts: '~fonts/',
+	img: '~img/',
+	svg: '~svg/',
+	jpg: '~jpg/',
+	png: '~png/',
+	gif: '~gif/',
 );
 
 

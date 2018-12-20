@@ -13,10 +13,10 @@ module.exports = merge(
 	common,
 	{
 		output: {
-			filename: '[name].js'
+			filename: 'js/[name].js'
 		},
 		mode: 'development',
-		devtool: false,
+		devtool: 'source-map',
 		watch: true,
 		module: {
 			rules: [{
@@ -34,7 +34,7 @@ module.exports = merge(
 						loader: 'postcss-loader',
 						options: {
 							sourceMap: true
-						}
+						},
 					},
 					{
 						loader: 'sass-loader',
@@ -47,7 +47,7 @@ module.exports = merge(
 		},
 		plugins: [
 			new MiniCssExtractPlugin({
-				filename: 'main.css'
+				filename: 'css/main.css'
 			}),
 		]
 	},

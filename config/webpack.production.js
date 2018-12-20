@@ -13,10 +13,10 @@ module.exports = merge(
 	common,
 	{
 		output: {
-			filename: '[name].[chunkhash:8].js'
+			filename: 'js/[name].[chunkhash:8].js'
 		},
 		mode: 'production',
-		devtool: 'source-map',
+		devtool: false,
 		watch: false,
 		module: {
 			rules: [{
@@ -37,6 +37,13 @@ module.exports = merge(
 						}
 					},
 					{
+						loader: 'resolve-url-loader',
+						options: {
+							  debug: false,
+							  root: __dirname,
+						},
+					},
+					{
 						loader: 'sass-loader',
 						options: {
 							sourceMap: false
@@ -47,7 +54,7 @@ module.exports = merge(
 		},
 		plugins: [
 			new MiniCssExtractPlugin({
-				filename: 'main.[chunkhash:8].css'
+				filename: 'css/main.[chunkhash:8].css'
 			}),
 		]
 	},
