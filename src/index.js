@@ -1,23 +1,26 @@
 import './stylesheets/styles.scss';
 
-import App from './App';
+import Events from 'Blocks/Events';
+import SchoolTraining from 'Blocks/school-training';
 
-import Events from './blocks/events';
-import SchoolTraining from './blocks/school-training';
+import App from './App';
 
 import guid from './common/guid';
 import Menu from './common/Menu';
 
-import './blocks/movie';
-import './blocks/adult-training';
-import './blocks/home';
+require('Blocks/movie');
+require('Blocks/adult-training');
+require('Blocks/home');
 
 require.context('svg/', true);
 require.context('icons/', true);
 
 window.app = new App();
 
-Events('.js-events');
+// Events
+const events = new Events('.js-events');
+events.setupEvents();
+
 SchoolTraining('.js-school-trainings');
 
 guid();

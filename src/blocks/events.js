@@ -1,32 +1,24 @@
-const classes = require('dom-classes');
-
-
 /**
  * Events
+ *
+ * @file blocks/Events.js
+ * @author Jérémy Levron <jeremylevron@19h47.fr> (http://19h47.fr)
  */
-export default function Events(element) {
-	if (!(this instanceof Events)) {
-		return new Events(element);
+export default class Events {
+	constructor(element) {
+		this.element = document.querySelector(element);
+
+		if (!this.element || this.element === undefined) return false;
+
+		this.$cont = this.element.querySelector('.js-events-container');
+		this.buttonFilters = this.element.querySelectorAll('.js-events-button');
+
+		this.category = {};
+		this.category.id = 0;
+
+		// this.count = parseInt(this.button.dataset.count, 0);
+		// this.offset = 0;
 	}
-
-	this.element = document.querySelector(element);
-
-	if (!this.element || this.element === undefined) return false;
-
-	this.$cont = this.element.querySelector('.js-events-container');
-	this.buttonFilters = this.element.querySelectorAll('.js-events-button');
-
-	this.category = {};
-	this.category.id = 0;
-
-	// this.count = parseInt(this.button.dataset.count, 0);
-	// this.offset = 0;
-
-	this.setupEvents.call(this);
-}
-
-
-Events.prototype = {
 
 	/**
 	 * Events.setupEvents
@@ -34,12 +26,11 @@ Events.prototype = {
 	setupEvents() {
 		this.element.addEventListener('click', (e) => {
 			if (e.target === this.category.button) {
-				return;
+				return false;
 			}
 
-			// If element hasn't 'js-events-button' class
-			if (!classes.has(e.target, 'js-events-button')) {
-				return;
+			if (!e.target.classList.contains('js-events-button')) {
+				return false;
 			}
 
 			// Remove all `is-active` classes
@@ -57,9 +48,9 @@ Events.prototype = {
 				id: e.target.dataset.categoryId,
 			};
 
-			this.filter();
+			return this.filter();
 		});
-	},
+	}
 
 
 	/**
@@ -72,7 +63,7 @@ Events.prototype = {
 			.then(this.append.bind(this))
 			// finally update things
 			.done(this.update.bind(this));
-	},
+	}
 
 
 	/**
@@ -85,7 +76,7 @@ Events.prototype = {
 			.then(this.replace.bind(this))
 			// finally update things
 			.done(this.update.bind(this));
-	},
+	}
 
 
 	/**
@@ -102,10 +93,10 @@ Events.prototype = {
 		}
 
 		// lock everything before the request
-		this.lock.on.call(this);
+		this.lock('on');
 
 		return $.get(window.wp.ajax_url, data);
-	},
+	}
 
 
 	/**
@@ -117,7 +108,7 @@ Events.prototype = {
 		}
 
 		this.$cont.innerHTML = html;
-	},
+	}
 
 
 	/**
@@ -129,7 +120,7 @@ Events.prototype = {
 		}
 
 		$(this.$cont).append(html);
-	},
+	}
 
 
 	/**
@@ -138,40 +129,32 @@ Events.prototype = {
 	update() {
 		// this.offset = this.$cont.children.length;
 		// ensure everything is unlocked
-		this.lock.off.call(this);
-	},
+		this.lock('off');
+	}
 
 
 	/**
 	 * Events.lock
 	 */
-	lock: {
-
-		/**
-		 * Events.lock.on
-		 */
-		on() {
-			// console.log('Events.lock.on');
+	lock(method) {
+		// console.log('Events.lock(on)');
+		if (method === 'on') {
 			if (this.category.button) {
-				classes.add(this.category.button, 'is-active');
+				this.category.button.classList.add('is-active');
 			}
 
 			// add loading state to ajax container if exists
 			if (this.$cont) {
-				classes.add(this.$cont, 'is-loading');
+				this.$cont.classList.add('is-loading');
 			}
-		},
+		}
 
-
-		/**
-		 * Events.lock.off
-		 */
-		off() {
-			// console.log('Events.lock.off');
+		// console.log('Events.lock.off');
+		if (method === 'off') {
 			// remove loading state of ajax container if exists
 			if (this.$cont) {
-				classes.remove(this.$cont, 'is-loading');
+				this.$cont.classList.remove('is-loading');
 			}
-		},
-	},
-};
+		}
+	}
+}
