@@ -6,7 +6,7 @@
 .Movie {
 	@extend %Transition-ease;
 
-	@at-root 
+	@at-root
 		.slick-active &,
 		.slick-center & {
 
@@ -22,11 +22,11 @@
 	 * @uses .Movie__content
 	 */
 	&__content {
-		@include padding( 
-			top $grid-gutter-width / 2 
-			right $grid-gutter-width / 2 
-			bottom $grid-gutter-width / 2 
-			left $grid-gutter-width / 2 
+		@include padding(
+			top $grid-gutter-width / 2
+			right $grid-gutter-width / 2
+			bottom $grid-gutter-width / 2
+			left $grid-gutter-width / 2
 		);
 	}
 
@@ -41,15 +41,15 @@
 		@include absolute( top 0 left 0 );
 		@include autoAlpha( 0 );
 		@include font( 18.14, 40, 50 );
-		@include margin( 
-			top $grid-gutter-width / -2 
-			left $grid-gutter-width / -2 
+		@include margin(
+			top $grid-gutter-width / -2
+			left $grid-gutter-width / -2
 		);
 		@include padding( right $grid-gutter-width / 2 left $grid-gutter-width / 2 );
 
 		color: the_color( white );
 
-		@at-root 
+		@at-root
 				.slick-active &,
 				.slick-center & { @include autoAlpha( 1 ); }
 	}
@@ -72,7 +72,7 @@
 			object-fit: cover;
 		}
 	}
-	
+
 
 	/**
 	 * Title
@@ -91,8 +91,8 @@
 	 * @uses .Movie__directors
 	 */
 	&__directors {
-		@extend %font-semibold, %margin-xs-y-0; 
-		@include font( 20, 24 ); 
+		@extend %font-semibold, %margin-xs-y-0;
+		@include font( 20, 24 );
 	}
 
 
@@ -155,9 +155,8 @@
 		@include from( 'md' ) {
 			width: auto;
 
-			@include margin( top 0 right 5px bottom 0 left 5px );
+			@include margin( top 0 right 10px );
 
-			&:first-child { @include margin( left 0 ); }
 			&:last-child { @include margin( right 0 ); }
 		}
 
@@ -165,7 +164,7 @@
 			color: the_color( white );
 		}
 
-		@at-root 
+		@at-root
 			.slick-active &,
 			.slick-center & { @include autoAlpha( 1 ); }
 	}
@@ -203,12 +202,12 @@
 			}
 			content: '';
 		}
-		
+
 		&:hover {
 			text-decoration: underline;
 		}
 
-		@at-root 
+		@at-root
 				.slick-active &,
 				.slick-center & { @include autoAlpha( 1 ); }
 	}

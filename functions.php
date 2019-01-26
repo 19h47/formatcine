@@ -475,14 +475,14 @@ class FRMTCN extends TimberSite {
 		 * Remove native version of jQuery and use custom CDN version instead
 		 */
 		wp_deregister_script( 'jquery' );
-		wp_register_script( 'jquery', '//code.jquery.com/jquery-3.1.1.min.js', false, null, true );
+		wp_register_script( 'jquery', '//code.jquery.com/jquery-3.3.1.slim.min.js', false, null, true );
 
 
 		// Slick
 
 		wp_register_script(
 			'slick',
-			'//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js',
+			'//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js',
 			array( 'jquery' ),
 			null,
 			true

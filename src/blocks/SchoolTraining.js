@@ -1,47 +1,44 @@
-const classes = require('dom-classes');
-
-
 /**
  * SchoolTraining
+ *
+ * @author Jérémy Levron <jeremylevron@19h47.fr> (http://19h47.fr)
  */
-function SchoolTraining(element) {
-	if (!(this instanceof SchoolTraining)) {
-		return new SchoolTraining(element);
+export default class SchoolTraining {
+	constructor(element) {
+		this.$element = document.querySelector(element);
+
+		if (!this.$element || this.$element === undefined) return false;
+
+		this.$cont = this.$element.querySelector('.js-school-trainings-container');
+		this.buttonFilters = this.$element.querySelectorAll('.js-school-trainings-button');
+
+		this.school_class = {};
+		this.school_class.ids = [0];
+		this.season = null;
+
+		// this.count = parseInt(this.button.dataset.count, 0);
+		// this.offset = 0;
+
+		return true;
 	}
 
-	this.element = document.querySelector(element);
+	init() {
+		if (!this.$element || this.$element === undefined) return false;
 
-	if (!this.element) {
-		return false;
+		return this.setupEvents();
 	}
-
-	this.$cont = this.element.querySelector('.js-school-trainings-container');
-	this.buttonFilters = this.element.querySelectorAll('.js-school-trainings-button');
-
-	this.school_class = {};
-	this.school_class.ids = [0];
-	this.season = null;
-
-	// this.count = parseInt(this.button.dataset.count, 0);
-	// this.offset = 0;
-
-	this.setupEvents.call(this);
-}
-
-
-SchoolTraining.prototype = {
 
 	/**
 	 * SchoolTraining.setupEvents
 	 */
 	setupEvents() {
-		this.element.addEventListener('click', (e) => {
+		this.$element.addEventListener('click', (e) => {
 			if (e.target === this.school_class.button) {
 				return;
 			}
 
 			// If element hasn't 'js-school-trainings-button' class
-			if (!classes.has(e.target, 'js-school-trainings-button')) {
+			if (!e.target.classList.contains('js-school-trainings-button')) {
 				return;
 			}
 
@@ -61,7 +58,7 @@ SchoolTraining.prototype = {
 
 			this.filter();
 		});
-	},
+	}
 
 
 	/**
@@ -74,7 +71,7 @@ SchoolTraining.prototype = {
 			.then(this.append.bind(this))
 			// finally update things
 			.done(this.update.bind(this));
-	},
+	}
 
 
 	/**
@@ -83,35 +80,39 @@ SchoolTraining.prototype = {
 	filter() {
 		// load more projects with AJAX
 		this.load()
+			.then(response => response.text())
 			// then append result to the container
 			.then(this.replace.bind(this))
 			// finally update things
-			.done(this.update.bind(this));
-	},
+			.finally(this.update.bind(this));
+	}
 
 
 	/**
 	 * SchoolTraining.load
 	 */
 	load() {
-		const data = {
-			action: 'ajax_load_school_trainings',
-			// offset: this.offset,
-		};
+		let url = `${window.wp.ajax_url}?action=ajax_load_school_trainings`;
 
 		if (this.school_class.ids) {
-			data.school_class = this.school_class.ids;
+			url += `&school_class=${this.school_class.ids}`;
 		}
 
 		if (this.season) {
-			data.season = this.season;
+			url += `&season=${this.season}`;
 		}
 
-		// lock everything before the request
-		this.lock.on.call(this);
+		const request = new Request(url);
+		const init = {
+			method: 'post',
+			// offset: this.offset,
+		};
 
-		return $.get(window.wp.ajax_url, data);
-	},
+		// lock everything before the request
+		this.lock('on');
+
+		return fetch(request, init);
+	}
 
 
 	/**
@@ -123,7 +124,7 @@ SchoolTraining.prototype = {
 		}
 
 		this.$cont.innerHTML = html;
-	},
+	}
 
 
 	/**
@@ -135,7 +136,7 @@ SchoolTraining.prototype = {
 		}
 
 		$(this.$cont).append(html);
-	},
+	}
 
 
 	/**
@@ -144,43 +145,34 @@ SchoolTraining.prototype = {
 	update() {
 		// this.offset = this.$cont.children.length;
 		// ensure everything is unlocked
-		this.lock.off.call(this);
-	},
+		this.lock('off');
+	}
 
 
 	/**
 	 * SchoolTraining.lock
+	 *
+	 * @param {str} method on or off
 	 */
-	lock: {
-
-		/**
-		 * SchoolTraining.lock.on
-		 */
-		on() {
-			// console.log('SchoolTraining.lock.on');
+	lock(method) {
+		// console.log('SchoolTraining.lock(on)');
+		if (method === 'on') {
 			if (this.school_class.button) {
-				classes.add(this.school_class.button, 'is-active');
+				this.school_class.button.classList.add('is-active');
 			}
 
 			// add loading state to ajax container if exists
 			if (this.$cont) {
-				classes.add(this.$cont, 'is-loading');
+				this.$cont.classList.add('is-loading');
 			}
-		},
+		}
 
-
-		/**
-		 * SchoolTraining.lock.off
-		 */
-		off() {
-			// console.log('SchoolTraining.lock.off');
+		// console.log('SchoolTraining.lock('off')');
+		if (method === 'off') {
 			// remove loading state of ajax container if exists
 			if (this.$cont) {
-				classes.remove(this.$cont, 'is-loading');
+				this.$cont.classList.remove('is-loading');
 			}
-		},
-	},
-};
-
-
-export default SchoolTraining;
+		}
+	}
+}

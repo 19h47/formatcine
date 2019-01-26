@@ -3,7 +3,7 @@
  * Post
  */
 class Post {
-	
+
 	/**
 	 * The unique identifier of this theme.
 	 *
@@ -45,16 +45,16 @@ class Post {
 
 	/**
 	 * [css description]
-	 * 
+	 *
 	 * @return [type] [description]
 	 */
-	public function css() { 
+	public function css() {
 
 	?>
 		<style>
 			.fixed .column-event_date { width: 160px; }
-			
-			.fixed .column-event_date:first-letter { text-transform: uppercase; }  
+
+			.fixed .column-event_date:first-letter { text-transform: uppercase; }
 
 			.acf-field-color-picker { min-height: 0!important; }
 		</style>
@@ -64,7 +64,7 @@ class Post {
 
 	/**
 	 * Add custom columns
-	 * 
+	 *
 	 * @param $columns
 	 */
 	public function add_custom_columns( $columns ) {
@@ -74,11 +74,11 @@ class Post {
 
 		$new_columns = array();
 		$keys = array_keys( $columns );
-		
+
 		foreach( $columns as $key => $value ) {
-			
+
 			if ( $key === end( $keys ) ) {
-		 
+
 				$new_columns['event_date'] = __( 'Date de l\'événement' );
 			}
 
@@ -90,20 +90,20 @@ class Post {
 
 	/**
 	 * Render custom columns
-	 * 
-	 * @param $column_name 
-	 * @param $post_id     
+	 *
+	 * @param $column_name
+	 * @param $post_id
 	 */
 	public function render_custom_columns( $column_name, $post_id ) {
 
 		switch ( $column_name ) {
-			
+
 			case 'event_date' :
-				
+
 				if ( get_field( 'event_date', $post_id ) ) {
-					
+
 					the_field( 'event_date', $post_id );
-					
+
 				} else {
 					echo '—';
 				}
@@ -114,14 +114,14 @@ class Post {
 
 
 	/**
-	 * Load posts with AJAX request.     
+	 * Load posts with AJAX request.
 	 */
 	public function ajax_load_events() {
 
 		$category = isset( $_GET['category'] ) ? $_GET['category'] : 0;
 		$offset = isset( $_GET['offset'] ) ? $_GET['offset'] : 0;
 		$posts_per_page = isset( $_GET['posts_per_page'] ) ? $_GET['posts_per_page'] : 6;
-		
+
 		$args = array(
 			'post_type'         => 'post',
 			'posts_per_page'    => (int) $posts_per_page,
@@ -147,7 +147,7 @@ class Post {
 		// var_dump($context['posts']['projects']);
 
 		Timber::render( 'partials/tease-event.twig', $context );
-		
+
 		wp_die();
 	}
 }

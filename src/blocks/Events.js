@@ -6,25 +6,33 @@
  */
 export default class Events {
 	constructor(element) {
-		this.element = document.querySelector(element);
+		this.$element = document.querySelector(element);
 
-		if (!this.element || this.element === undefined) return false;
+		if (!this.$element || this.$element === undefined) return false;
 
-		this.$cont = this.element.querySelector('.js-events-container');
-		this.buttonFilters = this.element.querySelectorAll('.js-events-button');
+		this.$cont = this.$element.querySelector('.js-events-container');
+		this.buttonFilters = this.$element.querySelectorAll('.js-events-button');
 
 		this.category = {};
 		this.category.id = 0;
 
+		return true;
+
 		// this.count = parseInt(this.button.dataset.count, 0);
 		// this.offset = 0;
+	}
+
+	init() {
+		if (!this.$element || this.$element === undefined) return false;
+
+		return this.setupEvents();
 	}
 
 	/**
 	 * Events.setupEvents
 	 */
 	setupEvents() {
-		this.element.addEventListener('click', (e) => {
+		this.$element.addEventListener('click', (e) => {
 			if (e.target === this.category.button) {
 				return false;
 			}
@@ -72,10 +80,11 @@ export default class Events {
 	filter() {
 		// load more projects with AJAX
 		this.load()
+			.then(response => response.text())
 			// then append result to the container
 			.then(this.replace.bind(this))
 			// finally update things
-			.done(this.update.bind(this));
+			.finally(this.update.bind(this));
 	}
 
 
@@ -83,19 +92,22 @@ export default class Events {
 	 * Events.load
 	 */
 	load() {
-		const data = {
-			action: 'ajax_load_events',
-			// offset: this.offset,
-		};
+		let url = `${window.wp.ajax_url}?action=ajax_load_events`;
 
 		if (this.category) {
-			data.category = this.category.id;
+			url += `&category=${this.category.id}`;
 		}
+
+		const request = new Request(url);
+		const init = {
+			method: 'post',
+			// offset: this.offset,
+		};
 
 		// lock everything before the request
 		this.lock('on');
 
-		return $.get(window.wp.ajax_url, data);
+		return fetch(request, init);
 	}
 
 

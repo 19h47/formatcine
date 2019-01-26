@@ -1,4 +1,3 @@
-
 /**
  * Config object
  *
@@ -11,5 +10,5 @@ export default {
 			top: 0,
 		},
 	},
-	html: $('html'),
+	html: document.documentElement,
 };

@@ -28,7 +28,7 @@ class School_Training {
 	public function __construct( $theme_name, $theme_version ) {
 		$this->theme_name = $theme_name;
         $this->theme_version = $theme_version;
-        
+
         $this->register_post_type();
 
         add_action( 'init', array( $this, 'register_post_type' ) );
@@ -47,7 +47,7 @@ class School_Training {
         add_filter( 'wp_insert_post_data', array( $this, 'change_title' ), 99, 2 );
 	}
 
-	
+
 	/**
 	 * Register Custom Post Type
 	 */
@@ -111,8 +111,8 @@ class School_Training {
 	}
 
 
-	public function css() { 
-		
+	public function css() {
+
 		?>
 	    <style>
 	        #dashboard_right_now .school_training-count:before { content: "\f118"; }
@@ -121,20 +121,20 @@ class School_Training {
 	}
 
 
-	public function admin_css() { 
+	public function admin_css() {
 
 		global $typenow;
-		
+
 		if ( 'school_training' !== $typenow ) {
 			return;
 		}
-		
+
 		?>
 	    <style>
 
 	        .fixed .title strong { display: none; }
-	        .fixed .title .row-actions { 
-	        	left: 0; 
+	        .fixed .title .row-actions {
+	        	left: 0;
 	        	padding: 0;
 	        }
 	        .fixed  th.column-title a { display: none; }
@@ -142,11 +142,11 @@ class School_Training {
 	        	width: 160px;
 	        }
 	        .fixed .column-taxonomy-season { width: 80px; }
-			
+
 			.acf-field-taxonomy,
 	        .acf-field-date-picker,
-	        .acf-field-post-object { 
-	        	min-height: 0!important; 
+	        .acf-field-post-object {
+	        	min-height: 0!important;
 	        }
 	    </style>
 	<?php
@@ -155,13 +155,13 @@ class School_Training {
 
 	/**
 	 * Add custom columns
-	 * 
+	 *
 	 * @param $columns
 	 */
 	public function add_custom_columns( $columns ) {
 
 		global $typenow;
-		
+
 		if ( 'school_training' !== $typenow ) {
 			return;
 		}
@@ -175,7 +175,7 @@ class School_Training {
 
 
 	    $new_columns = array();
-	  	
+
 	  	foreach( $columns as $key => $value ) {
 
       	  	if ( $key === 'title' ) {
@@ -193,14 +193,14 @@ class School_Training {
 
     /**
      * Render custom columns
-     * 
-     * @param $column_name 
-     * @param $post_id     
+     *
+     * @param $column_name
+     * @param $post_id
      */
     public function render_custom_columns( $column_name, $post_id ) {
 
     	global $typenow;
-    	
+
     	if ( 'school_training' !== $typenow ) {
     		return;
     	}
@@ -214,9 +214,9 @@ class School_Training {
     	    		$movies = get_field( 'movies', $post_id );
     	    		$output = array();
 
-    	    		
+
     	    		foreach ( $movies as $movie ) {
-    	    			
+
 	   					$html = '<a href="' . get_edit_post_link( $movie->ID );
 	   					$html .= '">' . $movie->post_title . '</a>';
 
@@ -241,26 +241,26 @@ class School_Training {
 	    $post_type = 'school_training';
 	    $post_status = 'publish';
 	    $object = get_post_type_object( $post_type );
-	    
+
 	    $num_posts = wp_count_posts( $post_type );
 	    if ( ! $num_posts || ! isset ( $num_posts->{$post_status} ) || 0 === (int) $num_posts->{$post_status} ) {
-	        
+
 	        return $items;
 	    }
 	    $text = sprintf(
-	        _n( '%1$s %4$s%2$s', '%1$s %4$s%3$s', $num_posts->{$post_status} ), 
-	        number_format_i18n( $num_posts->{$post_status} ), 
-	        strtolower( $object->labels->singular_name ), 
+	        _n( '%1$s %4$s%2$s', '%1$s %4$s%3$s', $num_posts->{$post_status} ),
+	        number_format_i18n( $num_posts->{$post_status} ),
+	        strtolower( $object->labels->singular_name ),
 	        strtolower( $object->labels->name ),
 	        'pending' === $post_status ? 'Pending ' : ''
 	    );
 	    if ( current_user_can( $object->cap->edit_posts ) ) {
 	        $items[] = sprintf( '<a class="%1$s-count" href="edit.php?post_status=%2$s&post_type=%1$s">%3$s</a>', $post_type, $post_status, $text );
-	    
+
 	    } else {
 	        $items[] = sprintf( '<span class="%1$s-count">%s</span>', $text );
 	    }
-	    
+
 	    return $items;
 	}
 
@@ -274,41 +274,41 @@ class School_Training {
     * @return 	array
     */
   	public function change_title( $data, $postarr ) {
-    	
+
     	$screen = get_current_screen();
 
     	if ( $screen->post_type !== 'school_training' ) {
 
      		return $data;
     	}
-     
+
     	// Filtering Post
     	$post_data = filter_input_array( INPUT_POST, FILTER_SANITIZE_STRING );
 
     	// Grab some field value to serve as the post_title
     	$title = 'Formation';
-     
+
     	// Record the manually created post title to $data['post_title'] so
     	// WordPress will save it as post title
     	$data['post_title'] = $title;
- 
+
     	// Create manually post_name using data from title
     	$slug = sanitize_title_with_dashes( $title );
     	$data['post_name'] = wp_unique_post_slug(
-    		$slug, 
-    		$postarr['ID'],  
-    		$postarr['post_status'], 
-    		$postarr['post_type'], 
+    		$slug,
+    		$postarr['ID'],
+    		$postarr['post_status'],
+    		$postarr['post_type'],
     		$postarr['post_parent']
     	);
-     
+
     	// Remember this is a "filter", need to return the data back!
     	return $data;
   	}
 
 
   	/**
-  	 * Load school training with AJAX request.     
+  	 * Load school training with AJAX request.
   	 */
   	public function ajax_load_school_trainings() {
 
@@ -316,7 +316,7 @@ class School_Training {
   	    $offset = isset( $_GET['offset'] ) ? $_GET['offset'] : 0;
   	    $posts_per_page = isset( $_GET['posts_per_page'] ) ? $_GET['posts_per_page'] : -1;
   	    $season = (int) $_GET['season'];
-  	    
+
   	    $args = array(
   	        'post_type'         => 'school_training',
   	        'posts_per_page'    => (int) $posts_per_page,
@@ -334,7 +334,7 @@ class School_Training {
     			)
     		)
   	    );
-  	    
+
   	    if ( $school_class !== 0 ) {
 
   	    	$args['tax_query'] = array(
@@ -346,10 +346,10 @@ class School_Training {
      				'operator' 	=> 'IN'
      			),
      		);
-  	    	
+
   	    	$school_class_query = array( 'relation' => 'OR' );
 
-  	    	foreach ($school_class as $term_id) {
+  	    	foreach ( explode( ',', $school_class ) as $term_id ) {
   	    		array_push( $school_class_query,
   	    			array(
 	        			'taxonomy'	=> 'school_class',
@@ -358,19 +358,19 @@ class School_Training {
         			)
         		);
   	    	}
-			
-			array_push($args['tax_query'], $school_class_query );
+
+			array_push( $args['tax_query'], $school_class_query );
 
   	    }
 
-  	    
+
 
   	    $context = Timber::get_context();
 
   	    $context['school_trainings'] = Timber::get_posts($args);
 
   	    Timber::render( 'partials/tease-school-training.twig', $context );
-  	    
+
   	    wp_die();
   	}
 }

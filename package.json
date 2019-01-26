@@ -1,26 +1,25 @@
 {
 	"name": "formatcine",
 	"version": "3.1.0",
-	"description": "Format'ciné website ",
-	"main": "index.js",
+	"description": "Format'ciné's website ",
+	"main": "src/index.js",
 	"scripts": {
 		"development": "./bin/development",
 		"dev": "npm run development",
 		"production": "./bin/production",
 		"prod": "npm run production"
 	},
-	"keywords": [],
-	"author": "Levron Jérémy <levronjeremy@19h47.fr>",
+	"keywords": ["Webpack", "ES6", "Slick", "Ress", "Bootstrap", "Babel", "ESLint", "WordPress"],
+	"author": "Jérémy Levron <jeremylevron@19h47.fr> (http://19h47.fr)",
 	"license": "ISC",
 	"dependencies": {
 		"@babel/runtime": "^7.3.1",
 		"bootstrap-sass": "^3.4.0",
-		"dom-classes": "^1.0.0",
-		"dom-select": "^1.1.1",
 		"ress": "^1.2.2"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.2.2",
+		"@babel/plugin-syntax-dynamic-import": "^7.2.0",
 		"@babel/plugin-transform-runtime": "^7.2.0",
 		"@babel/preset-env": "^7.3.1",
 		"autoprefixer": "^9.4.6",

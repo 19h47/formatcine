@@ -29,7 +29,7 @@ class App {
 
 		config.body.scroll.top = pageYOffset || documentElementScrollTop || bodyScrollTop;
 
-		config.html.css('overflow', 'hidden');
+		config.html.style.setProperty('overflow', 'hidden');
 
 		App.resetScroll(config.body.scroll.left, config.body.scroll.top);
 	}
@@ -55,7 +55,7 @@ class App {
 
 		// unlock scroll position
 		// http://stackoverflow.com/a/3656618
-		config.html.css('overflow', 'visible');
+		config.html.style.setProperty('overflow', 'visible');
 
 		// resume scroll position if possible
 		if (resumeScroll) {

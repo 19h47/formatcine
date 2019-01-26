@@ -25,6 +25,11 @@ module.exports = {
 		port: 9000,
 		inline: true,
 	},
+	optimization: {
+		splitChunks: {
+			name: 'common'
+		}
+	},
 	resolve: {
 		alias: {
 			'@': resolve('src'),

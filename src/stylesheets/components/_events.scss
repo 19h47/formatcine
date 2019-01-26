@@ -25,7 +25,7 @@
 	&-tease-container {
 		@extend %Transition-ease;
 		@include margin( top 30px );
-		
+
 		opacity: 1;
 
 		.col-md-4:nth-child( 3n + 1 ) { clear:left; }
@@ -50,20 +50,20 @@
 
 		.item {
 			@extend %display-xs-block, %display-md-inline-block, %margin-xs-y-0;
-			
+
 			&:first-child button { @include margin( top 0 ); }
 			&:last-child button { @include margin( bottom 0 ); }
 
 			@include from( 'md' ) {
-				
+
 				&:first-child button { @include margin( left 0 ); }
 				&:last-child button { @include margin( right 0 ); }
 
 			}
 
-			button { 
+			button {
 				@extend %font-extrabold, %uppercase, %Transition-ease;
-				@include font( 18, 30, 50 ); 
+				@include font( 18, 30, 50 );
 				@include padding( right 10px left 10px );
 				@include margin( top $grid-gutter-width / 4 bottom $grid-gutter-width / 4 );
 
@@ -75,7 +75,7 @@
 					width: auto;
 				}
 
-				
+
 				&:hover,
 				&.is-active {
 					background: { color: the_color( gray, very-dark-mostly-black ); }
