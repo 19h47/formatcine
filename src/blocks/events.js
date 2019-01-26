@@ -1,8 +1,4 @@
-// var $ = require('jquery');
-
-
 const classes = require('dom-classes');
-// const select = require('dom-select');
 
 
 /**

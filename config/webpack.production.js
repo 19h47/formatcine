@@ -23,7 +23,12 @@ module.exports = merge(
 				test: /\.scss$/,
 				exclude: /node_modules/,
 				use: [
-					MiniCssExtractPlugin.loader,
+					{
+						loader: MiniCssExtractPlugin.loader,
+						options: {
+							publicPath: '../'
+						}
+					},
 					{
 						loader: 'css-loader',
 						options: {

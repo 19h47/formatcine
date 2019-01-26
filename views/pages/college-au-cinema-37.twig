@@ -19,7 +19,7 @@
 	{% if post.post_title %}
 		{% include 'components/post-title.twig' %}
 	{% endif %}
-	
+
 
 	{# Post content #}
 	{% if post.post_content %}
@@ -30,7 +30,7 @@
 
 	{% include 'partials/programming.twig' %}
 
-	
+
 	{# Educational support #}
 	<section class="Educational-support">
 		<div class="Site-container">
@@ -62,16 +62,16 @@
 					</div>
 				</div>
 			</div>
-		</div> 
+		</div>
 	</section>
 
-	
+
 	{# School trainings #}
 	<section class="School-trainings js-school-trainings">
 		<div class="Site-container">
 
 			{# Title mobile #}
-			<div class="row hidden-md hidden-ld hidden-hd">
+			<div class="row hidden-md hidden-lg hidden-hd">
 				<div class="col-xs-12 col-md-4">
 					<h2 class="margin-xs-y-0">
 						<span class="Site-title-underline">
@@ -88,7 +88,7 @@
 					<ul class="School-trainings-filters">
 
 						<li class="item">
-							<button 
+							<button
 								class="color-secondary is-active js-school-trainings-button"
 								data-season="{{ season.term_id }}"
 							>
@@ -96,9 +96,9 @@
 						</li>
 
 						{% for school_class in school_classes %}
-						
+
 							<li class="item">
-								<button 
+								<button
 									class="color-secondary js-school-trainings-button"
 									data-school-class-ids="[{{ school_class.term_ids | join( ',' ) }}]"
 									data-season="{{ season.term_id }}"
@@ -122,22 +122,22 @@
 					</h2>
 					<p class="description font-semibold">
 						{{- post.get_field( 'school-trainings_description' ) -}}
-				
+
 					</p>
 				</div>
-					
+
 				<div class="col-xs-12 col-md-8 School-trainings-tease-container js-school-trainings-container">
-					
-					{% include 'partials/tease-school-training.twig' %}			
-					
+
+					{% include 'partials/tease-school-training.twig' %}
+
 				</div>
 			</div>
 		</div>
 
 
-		{% include 'partials/reports.twig' %}	
+		{% include 'partials/reports.twig' %}
 	</section>
-	
+
 
 {% endblock %}
 
