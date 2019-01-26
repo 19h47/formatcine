@@ -13,8 +13,10 @@ export default class Events {
 		this.$cont = this.$element.querySelector('.js-events-container');
 		this.buttonFilters = this.$element.querySelectorAll('.js-events-button');
 
-		this.category = {};
-		this.category.id = 0;
+		this.category = {
+			button: null,
+			id: 0,
+		};
 
 		return true;
 
@@ -62,26 +64,13 @@ export default class Events {
 
 
 	/**
-	 * Events.loadMore
-	 */
-	loadMore() {
-		// load more projects with AJAX
-		this.load()
-			// then append result to the container
-			.then(this.append.bind(this))
-			// finally update things
-			.done(this.update.bind(this));
-	}
-
-
-	/**
 	 * Events.filter
 	 */
 	filter() {
 		// load more projects with AJAX
 		this.load()
 			.then(response => response.text())
-			// then append result to the container
+			// then replace result to the container
 			.then(this.replace.bind(this))
 			// finally update things
 			.finally(this.update.bind(this));
@@ -112,7 +101,7 @@ export default class Events {
 
 
 	/**
-	 * Events.append
+	 * Events.replace
 	 */
 	replace(html) {
 		if (!html) {
@@ -120,18 +109,6 @@ export default class Events {
 		}
 
 		this.$cont.innerHTML = html;
-	}
-
-
-	/**
-	 * Events.append
-	 */
-	append(html) {
-		if (!html) {
-			return;
-		}
-
-		$(this.$cont).append(html);
 	}
 
 

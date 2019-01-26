@@ -12,8 +12,10 @@ export default class SchoolTraining {
 		this.$cont = this.$element.querySelector('.js-school-trainings-container');
 		this.buttonFilters = this.$element.querySelectorAll('.js-school-trainings-button');
 
-		this.school_class = {};
-		this.school_class.ids = [0];
+		this.school_class = {
+			ids: [0],
+			button: null,
+		};
 		this.season = null;
 
 		// this.count = parseInt(this.button.dataset.count, 0);
@@ -62,26 +64,13 @@ export default class SchoolTraining {
 
 
 	/**
-	 * SchoolTraining.loadMore
-	 */
-	loadMore() {
-		// load more projects with AJAX
-		this.load()
-			// then append result to the container
-			.then(this.append.bind(this))
-			// finally update things
-			.done(this.update.bind(this));
-	}
-
-
-	/**
 	 * SchoolTraining.filter
 	 */
 	filter() {
 		// load more projects with AJAX
 		this.load()
 			.then(response => response.text())
-			// then append result to the container
+			// then replace result to the container
 			.then(this.replace.bind(this))
 			// finally update things
 			.finally(this.update.bind(this));
@@ -116,7 +105,7 @@ export default class SchoolTraining {
 
 
 	/**
-	 * SchoolTraining.append
+	 * SchoolTraining.replace
 	 */
 	replace(html) {
 		if (!html) {
@@ -124,18 +113,6 @@ export default class SchoolTraining {
 		}
 
 		this.$cont.innerHTML = html;
-	}
-
-
-	/**
-	 * SchoolTraining.append
-	 */
-	append(html) {
-		if (!html) {
-			return;
-		}
-
-		$(this.$cont).append(html);
 	}
 
 
