@@ -1,11 +1,9 @@
 {#
-/**
- * /views/pages/formations-pour-les-enseignants
- *
- * @package 	WordPress
- * @subpackage 	19h47
- * @author 		Jérémy Levron <jeremylevron@19h47.fr>
- */
+
+@package 	Format'ciné
+@author 	Jérémy Levron <jeremylevron@19h47.fr> (http://19h47.fr)
+@file 		/views/pages/formations-pour-les-enseignants
+
 #}
 {% extends 'index.twig' %}
 
@@ -14,12 +12,12 @@
 
 
 {% block content %}
-	
+
 	{# Post title #}
 	{% if post.post_title %}
 		{% include 'components/post-title.twig' with { post_title: parent.post_title } %}
 	{% endif %}
-	
+
 	<div class="Site-container">
 		<div class="row">
 			<div class="col-xs-12 text-xs-center">
@@ -36,7 +34,7 @@
 		{% include 'components/post-content.twig' %}
 	{% endif %}
 
-	
+
 	<div class="Site-container">
 		<div class="row">
 			<div class="col-xs-12">
@@ -47,7 +45,7 @@
 		</div>
 	</div>
 
-	
+
 
 	<div class="Site-container">
 		<div class="row">
@@ -66,9 +64,9 @@
 					<article class="Adult-training-teachers">
 						{# <pre>{{ adult_training | print_r }}</pre> #}
 						{% if adult_training.thumbnail %}
-						
+
 						<img
-						 	class="Adult-training-teachers__thumbnail" 
+						 	class="Adult-training-teachers__thumbnail"
 							src="{{ TimberImage( adult_training.thumbnail ).src }}"
 							width="90"
 							height="60"
@@ -84,16 +82,16 @@
 						</p>
 
 						{% if adult_training.get_field( 'document' ) %}
-							
-						<a 
-							class="Adult-training-teachers__link background-color-secondary" 
+
+						<a
+							class="Adult-training-teachers__link background-color-secondary"
 							href="{{ adult_training.get_field( 'document' ).url }}"
 						>
 							{{ _e( 'Formulaire d\'inscription' ) }}
 						</a>
 
 						{% endif %}
-						
+
 					</article>
 				</div>
 			{% endfor %}
@@ -110,7 +108,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	{% include 'partials/adult-training-comments.twig' with { taxonomy: 35 } %}
 
 {% endblock %}

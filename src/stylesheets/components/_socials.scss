@@ -1,26 +1,28 @@
 .Socials {
-	@extend %list-unstyled, %text-xs-center; 
-	
+	@extend %list-unstyled;
+
 	/**
 	 * Menu
 	 *
 	 * @uses .Socials--menu
 	 */
-	&--menu { 
-		@include margin( top 170px bottom 0 ); 
+	&--menu {
+		@extend %text-xs-center;
+		@include margin( top 170px bottom 0 );
 
 		color: the_color( white );
 	}
 
-	
+
 	/**
 	 * Header
 	 *
 	 * @uses .Socials--header
 	 */
-	&--header { 
+	&--header {
+		@extend %text-xs-right;
 		@include margin( top 0 );
-		
+
 		color: the_color( gray, dark ); }
 
 
@@ -37,7 +39,15 @@
 		&:first-child { @extend %margin-xs-left-0; }
 		&:last-child { @extend %margin-xs-right-0; }
 
+		a {
+			@extend %display-xs-block;
+
+			&:hover { opacity: 0.7; }
+		}
+
 		svg {
+			@extend %display-xs-inline-block, %vertical-align-middle;
+
 			fill: currentColor;
 			max-width: $grid-gutter-width;
 			max-height: $grid-gutter-width;

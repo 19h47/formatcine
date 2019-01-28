@@ -1,11 +1,10 @@
 {#
-/**
- * /views/pages/ateliers-cinema
- *
- * @package 	WordPress
- * @subpackage 	frmtcn
- * @author 		Jérémy Levron <jeremylevron@19h47.fr>
- */
+
+@file 			/views/pages/ateliers-cinema
+@package 		WordPress
+@subpackage 	frmtcn
+@author 		Jérémy Levron <jeremylevron@19h47.fr> (http://19h47.fr)
+
 #}
 {% extends 'index.twig' %}
 
@@ -13,7 +12,7 @@
 
 	{{- parent() -}}
 
-	<div class="Site-container">
+	<div class="Site-container Workshops">
 		<div class="row">
 
 			{% for workshop in post.get_field( 'workshops' ) %}
@@ -27,7 +26,6 @@
 								  <use xlink:href="{{ theme.link }}/dist/icons.svg#{{ workshop.icon }}"></use>
 							</svg>
 						</div>
-
 
 						<p class="Workshops-link__label">{{- workshop.name -}}</p>
 

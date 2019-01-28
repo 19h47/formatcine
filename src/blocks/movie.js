@@ -26,9 +26,15 @@ sliders.forEach((slider) => {
 const filters = document.querySelectorAll('.js-movie-filter');
 const containers = document.querySelectorAll('.js-movie-slider');
 
+/**
+ * Active filter
+ *
+ * @author Jérémy Levron <jeremylevron@19h47.fr> (http://19h47.fr)
+ * @return {bool}
+ */
 function activeFilter() {
 	if (this.classList.contains('is-active')) {
-		return;
+		return false;
 	}
 
 	const schoolClasses = JSON.parse(this.dataset.schoolClass);
@@ -37,7 +43,6 @@ function activeFilter() {
 	filters.forEach((e) => {
 		e.classList.remove('is-active');
 	});
-
 	this.classList.add('is-active');
 
 	containers.forEach((e) => {
@@ -49,6 +54,8 @@ function activeFilter() {
 			return categories.indexOf(el) >= 0 ? currentContainer.classList.add('is-active') : '';
 		});
 	});
+
+	return true;
 }
 
 

@@ -25,15 +25,15 @@
 	 *
 	 * @uses .Site-title-underline
 	 */
-	&-title-underline { 
-		@extend 
-			%font-extrabold, 
-			%uppercase, 
-			%position-xs-relative, 
+	&-title-underline {
+		@extend
+			%font-extrabold,
+			%uppercase,
+			%position-xs-relative,
 			%display-xs-inline,
 			%margin-xs-y-0;
 		@include font( 30, 55, 50 );
-		
+
 
 		color: the_color( gray, very-dark-mostly-black );
 		border: {
@@ -54,17 +54,17 @@
 	 * Site container
 	 *
 	 * The fluid container of the grid
-	 * 
+	 *
 	 * @uses .Site-container
 	 */
 	&-container {
 		@extend %position-xs-relative;
-		@include padding( 
+		@include padding(
 			right $grid-gutter-width
 			left $grid-gutter-width
 		);
 		@include margin( top 0 right auto bottom 0 left auto );
-		
+
 		max-width: $container-width;
 	}
 
@@ -102,7 +102,7 @@
 
 				@include from( 'md' ) {
 					max-width: 50px;
-					max-height: 50px;					
+					max-height: 50px;
 				}
 			}
 		}
@@ -124,10 +124,12 @@
 				@include absolute( top 0 right 0 );
 			}
 
+			a:hover { text-decoration: underline; }
+
 			&__address {
 				@extend %font-semibold;
 				@include margin( bottom 0 );
-				
+
 				font-size: 16.01px;
 				line-height: normal;
 
@@ -151,11 +153,9 @@
 	&-footer {
 		@extend %text-xs-center, %font-semibold;
 		@include padding( top 22.5px bottom 22.5px );
-		
+
 		color: the_color( white );
 		font-size: 16px;
 		line-height: normal;
-
-		a:hover { text-decoration: underline; }
 	}
 }

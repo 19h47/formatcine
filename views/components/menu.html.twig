@@ -61,19 +61,13 @@
 						</li>
 					{% endfor %}
 					</ul>
-
 				</div>
-
 			</div>
 
 
 			{# Socials #}
 			<div class="row">
-				<div class="col-xs-12">
-
-					{% include 'components/socials.twig' with { prefix: 'menu' } %}
-
-				</div>
+				<div class="col-xs-12">{%- include 'components/socials.twig' with { prefix: 'menu' } -%}</div>
 			</div>
 
 
@@ -82,17 +76,15 @@
 					<div class="Menu-contact">
 						{% spaceless %}
 
-						<p class="Menu-contact__title">
-							Association {{site.name }}
-						</p>
+						<p class="Menu-contact__title">{{- __( 'Association' ) -}}&nbsp;{{- site.name -}}</p>
 
 						<p class="Menu-contact__content">
-							{{ contact.address | replace( { '\n': ' — ' } ) }}
+							{{- contact.address | replace( { '\n': ' — ' } ) -}}
 							&nbsp;•&nbsp;
-							<a class="font-extrabold" href="tel:{{ contact.phone | replace( { ' ' : '' } ) }}">{{ contact.phone }}</a>
+							<a href="tel:{{ contact.phone | replace( { ' ' : '' } ) }}">{{- contact.phone -}}</a>
 							&nbsp;•&nbsp;
 
-							{% for email_address in contact.email_addresses %}
+							{%- for email_address in contact.email_addresses %}
 								<a href="mailto:{{ email_address }}">{{- email_address -}}</a>
 								{{ not loop.last ? ' — ' }}
 							{% endfor %}
@@ -107,7 +99,7 @@
 			<div class="row">
 				<div class="col-xs-12">
 					<p class="Menu-footer">
-						{% include 'components/contact.twig' %}
+						{%- include 'components/contact.html.twig' -%}
 					</p>
 				</div>
 			</div>

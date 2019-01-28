@@ -1,11 +1,9 @@
 {#
-	/**
-	 * /views/header
-	 *
-	 * @package WordPress
-	 * @subpackage frmtcn
-	 * @author Jérémy Levron <jeremylevron@19h47.fr>
-	 */
+
+@file 		/views/header
+@package 	Format'ciné
+@author 	Jérémy Levron <jeremylevron@19h47.fr> (http://19h47.fr)
+
 #}
 
 <!DOCTYPE html>
@@ -32,7 +30,7 @@
 
 	<body {{ body_class( 'border-color-main' ) }}>
 
-		{% include 'components/menu.twig' %}
+		{% include 'components/menu.html.twig' %}
 
 		<div class="Site-container">
 			<header class="Site-header">
@@ -65,8 +63,11 @@
 				<div class="Site-header-contact hidden-xs hidden-sm">
 					{% include 'components/socials.twig' with { prefix: 'header' } %}
 
-					<p class="Site-header-contact__address">{{- contact.address | nl2br -}}</p>
-					<p class="Site-header-contact__phone">{{- contact.phone -}}</p>
+					<p class="Site-header-contact__address">
+						<a href="{{ 'https://www.google.com/maps/search/?api=1&query=' ~ contact.address -}}" target="_blank">{{- contact.address | nl2br -}}</a>
+					</p>
+					<p class="Site-header-contact__phone">
+						<a href="{{ 'tel:' ~ contact.phone }}" target="_phone">{{- contact.phone -}}</a></p>
 				</div>
 
 			</header>

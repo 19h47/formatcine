@@ -23,7 +23,7 @@ $templates = array( 'index.twig' );
 
 // Page video
 if ( is_page( 171 ) || is_page( 183 ) ) {
-	array_unshift( $templates, 'pages/video.twig' );
+	array_unshift( $templates, 'pages/video.html.twig' );
 }
 
 

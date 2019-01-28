@@ -17,7 +17,7 @@
 	&-inner {
 		@include padding( top 75px );
 
-		@include from( 'md' ) {		
+		@include from( 'md' ) {
 			border: {
 				style: solid;
 				width: 25px 25px 0 25px;
@@ -51,7 +51,7 @@
 			}
 		}
 	}
-	
+
 	/**
 	 * Items
 	 *
@@ -62,7 +62,7 @@
 		@include margin( bottom $grid-gutter-width );
 
 		@include from( 'md' ) {
-			@include margin( bottom 50px );			
+			@include margin( bottom 50px );
 		}
 	}
 
@@ -79,7 +79,7 @@
 
 		color: the_color( white );
 
-		@include from( 'md' ) {	
+		@include from( 'md' ) {
 			@include font( 29.99, 39.87, 50 );
 			@include margin( bottom $grid-gutter-width );
 		}
@@ -88,10 +88,10 @@
 		&--has-children {
 			@include font( 16, 54.96, 50 );
 
-			@include from( 'md' ) {	
+			@include from( 'md' ) {
 				@include font( 29.98, 54.96, 50 );
 			}
-			
+
 			color: the_color( gray, very-dark-mostly-black );
 
 			.Site-title-underline {
@@ -139,15 +139,19 @@
 
 		color: the_color( gray, very-dark-mostly-black );
 
-		p { @extend %font-bold; }
+		p { @extend %font-extrabold; }
 
-		&__title { 
+		&__title {
 			@extend %uppercase, %margin-xs-y-0;
-			@include font( 18.05, 30.08, 100 ); 
+			@include font( 18.05, 30.08, 100 );
 		}
 
 
-		&__content { @extend %margin-xs-y-0; }
+		&__content {
+			@extend %margin-xs-y-0;
+
+			a:hover { text-decoration: underline; }
+		}
 	}
 
 
@@ -161,5 +165,11 @@
 		@include margin( top 140px );
 
 		color: the_color( white );
+
+		@at-root .Site-footer & {
+			@include margin( top 0 bottom 0 );
+		}
+
+		a:hover { text-decoration: underline; }
 	}
 }
