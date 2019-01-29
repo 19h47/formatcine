@@ -19,12 +19,6 @@ function resolve (dir) {
 }
 
 module.exports = {
-	devServer: {
-		contentBase: resolve('dist'),
-		compress: true,
-		port: 9000,
-		inline: true,
-	},
 	optimization: {
 		splitChunks: {
 			name: 'common'
