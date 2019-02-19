@@ -5,28 +5,29 @@
  */
 .Adult-training {
 	@include margin( top 50px bottom 50px );
-	
+
 	/**
 	 * Adult training teachers
 	 *
 	 * @uses .Adult-training-teachers
+	 * @author Jérémy Levron <jeremylevron@19h47.fr> (http://19h47.fr)
 	 */
 	&-teachers {
 		@extend %text-xs-center;
-		@include padding( 
-			top 40px 
+		@include padding(
+			top 40px
 			right $grid-gutter-width
-			bottom 50px 
+			bottom 50px
 			left $grid-gutter-width
 		);
-		@include margin( 
-			bottom $grid-gutter-width 
+		@include margin(
+			bottom $grid-gutter-width
 		);
 
 		background-color: the_color( gray, very-light );
 	    height: 100%;
-		
-		
+
+
 		/**
 		 * Thumbnail
 		 *
@@ -44,9 +45,9 @@
 		 */
 		&__title {
 			@include font( 25, 30 );
-			@include margin( 
-				top $grid-gutter-width 
-				bottom $grid-gutter-width 
+			@include margin(
+				top $grid-gutter-width
+				bottom $grid-gutter-width
 			);
 		}
 
@@ -58,10 +59,6 @@
 		 */
 		&__content {
 			@include font( 16, 20 );
-			// @include margin( 
-			// 	top $grid-gutter-width 
-			// 	bottom $grid-gutter-width 
-			// );
 		}
 
 
@@ -74,7 +71,7 @@
 			@extend %font-extrabold, %uppercase, %display-xs-block, %display-md-inline-block;
 			@include padding( right 10px left 10px );
 			@include font( 18, 30, 50 );
-	
+
 			color: the_color( white );
 			width: 100%;
 
@@ -83,21 +80,21 @@
 			}
 		}
 	}
-	
+
 
 	/**
 	 * Professional
 	 */
 	&-professional {
 		@extend %text-xs-center;
-		@include padding( 
-			top 40px 
+		@include padding(
+			top 40px
 			right $grid-gutter-width
-			bottom 50px 
+			bottom 50px
 			left $grid-gutter-width
 		);
-		@include margin( 
-			bottom $grid-gutter-width 
+		@include margin(
+			bottom $grid-gutter-width
 		);
 		background-color: the_color( gray, very-light );
 
@@ -120,8 +117,8 @@
 		&__title {
 			@extend %font-extrabold;
 			@include font( 25, 30 );
-			@include margin( 
-				top $grid-gutter-width 
+			@include margin(
+				top $grid-gutter-width
 				bottom 0
 			);
 		}
@@ -194,7 +191,7 @@
 			}
 		}
 
-		
+
 		/**
 		 * Document
 		 *
@@ -214,7 +211,7 @@
 		@extend %text-xs-center;
 		@include padding( bottom $grid-gutter-width );
 		@include margin( top $grid-gutter-width * 2 bottom $grid-gutter-width * 2 );
-		
+
 		.slick-track { @extend %margin-xs-0; }
 
 		/**
@@ -234,9 +231,10 @@
 	 * Comment
 	 *
 	 * @uses .Adult-training-comment
+	 * @author Jérémy Levron <jeremylevron@19h47.fr> (http://19h47.fr)
 	 */
 	&-comment {
-		@include margin( right $grid-gutter-width left $grid-gutter-width );
+
 		/**
 		 * Post
 		 *
@@ -271,8 +269,9 @@
 		 * @uses .Adult-training-comment__author
 		 */
 		&__author {
-			@extend %font-extrabold, %margin-xs-top-0;
+			@extend %font-extrabold;
 			@include font( 15.98, 19.97 );
+			@include margin( top $grid-gutter-width );
 		}
 
 
@@ -309,13 +308,13 @@
 		@extend %text-xs-center;
 
 		p { @extend %font-semibold; }
-		p span { 
+		p span {
 			@extend %margin-xs-top-0;
-			@include font( 55, 20 ); 
+			@include font( 55, 20 );
 		}
 		p:first-child { @extend %margin-xs-0; }
-		p:nth-child( 2 ) { 
-			@extend %margin-xs-top-0; 
+		p:nth-child( 2 ) {
+			@extend %margin-xs-top-0;
 			@include font( 16, 20 );
 		}
 	}

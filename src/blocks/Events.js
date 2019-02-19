@@ -81,7 +81,7 @@ export default class Events {
 	 * Events.load
 	 */
 	load() {
-		let url = `${window.wp.ajax_url}?action=ajax_load_events`;
+		let url = `${window.wp.ajax_url}?action=ajax_load_events&nonce=${wp.nonce}`;
 
 		if (this.category) {
 			url += `&category=${this.category.id}`;
@@ -90,10 +90,9 @@ export default class Events {
 		const request = new Request(url);
 		const init = {
 			method: 'post',
-			// offset: this.offset,
 		};
 
-		// lock everything before the request
+		// Lock everything before the request.
 		this.lock('on');
 
 		return fetch(request, init);

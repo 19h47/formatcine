@@ -1,24 +1,23 @@
 {#
 
 @file 			/views/pages/video.html.twig
-@package 		WordPress
-@subpackage 	Formatcine
+@package 		frmtcn
 @author 		Jérémy Levron <jeremylevron@19h47.fr> (http://19h47.fr)
 
 #}
-{% extends 'index.twig' %}
+{% extends 'index.html.twig' %}
 
 
 {% block content %}
 
 	{# Post title #}
 	{% if post.post_title %}
-		{% include 'components/post-title.twig' with { post_title: parent.post_title } %}
+		{% include 'components/post-title.html.twig' with { post_title: parent.post_title } %}
 	{% endif %}
 
 	{# Post content #}
 	{% if post.post_content %}
-		{% include 'components/post-content.twig' %}
+		{% include 'components/post-content.html.twig' %}
 	{% endif %}
 
 	<div class="Site-container">

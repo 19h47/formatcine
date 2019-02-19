@@ -1,10 +1,10 @@
 <?php
-
 /**
- * @author   	Jérémy Levron <jeremylevron@19h47.fr> (http://19h47.fr)
- * @file 		front-page.php
- * @package  	WordPress
- * @subpackage  frmtcn
+ * Front page
+ *
+ * @author  Jérémy Levron <jeremylevron@19h47.fr> (http://19h47.fr)
+ * @file    front-page.php
+ * @package frmtcn
  */
 
 if ( ! class_exists( 'Timber' ) ) {
@@ -13,24 +13,21 @@ if ( ! class_exists( 'Timber' ) ) {
 }
 
 
-$context = Timber::get_context();
-$post = new TimberPost();
-$context['post'] = $post;
+$context          = Timber::get_context();
+$context['post']  = new TimberPost();
 $context['posts'] = Timber::get_posts(
 	array(
-		'post_type' 	=> 'post',
-		'post_status'	=> 'publish',
-		'meta_key'		=> 'event_date',
-		'orderby'		=> 'meta_value',
-		'order'			=> 'ASC',
-		'post_per_page'	=> 6
+		'post_type'     => 'post',
+		'post_status'   => 'publish',
+		'meta_key'      => 'event_date',
+		'orderby'       => 'meta_value',
+		'order'         => 'ASC',
+		'post_per_page' => 6,
 	)
 );
 
 $context['events']['categories'] = get_terms( array( 'taxonomy' => 'category' ) );
 
-
-$templates = array( 'pages/front-page.twig' );
-
+$templates = array( 'pages/front-page.html.twig' );
 
 Timber::render( $templates, $context );

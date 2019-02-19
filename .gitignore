@@ -45,3 +45,4 @@ static/prototypes
 sftp-config.json
 dist
 screenshots
+/wpcs/

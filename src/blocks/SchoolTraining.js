@@ -81,7 +81,7 @@ export default class SchoolTraining {
 	 * SchoolTraining.load
 	 */
 	load() {
-		let url = `${window.wp.ajax_url}?action=ajax_load_school_trainings`;
+		let url = `${window.wp.ajax_url}?action=ajax_load_school_trainings&nonce=${wp.nonce}`;
 
 		if (this.school_class.ids) {
 			url += `&school_class=${this.school_class.ids}`;
@@ -94,7 +94,6 @@ export default class SchoolTraining {
 		const request = new Request(url);
 		const init = {
 			method: 'post',
-			// offset: this.offset,
 		};
 
 		// lock everything before the request

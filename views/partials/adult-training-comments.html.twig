@@ -1,0 +1,63 @@
+{#
+
+@file views/partials/adult-training-comment
+
+#}
+<div class="Site-container">
+	<div class="Adult-training-comments background-color-ternary">
+		<div class="row">
+			<div class="col-xs-12">
+				<h2 class="Adult-training-comments__title">
+					{{- __( 'Commentaires de stagiaires' ) -}}
+				</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-md-8 col-md-offset-2">
+
+				<div class="js-adult-training">
+
+				{% for comment in comments %}
+
+					<article class="Adult-training-comment">
+						<p class="Adult-training-comment__post background-color-main">
+							{{- function( 'get_the_title', comment.comment_post_ID ) -}}
+						</p>
+						<p class="Adult-training-comment__content">
+							{{- comment.comment_content -}}
+						</p>
+
+						{% spaceless %}
+
+						<p class="Adult-training-comment__author color-secondary">
+							{{- comment.comment_author -}}
+
+							{% if comment.comment_author_url %}
+								<a
+									class="Adult-training-comment__author-url"
+									href="{{ comment.comment_author_url }}"
+									target="_blank"
+								>
+									-&nbsp;{{- comment.comment_author_url -}}
+								</a>
+							{% endif %}
+
+							{% if function( 'get_field', 'origin', 'comment_' ~ comment.comment_ID ) %}
+								<span class="Adult-training-comment__origin">
+									-&nbsp;{{- function( 'get_field', 'origin', 'comment_' ~ comment.comment_ID ) -}}
+								</span>
+							{% endif %}
+
+						</p>
+
+						{% endspaceless %}
+					</article>
+
+
+				{% endfor %}
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

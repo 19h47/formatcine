@@ -1,0 +1,238 @@
+{
+    "key": "group_59cebd7392440",
+    "title": "Informations sur le Film",
+    "fields": [
+        {
+            "key": "field_59cebd78aa8ab",
+            "label": "Réalisateur·trice·s",
+            "name": "director",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "director",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "add_term": 1,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "object",
+            "multiple": 0
+        },
+        {
+            "key": "field_59cebdc7aa8ac",
+            "label": "Pays",
+            "name": "country",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "country",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "add_term": 1,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "object",
+            "multiple": 0
+        },
+        {
+            "key": "field_59cebf3daa8ad",
+            "label": "Année",
+            "name": "release_year",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Année de sortie du film",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_59cebf74aa8ae",
+            "label": "Durée",
+            "name": "running_time",
+            "type": "time_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "G:i",
+            "return_format": "G\\hi"
+        },
+        {
+            "key": "field_59cfc9ca99337",
+            "label": "Résumé",
+            "name": "summary",
+            "type": "textarea",
+            "instructions": "Indiquer le résumé du film",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Résumé du film",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": "br"
+        },
+        {
+            "key": "field_59cfca0b2418a",
+            "label": "Critique",
+            "name": "review",
+            "type": "textarea",
+            "instructions": "Indiquer la critique du film",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Critique du film",
+            "maxlength": "",
+            "rows": 2,
+            "new_lines": ""
+        },
+        {
+            "key": "field_59cfc74ae6bac",
+            "label": "Bande annonce",
+            "name": "trailer",
+            "type": "url",
+            "instructions": "Indiquer le lien pour visionner la bande annonce",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Bande annonce du film"
+        },
+        {
+            "key": "field_59cff96718c5d",
+            "label": "Version",
+            "name": "version",
+            "type": "checkbox",
+            "instructions": "Indiquer la ou les versions du film",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "vf": "VF",
+                "vo": "VO",
+                "vost": "VOST"
+            },
+            "allow_custom": 0,
+            "save_custom": 0,
+            "default_value": [],
+            "layout": "horizontal",
+            "toggle": 0,
+            "return_format": "array"
+        },
+        {
+            "key": "field_59cffb27de96c",
+            "label": "Documents",
+            "name": "documents",
+            "type": "repeater",
+            "instructions": "Ajouter les documents du film",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "field_59cffb38de96d",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Ajouter un document",
+            "sub_fields": [
+                {
+                    "key": "field_59cffb38de96d",
+                    "label": "Label",
+                    "name": "label",
+                    "type": "text",
+                    "instructions": "Indiquer le label du lien",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "Label du lien",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_59cffb62de96e",
+                    "label": "Lien",
+                    "name": "link",
+                    "type": "url",
+                    "instructions": "Indiquer l'URL du lien",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "URL du lien"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "movie"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1550611712
+}

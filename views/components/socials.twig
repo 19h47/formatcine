@@ -20,13 +20,15 @@
 		</li>
 	{% endfor %}
 
-	<li class="Socials-item">
-		<a href="mailto:{{ contact.email_addresses | first }}" target="_blank">
-			<svg class="">
-				  <use xlink:href="{{ theme.link }}/dist/icons.svg#envelope"></use>
-			</svg>
-		</a>
-	</li>
+	{% if contact.email_addresses %}
+		<li class="Socials-item">
+			<a href="mailto:{{ contact.email_addresses | first }}" target="_blank">
+				<svg class="">
+					  <use xlink:href="{{ theme.link }}/dist/icons.svg#envelope"></use>
+				</svg>
+			</a>
+		</li>
+	{% endif %}
 
 	{% endspaceless %}
 

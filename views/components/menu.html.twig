@@ -79,14 +79,22 @@
 						<p class="Menu-contact__title">{{- __( 'Association' ) -}}&nbsp;{{- site.name -}}</p>
 
 						<p class="Menu-contact__content">
-							{{- contact.address | replace( { '\n': ' — ' } ) -}}
-							&nbsp;•&nbsp;
-							<a href="tel:{{ contact.phone | replace( { ' ' : '' } ) }}">{{- contact.phone -}}</a>
-							&nbsp;•&nbsp;
+							{% if contact.adress %}
+								{{- contact.address | replace( { '\n': ' — ' } ) -}}&nbsp;•&nbsp;
+							{% endif %}
+
+							{% if contact.phone %}
+								<a href="tel:{{ contact.phone | replace( { ' ' : '' } ) }}">
+									{{- contact.phone -}}
+								</a>
+								&nbsp;•&nbsp;
+							{% endif %}
 
 							{%- for email_address in contact.email_addresses %}
-								<a href="mailto:{{ email_address }}">{{- email_address -}}</a>
-								{{ not loop.last ? ' — ' }}
+								<a href="mailto:{{ email_address }}">
+									{{- email_address -}}
+								</a>
+								{{- not loop.last ? ' — ' -}}
 							{% endfor %}
 
 						</p>

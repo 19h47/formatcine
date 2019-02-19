@@ -36,6 +36,7 @@
         "TweenLite": false,
         "TimelineLite": false,
         "Cookie": false,
-        "AccordionStyle": false
+        "AccordionStyle": false,
+        "wp": false,
     }
 }

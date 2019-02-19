@@ -1,6 +1,10 @@
 {
     "require": {
         "timber/timber": "^1.5",
-        "cocur/slugify": "^3.0"
+        "cocur/slugify": "^3.0",
+        "squizlabs/php_codesniffer": "*"
+    },
+    "scripts": {
+        "lint": "vendor/bin/phpcs --standard=WordPress"
     }
 }
