@@ -13,4 +13,4 @@
  *
  * @link https://github.com/19h47/formatcine
  */
-require_once get_template_directory() . '/class-formatcine.php';
+require_once get_template_directory() . '/inc/class-formatcine.php';

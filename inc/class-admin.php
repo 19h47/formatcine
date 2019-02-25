@@ -8,7 +8,7 @@
 /**
  * Admin class
  *
- * @author  Jérémy Levron levronjeremy@19h47.fr
+ * @author  Jérémy Levron <jeremyjeremy@19h47.fr> (http://19h47.fr)
  */
 class Admin {
 
