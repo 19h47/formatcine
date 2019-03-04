@@ -150,7 +150,8 @@ module.exports = {
 	},
 	plugins: [
 		new CleanWebpackPlugin(['dist'], {
-			root: resolve('')
+			root: resolve(''),
+			verbose: false,
 		}),
 		new ManifestPlugin(),
 

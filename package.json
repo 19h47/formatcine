@@ -4,10 +4,10 @@
 	"description": "Format'ciné's website ",
 	"main": "src/index.js",
 	"scripts": {
-		"development": "./bin/development",
-		"dev": "npm run development",
-		"production": "./bin/production",
-		"prod": "npm run production"
+		"prod": "node scripts/production.js",
+		"production": "node scripts/production.js",
+		"dev": "node scripts/development.js",
+		"development": "node scripts/development.js"
 	},
 	"keywords": [
 		"Webpack",
@@ -37,6 +37,8 @@
 		"breakpoint-sass": "^2.7.1",
 		"breakpoint-slicer": "^2.0.0",
 		"clean-webpack-plugin": "^1.0.1",
+		"clear": "^0.1.0",
+		"compression-webpack-plugin": "^2.0.0",
 		"css-loader": "^2.1.0",
 		"cssnano": "^4.1.10",
 		"eslint": "^5.14.1",
@@ -54,6 +56,7 @@
 		"image-webpack-loader": "^4.6.0",
 		"mini-css-extract-plugin": "^0.5.0",
 		"node-sass": "^4.11.0",
+		"ora": "^3.2.0",
 		"postcss-loader": "^3.0.0",
 		"sass-loader": "^7.1.0",
 		"style-loader": "^0.23.1",
@@ -63,6 +66,7 @@
 		"svgo-loader": "^2.2.0",
 		"webpack": "^4.29.5",
 		"webpack-cli": "^3.2.3",
+		"webpack-format-messages": "^2.0.5",
 		"webpack-manifest-plugin": "^2.0.4",
 		"webpack-merge": "^4.2.1",
 		"webpack-notifier": "^1.7.0"
