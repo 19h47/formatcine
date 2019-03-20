@@ -62,6 +62,7 @@
 	 */
 	&__thumbnail {
 		@extend %position-xs-relative;
+
 		height: 250px;
 		background: { color: the_color( gray, dark); }
 
@@ -141,7 +142,7 @@
 	 */
 	&__document {
 		@extend %display-xs-block, %display-md-inline-block, %font-semibold, %Transition-ease, %text-xs-center;
-		@include autoAlpha( 0 );
+		// @include autoAlpha( 0 );
 		@include font( 13.74, 29.45, 25 );
 		@include margin( top 10px bottom 10px );
 		@include padding( right 5px left 5px );
@@ -164,9 +165,9 @@
 			color: the_color( white );
 		}
 
-		@at-root
-			.slick-active &,
-			.slick-center & { @include autoAlpha( 1 ); }
+		// @at-root
+		// 	.slick-active &,
+		// 	.slick-center & { @include autoAlpha( 1 ); }
 	}
 
 
