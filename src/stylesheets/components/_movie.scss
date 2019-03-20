@@ -179,7 +179,6 @@
 	&__documents {}
 
 
-
 	/**
 	 * Trailer
 	 *
@@ -187,7 +186,7 @@
 	 */
 	&__trailer {
 		@extend %Transition-ease;
-		@include autoAlpha( 0 );
+		// @include autoAlpha( 0 );
 
 		font-size: 13.95px;
 		line-height: normal;
@@ -208,8 +207,8 @@
 			text-decoration: underline;
 		}
 
-		@at-root
-				.slick-active &,
-				.slick-center & { @include autoAlpha( 1 ); }
+		// @at-root
+		// 	.slick-active &,
+		// 	.slick-center & { @include autoAlpha( 1 ); }
 	}
 }
