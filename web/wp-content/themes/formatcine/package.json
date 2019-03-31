@@ -1,6 +1,6 @@
 {
 	"name": "formatcine",
-	"version": "4.0.0",
+	"version": "5.0.0",
 	"description": "Format'ciné's website ",
 	"main": "src/index.js",
 	"scripts": {
@@ -17,7 +17,8 @@
 		"Bootstrap",
 		"Babel",
 		"ESLint",
-		"WordPress"
+		"WordPress",
+		"Docker"
 	],
 	"author": "Jérémy Levron <jeremylevron@19h47.fr> (http://19h47.fr)",
 	"license": "ISC",

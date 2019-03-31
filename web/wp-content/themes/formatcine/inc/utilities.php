@@ -196,9 +196,20 @@ if ( ! function_exists( 'get_theme_manifest' ) ) :
 	 * @return arr
 	 */
 	function get_theme_manifest() {
-		$request = wp_remote_get( get_template_directory_uri() . '/dist/manifest.json' );
 
-		return json_decode( wp_remote_retrieve_body( $request ), true );
+		// Helpers to define the path.
+    	$directory = get_template_directory();
+
+		// Define the path.
+		$path = $directory . '/dist/manifest.json';
+
+		ob_start();
+
+		require_once $path;
+
+    	$contents = ob_get_clean();
+
+    	return json_decode( $contents, true );
 	}
 
 endif;
