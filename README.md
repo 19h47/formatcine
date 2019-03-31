@@ -1,41 +1,23 @@
 # Format'ciné
 
-__Format'ciné__ is a French association promoting cinema in the __Indre et Loire__ region, here's their website.
-
-![Screenshot](screenshot.png)
-
-## Author
-
-The website has been designed by [Moka Création](http://www.mokacreation.com/) and developed by [19h47](http://www.19h47.fr/).
-
-## PHPCS
-
-### Install the WordPress rules
-
-Add __PHP_CodeSniffer__ to the `composer.json` file
-
-```json
-{
-    "require": {
-        "squizlabs/php_codesniffer": "*"
-    }
-}
-```
-
-Then update dependencies
+## Docker
 
 ```bash
-composer update
+docker-compose down --volumes
 ```
-
-Create the project
 
 ```bash
-Make create-project
+docker-compose up -d
 ```
 
-### Add the Rules to PHP CodeSniffer
+## Make an url point to localhost
 
 ```bash
-Make config-set
+sudo nano /etc/hosts
 ```
+
+```
+127.0.0.1 formatcine.test www.formatcine.test
+```
+
+Then type `ctrl + x`, and `y` to save and exit nano. Now, the custom url points to `localhost`.

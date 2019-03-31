@@ -36,13 +36,24 @@
 ehthumbs.db
 Thumbs.db
 
-src/prototypes/
-static/prototypes/
-vendor/
-node_modules/
-public/
-static/prototypes
-sftp-config.json
-dist
-screenshots
-/wpcs/
+# Docker #
+##########
+database
+
+# WordPress files #
+###################
+web/*
+!web/wp-content/themes/
+web/wp-content/themes/*
+
+# Theme and plugins #
+#####################
+!web/wp-content/themes/formatcine/
+web/wp-content/themes/formatcine/vendor/
+web/wp-content/themes/formatcine/wpcs/
+web/wp-content/themes/formatcine/dist
+web/wp-content/themes/formatcine/screenshots
+
+# Front-end #
+#############
+node_modules
