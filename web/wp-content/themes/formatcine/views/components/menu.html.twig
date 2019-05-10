@@ -11,7 +11,7 @@
 	<div class="Menu-inner border-color-main">
 		<div class="Site-container">
 			<div class="row">
-				<div class="col-xs-12">
+				<div class="col-12">
 					<button class="Menu-button js-toggle-menu-button">
 						<svg>
 							<use xlink:href="{{ theme.link }}/dist/icons.svg#close"></use>
@@ -20,7 +20,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-xs-12">
+				<div class="col-12">
 
 					<ul class="Menu-items">
 					{# <pre>{{ menu.main|print_r }}</pre> #}
@@ -55,9 +55,6 @@
 
 							{% endif %}
 
-
-							{# {% if item.children %}{% endif %} #}
-
 						</li>
 					{% endfor %}
 					</ul>
@@ -67,12 +64,12 @@
 
 			{# Socials #}
 			<div class="row">
-				<div class="col-xs-12">{%- include 'components/socials.twig' with { prefix: 'menu' } -%}</div>
+				<div class="col-12">{%- include 'components/socials.twig' with { prefix: 'menu' } -%}</div>
 			</div>
 
 
 			<div class="row">
-				<div class="col-xs-12">
+				<div class="col-12">
 					<div class="Menu-contact">
 						{% spaceless %}
 
@@ -105,7 +102,7 @@
 			</div>
 
 			<div class="row">
-				<div class="col-xs-12">
+				<div class="col-12">
 					<p class="Menu-footer">
 						{%- include 'components/contact.html.twig' -%}
 					</p>

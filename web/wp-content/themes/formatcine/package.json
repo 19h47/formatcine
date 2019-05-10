@@ -1,6 +1,6 @@
 {
 	"name": "formatcine",
-	"version": "5.0.0",
+	"version": "6.0.0",
 	"description": "Format'ciné's website ",
 	"main": "src/index.js",
 	"scripts": {
@@ -24,6 +24,7 @@
 	"license": "ISC",
 	"dependencies": {
 		"@babel/runtime": "^7.4.4",
+		"architecture": "github:19h47/architecture",
 		"bootstrap-sass": "^3.4.1",
 		"ress": "^1.2.2"
 	},
@@ -65,8 +66,8 @@
 		"svg-transform-loader": "^2.0.7",
 		"svgo": "^1.2.2",
 		"svgo-loader": "^2.2.0",
-		"webpack": "^4.30.0",
-		"webpack-cli": "^3.3.1",
+		"webpack": "^4.31.0",
+		"webpack-cli": "^3.3.2",
 		"webpack-format-messages": "^2.0.5",
 		"webpack-manifest-plugin": "^2.0.4",
 		"webpack-merge": "^4.2.1",

@@ -8,8 +8,8 @@
 /**
 * Dependencies
 */
-@import '~breakpoint-sass/stylesheets/breakpoint';
-@import '~breakpoint-slicer/stylesheets/breakpoint-slicer';
+@import '~architecture/src/stylesheets/abstracts/easings';
+
 @import 'abstracts/variables';
 @import 'base/fonts';
 
@@ -17,36 +17,47 @@
 /**
  * Vendors
  */
-@import 
+@import
 	'~ress/ress',
-	'vendors/bootstrap-custom',
+	'vendors/bootstrap-imports',
 	'vendors/slick';
 	// 'vendors/slick-theme';
 
 
 
-/**
- * Abstracts
- */
-@import 
-	'abstracts/functions',
-	'abstracts/mixins',
-	'abstracts/placeholders';
-	//'abstracts/animations';
+// Functions.
+@import
+	'~architecture/src/stylesheets/abstracts/functions';
+
+// Mixins.
+@import
+	'~architecture/src/stylesheets/abstracts/mixins/create-class-color',
+	'~architecture/src/stylesheets/abstracts/mixins/position',
+	'~architecture/src/stylesheets/abstracts/mixins/margin',
+	'~architecture/src/stylesheets/abstracts/mixins/padding',
+	'~architecture/src/stylesheets/abstracts/mixins/letter-spacing',
+	'~architecture/src/stylesheets/abstracts/mixins/size',
+	'~architecture/src/stylesheets/abstracts/mixins/auto-alpha',
+	'~architecture/src/stylesheets/abstracts/mixins/font',
+	'~architecture/src/stylesheets/abstracts/mixins/power';
+
+@import 'abstracts/placeholders';
+
+
 
 
 /**
  * Base
  */
-@import 
-	'base/base',	
+@import
+	'base/base',
 	'base/typography';
 
 
 /**
  * Layout
  */
-@import 
+@import
 	'layout/site';
 	//'layout/header',
 	//'layout/footer';
@@ -55,14 +66,14 @@
 /**
  * Pages
  */
-@import 
+@import
 	'pages/page';
 
 
 /**
  * Components
  */
-@import 
+@import
 	'components/logo',
 	'components/slider',
 	'components/discovery',
@@ -83,10 +94,28 @@
 	'components/partners';
 
 
-/**
- * Utilities
- */
-@import 'utilities/_settings';
+
+// Utilities.
+@import
+	'vendors/architecture-variables',
+// 	'~architecture/src/stylesheets/utilities/colors',
+// 	'~architecture/src/stylesheets/utilities/cursors',
+	// '~architecture/src/stylesheets/utilities/displays',
+	'~architecture/src/stylesheets/utilities/floats',
+	'~architecture/src/stylesheets/utilities/fonts',
+	'~architecture/src/stylesheets/utilities/margins',
+	// '~architecture/src/stylesheets/utilities/overflows',
+	// '~architecture/src/stylesheets/utilities/paddings',
+	'~architecture/src/stylesheets/utilities/positions',
+	'~architecture/src/stylesheets/utilities/sizes',
+	'~architecture/src/stylesheets/utilities/text-aligns',
+	// '~architecture/src/stylesheets/utilities/text-decorations',
+	'~architecture/src/stylesheets/utilities/text-transforms',
+	'~architecture/src/stylesheets/utilities/vertical-aligns',
+// 	'~architecture/src/stylesheets/utilities/visibilities',
+	// '~architecture/src/stylesheets/utilities/white-spaces',
+	'~architecture/src/stylesheets/utilities/lists';
+
 
 
 /**

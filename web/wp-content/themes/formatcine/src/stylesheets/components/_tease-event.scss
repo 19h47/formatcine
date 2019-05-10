@@ -11,7 +11,7 @@
 	);
 	width: 100%;
 
-	@include from( 'md' ) {
+	@include media-breakpoint-up( md ) {
 		@include margin( 
 			right #{ ( $grid-gutter-width / 2 ) * -1 } 
 			left #{ $grid-gutter-width * -1 } 
@@ -23,7 +23,7 @@
 
 
 	&__date {
-		@extend %font-semibold, %margin-xs-y-0;
+		@extend %font-weight-semibold, %margin-y-0;
 
 		color: the_color( gray, very-dark-mostly-black );
 		font-size: 18px;
@@ -35,7 +35,7 @@
 	}
 
 	&__title {
-		@extend %font-extrabold;
+		@extend %font-weight-extrabold;
 		@include font( 24.98, 29.97, 0 );
 
 		color: the_color( gray, very-dark-mostly-black );
@@ -53,7 +53,7 @@
 	}
 
 	&__read-more {
-		@extend %font-semibold, %Transition-ease, %display-xs-block, %display-md-inline-block, %text-xs-center;
+		@extend %font-weight-semibold, %Transition-ease, .d-block, .d-md-inline-block, %text-align-center;
 		@include font( 13.74, 25, 25 );
 		@include padding( right 5px left 5px );
 		
@@ -65,7 +65,7 @@
 		color: the_color( gray, very-dark-mostly-black );
 		width: 100%;
 
-		@include from( 'md' ) {
+		@include media-breakpoint-up( md ) {
 			width: auto;
 		}
 
@@ -78,7 +78,7 @@
 		}
 
 		&__icon {
-			@extend %display-xs-inline-block, %vertical-align-middle;
+			@extend .d-inline-block, %vertical-align-middle;
 			@include margin( left 4px );
 
 			max-width: 10px;

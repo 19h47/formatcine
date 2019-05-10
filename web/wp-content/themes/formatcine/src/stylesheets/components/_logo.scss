@@ -4,15 +4,15 @@
  * @uses .Logo
  */
 .Logo {
-	@extend %display-xs-inline-block;
+	@extend .d-inline-block;
 	@include margin( top $grid-gutter-width );
 
-	@include from( 'md' ) {
+	@include media-breakpoint-up( md ) {
 		@include margin( top 0 );
 	}
 
 	svg {
-		@extend %display-xs-inline-block, %vertical-align-middle;
+		@extend .d-inline-block, %vertical-align-middle;
 
 		max-width: 100%;
 		max-height: 100%;

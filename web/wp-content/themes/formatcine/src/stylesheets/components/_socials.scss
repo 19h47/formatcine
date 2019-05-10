@@ -1,5 +1,5 @@
 .Socials {
-	@extend %list-unstyled;
+	@extend %list-style-type-none;
 
 	/**
 	 * Menu
@@ -7,7 +7,7 @@
 	 * @uses .Socials--menu
 	 */
 	&--menu {
-		@extend %text-xs-center;
+		@extend %text-align-center;
 		@include margin( top 170px bottom 0 );
 
 		color: the_color( white );
@@ -20,7 +20,7 @@
 	 * @uses .Socials--header
 	 */
 	&--header {
-		@extend %text-xs-right;
+		@extend %text-align-right;
 		@include margin( top 0 );
 
 		color: the_color( gray, dark ); }
@@ -32,21 +32,21 @@
 	 * @uses .Socials-item
 	 */
 	&-item {
-		@extend %margin-xs-y-0, %display-xs-inline-block;
+		@extend %margin-y-0, .d-inline-block;
 		@include size( $grid-gutter-width );
 		@include margin( right 7.5px left 7.5px );
 
-		&:first-child { @extend %margin-xs-left-0; }
-		&:last-child { @extend %margin-xs-right-0; }
+		&:first-child { @extend %margin-left-0; }
+		&:last-child { @extend %margin-right-0; }
 
 		a {
-			@extend %display-xs-block;
+			@extend .d-block;
 
 			&:hover { opacity: 0.7; }
 		}
 
 		svg {
-			@extend %display-xs-inline-block, %vertical-align-middle;
+			@extend .d-inline-block, %vertical-align-middle;
 
 			fill: currentColor;
 			max-width: $grid-gutter-width;

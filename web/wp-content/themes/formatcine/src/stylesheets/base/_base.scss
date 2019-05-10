@@ -10,16 +10,16 @@ html {
 body {
 
     line-height: ( ( $base-line-height / $base-font-size ) * 1em );
-    
-    @include from( 'md' ) {    
+
+    @include media-breakpoint-up( md ) {
         border: {
             style: solid;
-            width: 25px 25px 0 25px;
+            width: $grid-gutter-width $grid-gutter-width 0 $grid-gutter-width;
         }
     }
 }
 
-a, 
+a,
 button {
     cursor: pointer;
     outline: none;
@@ -34,34 +34,34 @@ i {
     @extend %font-style-normal!optional;
 }
 
-b, 
+b,
 strong {
     font-weight: map-get( map-get( $font, weights ), bold );
 }
 
 p {
-    @include margin ( 
+    @include margin (
         top 1em
         bottom 1em
     );
-    
+
     font-size: 1em;
     line-height: $base-line-height-px;
 }
 
 ul,
 ol {
-    @include margin ( 
-        top ( ( $base-line-height / $base-font-size ) * 1em ) 
+    @include margin (
+        top ( ( $base-line-height / $base-font-size ) * 1em )
         right 0
         bottom ( ( ( $base-line-height / $base-font-size ) / 2 ) * 1em )
         left 0
     );
-    @include padding ( 
-        top 0 
-        right 0 
-        bottom 0 
-        left ( ( $base-line-height / $base-font-size ) * 1em ) 
+    @include padding (
+        top 0
+        right 0
+        bottom 0
+        left ( ( $base-line-height / $base-font-size ) * 1em )
     );
 }
 
@@ -70,23 +70,23 @@ ul {
 }
 
 li {
-    @include margin ( 
+    @include margin (
         top ( ( ( $base-line-height / $base-font-size ) / 2 ) * 1em )
-        right 0 
+        right 0
         bottom ( ( ( $base-line-height / $base-font-size ) / 4 ) * 1em )
-        left 0 
+        left 0
     );
 }
 
 hr {
-    @extend %margin-xs-0;
-    
+    @extend %margin-0;
+
     border: 0;
 }
 
 em {
 
-    font: 
+    font:
     {
         style: italic;
     }
@@ -98,21 +98,21 @@ iframe {
 
 blockquote {
     // Extend class
-    @extend .font-title, .font-regular; 
+    @extend %font-family-title, %font-weight-regular;
 
     // Include margin
-    @include margin ( 
+    @include margin (
         top ( ( $base-line-height / $base-font-size ) * 1em )
-        right 0 
+        right 0
         bottom ( ( ( $base-line-height / $base-font-size ) / 2 ) * 1em )
-        left 0 
+        left 0
     );
 
     // Include padding
-    @include padding ( 
-        top 20px 
-        left ( $grid-outer-gutter-width * 2 ) 
-        bottom 20px 
+    @include padding (
+        top $grid-gutter-width
+        left $grid-outer-gutter-width * 2
+        bottom $grid-gutter-width
     );
 
     border: {
@@ -124,7 +124,7 @@ blockquote {
     }
 
     p {
-        @extend %margin-xs-0;
+        @extend %margin-0;
     }
 }
 

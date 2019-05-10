@@ -8,13 +8,14 @@
 
 	&-link {
 		$this: &;
-		@extend %display-xs-block, %text-xs-center;
+		@extend .d-block;
+		@extend %text-align-center;
 		@include margin(
 			top 50px
 			bottom 50px
 		);
 
-		@include from( 'md' ) {
+		@include media-breakpoint-up( md ) {
 			@include margin(
 				right $grid-gutter-width
 				left $grid-gutter-width
@@ -46,11 +47,11 @@
 
 		&__label {
 			@extend
-				%font-bold,
-				%uppercase,
-				%position-xs-relative,
-				%display-xs-inline,
-				%margin-xs-y-0,
+				%font-weight-bold,
+				%text-transform-uppercase,
+				%position-relative,
+				.d-inline,
+				%margin-y-0,
 				%Transition-ease;
 			@include font( 20, 24 );
 

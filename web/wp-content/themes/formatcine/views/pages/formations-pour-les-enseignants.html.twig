@@ -20,7 +20,7 @@
 
 	<div class="Site-container">
 		<div class="row">
-			<div class="col-xs-12 text-xs-center">
+			<div class="col-12 text-align-center">
 				<div class="Page-list-adjacent">
 
 					<p class="Page-list-adjacent__item Page-list-adjacent__item--is-active background-color-main background-color-main-hover">
@@ -44,7 +44,7 @@
 
 	<div class="Site-container">
 		<div class="row">
-			<div class="col-xs-12">
+			<div class="col-12">
 				<p class="Page-introduction font-semibold">
 					{{- __( 'Notre association organise en Touraine depuis vingt cinq ans des stages de un à trois jours dans le domaine du cinéma et de l\'audiovisuel. Les enseignants hors département de l\'Indre-et-Loire peuvent s\'y inscrire sous certaines conditions (nous contacter).' ) -}}
 				</p>
@@ -53,13 +53,10 @@
 	</div>
 
 
-
 	<div class="Site-container">
 		<div class="row">
-			<div class="col-xs-12 text-xs-center">
-				<h2 class="Site-title-underline">
-					{{- __( 'Stages et formations' ) }}
-				</h2>
+			<div class="col-12 text-align-center">
+				<h2 class="Site-title-underline">{{- __( 'Stages et formations' ) }}</h2>
 			</div>
 		</div>
 	</div>
@@ -67,7 +64,7 @@
 	<div class="Site-container Adult-training">
 		<div class="row is-flex">
 			{% for adult_training in adult_trainings %}
-				<div class="col-xs-12 col-md-6">
+				<div class="col-12 col-md-6">
 					<article class="Adult-training-teachers">
 						{# <pre>{{ adult_training | print_r }}</pre> #}
 						{% if adult_training.thumbnail %}
@@ -107,11 +104,9 @@
 
 	<div class="Site-container Adult-training-conclusion">
 		<div class="row">
-			<div class="col-xs-12 color-main">
+			<div class="col-12 color-main">
 				<p><span>+</span></p>
-				<p>
-					En plus de ces stages, l'association Format'Ciné offre la possibilité d'assister à la rencontre professionnelle organisée par la NEF Animation en octobre à l'abbaye de Fontevraud.
-				</p>
+				<p>{{- 'En plus de ces stages, l\'association Format\'Ciné offre la possibilité d'assister à la rencontre professionnelle organisée par la NEF Animation en octobre à l\'abbaye de Fontevraud.' -}}</p>
 			</div>
 		</div>
 	</div>

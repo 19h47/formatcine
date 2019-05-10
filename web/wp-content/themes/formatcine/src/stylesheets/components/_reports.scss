@@ -4,7 +4,7 @@
  * @uses .Reports
  */
 .Reports {
-	@extend %text-xs-center;
+	@extend %text-align-center;
 	@include margin( 
 		top $grid-gutter-width * 2 
 		// bottom 70px
@@ -21,7 +21,7 @@
 	 * @uses .Reports__title
 	 */
 	&__title {
-		@extend %uppercase, %font-extrabold, %text-xs-center;
+		@extend %text-transform-uppercase, %font-weight-extrabold, %text-align-center;
 		@include font( 18, 30, 50 );
 		@include margin( top $grid-gutter-width / -2 );
 
@@ -34,7 +34,7 @@
 	 * @uses .Reports__subheading
 	 */
 	&__subheading {
-		@extend %font-semibold, %margin-xs-y-0;
+		@extend %font-weight-semibold, %margin-y-0;
 		font-size: 17.96px;
 		line-height: normal;
 	}
@@ -59,7 +59,7 @@
 	 * @uses .Reports__label
 	 */
 	&__label {
-		@extend %font-extrabold, %uppercase, %display-xs-inline-block, %Transition-ease;
+		@extend %font-weight-extrabold, %text-transform-uppercase, .d-inline-block, %Transition-ease;
 		@include margin( right auto left auto );
 		@include padding( top 2px right 9px bottom 2px left 9px );
 		@include font( 18, 30, 50 );

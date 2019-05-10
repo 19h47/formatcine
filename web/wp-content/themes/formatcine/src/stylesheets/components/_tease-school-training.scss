@@ -28,7 +28,7 @@
 		background: { color: the_color( gray, dark ); }
 
 		img {
-			@extend %display-xs-inline-block, %vertical-align-middle;
+			@extend .d-inline-block, %vertical-align-middle;
 			@include size( 100% );
 
 			object-fit: cover;
@@ -42,7 +42,7 @@
 	 * @uses .Tease-school-training__date
 	 */
 	&__date {
-		@extend %font-semibold, %margin-xs-y-0;
+		@extend %font-weight-semibold, %margin-y-0;
 
 		color: the_color( gray, very-dark-mostly-black );
 		font-size: 17.96px;
@@ -58,7 +58,7 @@
 	 * @uses .Tease-school-training__title
 	 */
 	&__title {
-		@extend %font-extrabold;
+		@extend %font-weight-extrabold;
 		@include font( 24.94, 29.93, 0 );
 		@include margin( top 10px );
 
@@ -84,7 +84,7 @@
 	}
 
 	&__read-more {
-		@extend %font-semibold, %Transition-ease, %display-xs-block, %display-md-inline-block, %text-xs-center;
+		@extend %font-weight-semibold, %Transition-ease, .d-block, .d-md-inline-block, %text-align-center;
 		@include font( 13.76, 25, 25 );
 		@include padding( right 5px left 5px );
 		@include margin( top 25px );
@@ -97,7 +97,7 @@
 		color: the_color( gray, very-dark-mostly-black );
 		width: 100%;
 
-		@include from( 'md' ) {
+		@include media-breakpoint-up( md ) {
 			width: auto;
 		}
 
@@ -109,7 +109,7 @@
 
 
 		&__icon {
-			@extend %display-xs-inline-block, %vertical-align-middle;
+			@extend .d-inline-block, %vertical-align-middle;
 			@include margin( left 4px );
 
 			max-width: 10px;

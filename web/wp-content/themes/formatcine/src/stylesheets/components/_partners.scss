@@ -12,7 +12,7 @@
 	 * @uses .Partners-item
 	 */
 	&-item {
-		@extend %uppercase, %font-semibold, %display-xs-block;
+		@extend %text-transform-uppercase, %font-weight-semibold, .d-block;
 		@include font( 18, 29.99, 100 );
 
 		color: the_color( gray, dark );

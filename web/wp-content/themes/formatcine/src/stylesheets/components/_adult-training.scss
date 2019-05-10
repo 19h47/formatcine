@@ -13,7 +13,7 @@
 	 * @author Jérémy Levron <jeremylevron@19h47.fr> (http://19h47.fr)
 	 */
 	&-teachers {
-		@extend %text-xs-center;
+		@extend %text-align-center;
 		@include padding(
 			top 40px
 			right $grid-gutter-width
@@ -34,7 +34,7 @@
 		 * @uses .Adult-training-teachers__thumbnail
 		 */
 		&__thumbnail {
-			@extend %display-xs-inline, %vertical-align-middle;
+			@extend .d-inline, %vertical-align-middle;
 		}
 
 
@@ -68,14 +68,14 @@
 		 * @uses .Adult-training-teachers__link
 		 */
 		&__link {
-			@extend %font-extrabold, %uppercase, %display-xs-block, %display-md-inline-block;
+			@extend %font-weight-extrabold, %text-transform-uppercase, .d-block, .d-md-inline-block;
 			@include padding( right 10px left 10px );
 			@include font( 18, 30, 50 );
 
 			color: the_color( white );
 			width: 100%;
 
-			@include from( 'md' ) {
+			@include media-breakpoint-up( md ) {
 				width: auto;
 			}
 		}
@@ -86,7 +86,7 @@
 	 * Professional
 	 */
 	&-professional {
-		@extend %text-xs-center;
+		@extend %text-align-center;
 		@include padding(
 			top 40px
 			right $grid-gutter-width
@@ -105,7 +105,7 @@
 		 * @uses .Adult-training-teachers__thumbnail
 		 */
 		&__thumbnail {
-			@extend %display-xs-inline, %vertical-align-middle;
+			@extend .d-inline, %vertical-align-middle;
 		}
 
 
@@ -115,7 +115,7 @@
 		 * @uses .Adult-training-teachers__title
 		 */
 		&__title {
-			@extend %font-extrabold;
+			@extend %font-weight-extrabold;
 			@include font( 25, 30 );
 			@include margin(
 				top $grid-gutter-width
@@ -153,7 +153,7 @@
 		&__contents {
 
 			&__title {
-				@extend %uppercase, %font-extrabold;
+				@extend %text-transform-uppercase, %font-weight-extrabold;
 				@include font( 18, 30, 100 );
 			}
 		}
@@ -170,14 +170,14 @@
 			color: the_color( gray, very-dark );
 
 			&__title {
-				@extend %font-semibold;
+				@extend %font-weight-semibold;
 				@include font( 18, 22 );
 				@include margin( bottom 0 );
 
 				color: the_color( gray, very-dark-mostly-black );
 
 				span {
-					@extend %display-xs-inline-block, %vertical-align-middle;
+					@extend .d-inline-block, %vertical-align-middle;
 					@include size( 22px );
 					@include margin( right 10px );
 
@@ -208,11 +208,11 @@
 	 * @uses .Adult-training-comments
 	 */
 	&-comments {
-		@extend %text-xs-center;
+		@extend %text-align-center;
 		@include padding( bottom $grid-gutter-width );
 		@include margin( top $grid-gutter-width * 2 bottom $grid-gutter-width * 2 );
 
-		.slick-track { @extend %margin-xs-0; }
+		.slick-track { @extend %margin-0; }
 
 		/**
 		 * Title
@@ -220,7 +220,7 @@
 		 * @uses .Adult-training-comments__title
 		 */
 		&__title {
-			@extend %uppercase, %font-extrabold, %margin-xs-top-0;
+			@extend %text-transform-uppercase, %font-weight-extrabold, %margin-top-0;
 			@include font( 29.93, 29.95, 50 );
 			transform: translate3d( 0, -50%, 0 );
 		}
@@ -241,7 +241,7 @@
 		 * @uses .Adult-training-comment__post
 		 */
 		&__post {
-			@extend %font-semibold, %uppercase, %display-xs-inline-block, %margin-xs-top-0;
+			@extend %font-weight-semibold, %text-transform-uppercase, .d-inline-block, %margin-top-0;
 			@include padding( right 7px left 7px );
 			@include letter-spacing( 100 );
 
@@ -256,7 +256,7 @@
 		 * @uses .Adult-training-comment__content
 		 */
 		&__content {
-			@extend %margin-xs-bottom-0;
+			@extend %margin-bottom-0;
 			@include font( 15.98, 19.97 );
 
 			color: the_color( gray, very-dark-mostly-black );
@@ -269,7 +269,7 @@
 		 * @uses .Adult-training-comment__author
 		 */
 		&__author {
-			@extend %font-extrabold;
+			@extend %font-weight-extrabold;
 			@include font( 15.98, 19.97 );
 			@include margin( top $grid-gutter-width );
 		}
@@ -281,7 +281,7 @@
 		 * @uses .Adult-training-comment__author-url
 		 */
 		&__author-url {
-			@extend %font-semibold, %display-xs-inline-block;
+			@extend %font-weight-semibold, .d-inline-block;
 
 			text-decoration: underline;
 		}
@@ -293,7 +293,7 @@
 		 * @uses .Adult-training-comment__origin
 		 */
 		&__origin {
-			@extend %font-semibold;
+			@extend %font-weight-semibold;
 		}
 	}
 
@@ -305,16 +305,16 @@
 	 */
 	&-conclusion {
 		@include margin( bottom $grid-gutter-width * 2 );
-		@extend %text-xs-center;
+		@extend %text-align-center;
 
-		p { @extend %font-semibold; }
+		p { @extend %font-weight-semibold; }
 		p span {
-			@extend %margin-xs-top-0;
+			@extend %margin-top-0;
 			@include font( 55, 20 );
 		}
-		p:first-child { @extend %margin-xs-0; }
+		p:first-child { @extend %margin-0; }
 		p:nth-child( 2 ) {
-			@extend %margin-xs-top-0;
+			@extend %margin-top-0;
 			@include font( 16, 20 );
 		}
 	}

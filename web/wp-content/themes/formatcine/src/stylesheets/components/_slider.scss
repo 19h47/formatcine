@@ -5,7 +5,7 @@
 
 	// height: 225px;
 	
-	@include from( 'sm' ) {
+	@include media-breakpoint-up( 'sm' ) {
 
 		height: 550px;	
 	}
@@ -16,20 +16,20 @@
 	 * @uses .Slider .title
 	 */
 	.title {
-		@extend %margin-xs-y-0, %font-regular;
+		@extend %margin-y-0, %font-weight-regular;
 		
 		color: the_color( white );
 		line-height: normal;
 
 		span:nth-child( 1 ) {
-			@extend %uppercase, %display-xs-block;
+			@extend %text-transform-uppercase, .d-block;
 			@include letter-spacing( 400 );
 			@include margin( bottom 20px );
 
 			font-size: 24.09px;
 		}
 		span:nth-child( 2 ) {
-			@extend %font-decor, %display-xs-block;
+			@extend %font-family-decor, .d-block;
 			@include letter-spacing( 75 );
 			
 			font-size: 40.15px;
@@ -45,7 +45,7 @@
 	.image {
 		@extend 
 			// %Position-absolute-center, 
-			%display-xs-block,
+			.d-block,
 			%Pointer-events-none;
 		@include margin( 
 			right auto 
@@ -80,7 +80,7 @@
 	 * Image moblile
 	 */
 	.image-mobile {
-		@extend %display-md-none;
+		@extend .d-md-none;
 		@include margin( 
 			top $grid-gutter-width 
 			bottom $grid-gutter-width 

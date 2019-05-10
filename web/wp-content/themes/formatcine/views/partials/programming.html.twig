@@ -12,7 +12,7 @@ Programming
 	<div class="Site-container">
 
 		<div class="Programming-title row">
-			<div class="col-xs-12">
+			<div class="col-12">
 				<h2 class="Site-title-underline">
 					{{- __( 'Programmation' ) ~ ' ' ~ season.name -}}
 				</h2>
@@ -21,7 +21,7 @@ Programming
 
 
 		<div class="row Programming-filters">
-			<div class="col-xs-12">
+			<div class="col-12">
 				{% spaceless %}
 					{% for school_class in school_classes %}
 						<button
@@ -76,7 +76,7 @@ Programming
 
 						{# `Sixième` or `Cinquième` class #}
 						{% if 'sixieme' in current_school_classes or 'cinquieme' in current_school_classes %}
-							<div class="col-xs-12 col-md-4">
+							<div class="col-12">
 								{%- include 'components/movie.html.twig' -%}
 							</div>
 						{% endif %}
@@ -84,7 +84,7 @@ Programming
 
 						{# `Quatrième` or `Troisième` class #}
 						{% if 'quatrieme' in current_school_classes or 'troisieme' in current_school_classes %}
-							<div class="col-xs-12 col-md-4">
+							<div class="col-12">
 								{%- include 'components/movie.html.twig' -%}
 							</div>
 						{% endif %}
