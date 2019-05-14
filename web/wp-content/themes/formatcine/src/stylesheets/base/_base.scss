@@ -4,7 +4,7 @@
 
 html {
     // @extend %w-xs-100;
-    overflow-x: hidden;
+    @extend %overflow-x-hidden;
 }
 
 body {

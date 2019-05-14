@@ -84,7 +84,7 @@
 	<div class="Events js-events">
 		<div class="Site-container">
 
-			<div class="row hidden-md hidden-lg hidden-hd">
+			<div class="row d-md-none">
 				<div class="col-12 col-md-4">
 					<h2 class="Site-title-underline">{{- __( 'Les\névénements' ) | nl2br -}}</h2>
 					<p class="description">
@@ -118,8 +118,8 @@
 			</div>
 
 			<div class="row">
-				<div class="col-12 col-md-4 hidden-xs hidden-sm">
-					<h2 class="Site-title-underline">{{ __( 'Les\névénements' ) | nl2br }}</h2>
+				<div class="col-12 col-md-4 d-none d-md-block">
+					<h2 class="Site-title-underline">{{- __( 'Les\névénements' ) | nl2br -}}</h2>
 					<p class="description">
 						{{- __( 'Toute l’année, retrouvez des manifestations organisées avec nos partenaires sur différents thèmes.' ) -}}
 					</p>

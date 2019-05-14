@@ -62,9 +62,9 @@
 	</div>
 
 	<div class="Site-container Adult-training">
-		<div class="row is-flex">
+		<div class="row d-flex justify-content-center">
 			{% for adult_training in adult_trainings %}
-				<div class="col-12 col-md-6">
+				<div class="col-12 col-md-6 padding-bottom-3">
 					<article class="Adult-training-teachers">
 						{# <pre>{{ adult_training | print_r }}</pre> #}
 						{% if adult_training.thumbnail %}
@@ -106,7 +106,7 @@
 		<div class="row">
 			<div class="col-12 color-main">
 				<p><span>+</span></p>
-				<p>{{- 'En plus de ces stages, l\'association Format\'Ciné offre la possibilité d'assister à la rencontre professionnelle organisée par la NEF Animation en octobre à l\'abbaye de Fontevraud.' -}}</p>
+				<p>{{- 'En plus de ces stages, l\'association Format\'Ciné offre la possibilité d\'assister à la rencontre professionnelle organisée par la NEF Animation en octobre à l\'abbaye de Fontevraud.' -}}</p>
 			</div>
 		</div>
 	</div>

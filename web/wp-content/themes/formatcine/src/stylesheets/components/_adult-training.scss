@@ -242,8 +242,9 @@
 		 */
 		&__post {
 			@extend %font-weight-semibold, %text-transform-uppercase, .d-inline-block, %margin-top-0;
-			@include padding( right 7px left 7px );
+			@include padding( right $grid-gutter-width / 4 left $grid-gutter-width / 4 );
 			@include letter-spacing( 100 );
+			@include margin( right $grid-gutter-width / 2 left $grid-gutter-width / 2 );
 
 			font-size: 14px;
 			color: the_color( white );
@@ -258,6 +259,7 @@
 		&__content {
 			@extend %margin-bottom-0;
 			@include font( 15.98, 19.97 );
+			@include margin( right $grid-gutter-width / 2 left $grid-gutter-width / 2 );
 
 			color: the_color( gray, very-dark-mostly-black );
 		}
@@ -271,7 +273,7 @@
 		&__author {
 			@extend %font-weight-extrabold;
 			@include font( 15.98, 19.97 );
-			@include margin( top $grid-gutter-width );
+			@include margin( top $grid-gutter-width right $grid-gutter-width / 2 left $grid-gutter-width / 2 );
 		}
 
 

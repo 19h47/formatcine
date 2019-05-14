@@ -396,38 +396,17 @@ class Formatcine extends Timber {
 		}
 
 		// Maybe it hasn't at all.
-		if ( null === $color_ternary ) {
+		if ( null === $color_ternary || '' === $color_ternary ) {
 			$color_ternary = '#FFFFFF';
 		}
 
 		?>
 		<style>
-			/* Color */
-			.color-main { color: <?php echo $color_main; ?>; }
-			.color-secondary { color: <?php echo $color_secondary; ?>; }
-			.color-ternary { color: <?php echo $color_ternary ? $color_ternary : '#ffffff' ?>; }
-			.color-main-hover:hover { color: <?php echo $color_main; ?>; }
-			.color-secondary-hover:hover { color: <?php echo $color_secondary; ?>; }
-
-			/* Border */
-			.border-color-main { border-color: <?php echo $color_main; ?>; }
-			.border-color-main-hover:hover { border-color: <?php echo $color_main; ?>; }
-			.border-color-secondary { border-color: <?php echo $color_secondary; ?>; }
-			.border-color-secondary-hover:hover { border-color: <?php echo $color_secondary; ?>; }
-
-			/* Background */
-			.background-color-main { background-color: <?php echo $color_main; ?>; }
-			.background-color-main-hover:hover { background-color: <?php echo $color_main; ?>; }
-			.background-color-secondary { background-color: <?php echo $color_secondary; ?>; }
-			.background-color-secondary-hover:hover { background-color: <?php echo $color_secondary; ?>; }
-			.background-color-ternary { background-color: <?php echo $color_ternary ? $color_ternary : '#ffffff' ?>; }
-
-			/* Fill */
-			.fill-main { fill: <?php echo $color_main; ?>; }
-			.fill-secondary { fill: <?php echo $color_secondary; ?>; }
-
-			/* Outline */
-			.outline-color-secondary { outline-color: <?php echo $color_secondary; ?>; }
+			:root {
+				--main: <?php echo $color_main; ?>;
+				--secondary: <?php echo $color_secondary; ?>;
+				--ternary: <?php echo $color_ternary; ?>;
+			}
 		</style>
 		<?php
 	}

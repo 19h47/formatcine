@@ -9,6 +9,7 @@
 * Dependencies
 */
 @import '~architecture/src/stylesheets/abstracts/easings';
+@import 'vendors/bootstrap-imports';
 
 @import 'abstracts/variables';
 @import 'base/fonts';
@@ -19,7 +20,6 @@
  */
 @import
 	'~ress/ress',
-	'vendors/bootstrap-imports',
 	'vendors/slick';
 	// 'vendors/slick-theme';
 
@@ -45,13 +45,14 @@
 
 
 
-
 /**
  * Base
  */
 @import
 	'base/base',
 	'base/typography';
+
+@import 'theme';
 
 
 /**
@@ -91,7 +92,8 @@
 	'components/socials',
 	'components/video',
 	'components/adult-training',
-	'components/partners';
+	'components/partners',
+	'components/embed-container';
 
 
 
@@ -104,8 +106,8 @@
 	'~architecture/src/stylesheets/utilities/floats',
 	'~architecture/src/stylesheets/utilities/fonts',
 	'~architecture/src/stylesheets/utilities/margins',
-	// '~architecture/src/stylesheets/utilities/overflows',
-	// '~architecture/src/stylesheets/utilities/paddings',
+	'~architecture/src/stylesheets/utilities/overflows',
+	'~architecture/src/stylesheets/utilities/paddings',
 	'~architecture/src/stylesheets/utilities/positions',
 	'~architecture/src/stylesheets/utilities/sizes',
 	'~architecture/src/stylesheets/utilities/text-aligns',

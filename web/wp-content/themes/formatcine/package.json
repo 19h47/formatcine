@@ -1,6 +1,6 @@
 {
 	"name": "formatcine",
-	"version": "6.0.0",
+	"version": "6.0.1",
 	"description": "Format'ciné's website ",
 	"main": "src/index.js",
 	"scripts": {
@@ -25,7 +25,7 @@
 	"dependencies": {
 		"@babel/runtime": "^7.4.4",
 		"architecture": "github:19h47/architecture",
-		"bootstrap-sass": "^3.4.1",
+		"bootstrap": "^4.3.1",
 		"ress": "^1.2.2"
 	},
 	"devDependencies": {
@@ -35,9 +35,7 @@
 		"@babel/preset-env": "^7.4.4",
 		"autoprefixer": "^9.5.1",
 		"babel-eslint": "^10.0.1",
-		"babel-loader": "^8.0.5",
-		"breakpoint-sass": "^2.7.1",
-		"breakpoint-slicer": "^2.0.0",
+		"babel-loader": "^8.0.6",
 		"clean-webpack-plugin": "^1.0.1",
 		"clear": "^0.1.0",
 		"compression-webpack-plugin": "^2.0.0",

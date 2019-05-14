@@ -170,3 +170,21 @@ $state-classes: (
 	single-menu-open: single-menu--is-open,
 	bottom: is-bottom,
 );
+
+
+/**
+ * Spacers
+ *
+ * Usefull for padding and margin utilities rythm
+ */
+$spacers: (
+	0: 0,
+	1: $grid-gutter-width-unitless * 0.25,
+	2: $grid-gutter-width-unitless * 0.5,
+	3: $grid-gutter-width-unitless,
+	4: $grid-gutter-width-unitless * 1.5,
+	5: $grid-gutter-width-unitless * 2,
+	6: $grid-gutter-width-unitless * 3,
+	7: $grid-gutter-width-unitless * 4,
+	8: $grid-gutter-width-unitless * 5,
+);
