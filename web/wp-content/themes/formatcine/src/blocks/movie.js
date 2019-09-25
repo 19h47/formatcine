@@ -1,6 +1,8 @@
+/* global $ */
+
 // Movies slider
-const sliders = document.querySelectorAll('.js-movie-slider');
-// console.log(sliders);
+const sliders = [...document.querySelectorAll('.js-movie-slider')];
+
 sliders.forEach((slider) => {
 	const $slider = $(slider);
 

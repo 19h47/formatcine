@@ -1,3 +1,5 @@
+/* global $ */
+
 import App from '../App';
 
 const $body = $('body');

@@ -8,7 +8,7 @@
 const path = require('path');
 
 // Plugins
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
@@ -63,7 +63,7 @@ module.exports = {
 		{
 			test: /\.js$/,
 			exclude: /node_modules/,
-			loader: 'babel-loader'
+			loader: 'babel-loader',
 		},
 		{
 			test: /\.(woff2?|eot|ttf|otf|woff|svg)?$/,
@@ -75,7 +75,6 @@ module.exports = {
 					outputPath: 'fonts/',
 					publicPath: '../fonts/',
 				},
-
 			}]
 		},
 		{
@@ -86,7 +85,7 @@ module.exports = {
 				options: {
 					spriteFilename: 'icons.svg',
 					extract: true
-				}
+				},
 			},
 			'svg-transform-loader',
 			'svgo-loader'
@@ -103,17 +102,19 @@ module.exports = {
 			{
 				loader: 'svgo-loader',
 				options: {
-					plugins: [{
-						removeTitle: true
-					},
-					{
-						convertColors: {
-							shorthex: false
+					plugins: [
+						{
+							removeTitle: true
+						},
+						{
+							convertColors: {
+								shorthex: false
+							}
+						},
+						{
+							convertPathData: false
 						}
-					},
-					{
-						convertPathData: false
-					}]
+					]
 				}
 			}]
 		},
@@ -132,13 +133,13 @@ module.exports = {
 				options: {
 					mozjpeg: {
 						progressive: true,
-						quality: 65
+						quality: [65]
 					},
 					optipng: {
 						enabled: false
 					},
 					pngquant: {
-						quality: '65-90',
+						quality: [0.65, 0.9],
 						speed: 4
 					},
 					gifsicle: {
@@ -149,14 +150,11 @@ module.exports = {
 		}]
 	},
 	plugins: [
-		new CleanWebpackPlugin(['dist'], {
-			root: resolve(''),
-			verbose: false,
-		}),
+		new CleanWebpackPlugin(),
 		new ManifestPlugin(),
-
-		new SpriteLoaderPlugin({ plainSprite: true }),
-
+		new SpriteLoaderPlugin({
+			plainSprite: true
+		}),
 		new WebpackNotifierPlugin({
 			title: 'Webpack',
 			excludeWarnings: true,

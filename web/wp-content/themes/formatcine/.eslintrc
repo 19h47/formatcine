@@ -1,5 +1,5 @@
 {
-    "settings": {
+    settings: {
         "import/resolver": {
           webpack: {
               config: 'config/webpack.common.js'
@@ -10,7 +10,7 @@
         node: true,
         browser: true,
     },
-    "parser": "babel-eslint",
+    parser: "babel-eslint",
     "parserOptions": {
         "sourceType": "module",
         "allowImportExportEverywhere": true,
@@ -24,7 +24,6 @@
         "consistent-return": 1,
     },
     "globals": {
-        "$": false,
         "log": false,
         "data": false,
         "google": false,
@@ -37,6 +36,5 @@
         "TimelineLite": false,
         "Cookie": false,
         "AccordionStyle": false,
-        "wp": false,
     }
 }

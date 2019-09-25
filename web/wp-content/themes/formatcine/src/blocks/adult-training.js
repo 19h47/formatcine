@@ -1,3 +1,4 @@
+/* global $ */
 
 $('.js-adult-training').slick({
 	slidesToScroll: 1,

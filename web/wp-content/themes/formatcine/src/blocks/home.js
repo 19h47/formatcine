@@ -1,3 +1,5 @@
+/* global $ */
+
 // Home slider
 $('.js-slider-home').slick({
 	mobileFirst: true,
