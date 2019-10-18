@@ -2,7 +2,7 @@
 /**
  * Template Name: Nos partenaires
  *
- * @package frmtcn
+ * @package Formatcine
  */
 
 $context         = Timber::get_context();

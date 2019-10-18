@@ -2,7 +2,7 @@
 /**
  * Contact
  *
- * @package frmtcn
+ * @package Formatcine
  */
 
 add_action( 'customize_register', 'frmtcn_customize_contact' );

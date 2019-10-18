@@ -2,8 +2,10 @@
 /**
  * Class Admin
  *
- * @package frmtcn
+ * @package Formatcine
  */
+
+namespace Formatcine;
 
 /**
  * Admin class

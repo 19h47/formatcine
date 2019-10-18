@@ -2,7 +2,7 @@
 /**
  * Utitlities
  *
- * @package frmtcn
+ * @package Formatcine
  */
 
 if ( ! function_exists( 'get_html_class' ) ) :

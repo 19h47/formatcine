@@ -2,7 +2,7 @@
 /**
  * ACF
  *
- * @package frmtcn
+ * @package Formatcine
  */
 
 add_filter( 'acf/prepare_field/name=event_color', 'change_acf_event_color_picker' );

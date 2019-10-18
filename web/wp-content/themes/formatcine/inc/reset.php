@@ -2,7 +2,7 @@
 /**
  * Reset
  *
- * @package frmtcn
+ * @package Formatcine
  */
 
 // Remove Get Shortlink.

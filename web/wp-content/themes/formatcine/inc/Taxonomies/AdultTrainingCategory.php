@@ -2,13 +2,15 @@
 /**
  * Class Adult Training Category
  *
- * @package frmtcn
+ * @package Formatcine
  */
+
+namespace Formatcine\Taxonomies;
 
 /**
  * Adult Training Category tag class
  */
-class Adult_Training_Category {
+class AdultTrainingCategory {
 
 	/**
 	 * The version of the theme.

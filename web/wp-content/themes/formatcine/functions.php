@@ -4,13 +4,12 @@
  *
  * @see https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package frmtcn
+ * @package Formatcine
  * @since   1.0.0
  */
 
-/**
- * Include class theme
- *
- * @link https://github.com/19h47/formatcine
- */
-require_once get_template_directory() . '/inc/class-formatcine.php';
+require_once get_template_directory() . '/vendor/autoload.php';
+
+use Formatcine\App as App;
+
+$app = new App( 'Formatciné', wp_get_theme()->Version ); // phpcs:ignore

@@ -2,8 +2,10 @@
 /**
  * Class Country
  *
- * @package frmtcn
+ * @package Formatcine
  */
+
+namespace Formatcine\Taxonomies;
 
 /**
  * Country tag class

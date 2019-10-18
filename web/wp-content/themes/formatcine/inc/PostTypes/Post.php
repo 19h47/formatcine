@@ -1,9 +1,13 @@
-<?php
+<?php // phpcs:ignore
 /**
  * Class Post
  *
- * @package frmtcn
+ * @package Formatcine
  */
+
+namespace Formatcine\PostTypes;
+
+use Timber\{ Timber };
 
 /**
  * Post
@@ -140,7 +144,7 @@ class Post {
 			'posts_per_page' => (int) $posts_per_page,
 			'offset'         => (int) $offset,
 			'post_status'    => 'publish',
-			'meta_key'       => 'event_date',
+			'meta_key'       => 'event_date', // phpcs:ignore
 			'orderby'        => 'meta_value',
 			'order'          => 'ASC',
 		);

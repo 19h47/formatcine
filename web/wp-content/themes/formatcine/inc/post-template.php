@@ -2,7 +2,7 @@
 /**
  * Post template
  *
- * @package frmtcn
+ * @package Formatcine
  */
 
 add_filter( 'body_class', 'custom_body_class' );

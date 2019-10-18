@@ -2,8 +2,10 @@
 /**
  * Class Season
  *
- * @package frmtcn
+ * @package Formatcine
  */
+
+namespace Formatcine\Taxonomies;
 
 /**
  * Season tag class
@@ -23,10 +25,10 @@ class Season {
 	/**
 	 * Construct function
 	 *
-	 * @param str $theme_version The theme version.
+	 * @param string $theme_version The theme version.
 	 * @access public
 	 */
-	public function __construct( $theme_version ) {
+	public function __construct( string $theme_version ) {
 		$this->theme_version = $theme_version;
 
 		add_action( 'init', array( $this, 'register_taxonomy' ) );

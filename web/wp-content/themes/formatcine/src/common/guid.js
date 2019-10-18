@@ -7,7 +7,7 @@ export default function () {
 		const $guid = document.querySelector('.Guid');
 
 		if ((e.metaKey || e.ctrlKey) && e.keyCode === 186) {
-			$guid.classList.toggle('display-xs-none');
+			$guid.classList.toggle('display-none');
 		}
 	});
 }

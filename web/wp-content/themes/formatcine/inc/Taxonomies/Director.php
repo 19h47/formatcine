@@ -2,8 +2,10 @@
 /**
  * Class Director
  *
- * @package frmtcn
+ * @package Formatcine
  */
+
+namespace Formatcine\Taxonomies;
 
 /**
  * Director tag class

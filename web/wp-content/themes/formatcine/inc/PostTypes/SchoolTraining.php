@@ -2,13 +2,17 @@
 /**
  * Class School Training
  *
- * @package frmtcn
+ * @package Formatcine
  */
+
+namespace Formatcine\PostTypes;
+
+use Timber\{ Timber };
 
 /**
  * School Training class
  */
-class School_Training {
+class SchoolTraining {
 
 	/**
 	 * The version of the theme.
@@ -22,18 +26,16 @@ class School_Training {
 	/**
 	 * Construct function
 	 *
+	 * @param string $theme_version The theme version.
 	 * @access public
-	 * @param str $theme_version The theme version.
 	 */
-	public function __construct( $theme_version ) {
+	public function __construct( string $theme_version ) {
 		$this->theme_version = $theme_version;
 
 		$this->register_post_type();
 
 		add_action( 'init', array( $this, 'register_post_type' ) );
-		add_action( 'admin_head', array( $this, 'css' ) );
 		add_action( 'admin_head', array( $this, 'admin_css' ) );
-		add_filter( 'dashboard_glance_items', array( $this, 'at_a_glance' ) );
 
 		add_filter( 'manage_school_training_posts_columns', array( $this, 'add_custom_columns' ) );
 		add_action( 'manage_school_training_posts_custom_column', array( $this, 'render_custom_columns' ), 10, 2 );
@@ -50,30 +52,30 @@ class School_Training {
 	 */
 	public function register_post_type() {
 		$labels = array(
-			'name'                  => _x( 'Formations scolaires', 'Formation Nom pluriel', 'frmtcn' ),
-			'singular_name'         => _x( 'Formation scolaire ', 'Formation Nom singulier', 'frmtcn' ),
-			'menu_name'             => __( 'Formations scolaires', 'frmtcn' ),
-			'name_admin_bar'        => __( 'Formation', 'frmtcn' ),
-			'all_items'             => __( 'Toutes les formations scolaires', 'frmtcn' ),
-			'add_new_item'          => __( 'Ajouter une nouvelle formation scolaire', 'frmtcn' ),
-			'add_new'               => __( 'Ajouter', 'frmtcn' ),
-			'new_item'              => __( 'Nouvelle formation scolaire', 'frmtcn' ),
-			'edit_item'             => __( 'Modifier la formation scolaire', 'frmtcn' ),
-			'update_item'           => __( 'Mettre à jour la formation scolaire', 'frmtcn' ),
-			'view_item'             => __( 'Voir la formation scolaire', 'frmtcn' ),
-			'view_items'            => __( 'Voir les formations scolaires', 'frmtcn' ),
-			'search_items'          => __( 'Chercher parmi les formations', 'frmtcn' ),
-			'not_found'             => __( 'Aucune formation scolaire trouvée.', 'frmtcn' ),
-			'not_found_in_trash'    => __( 'Aucune formation scolaire trouvée dans la corbeille.', 'frmtcn' ),
-			'featured_image'        => __( 'Image à la une', 'frmtcn' ),
-			'set_featured_image'    => __( 'Mettre une image à la une', 'frmtcn' ),
-			'remove_featured_image' => __( 'Retirer l\'image mise en avant', 'frmtcn' ),
-			'use_featured_image'    => __( 'Mettre une image à la une', 'frmtcn' ),
-			'insert_into_item'      => __( 'Insérer dans la formation scolaire', 'frmtcn' ),
-			'uploaded_to_this_item' => __( 'Ajouter à cette formation scolaire', 'frmtcn' ),
-			'items_list'            => __( 'Liste des formations', 'frmtcn' ),
-			'items_list_navigation' => __( 'Navigation de liste des formations scolaires', 'frmtcn' ),
-			'filter_items_list'     => __( 'Filtrer la liste des formations scolaires', 'frmtcn' ),
+			'name'                  => _x( 'Formations scolaires', 'Formation Nom pluriel', 'Formatcine' ),
+			'singular_name'         => _x( 'Formation scolaire ', 'Formation Nom singulier', 'Formatcine' ),
+			'menu_name'             => __( 'Formations scolaires', 'Formatcine' ),
+			'name_admin_bar'        => __( 'Formation', 'Formatcine' ),
+			'all_items'             => __( 'Toutes les formations scolaires', 'Formatcine' ),
+			'add_new_item'          => __( 'Ajouter une nouvelle formation scolaire', 'Formatcine' ),
+			'add_new'               => __( 'Ajouter', 'Formatcine' ),
+			'new_item'              => __( 'Nouvelle formation scolaire', 'Formatcine' ),
+			'edit_item'             => __( 'Modifier la formation scolaire', 'Formatcine' ),
+			'update_item'           => __( 'Mettre à jour la formation scolaire', 'Formatcine' ),
+			'view_item'             => __( 'Voir la formation scolaire', 'Formatcine' ),
+			'view_items'            => __( 'Voir les formations scolaires', 'Formatcine' ),
+			'search_items'          => __( 'Chercher parmi les formations', 'Formatcine' ),
+			'not_found'             => __( 'Aucune formation scolaire trouvée.', 'Formatcine' ),
+			'not_found_in_trash'    => __( 'Aucune formation scolaire trouvée dans la corbeille.', 'Formatcine' ),
+			'featured_image'        => __( 'Image à la une', 'Formatcine' ),
+			'set_featured_image'    => __( 'Mettre une image à la une', 'Formatcine' ),
+			'remove_featured_image' => __( 'Retirer l\'image mise en avant', 'Formatcine' ),
+			'use_featured_image'    => __( 'Mettre une image à la une', 'Formatcine' ),
+			'insert_into_item'      => __( 'Insérer dans la formation scolaire', 'Formatcine' ),
+			'uploaded_to_this_item' => __( 'Ajouter à cette formation scolaire', 'Formatcine' ),
+			'items_list'            => __( 'Liste des formations', 'Formatcine' ),
+			'items_list_navigation' => __( 'Navigation de liste des formations scolaires', 'Formatcine' ),
+			'filter_items_list'     => __( 'Filtrer la liste des formations scolaires', 'Formatcine' ),
 		);
 
 		$rewrite = array(
@@ -85,7 +87,7 @@ class School_Training {
 
 		$args = array(
 			'label'               => 'formation scolaire',
-			'description'         => __( 'Les formations scolaires', 'frmtcn' ),
+			'description'         => __( 'Les formations scolaires', 'Formatcine' ),
 			'labels'              => $labels,
 			'supports'            => array( 'thumbnail' ),
 			'taxonomies'          => array( 'school_tag', 'year' ),
@@ -108,18 +110,6 @@ class School_Training {
 		register_post_type( 'school_training', $args );
 	}
 
-	/**
-	 * CSS
-	 *
-	 * @return void
-	 */
-	public function css() {
-		?>
-		<style>
-			#dashboard_right_now .school_training-count:before { content: "\f118"; }
-		</style>
-		<?php
-	}
 
 	/**
 	 * Admin CSS
@@ -226,39 +216,6 @@ class School_Training {
 
 
 	/**
-	 * "At a glance" items (dashboard widget): add the school_training.
-	 *
-	 * @param arr $items Array of items.
-	 */
-	public function at_a_glance( $items ) {
-		$post_type   = 'school_training';
-		$post_status = 'publish';
-		$object      = get_post_type_object( $post_type );
-
-		$num_posts = wp_count_posts( $post_type );
-		if ( ! $num_posts || ! isset( $num_posts->{$post_status} ) || 0 === (int) $num_posts->{$post_status} ) {
-
-			return $items;
-		}
-		$text = sprintf(
-			_n( '%1$s %4$s%2$s', '%1$s %4$s%3$s', $num_posts->{$post_status} ),
-			number_format_i18n( $num_posts->{$post_status} ),
-			strtolower( $object->labels->singular_name ),
-			strtolower( $object->labels->name ),
-			'pending' === $post_status ? 'Pending ' : ''
-		);
-		if ( current_user_can( $object->cap->edit_posts ) ) {
-			$items[] = sprintf( '<a class="%1$s-count" href="edit.php?post_status=%2$s&post_type=%1$s">%3$s</a>', $post_type, $post_status, $text );
-
-		} else {
-			$items[] = sprintf( '<span class="%1$s-count">%s</span>', $text );
-		}
-
-		return $items;
-	}
-
-
-	/**
 	 * Manually create the post title and post name since
 	 * this content type doesn't have post title field.
 	 *
@@ -319,42 +276,41 @@ class School_Training {
 		}
 
 		if ( isset( $_GET['offset'] ) ) {
-			$offset = sanitize_text_field( wp_unslash( $_GET['offset'] ) );
+			$offset = (int) sanitize_text_field( wp_unslash( $_GET['offset'] ) );
 		}
 
 		if ( isset( $_GET['posts_per_page'] ) ) {
-			$posts_per_page = sanitize_text_field( wp_unslash( $_GET['posts_per_page'] ) );
+			$posts_per_page = (int) sanitize_text_field( wp_unslash( $_GET['posts_per_page'] ) );
 		}
 
 		if ( isset( $_GET['season'] ) ) {
-			$season = sanitize_text_field( wp_unslash( $_GET['season'] ) );
+			$season = (int) sanitize_text_field( wp_unslash( $_GET['season'] ) );
 		}
 
 		$args = array(
 			'post_type'      => 'school_training',
-			'posts_per_page' => (int) $posts_per_page,
-			'offset'         => (int) $offset,
+			'posts_per_page' => $posts_per_page,
+			'offset'         => $offset,
 			'post_status'    => 'publish',
-			'meta_key'       => 'formation_date',
+			'meta_key'       => 'formation_date', // phpcs:ignore
 			'orderby'        => 'meta_value',
 			'order'          => 'ASC',
-			'tax_query'      => array(
+			'tax_query'      => array( // phpcs:ignore
 				array(
 					'taxonomy' => 'season',
 					'field'    => 'term_id',
-					'terms'    => (int) $season,
+					'terms'    => $season,
 				),
 			),
 		);
 
 		if ( 0 !== $school_class ) {
-
-			$args['tax_query'] = array(
+			$args['tax_query'] = array( // phpcs:ignore
 				'relation' => 'AND',
 				array(
 					'taxonomy' => 'season',
 					'field'    => 'term_id',
-					'terms'    => (int) $season,
+					'terms'    => $season,
 					'operator' => 'IN',
 				),
 			);

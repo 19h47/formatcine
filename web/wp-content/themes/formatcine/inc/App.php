@@ -2,34 +2,22 @@
 /**
  * Class Formatcine
  *
- * @package frmtcn
+ * @package Formatcine
  */
 
-/**
- * Autoload
- */
-require_once get_template_directory() . '/vendor/autoload.php';
+namespace Formatcine;
 
+use Formatcine\PostTypes\{ Post, Page, Programming, AdultTraining, SchoolTraining, Movie };
+use Formatcine\Taxonomies\{ Country, SchoolClass, Director, Season, AdultTrainingCategory };
 
-/**
- * Timber
- *
- * Instanciate Timber
- *
- * @see         https://github.com/timber/timber
- * @version     1.9
- */
-use Timber\Timber as Timber;
+use Timber\{ Timber, Menu };
+
 use Twig_SimpleFunction as Twig_SimpleFunction;
 
+use Cocur\Slugify\Bridge\Twig\{ SlugifyExtension };
+use Cocur\Slugify\{ Slugify };
 
-
-
-/**
- * Slugify
- */
-use Cocur\Slugify\Bridge\Twig\SlugifyExtension;
-use Cocur\Slugify\Slugify;
+use Set_Glance_Items;
 
 
 
@@ -44,7 +32,7 @@ Timber::$dirname = array( 'views' );
 /**
  * Class Formatcine
  */
-class Formatcine extends Timber {
+class App extends Timber {
 
 	/**
 	 * The name of the theme
@@ -105,34 +93,65 @@ class Formatcine extends Timber {
 		require_once get_template_directory() . '/inc/customizer/contact.php';
 		require_once get_template_directory() . '/inc/post-template.php';
 		require_once get_template_directory() . '/inc/reset.php';
-		require_once get_template_directory() . '/inc/class-admin.php';
 		require_once get_template_directory() . '/inc/acf.php';
-
-		require_once get_template_directory() . '/inc/post-types/class-post.php';
-		require_once get_template_directory() . '/inc/post-types/class-page.php';
-		require_once get_template_directory() . '/inc/post-types/class-movie.php';
-		require_once get_template_directory() . '/inc/post-types/class-programming.php';
-		require_once get_template_directory() . '/inc/post-types/class-school-training.php';
-		require_once get_template_directory() . '/inc/post-types/class-adult-training.php';
-
-		require_once get_template_directory() . '/inc/taxonomies/class-country.php';
-		require_once get_template_directory() . '/inc/taxonomies/class-director.php';
-		require_once get_template_directory() . '/inc/taxonomies/class-school-class.php';
-		require_once get_template_directory() . '/inc/taxonomies/class-season.php';
-		require_once get_template_directory() . '/inc/taxonomies/class-adult-training-category.php';
 
 		new Movie( $this->get_theme_version() );
 		new Post( $this->get_theme_version() );
 		new Page( $this->get_theme_version() );
 		new Programming( $this->get_theme_version() );
-		new School_Training( $this->get_theme_version() );
-		new Adult_Training( $this->get_theme_version() );
+		new SchoolTraining( $this->get_theme_version() );
+		new AdultTraining( $this->get_theme_version() );
 
 		new Country( $this->get_theme_version() );
-		new School_Class( $this->get_theme_version() );
+		new SchoolClass( $this->get_theme_version() );
 		new Director( $this->get_theme_version() );
 		new Season( $this->get_theme_version() );
-		new Adult_Training_Category( $this->get_theme_version() );
+		new AdultTrainingCategory( $this->get_theme_version() );
+
+		if ( class_exists( 'Set_Glance_Items' ) ) {
+			new Set_Glance_Items(
+				array(
+					array(
+						'name' => 'country',
+						'code' => '\f11d',
+					),
+					array(
+						'name' => 'school_class',
+						'code' => '\f118',
+					),
+					array(
+						'name' => 'director',
+						'code' => '\f234',
+					),
+					array(
+						'name' => 'season',
+						'code' => '\f469',
+					),
+					array(
+						'name' => 'adult_training_category',
+						'code' => '\f118',
+					),
+				),
+				array(
+					array(
+						'name' => 'movie',
+						'code' => '\f524',
+					),
+					array(
+						'name' => 'programming',
+						'code' => '\f508',
+					),
+					array(
+						'name' => 'school_training',
+						'code' => '\f118',
+					),
+					array(
+						'name' => 'adult_training',
+						'code' => '\f118',
+					),
+				)
+			);
+		}
 
 		if ( is_admin() ) {
 			new Admin( $this->get_theme_version() );
@@ -209,7 +228,7 @@ class Formatcine extends Timber {
 		 */
 		$menus = get_registered_nav_menus();
 		foreach ( $menus as $menu => $value ) {
-			$context['menu'][ $menu ] = new TimberMenu( $value );
+			$context['menu'][ $menu ] = new Menu( $value );
 		}
 
 		// Add socials to context.
@@ -523,9 +542,3 @@ class Formatcine extends Timber {
 		return $this->theme_name;
 	}
 }
-
-
-/**
- * Begins execution of the theme.
- */
-$theme = new Formatcine( 'frmtcn', '1.0.0' );

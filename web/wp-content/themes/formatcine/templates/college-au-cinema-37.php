@@ -2,7 +2,7 @@
 /**
  * Template Name: Collège au cinéma 37
  *
- * @package frmtcn
+ * @package Formatcine
  */
 
 $season = get_field( 'season', $post );

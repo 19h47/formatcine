@@ -4,7 +4,7 @@
  *
  * @author  Jérémy Levron <jeremylevron@19h47.fr> (http://19h47.fr)
  * @file    page.php
- * @package frmtcn
+ * @package Formatcine
  */
 
 if ( ! class_exists( 'Timber' ) ) {

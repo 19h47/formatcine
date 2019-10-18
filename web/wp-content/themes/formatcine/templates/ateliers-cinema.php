@@ -2,7 +2,7 @@
 /**
  * Template Name: Ateliers Cinéma
  *
- * @package frmtcn
+ * @package Formatcine
  */
 
 $context         = Timber::get_context();

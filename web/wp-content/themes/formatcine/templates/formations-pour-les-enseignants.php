@@ -2,7 +2,7 @@
 /**
  * Template Name: Formations pour les enseignants
  *
- * @package frmtcn
+ * @package Formatcine
  */
 
 $context           = Timber::get_context();

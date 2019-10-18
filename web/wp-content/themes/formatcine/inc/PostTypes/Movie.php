@@ -2,8 +2,10 @@
 /**
  * Class Movie
  *
- * @package frmtcn
+ * @package Formatcine
  */
+
+namespace Formatcine\PostTypes;
 
 /**
  * Movie class
@@ -22,10 +24,10 @@ class Movie {
 	/**
 	 * Construct function
 	 *
-	 * @param  str $theme_version Theme version.
+	 * @param  string $theme_version Theme version.
 	 * @access public
 	 */
-	public function __construct( $theme_version ) {
+	public function __construct( string $theme_version ) {
 		$this->theme_version = $theme_version;
 
 		$this->register_post_type();
@@ -33,7 +35,6 @@ class Movie {
 		add_action( 'init', array( $this, 'register_post_type' ) );
 		add_action( 'admin_head', array( $this, 'css' ) );
 		add_action( 'admin_head', array( $this, 'custom_post_type_css' ) );
-		add_filter( 'dashboard_glance_items', array( $this, 'at_a_glance' ) );
 
 		add_filter( 'manage_movie_posts_columns', array( $this, 'add_custom_columns' ) );
 		add_action( 'manage_movie_posts_custom_column', array( $this, 'render_custom_columns' ), 10, 2 );
@@ -126,8 +127,6 @@ class Movie {
 	public function css() {
 		?>
 		<style>
-			#dashboard_right_now .movie-count:before { content: "\f524"; }
-
 			.fixed .column-poster {
 				vertical-align: top;
 				width: 80px;
@@ -226,44 +225,5 @@ class Movie {
 
 				break;
 		}
-	}
-
-
-	/**
-	 * "At a glance" items (dashboard widget): add the projects.
-	 *
-	 * @param arr $items Array of items.
-	 * @return $items
-	 */
-	public function at_a_glance( $items ) {
-		$post_type   = 'movie';
-		$post_status = 'publish';
-		$object      = get_post_type_object( $post_type );
-
-		$num_posts = wp_count_posts( $post_type );
-		if ( ! $num_posts || ! isset( $num_posts->{$post_status} ) || 0 === (int) $num_posts->{$post_status} ) {
-			return $items;
-		}
-
-		$text = sprintf(
-			_n( '%1$s %4$s%2$s', '%1$s %4$s%3$s', $num_posts->{$post_status} ),
-			number_format_i18n( $num_posts->{$post_status} ),
-			strtolower( $object->labels->singular_name ),
-			strtolower( $object->labels->name ),
-			'pending' === $post_status ? 'Pending ' : ''
-		);
-
-		if ( current_user_can( $object->cap->edit_posts ) ) {
-			$items[] = sprintf(
-				'<a class="%1$s-count" href="edit.php?post_status=%2$s&post_type=%1$s">%3$s</a>',
-				$post_type,
-				$post_status,
-				$text
-			);
-		} else {
-			$items[] = sprintf( '<span class="%1$s-count">%s</span>', $text );
-		}
-
-		return $items;
 	}
 }

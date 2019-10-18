@@ -2,13 +2,15 @@
 /**
  * Class School Class
  *
- * @package frmtcn
+ * @package Formatcine
  */
+
+namespace Formatcine\Taxonomies;
 
 /**
  * SchoolClass tag class
  */
-class School_Class {
+class SchoolClass {
 
 	/**
 	 * The version of the theme.

@@ -2,8 +2,10 @@
 /**
  * Class Page
  *
- * @package frmtcn
+ * @package Formatcine
  */
+
+namespace Formatcine\PostTypes;
 
 /**
  * Page class
