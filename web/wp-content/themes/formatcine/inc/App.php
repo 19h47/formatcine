@@ -366,7 +366,6 @@ class App extends Timber {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_style' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
-		// Add main color in head.
 		add_action( 'wp_head', array( $this, 'main_color' ) );
 	}
 
@@ -377,11 +376,13 @@ class App extends Timber {
 	 * @access public
 	 */
 	public function main_color() {
+		if ( is_404() ) {
+			return false;
+		}
+
 		global $post;
 
-		// Just in case we need it later.
-		$parent_id = get_post_ancestors( $post->ID );
-
+		$parent_id  = get_post_ancestors( $post->ID );
 		$color_main = get_field( 'page_color_main', $post->ID );
 
 		// If page_color_main isn't set, maybe it has a parent ?

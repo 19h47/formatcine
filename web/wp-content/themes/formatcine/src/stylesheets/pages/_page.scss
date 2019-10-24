@@ -45,7 +45,7 @@
 
 			color: the_color( gray, dark );
 
-			@at-root .page-template-default & {
+			@at-root .page-template-default &, .error404 & {
 				@include margin( bottom $grid-gutter-width * 3 );
 
 				p {

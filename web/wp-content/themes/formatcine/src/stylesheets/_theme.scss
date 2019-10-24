@@ -5,7 +5,7 @@ $colors: main secondary ternary;
 @each $property in $properties {
     @each $color in $colors {
         .#{ $property }-#{ $color } {
-            #{ $property }: var( --#{ $color } );
+            #{ $property }: var( --#{ $color }, the_color( black ) );
 
             &-hover:hover {
                 #{ $property }: var( --#{ $color } )!important;
