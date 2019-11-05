@@ -439,16 +439,16 @@
         },
         {
             "name": "timber/timber",
-            "version": "1.11.0",
+            "version": "1.12.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/timber/timber.git",
-                "reference": "a08370165c9240a33b977b037574181d3e1fa5a1"
+                "reference": "5dd3cbb3b06e1f68f9de4530d1de7ae129e91aac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/timber/timber/zipball/a08370165c9240a33b977b037574181d3e1fa5a1",
-                "reference": "a08370165c9240a33b977b037574181d3e1fa5a1",
+                "url": "https://api.github.com/repos/timber/timber/zipball/5dd3cbb3b06e1f68f9de4530d1de7ae129e91aac",
+                "reference": "5dd3cbb3b06e1f68f9de4530d1de7ae129e91aac",
                 "shasum": ""
             },
             "require": {
@@ -460,7 +460,7 @@
             },
             "require-dev": {
                 "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
-                "johnpbloch/wordpress": "4.*",
+                "johnpbloch/wordpress": "*",
                 "phpunit/phpunit": "5.7.16|6.*",
                 "squizlabs/php_codesniffer": "3.*",
                 "wp-coding-standards/wpcs": "^2.0",
@@ -500,20 +500,20 @@
                 "timber",
                 "twig"
             ],
-            "time": "2019-09-14T21:26:27+00:00"
+            "time": "2019-10-20T14:32:56+00:00"
         },
         {
             "name": "twig/twig",
-            "version": "v2.12.0",
+            "version": "v2.12.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "c7a85fd08348ca04b4d8f234f49583d9910906aa"
+                "reference": "ddd4134af9bfc6dba4eff7c8447444ecc45b9ee5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/c7a85fd08348ca04b4d8f234f49583d9910906aa",
-                "reference": "c7a85fd08348ca04b4d8f234f49583d9910906aa",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/ddd4134af9bfc6dba4eff7c8447444ecc45b9ee5",
+                "reference": "ddd4134af9bfc6dba4eff7c8447444ecc45b9ee5",
                 "shasum": ""
             },
             "require": {
@@ -567,7 +567,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2019-10-05T16:42:38+00:00"
+            "time": "2019-10-17T07:34:53+00:00"
         },
         {
             "name": "upstatement/routes",

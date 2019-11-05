@@ -19,7 +19,7 @@
 		<meta charset="{{ site.charset }}">
 		<link rel="profile" href="http://gmpg.org/xfn/11">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
 		<base href="{{ theme.path }}/dist/">
 
 		{{ wp_head }}
@@ -37,16 +37,13 @@
 
 
 				{# Button #}
-				<button class="Site-header-button js-toggle-menu-button">
-					<svg class="fill-main">
-						<use xlink:href="{{ theme.link }}/dist/icons.svg#open"></use>
-					</svg>
+				<button type="button" class="Site-header-button js-toggle-menu-button" aria-label="Open menu">
+					{% include 'svg/use.html.twig' with { icon: 'open', classes: [ 'fill-main' ] } %}
 				</button>
 
 
 				{# Logo #}
 				<div class="row">
-
 					<div class="col-10 offset-1 col-md-6 offset-md-3">
 						<a class="Logo" href="{{ site.url }}">
 							{% include 'logo.html.twig' %}
@@ -64,7 +61,9 @@
 					{% include 'components/socials.twig' with { prefix: 'header' } %}
 
 					<p class="Site-header-contact__address">
-						<a href="{{ 'https://www.google.com/maps/search/?api=1&query=' ~ contact.address -}}" target="_blank">{{- contact.address | nl2br -}}</a>
+						<a href="{{ 'https://www.google.com/maps/search/?api=1&query=' ~ contact.address -}}" target="_blank" rel="noopener">
+							{{- contact.address | nl2br -}}
+						</a>
 					</p>
 					<p class="Site-header-contact__phone">
 						<a href="{{ 'tel:' ~ contact.phone }}" target="_phone">{{- contact.phone -}}</a></p>

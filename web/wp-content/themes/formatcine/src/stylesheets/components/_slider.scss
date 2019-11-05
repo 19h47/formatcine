@@ -4,10 +4,9 @@
 .Slider {
 
 	// height: 225px;
-	
-	@include media-breakpoint-up( 'sm' ) {
 
-		height: 550px;	
+	@include media-breakpoint-up( sm ) {
+		height: 550px;
 	}
 
 	/**
@@ -17,7 +16,7 @@
 	 */
 	.title {
 		@extend %margin-y-0, %font-weight-regular;
-		
+
 		color: the_color( white );
 		line-height: normal;
 
@@ -31,24 +30,23 @@
 		span:nth-child( 2 ) {
 			@extend %font-family-decor, .d-block;
 			@include letter-spacing( 75 );
-			
+
 			font-size: 40.15px;
 		}
 	}
 
-	
+
 	/**
 	 * Image
 	 *
 	 * .Slider .image
 	 */
 	.image {
-		@extend 
-			// %Position-absolute-center, 
+		@extend
 			.d-block,
 			%Pointer-events-none;
-		@include margin( 
-			right auto 
+		@include margin(
+			right auto
 			left auto
 		);
 
@@ -61,13 +59,13 @@
 
 	&-images {
 		@extend %Position-absolute-center;
-		@include margin( 
-			top 64px 
-			bottom 64px  
+		@include margin(
+			top 64px
+			bottom 64px
 		);
-		@include padding( 
-			right $grid-gutter-width / 2 
-			left $grid-gutter-width / 2 
+		@include padding(
+			right $grid-gutter-width / 2
+			left $grid-gutter-width / 2
 		);
 
 		.slick-list {
@@ -81,13 +79,13 @@
 	 */
 	.image-mobile {
 		@extend .d-md-none;
-		@include margin( 
-			top $grid-gutter-width 
-			bottom $grid-gutter-width 
+		@include margin(
+			top $grid-gutter-width
+			bottom $grid-gutter-width
 		);
-		@include padding( 
-			right $grid-gutter-width 
-			left $grid-gutter-width 
+		@include padding(
+			right $grid-gutter-width
+			left $grid-gutter-width
 		);
 		@include size( 100%, auto );
 	}

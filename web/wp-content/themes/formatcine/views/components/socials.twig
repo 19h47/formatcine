@@ -3,33 +3,23 @@
 	 * views/components/socials
 	 *
 	 * @param 	str 	prefix
-	 * @author  		Levron Jérémy jeremy@19h47.fr
+	 * @author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
 	 */
 #}
-<ul class="{{ prefix ? 'Socials Socials--' ~ prefix : 'Socials' }}">
-
-	{% spaceless %}
-
+<ul class="Socials{{ prefix ? ' Socials--' ~ prefix }}">
 	{% for social in contact.socials | sort %}
 		<li class="Socials-item{{ social.name ? ' ' ~ social.name }}">
-			<a href="{{ social.url }}">
-				<svg class="">
-					<use xlink:href="{{ theme.link }}/dist/icons.svg#{{ social.slug }}"></use>
-				</svg>
+			<a href="{{ social.url }}" target="_blank" rel="noopener" aria-label="{{ social.name }}">
+				{% include 'svg/use.html.twig' with { icon: social.slug } %}
 			</a>
 		</li>
 	{% endfor %}
 
 	{% if contact.email_addresses %}
 		<li class="Socials-item">
-			<a href="mailto:{{ contact.email_addresses | first }}" target="_blank">
-				<svg class="">
-					  <use xlink:href="{{ theme.link }}/dist/icons.svg#envelope"></use>
-				</svg>
+			<a href="mailto:{{ contact.email_addresses | first }}" target="_blank" aria-label="Email">
+				{% include 'svg/use.html.twig' with { icon: 'envelope' } %}
 			</a>
 		</li>
 	{% endif %}
-
-	{% endspaceless %}
-
 </ul>

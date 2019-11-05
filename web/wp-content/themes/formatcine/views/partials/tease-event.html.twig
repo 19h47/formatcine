@@ -20,11 +20,10 @@ Tease: Event
 						class="Tease-event__read-more background-color-main-hover border-color-main-hover"
 						href="{{ post.event_read_more }}"
 						target="_blank"
+						rel="noopener"
 					>
 						{{- __( 'En savoir plus' ) -}}
-						<svg class="Tease-event__read-more__icon">
-							<use xlink:href="{{ theme.link }}/dist/icons.svg#arrow"></use>
-						</svg>
+						{% include 'svg/use.html.twig' with { classes: [ 'Tease-event__read-more__icon' ], icon: 'arrow' } %}
 					</a>
 				{% endif %}
 

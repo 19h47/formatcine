@@ -47,6 +47,7 @@
 				url('#{ $file-path }#{ $font-family-namespace }/#{ $font-weight }/#{ $font-family-namespace }-#{ $font-weight }.svg##{ $font-family-namespace }' ) format('svg');
 		font-weight: $font-weight;
 		font-style: $font-style;
+		font-display: swap;
 	}
 }
 

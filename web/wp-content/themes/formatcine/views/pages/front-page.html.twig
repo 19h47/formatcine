@@ -28,13 +28,13 @@
 
 					<div class="Slider-images js-slider-home d-none d-md-block">
 						<div>
-							<img class="image" src="{{ manifest['img/svg/home-slider-01.svg'] }}" alt="" />
+							<img class="image" loading="lazy" src="{{ manifest['img/svg/home-slider-01.svg'] }}" alt="" />
 						</div>
 						<div>
-							<img class="image" src="{{ manifest['img/svg/home-slider-02.svg'] }}" alt="" />
+							<img class="image" loading="lazy" src="{{ manifest['img/svg/home-slider-02.svg'] }}" alt="" />
 						</div>
 						<div>
-							<img class="image" src="{{ manifest['img/svg/home-slider-03.svg'] }}" alt="" />
+							<img class="image" loading="lazy" src="{{ manifest['img/svg/home-slider-03.svg'] }}" alt="" />
 						</div>
 					</div>
 				</div>
@@ -56,19 +56,18 @@
 				<div class="col-12 col-md-4">
 					<article class="item">
 
-						{{ discovery.link ? '<a href="' ~ discovery.link ~ '">' : '' }}
+						{{- discovery.link ? "<a href=\"#{discovery.link}\" aria-label=\"#{discovery.title}\">" -}}
 
-						<img class="pictogram" src="{{ Image( discovery.pictogram ).src }}" alt="" />
+						<img class="pictogram" src="{{ Image( discovery.pictogram ).src }}" alt="{{ discovery.title }}" />
 
-						{{ discovery.link ? '</a>' : '' }}
+						{{- discovery.link ? '</a>' : '' -}}
 
 						<br>
-
-						{{ discovery.link ? '<a href="' ~ discovery.link ~ '">' : '' }}
 						<h3 class="title">
+							{{- discovery.link ? "<a href=\"#{discovery.link}\">" -}}
 								{{- discovery.title -}}
+							{{- discovery.link ? '</a>' : '' -}}
 						</h3>
-						{{ discovery.link ? '</a>' : '' }}
 						<br>
 
 						<p class="description">{{- discovery.description -}}</p>
@@ -99,6 +98,7 @@
 						{% for category in events.categories %}
 							<li class="item">
 								<button
+									type="button"
 									class="color-secondary js-events-button"
 									data-category-id="{{ category.term_id }}"
 								>
@@ -108,6 +108,7 @@
 						{% endfor %}
 						<li class="item">
 							<button
+								type="button"
 								class="color-secondary is-active js-events-button"
 								data-category-id="0"
 							>

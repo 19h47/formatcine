@@ -439,12 +439,14 @@ class App extends Timber {
 	 */
 	public function enqueue_style() {
 
+		wp_dequeue_style( 'wp-block-library' );
+
 		// Theme stylesheet.
 		wp_register_style(
 			$this->theme_name . '-global',
 			get_template_directory_uri() . '/dist/' . $this->theme_manifest['main.css'],
 			array(),
-			null
+			$this->get_theme_version()
 		);
 
 		wp_enqueue_style( $this->theme_name . '-global' );
@@ -463,24 +465,28 @@ class App extends Timber {
 
 		// Remove native version of jQuery and use custom CDN version instead.
 		wp_deregister_script( 'jquery' );
-		wp_register_script( 'jquery', '//code.jquery.com/jquery-3.3.1.min.js', false, null, true );
+		wp_register_script(
+			'jquery',
+			'//code.jquery.com/jquery-3.4.1.min.js',
+			false,
+			$this->get_theme_version(),
+			true
+		);
 
 		// Slick.
 		wp_register_script(
 			'slick',
 			'//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js',
 			array( 'jquery' ),
-			null,
+			$this->get_theme_version(),
 			true
 		);
 
 		wp_register_script(
 			$this->theme_name . '-main',
 			get_template_directory_uri() . '/dist/' . $this->theme_manifest['main.js'],
-			array(
-				'jquery',
-			),
-			null,
+			array( 'jquery' ),
+			$this->get_theme_version(),
 			true
 		);
 
