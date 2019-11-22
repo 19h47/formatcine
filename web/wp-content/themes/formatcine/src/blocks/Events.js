@@ -83,7 +83,7 @@ export default class Events {
 	 * Events.load
 	 */
 	load() {
-		let url = `${window.wp.ajax_url}?action=ajax_load_events&nonce=${wp.nonce}`;
+		let url = `${wp.ajax_url}?action=ajax_load_events&nonce=${wp.nonce}`;
 
 		if (this.category) {
 			url += `&category=${this.category.id}`;
