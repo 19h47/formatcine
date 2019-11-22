@@ -2,7 +2,7 @@
 
 views/components/movie
 
-@author  Jérémy Levron <jeremylevron@19h47.fr>
+@author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
 
 #}
 
@@ -54,7 +54,7 @@ views/components/movie
 				href="{{ movie.get_field( 'trailer' ) }}"
 				target="_blank"
 			>
-				{{-__('Visionner la bande annonce' ) -}}
+				{{-__( 'Visionner la bande annonce', 'formatcine' ) -}}
 			</a>
 		{% endif %}
 
@@ -63,7 +63,7 @@ views/components/movie
 
 		{% if movie.get_field( 'documents' ) %}
 			<div class="Movie__documents">
-				{{ movie.get_field( 'documents' ) | map( d => _self.document( d.link, d.label ) ) | join }}
+				{{- movie.get_field( 'documents' ) | map( d => _self.document( d.link, d.label ) ) | join -}}
 			</div>
 		{% endif %}
 	</div>

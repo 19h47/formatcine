@@ -1,10 +1,10 @@
 {#
-	/**
-	 * views/components/socials
-	 *
-	 * @param 	str 	prefix
-	 * @author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
-	 */
+
+views/components/socials
+
+@param string prefix
+@author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
+
 #}
 <ul class="Socials{{ prefix ? ' Socials--' ~ prefix }}">
 	{% for social in contact.socials | sort %}
