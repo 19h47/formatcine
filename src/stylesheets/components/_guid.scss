@@ -15,14 +15,14 @@
 	/**
 	 * Match all classes starting by col-xs
 	 */
-	[class^='col-xs'] .Guid__column {
+	[class^='col-'] .Guid__column {
 		background: {
 			color: rgba( the_color( blue, pure ), .2 );
 		}
 	}
 
 
-	[class^='col-xs']:nth-child(odd) .Guid__column {
+	[class^='col-']:nth-child(odd) .Guid__column {
 		background: {
 			color: rgba( the_color( red, strong ), .2 );
 		}
