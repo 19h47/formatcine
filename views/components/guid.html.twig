@@ -1,0 +1,25 @@
+{#
+
+views/components/guid
+
+Display a grid like Photoshop with same shortcut CMD+;
+
+@author  Julien Vasseur <julien@poigneedemainvirile.com>
+
+#}
+
+<div class="Guid d-none">
+	<div class="Site-container h-100">
+		<div class="row h-100">
+
+		{% for i in 1..12 %}
+		    <div class="col-1 text-align-center h-100">
+				<div class="Guid__column">
+					{{- i -}}
+				</div>
+			</div>
+		{% endfor %}
+
+		</div>
+	</div>
+</div>

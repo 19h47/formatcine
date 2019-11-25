@@ -1,0 +1,161 @@
+/**
+ * Site
+ *
+ * @uses .Site-{ property }
+ */
+.Site {
+
+	/**
+	 * Description
+	 *
+	 * @uses .Site-description
+	 */
+	&-description {
+		@include margin( top 7px bottom 0 );
+		@extend %text-transform-uppercase, %margin-bottom-0, %font-weight-semibold;
+		@include letter-spacing( 100 );
+
+		font-size: 18.01px;
+		line-height: normal;
+	}
+
+
+	/**
+	 * Title underline
+	 *
+	 * @uses .Site-title-underline
+	 */
+	&-title-underline {
+		@extend
+			%font-weight-extrabold,
+			%text-transform-uppercase,
+			%position-relative,
+			.d-inline,
+			%margin-y-0;
+		@include font( 30, 55, 50 );
+
+
+		color: the_color( gray, very-dark-mostly-black );
+		border: {
+			bottom: {
+				color: currentColor;
+				style: solid;
+				width: 3px;
+			}
+		}
+
+		// @include media-breakpoint-up( md ) {}
+
+		br { @extend .d-none, .d-md-inline; }
+	}
+
+
+	/**
+	 * Site container
+	 *
+	 * The fluid container of the grid
+	 *
+	 * @uses .Site-container
+	 */
+	&-container {
+		@extend %position-relative;
+		@include padding(
+			right $grid-gutter-width
+			left $grid-gutter-width
+		);
+		@include margin( top 0 right auto bottom 0 left auto );
+
+		max-width: $container-width;
+	}
+
+
+	/**
+	 * Site header
+	 *
+	 * @uses .Site-header
+	 */
+	&-header {
+		@extend %text-align-center;
+		@include margin( top 75px bottom 75px );
+
+		/**
+		 * Button
+		 *
+		 * @uses .Site-header-button
+		 */
+		&-button {
+			@include absolute( top 0 left 0 );
+			@include size( $grid-gutter-width );
+			@include margin( left $grid-gutter-width );
+
+			z-index: 1;
+
+			@include media-breakpoint-up( md ) {
+				@include size( 50px );
+			}
+
+			svg {
+				@extend .d-inline-block, %vertical-align-middle;
+
+				max-width: $grid-gutter-width;
+				max-height: $grid-gutter-width;
+
+				@include media-breakpoint-up( md ) {
+					max-width: 50px;
+					max-height: 50px;
+				}
+			}
+		}
+
+
+		/**
+		 * Contact
+		 *
+		 * @uses .Site-header-contact
+		 */
+		&-contact {
+			@extend %text-align-center, %text-align-md-right;
+			@include margin( top $grid-gutter-width );
+
+			color: the_color( gray, dark );
+
+			@include media-breakpoint-up( md ) {
+				@include margin( top 0 right $grid-gutter-width );
+				@include absolute( top 0 right 0 );
+			}
+
+			a:hover { text-decoration: underline; }
+
+			&__address {
+				@extend %font-weight-semibold;
+				@include margin( bottom 0 );
+
+				font-size: 16.01px;
+				line-height: normal;
+
+			}
+			&__phone {
+				@extend %font-weight-bold;
+				@include margin( top $grid-gutter-width / 2 bottom 0 );
+
+				font-size: 20.01px;
+				line-height: normal;
+			}
+		}
+	}
+
+
+	/**
+	 * Site footer
+	 *
+	 * @uses .Site-footer
+	 */
+	&-footer {
+		@extend %text-align-center, %font-weight-semibold;
+		@include padding( top 22.5px bottom 22.5px );
+
+		color: the_color( white );
+		font-size: 16px;
+		line-height: normal;
+	}
+}

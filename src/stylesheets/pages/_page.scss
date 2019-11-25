@@ -1,0 +1,143 @@
+/**
+ * Page
+ *
+ * @uses .Page
+ */
+.Page {
+
+	&-post {
+
+		/**
+		 * Title
+		 *
+		 * @uses .Page-post-title
+		 */
+		&-title {
+			h1 {
+				@extend %text-transform-uppercase, %margin-top-0, %text-align-center;
+				@include letter-spacing( 50 );
+				@include margin( bottom $grid-gutter-width * 2 );
+				font-size: 25px;
+
+				// @include responsive-font(
+				// 	( 50 * 100 ) / $psd-width-unitless,
+				// 	10px,
+				// 	50px
+				// );
+
+				line-height: normal;
+
+				@include media-breakpoint-up( md ) {
+					font-size: 50px;
+				}
+			}
+		}
+
+
+		/**
+		 * Content
+		 *
+		 * @uses .Page-post-content
+		 */
+		&-content {
+			@extend %font-weight-semibold, %text-transform-uppercase, %text-align-center;
+			@include font( 18.01, 32.01, 100 );
+
+			color: the_color( gray, dark );
+
+			@at-root .page-template-default &, .error404 & {
+				@include margin( bottom $grid-gutter-width * 3 );
+
+				p {
+					@extend %font-weight-semibold;
+					@include font( 15.98, 19.98 );
+					@include letter-spacing( 0 );
+
+					color: the_color( gray, very-dark );
+					text-transform: none;
+				}
+
+				h2 {
+					@extend %text-transform-uppercase;
+					@include font( 17.99, 30, 100 );
+					@include margin( bottom 0 );
+
+					color: the_color( gray, dark );
+				}
+
+				h2 + p { @include margin( top 0 ); }
+			}
+		}
+	}
+
+
+	/**
+	 * List adjacent
+	 *
+	 * @uses .Page-list-adjacent
+	 */
+	&-list-adjacent {
+		@include margin( bottom $grid-gutter-width * 2 );
+		&__item {
+			@extend .d-inline-block, %text-transform-uppercase, %font-weight-extrabold, %Transition-ease;
+			@include padding( right 10px left 10px );
+			@include font( 18, 30, 50 );
+
+			color: the_color( white );
+			width: 100%;
+
+			@include media-breakpoint-up( md ) {
+				@include margin( top 0 right 20px bottom 0 left 20px );
+
+				width: auto;
+
+				&:first-child { @include margin( left 0 ); }
+				&:last-child { @include margin( right 0 ); }
+			}
+
+			&:not(&--is-active) {
+				background: { color: transparent; }
+				color: the_color( gray, very-dark-mostly-black );
+			}
+
+			&:hover {
+				color: the_color( white );
+			}
+		}
+	}
+
+
+
+	/**
+	 * Introduction
+	 *
+	 * @uses .Page-introduction
+	 */
+	&-introduction {
+		@extend %text-align-center;
+		@include margin( top $grid-gutter-width * 2 bottom $grid-gutter-width * 2 );
+	}
+
+
+	/**
+	 * Button
+	 *
+	 * @uses .Page-button
+	 */
+	&-button {
+		@extend %font-weight-extrabold, %text-transform-uppercase, %Transition-ease, .d-inline-block;
+		@include font( 18, 30, 50 );
+		@include padding( top 3px right 10px bottom 3px left 10px );
+		@include margin( bottom 100px );
+
+		border: {
+			width: 2px;
+			style: solid;
+		}
+		color: the_color( white );
+
+		&:hover {
+			background: { color: transparent; }
+		}
+	}
+}

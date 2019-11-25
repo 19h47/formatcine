@@ -1,0 +1,174 @@
+/**
+ * Menu
+ *
+ * @uses .Menu
+ */
+.Menu {
+	@extend %Position-fixed-center, %Transition-ease;
+	@include autoAlpha( 0 );
+
+	overflow-y: auto;
+	z-index: 100;
+
+	@at-root .menu--is-open & {
+		@include autoAlpha( 1 );
+	}
+
+	&-inner {
+		@include padding( top 75px );
+
+		@include media-breakpoint-up( md ) {
+			border: {
+				style: solid;
+				width: 25px 25px 0 25px;
+			}
+		}
+
+
+	}
+
+	/**
+	 * Button
+	 *
+	 * @uses .Menu-button
+	 */
+	&-button {
+		@include size( $grid-gutter-width );
+
+		@include media-breakpoint-up( md ) {
+			@include size( 50px );
+		}
+
+		svg {
+			@extend .d-inline-block, %vertical-align-middle;
+
+			max-width: $grid-gutter-width;
+			max-height: $grid-gutter-width;
+
+			@include media-breakpoint-up( md ) {
+				max-width: 50px;
+				max-height: 50px;
+			}
+		}
+	}
+
+	/**
+	 * Items
+	 *
+	 * @uses .Menu-items
+	 */
+	&-items {
+		@extend %list-style-type-none, %padding-left-0, %margin-bottom-0, %text-align-center;
+
+		@include media-breakpoint-up( md ) {
+			@include margin( bottom 50px );
+		}
+	}
+
+
+	/**
+	 * Item
+	 *
+	 * @uses .Menu-item
+	 */
+	&-item {
+		@extend %font-weight-extrabold, %text-transform-uppercase, %margin-top-0;
+		@include font( 16, 39.87, 50 );
+		@include margin( bottom $grid-gutter-width / 2 );
+
+		color: the_color( white );
+
+		@include media-breakpoint-up( md ) {
+			@include font( 29.99, 39.87, 50 );
+			@include margin( bottom $grid-gutter-width );
+		}
+
+		&--is-current {}
+		&--has-children {
+			@include font( 16, 54.96, 50 );
+
+			@include media-breakpoint-up( md ) {
+				@include font( 29.98, 54.96, 50 );
+			}
+
+			color: the_color( gray, very-dark-mostly-black );
+
+			.Site-title-underline {
+				@include media-breakpoint-between( 'xs', 'sm' ) { @include font( 16, 55, 50 ); }
+			}
+		}
+	}
+
+
+	/**
+	 * Childrens
+	 *
+	 * @uses .Menu-childrens
+	 */
+	&-childrens {
+		@extend %list-style-type-none, %margin-top-0, %padding-left-0;
+	}
+
+
+	/**
+	 * Children
+	 *
+	 * @uses .Menu-children
+	 */
+	&-children {
+		@extend %margin-y-0;
+		@include font( 16, 40, 50 );
+
+		color: the_color( white );
+
+		@include media-breakpoint-up( md ) {
+			@include font( 30, 40, 50 );
+		}
+	}
+
+
+	/**
+	 * Contact
+	 *
+	 * @uses .Menu-contact
+	 */
+	&-contact {
+		@extend %text-align-center;
+		@include margin( top 90px );
+
+		color: the_color( gray, very-dark-mostly-black );
+
+		p { @extend %font-weight-extrabold; }
+
+		&__title {
+			@extend %text-transform-uppercase, %margin-y-0;
+			@include font( 18.05, 30.08, 100 );
+		}
+
+
+		&__content {
+			@extend %margin-y-0;
+
+			a:hover { text-decoration: underline; }
+		}
+	}
+
+
+	/**
+	 * Footer
+	 *
+	 * @uses .Menu-footer
+	 */
+	&-footer {
+		@extend %text-align-center, %font-weight-semibold;
+		@include margin( top 140px );
+
+		color: the_color( white );
+
+		@at-root .Site-footer & {
+			@include margin( top 0 bottom 0 );
+		}
+
+		a:hover { text-decoration: underline; }
+	}
+}

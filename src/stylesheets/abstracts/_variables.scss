@@ -1,0 +1,190 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+
+/**
+ * Color variation
+ *
+ * Each colors used in the theme.
+ *
+ * @uses the_color($key, $value) to retrieve color value
+ * @type nested map
+ * @see http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
+ * @see http://www.colorhexa.com/ to pickup color name
+ * @author Jérémy Levron <levronjeremy@19h47.fr>
+ */
+$color-variations: (
+
+	black: #000000,
+
+	// blanc (fond1)
+	white: #ffffff,
+
+	red: (
+		strong: #ff0000,
+	),
+
+	blue: (
+		pure: #0075e3,
+
+		// partie générale (accueil, mentions légales, partenaires) : bleu/violet
+		// violet clair (contour, picto, menu, footer, fond événement)
+		moderate: #6666d5,
+
+		  // violet foncé (baseline logo, fond photo d'accueil, fond événement)
+		very-dark-desaturated: #343471
+	),
+	cyan: (
+		// partie formations : turquoise
+		moderate: #55cdb9,
+		dark: #009696
+	),
+	gray: (
+		// gris clair (infos header, chapeaux)
+		dark: #969696,
+
+		// noir (titres)
+		very-dark-mostly-black: #1e1e1e,
+
+		// gris foncé (textes)
+		very-dark: #646464,
+
+		// gris très clair (fond2)
+		very-light: #ebebeb
+	),
+	violet: (
+		// partie collège au cinéma : mauve
+		slightly-desaturated: #965fb4
+	),
+	yellow: (
+		// partie ateliers: jaune
+		vivid: #ffc80a
+	),
+	magenta: (
+		dark-moderate: #6E3278
+	),
+	orange: (
+		vivid: #FF960A
+	)
+);
+
+
+/**
+ * Font
+ *
+ * A map containing all information about fonts (families and weights)
+ *
+ * @type map
+ */
+$font: (
+	/**
+	 * Font
+	 *
+	 * All fonts families found in the site are listed here
+	 *
+	 * @uses map-get( $font, $key ) to retrieve font value from map
+	 * @type map
+	 */
+	families: (
+		body: ( 'Akrobat', serif ),
+		title: ( 'Akrobat', sans-serif ),
+		decor: ( 'Perfograma', sans-serif )
+	),
+
+
+	/**
+	 * Font weight
+	 *
+	 * Each font weight used in the theme.
+	 *
+	 * @uses map-get( $font, weights ) to retrieve font weight value
+	 * @type map
+	 * @author Jérémy Levron <levronjeremy@19h47.fr>
+	 */
+	weights: (
+		extralight: 100,
+		light: 200,
+		book: 300,
+		regular: 400,
+		medium: 500,
+		semibold: 600,
+		bold: 700,
+		extrabold: 800,
+		extrablack: 900
+	)
+);
+
+
+/**
+ * Base font size and base line height
+ */
+$base-font-size: 16;
+$base-font-size-px: #{ $base-font-size }px;
+$base-line-height: 20;
+$base-line-height-px: #{ $base-line-height }px;
+
+
+/**
+ * Prototype width
+ *
+ * From Photoshop, Sketch, Illustrator, Paint maybe? 😝
+ */
+$psd-width-unitless: 1440;
+$psd-width: $psd-width-unitless * 1px;
+
+
+/**
+ * Directories
+ *
+ * Each directories used in this theme.
+ *
+ * @uses map-get( $directories, $key ) to retrieve directory value from map
+ * @type map
+ * @author Jérémy Levron <levronjeremy@19h47.fr>
+ */
+$directories: (
+	fonts: '~fonts/',
+	img: '~img/',
+	svg: '~svg/',
+	jpg: '~jpg/',
+	png: '~png/',
+	gif: '~gif/',
+);
+
+
+/**
+ * State classes
+ *
+ * Each state class used in this theme.
+ *
+ * @uses map-get( $state-classes, $key ) to retrieve class name from map
+ * @type map
+ * @author Jérémy Levron <levronjeremy@19h47.fr>
+ */
+$state-classes: (
+	menu-open: menu--is-open,
+	search-open: search--is-open,
+	panel-open: panel--is-open,
+	submenu-open: submenu--is-open,
+	single-menu-open: single-menu--is-open,
+	bottom: is-bottom,
+);
+
+
+/**
+ * Spacers
+ *
+ * Usefull for padding and margin utilities rythm
+ */
+$spacers: (
+	0: 0,
+	1: $grid-gutter-width-unitless * 0.25,
+	2: $grid-gutter-width-unitless * 0.5,
+	3: $grid-gutter-width-unitless,
+	4: $grid-gutter-width-unitless * 1.5,
+	5: $grid-gutter-width-unitless * 2,
+	6: $grid-gutter-width-unitless * 3,
+	7: $grid-gutter-width-unitless * 4,
+	8: $grid-gutter-width-unitless * 5,
+);

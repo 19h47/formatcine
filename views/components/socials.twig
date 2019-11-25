@@ -1,0 +1,25 @@
+{#
+
+views/components/socials
+
+@param string prefix
+@author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
+
+#}
+<ul class="Socials{{ prefix ? ' Socials--' ~ prefix }}">
+	{% for social in contact.socials | sort %}
+		<li class="Socials-item{{ social.name ? ' ' ~ social.name }}">
+			<a href="{{ social.url }}" target="_blank" rel="noopener" aria-label="{{ social.name }}">
+				{% include 'svg/use.html.twig' with { icon: social.slug } %}
+			</a>
+		</li>
+	{% endfor %}
+
+	{% if contact.email_addresses %}
+		<li class="Socials-item">
+			<a href="mailto:{{ contact.email_addresses | first }}" target="_blank" aria-label="Email">
+				{% include 'svg/use.html.twig' with { icon: 'envelope' } %}
+			</a>
+		</li>
+	{% endif %}
+</ul>

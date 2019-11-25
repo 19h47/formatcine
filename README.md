@@ -1,23 +1,9 @@
 # Format'ciné
 
-## Docker
+__Format'ciné__ is a French association promoting cinema in the __Indre et Loire__ region, here's their website.
 
-```bash
-docker-compose down --volumes
-```
+![Screenshot](screenshot.png)
 
-```bash
-docker-compose up -d
-```
+## Author
 
-## Make an url point to localhost
-
-```bash
-sudo nano /etc/hosts
-```
-
-```
-127.0.0.1 formatcine.test www.formatcine.test
-```
-
-Then type `ctrl + x`, and `y` to save and exit nano. Now, the custom url points to `localhost`.
+The website has been designed by [Moka Création](http://www.mokacreation.com/) and developed by [19h47](http://www.19h47.fr/).

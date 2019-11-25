@@ -36,11 +36,6 @@
 ehthumbs.db
 Thumbs.db
 
-# Docker #
-##########
-.env
-database
-
 # WordPress files #
 ###################
 web/wp-admin/
@@ -66,3 +61,5 @@ web/wp-content/themes/formatcine/screenshots
 # Front-end #
 #############
 node_modules
+dist
+vendor

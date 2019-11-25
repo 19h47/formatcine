@@ -1,0 +1,18 @@
+{#
+
+views/components/post-title
+
+@param title
+@author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
+
+#}
+
+<div class="Page-post-title Site-container">
+	<div class="row">
+		<div class="col-12">
+			<h1 class="color-main">
+				&bull;&nbsp;{{- post_title ? post_title : post.post_title -}}&nbsp;&bull;
+			</h1>
+		</div>
+	</div>
+</div>

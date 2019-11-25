@@ -1,0 +1,14 @@
+{#
+	@param arr classes
+	@param str id
+	@param str icon
+	@file views/svg/use.html.twig
+	@author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
+#}
+<svg
+	class="{{ icon }}{{ classes is defined ? ' ' ~ classes|join(' ') }}"
+	{{ id is defined ? "id=\"#{ id }\"" }}
+	aria-label="{{ site.description }}"
+>
+	<use xlink:href="#{{ icon }}" href="{{ theme.link }}/dist/icons.svg#{{ icon }}"></use>
+</svg>

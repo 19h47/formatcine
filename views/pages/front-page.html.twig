@@ -1,0 +1,139 @@
+{#
+
+@file 		/views/pages/front-page
+@package 	Formatcine
+@author 	Jérémy Levron <jeremylevron@19h47.fr> (http://19h47.fr)
+
+#}
+{% extends 'index.html.twig' %}
+
+{% block content %}
+	{# Introduction #}
+	<div class="Site-container Slider">
+		<div class="background-color-secondary h-100">
+			<div class="row h-100">
+				<div class="col-12 h-100">
+					<div class="d-table w-100 h-100">
+						<div class="d-table-cell vertical-align-middle text-align-center">
+							<img class="image-mobile" src="{{ manifest['img/svg/home-mobile-top.svg'] }}" alt="" />
+
+							<h1 class="title">
+								<span>{{ __( 'De chaque côté de' ) }}</span>
+								<span>{{ __( 'L\’écran' ) }}</span>
+							</h1>
+
+							<img class="image-mobile" src="{{ manifest['img/svg/home-mobile-bottom.svg'] }}" alt="" />
+						</div>
+					</div>
+
+					<div class="Slider-images js-slider-home d-none d-md-block">
+						<div>
+							<img class="image" loading="lazy" src="{{ manifest['img/svg/home-slider-01.svg'] }}" alt="" />
+						</div>
+						<div>
+							<img class="image" loading="lazy" src="{{ manifest['img/svg/home-slider-02.svg'] }}" alt="" />
+						</div>
+						<div>
+							<img class="image" loading="lazy" src="{{ manifest['img/svg/home-slider-03.svg'] }}" alt="" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{# Discover #}
+	<div class="Site-container Discovery">
+		<div class="row">
+			<div class="col-12 col-md-10 offset-md-1 text-align-center">
+				<h2 class="Site-title-underline">{{- post.discovery_title -}}</h2>
+				<p class="description">{{- post.discovery_description -}}</p>
+			</div>
+		</div>
+		<div class="row">
+
+			{% for discovery in post.get_field('discoveries') %}
+				<div class="col-12 col-md-4">
+					<article class="item">
+
+						{{- discovery.link ? "<a href=\"#{discovery.link}\" aria-label=\"#{discovery.title}\">" -}}
+
+						<img class="pictogram" src="{{ Image( discovery.pictogram ).src }}" alt="{{ discovery.title }}" />
+
+						{{- discovery.link ? '</a>' : '' -}}
+
+						<br>
+						<h3 class="title">
+							{{- discovery.link ? "<a href=\"#{discovery.link}\">" -}}
+								{{- discovery.title -}}
+							{{- discovery.link ? '</a>' : '' -}}
+						</h3>
+						<br>
+
+						<p class="description">{{- discovery.description -}}</p>
+
+					</article>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+
+
+	{# Events #}
+	<div class="Events js-events">
+		<div class="Site-container">
+
+			<div class="row d-md-none">
+				<div class="col-12 col-md-4">
+					<h2 class="Site-title-underline">{{- __( 'Les\névénements' ) | nl2br -}}</h2>
+					<p class="description">
+						{{- __( 'Toute l’année, retrouvez des manifestations organisées avec nos partenaires sur différents thèmes.' ) -}}
+					</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-12">
+					<ul class="Events-filters">
+						{% for category in events.categories %}
+							<li class="item">
+								<button
+									type="button"
+									class="color-secondary js-events-button"
+									data-category-id="{{ category.term_id }}"
+								>
+									{{- category.name -}}
+								</button>
+							</li>
+						{% endfor %}
+						<li class="item">
+							<button
+								type="button"
+								class="color-secondary is-active js-events-button"
+								data-category-id="0"
+							>
+								{{- __( 'Tout public' ) -}}</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-12 col-md-4 d-none d-md-block">
+					<h2 class="Site-title-underline">{{- __( 'Les\névénements' ) | nl2br -}}</h2>
+					<p class="description">
+						{{- __( 'Toute l’année, retrouvez des manifestations organisées avec nos partenaires sur différents thèmes.' ) -}}
+					</p>
+				</div>
+
+				<div class="col-12 col-md-8 Events-tease-container js-events-container">
+					{% include 'partials/tease-event.html.twig' %}
+				</div>
+
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+
+{% block footer %}{% endblock %}

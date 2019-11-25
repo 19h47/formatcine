@@ -1,0 +1,26 @@
+{#
+
+@file 		/views/footer.html.twig
+@package 	Format'ciné
+@author 	Jérémy Levron <jeremylevron@19h47.fr> (http://19h47.fr)
+
+#}
+		<footer class="Site-footer background-color-main">
+			<div class="Site-container">
+				<div class="row">
+					<div class="col-12">
+
+						<p class="Menu-footer">
+							{%- include 'components/contact.html.twig' -%}
+						</p>
+
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		{{ wp_footer }}
+		{% include 'components/guid.html.twig' %}
+
+	</body>
+</html>

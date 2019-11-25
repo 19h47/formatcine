@@ -1,0 +1,42 @@
+{#
+
+@file 			/views/pages/ateliers-cinema
+@package 		WordPress
+@subpackage 	frmtcn
+@author 		Jérémy Levron <jeremylevron@19h47.fr> (http://19h47.fr)
+
+#}
+{% extends 'index.html.twig' %}
+
+{% block content %}
+
+	{{- parent() -}}
+
+	<div class="Site-container Workshops">
+		<div class="row">
+
+			{% for workshop in post.get_field( 'workshops' ) %}
+
+				<div class="col-12 col-md-4">
+
+					<a class="Workshops-link" target="_blank" href="{{ workshop.document.url }}" title="{{ workshop.document.title }}">
+
+						<div>
+							<svg class="">
+								  <use xlink:href="{{ theme.link }}/dist/icons.svg#{{ workshop.icon }}"></use>
+							</svg>
+						</div>
+
+						<p class="Workshops-link__label">{{- workshop.name -}}</p>
+
+					</a>
+
+				</div>
+
+				{{- loop.index is divisible by( 3 ) and not loop.last ? '</div><div class="row">' -}}
+
+			{% endfor %}
+
+		</div>
+	</div>
+{% endblock %}
