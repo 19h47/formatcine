@@ -7,8 +7,11 @@ $colors: main secondary ternary;
         .#{ $property }-#{ $color } {
             #{ $property }: var( --#{ $color }, the_color( black ) );
 
-            &-hover:hover {
-                #{ $property }: var( --#{ $color } )!important;
+            &-hover{
+                &:focus,
+                &:hover {
+                    #{ $property }: var( --#{ $color } )!important;
+                }
             }
         }
     }

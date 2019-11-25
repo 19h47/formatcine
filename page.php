@@ -9,10 +9,8 @@
 
 use Timber\{ Timber, Post };
 
-
-$context           = Timber::get_context();
-$context['post']   = new Post();
-$context['parent'] = new Post( $post->post_parent );
+$context         = Timber::get_context();
+$context['post'] = new Post();
 
 $templates = array( 'index.html.twig' );
 

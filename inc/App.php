@@ -63,10 +63,11 @@ class App extends Timber {
 	/**
 	 * Initialize the class and set its properties.
 	 *
-	 * @param str $theme_version The theme version.
+	 * @param string $theme_version The theme version.
 	 * @access public
 	 */
-	public function __construct( $theme_version ) {
+	public function __construct( string $theme_name, string $theme_version ) {
+		$this->theme_name    = $theme_name;
 		$this->theme_version = $theme_version;
 
 		$this->setup();
@@ -464,27 +465,11 @@ class App extends Timber {
 
 		// Remove native version of jQuery and use custom CDN version instead.
 		wp_deregister_script( 'jquery' );
-		wp_register_script(
-			'jquery',
-			'//code.jquery.com/jquery-3.4.1.min.js',
-			false,
-			$this->get_theme_version(),
-			true
-		);
-
-		// Slick.
-		wp_register_script(
-			'slick',
-			'//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js',
-			array( 'jquery' ),
-			$this->get_theme_version(),
-			true
-		);
 
 		wp_register_script(
 			$this->theme_name . '-main',
 			get_template_directory_uri() . '/dist/' . $this->theme_manifest['main.js'],
-			array( 'jquery' ),
+			array(),
 			$this->get_theme_version(),
 			true
 		);
@@ -502,7 +487,6 @@ class App extends Timber {
 			)
 		);
 
-		wp_enqueue_script( 'slick' );
 		wp_enqueue_script( $this->theme_name . '-main' );
 	}
 
@@ -515,7 +499,7 @@ class App extends Timber {
 	 */
 	public function javascript_detection() {
 		?>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/feature.js/1.0.1/feature.min.js"></script>
+		<script rel="dns-prefetch" src="https://cdnjs.cloudflare.com/ajax/libs/feature.js/1.0.1/feature.min.js"></script>
 		<script>
 			document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
 

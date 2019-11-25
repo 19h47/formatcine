@@ -22,7 +22,6 @@ class App {
 		const bodyScrollLeft = document.body.scrollLeft;
 		const bodyScrollTop = document.body.scrollTop;
 
-
 		// lock scroll position, but retain settings for later
 		// http://stackoverflow.com/a/3656618
 		config.body.scroll.left = pageXOffset || documentElementScrollLeft || bodyScrollLeft;

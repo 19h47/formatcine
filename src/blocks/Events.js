@@ -61,7 +61,7 @@ export default class Events {
 			};
 
 			return this.filter();
-		});
+		}, { passive: true });
 	}
 
 

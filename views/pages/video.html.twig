@@ -10,9 +10,8 @@
 
 {% block content %}
 
-	{# Post title #}
-	{% if post.post_title %}
-		{% include 'components/post-title.html.twig' with { post_title: parent.post_title } %}
+	{% if post.parent.title %}
+		{% include 'components/post-title.html.twig' with { post_title: post.parent.title } %}
 	{% endif %}
 
 	{# Post content #}

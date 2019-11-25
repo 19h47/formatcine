@@ -61,7 +61,7 @@ export default class SchoolTraining {
 			};
 
 			this.filter();
-		});
+		}, { passive: true });
 	}
 
 

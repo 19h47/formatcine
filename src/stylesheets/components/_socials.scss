@@ -46,7 +46,10 @@
 			@extend .d-block;
 			@include size( 100% );
 
-			&:hover { opacity: 0.7; }
+			&:hover,
+			&:focus {
+				opacity: 0.7;
+			}
 		}
 
 		svg {

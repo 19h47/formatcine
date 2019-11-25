@@ -1,4 +1,5 @@
-/* global $ */
+import $ from 'jquery';
+import 'slick-carousel';
 
 // Home slider
 $('.js-slider-home').slick({

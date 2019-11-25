@@ -1,4 +1,5 @@
-/* global $ */
+import $ from 'jquery';
+import 'slick-carousel';
 
 // Movies slider
 const sliders = [...document.querySelectorAll('.js-movie-slider')];

@@ -81,7 +81,10 @@ module.exports = merge(
 					'ajax-loader',
 					'Facebook',
 					'page-template-default',
-					'error404'
+					'error404',
+					'iframe',
+			   		'object',
+			   		'embed'
 				],
 				whitelistPatternsChildren: [/^leaflet-/, /^wp-block-/, /^flickity-/, /^wpcf7-/, /^Socials/, /^slick/]
 			}),

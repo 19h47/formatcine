@@ -1,4 +1,5 @@
-/* global $ */
+import $ from 'jquery';
+import 'slick-carousel';
 
 $('.js-adult-training').slick({
 	slidesToScroll: 1,

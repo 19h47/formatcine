@@ -169,6 +169,9 @@
 			@include margin( top 0 bottom 0 );
 		}
 
-		a:hover { text-decoration: underline; }
+		a:hover,
+		a:focus {
+			text-decoration: underline;
+		}
 	}
 }
