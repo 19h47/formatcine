@@ -1,4 +1,4 @@
-<?php
+<?php // phpcs:ignore
 /**
  * Class Formatcine
  *
@@ -9,15 +9,17 @@ namespace Formatcine;
 
 use Formatcine\PostTypes\{ Post, Page, Programming, AdultTraining, SchoolTraining, Movie };
 use Formatcine\Taxonomies\{ Country, SchoolClass, Director, Season, AdultTrainingCategory };
-
 use Timber\{ Timber, Menu };
-
+use Dotenv;
 use Twig\{ TwigFunction };
 
 use Cocur\Slugify\Bridge\Twig\{ SlugifyExtension };
 use Cocur\Slugify\{ Slugify };
 
 use Set_Glance_Items;
+
+$dotenv = Dotenv\Dotenv::create( get_template_directory() );
+$dotenv->load();
 
 
 /**
@@ -464,7 +466,9 @@ class App extends Timber {
 		wp_deregister_script( 'wp-embed' );
 
 		// Remove native version of jQuery and use custom CDN version instead.
-		wp_deregister_script( 'jquery' );
+		if ( 'true' === getenv( 'PRODUCTION' ) ) {
+			wp_deregister_script( 'jquery' );
+		}
 
 		wp_register_script(
 			$this->theme_name . '-main',
