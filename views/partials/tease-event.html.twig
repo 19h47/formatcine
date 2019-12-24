@@ -10,10 +10,18 @@ Tease: Event
 <div class="row">
 	{% for post in posts %}
 		<div class="col-12 col-md-4">
-			<article id="post-{{ post.id }}" class="Tease-event{{ post.event_color ? ' has-background-color' }}"{{ post.event_color ? ' style="background-color: ' ~ post.event_color ~ ';"' }}>
+			<article id="post-{{ post.id }}" class="Tease-event{{ post.event_color ? ' has-background-color' }}"  itemscope itemtype="http://schema.org/Event"{{ post.event_color ? ' style="background-color: ' ~ post.event_color ~ ';"' }}>
+				<meta itemprop="startDate" content="{{ post.event_date }}">
+
+				<span itemprop="location" itemscope itemtype="http://schema.org/Place">
+					<span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+						<meta itemprop="addressLocality" content="Tours">
+					</span>
+				</span>
+
 				<p class="Tease-event__date">{{- post.event_date | date( 'l j F Y' ) -}}</p>
-				<h3 class="Tease-event__title">{{- post.post_title -}}</h3>
-				<p class="Tease-event__description">{{- post.description -}}</p>
+				<h3 class="Tease-event__title" itemprop="name">{{- post.post_title -}}</h3>
+				<p class="Tease-event__description" itemprop="description">{{- post.description -}}</p>
 
 				{% if post.event_read_more %}
 					<a

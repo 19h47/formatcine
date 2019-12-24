@@ -15,9 +15,10 @@ views/components/movie
 	</a>
 {% endmacro %}
 
-<article class="Movie outline-color-secondary">
+<article class="Movie outline-color-secondary" itemscope itemtype="http://schema.org/Movie">
 
 	<div class="Movie__thumbnail">
+		<meta itemprop="image" content="{{ TimberImage( movie.thumbnail ).src }}">
 
 		<p class="Movie__quarter background-color-secondary">
 			{{- programming.get_field( 'quarter' ).label -}}
@@ -28,13 +29,22 @@ views/components/movie
 
 	<div class="Movie__content">
 
-		<h3 class="Movie__title color-secondary">{{- movie.title -}}</h3>
+		<h3 class="Movie__title color-secondary" itemprop="name">{{- movie.title -}}</h3>
 
 		{# Directors #}
-		{{- directors ? "<p class=\"Movie__directors\">De&nbsp;#{ directors | join(', ') }</p>" : '' -}}
+		{% if directors %}
+			<p class="Movie__directors" itemprop="director" itemscope itemtype="http://schema.org/Person">
+				{{ directors | map( director => "<meta itemprop=\"name\" content=\"#{ director }\">" ) | join() }}
+				De&nbsp;{{ directors | join( ', ' ) }}
+			</p>
+		{% endif %}
 
 
 		<div class="Movie__meta">
+			<meta itemprop="dateCreated" content="{{ movie.release_year }}"> 
+			<meta itemprop="countryOfOrigin" content="{{ countries | join('-') }}">
+			<meta itemprop="duration" content="{{ movie.get_field( 'running_time' ) }}">
+
 			{% set meta = [] %}
 			{% set meta = meta | merge( [ countries ? countries | join('-') ] ) %}
 			{% set meta = meta | merge( [ movie.release_year ] ) %}
@@ -53,13 +63,19 @@ views/components/movie
 				class="Movie__trailer"
 				href="{{ movie.get_field( 'trailer' ) }}"
 				target="_blank"
+				itemprop="trailer" itemscope itemtype="http://schema.org/VideoObject"
 			>
+				<meta itemprop="embedUrl" content="{{ movie.get_field( 'summary' ) }}">
+				<meta itemprop="description" content="{{ movie.get_field( 'trailer' ) }}">
+				<meta itemprop="name" content="{{ movie.title }}">
+				<meta itemprop="thumbnailUrl" content="{{ TimberImage( movie.thumbnail ).src }}">
+				<meta itemprop="uploadDate" content="{{ movie.post_date }}">
 				{{-__( 'Visionner la bande annonce', 'formatcine' ) -}}
 			</a>
 		{% endif %}
 
-		<p class="Movie__summary">{{- movie.get_field( 'summary' ) -}}</p>
-		<p class="Movie__review color-main">{{- movie.get_field( 'review' ) -}}</p>
+		<p class="Movie__summary" itemprop="abstract">{{- movie.get_field( 'summary' ) -}}</p>
+		<p class="Movie__review color-main" itemprop="about">{{- movie.get_field( 'review' ) -}}</p>
 
 		{% if movie.get_field( 'documents' ) %}
 			<div class="Movie__documents">
