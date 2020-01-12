@@ -67,7 +67,7 @@
 				<div class="col-12 col-md-4">
 					<h2 class="margin-y-0">
 						<span class="Site-title-underline">
-							{{- __( 'Les\njournées de\nformation\n' )|nl2br -}}
+							{{- __( 'Les\njournées de\nformation\n' ) | nl2br -}}
 						</span>
 						<span class="Site-title-underline color-gray-dark">{{ season.name }}</span>
 					</h2>
@@ -120,9 +120,7 @@
 				</div>
 
 				<div class="col-12 col-md-8 School-trainings-tease-container js-school-trainings-container">
-
 					{% include 'partials/tease-school-training.html.twig' %}
-
 				</div>
 			</div>
 		</div>
@@ -130,7 +128,6 @@
 
 		{%- include 'partials/reports.html.twig' with { report: post.get_field( 'report' ) } only -%}
 	</section>
-
 
 {% endblock %}
 
