@@ -9,7 +9,7 @@ export default class SchoolTraining {
 	constructor(element) {
 		this.$element = document.querySelector(element);
 
-		if (!this.$element || this.$element === undefined) return false;
+		if (!this.$element || undefined === this.$element) return false;
 
 		this.$cont = this.$element.querySelector('.js-school-trainings-container');
 		this.buttonFilters = this.$element.querySelectorAll('.js-school-trainings-button');
@@ -36,7 +36,7 @@ export default class SchoolTraining {
 	 * SchoolTraining.setupEvents
 	 */
 	setupEvents() {
-		this.$element.addEventListener('click', (e) => {
+		this.$element.addEventListener('click', e => {
 			if (e.target === this.school_class.button) {
 				return;
 			}
@@ -47,7 +47,7 @@ export default class SchoolTraining {
 			}
 
 			// Remove all `is-active` classes
-			this.buttonFilters.forEach((buttonFilter) => {
+			this.buttonFilters.forEach(buttonFilter => {
 				buttonFilter.classList.remove('is-active');
 			});
 
@@ -134,7 +134,7 @@ export default class SchoolTraining {
 	 */
 	lock(method) {
 		// console.log('SchoolTraining.lock(on)');
-		if (method === 'on') {
+		if ('on' === method) {
 			if (this.school_class.button) {
 				this.school_class.button.classList.add('is-active');
 			}
@@ -146,7 +146,7 @@ export default class SchoolTraining {
 		}
 
 		// console.log('SchoolTraining.lock('off')');
-		if (method === 'off') {
+		if ('off' === method) {
 			// remove loading state of ajax container if exists
 			if (this.$cont) {
 				this.$cont.classList.remove('is-loading');

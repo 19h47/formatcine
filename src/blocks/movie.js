@@ -20,26 +20,26 @@ function activeFilter() {
 	const schoolClasses = JSON.parse(this.dataset.schoolClass);
 	let currentContainer = null;
 
-	filters.forEach((e) => {
+	filters.forEach(e => {
 		e.classList.remove('is-active');
 	});
 	this.classList.add('is-active');
 
-	containers.forEach((e) => {
+	containers.forEach(e => {
 		const categories = JSON.parse(e.dataset.schoolClass);
 		e.classList.remove('is-active');
 
-		schoolClasses.some((el) => {
+		schoolClasses.some(el => {
 			currentContainer = e;
 			$(currentContainer).find('.js-movie-slider-container').slick('refresh');
-			return categories.indexOf(el) >= 0 ? currentContainer.classList.add('is-active') : '';
+			return 0 <= categories.indexOf(el) ? currentContainer.classList.add('is-active') : '';
 		});
 	});
 
 	return true;
 }
 
-sliders.forEach((slider) => {
+sliders.forEach(slider => {
 	const $slider = $(slider);
 
 	$slider.find('.js-movie-slider-container').slick({
@@ -60,6 +60,6 @@ sliders.forEach((slider) => {
 });
 
 
-filters.forEach((filter) => {
+filters.forEach(filter => {
 	filter.addEventListener('click', activeFilter);
 });

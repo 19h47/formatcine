@@ -18,8 +18,8 @@ class Menu {
 		$(document)
 			.on('click.menu', '.js-toggle-menu-button', this.toggle.bind(this))
 			// .on('click.menu', '.js-toggle-menu-backdrop', this.toggle.bind(this))
-			.on('keydown.menu', (e) => {
-				if (e.which === 27) {
+			.on('keydown.menu', e => {
+				if (27 === e.which) {
 					this.close();
 				}
 			});

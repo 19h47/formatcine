@@ -44,11 +44,11 @@ class App {
 		let resumeScroll = true;
 		let currentPosition = position;
 
-		if (typeof currentPosition === 'undefined') {
+		if ('undefined' === typeof currentPosition) {
 			currentPosition = config.body.scroll.top;
 		}
 
-		if (typeof currentPosition === 'boolean' && currentPosition === false) {
+		if ('boolean' === typeof currentPosition && false === currentPosition) {
 			resumeScroll = false;
 		}
 
@@ -70,11 +70,11 @@ class App {
 	 * @param  positionY
 	 */
 	static resetScroll(positionX, positionY) {
-		if (typeof positionX !== 'undefined') {
+		if ('undefined' !== typeof positionX) {
 			config.body.scroll.left = parseInt(positionX, 10);
 		}
 
-		if (typeof positionY !== 'undefined') {
+		if ('undefined' !== typeof positionY) {
 			config.body.scroll.top = parseInt(positionY, 10);
 		}
 

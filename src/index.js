@@ -12,17 +12,17 @@ const bodyClasses = document.body.className.split(' ');
 
 // Collège au cinéma 37
 if (bodyClasses.includes('page-template-college-au-cinema-37')) {
-    import('Blocks/movie' /* webpackChunkName: "adult-training", webpackPreload: true */);
+	import('Blocks/movie' /* webpackChunkName: "adult-training", webpackPreload: true */); // eslint-disable-line no-unused-expressions
 }
 
 // Formations pour les adultes
 if (bodyClasses.includes('parent-pageid-181')) {
-    import('Blocks/adult-training' /* webpackChunkName: "movie", webpackPreload: true */);
+	import('Blocks/adult-training' /* webpackChunkName: "movie", webpackPreload: true */); // eslint-disable-line no-unused-expressions
 }
 
 // Home
 if (bodyClasses.includes('home')) {
-	import('Blocks/home' /* webpackChunkName: "home", webpackPreload: true */);
+	import('Blocks/home' /* webpackChunkName: "home", webpackPreload: true */); // eslint-disable-line no-unused-expressions
 }
 
 require.context('svg/', true);

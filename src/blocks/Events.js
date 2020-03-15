@@ -10,7 +10,7 @@ export default class Events {
 	constructor(element) {
 		this.$element = document.querySelector(element);
 
-		if (!this.$element || this.$element === undefined) return false;
+		if (!this.$element || undefined === this.$element) return false;
 
 		this.$cont = this.$element.querySelector('.js-events-container');
 		this.buttonFilters = this.$element.querySelectorAll('.js-events-button');
@@ -36,12 +36,14 @@ export default class Events {
 	 * Events.setupEvents
 	 */
 	setupEvents() {
-		this.$element.addEventListener('click', (e) => {
-			if (e.target === this.category.button) {
+		this.$element.addEventListener('click', event => {
+			const { target } = event;
+
+			if (target === this.category.button) {
 				return false;
 			}
 
-			if (!e.target.classList.contains('js-events-button')) {
+			if (!target.classList.contains('js-events-button')) {
 				return false;
 			}
 
@@ -56,8 +58,8 @@ export default class Events {
 
 			// Stock current term_id
 			this.category = {
-				button: e.target,
-				id: e.target.dataset.categoryId,
+				button: target,
+				id: target.dataset.categoryId,
 			};
 
 			return this.filter();
@@ -128,7 +130,7 @@ export default class Events {
 	 */
 	lock(method) {
 		// console.log('Events.lock(on)');
-		if (method === 'on') {
+		if ('on' === method) {
 			if (this.category.button) {
 				this.category.button.classList.add('is-active');
 			}
@@ -140,7 +142,7 @@ export default class Events {
 		}
 
 		// console.log('Events.lock.off');
-		if (method === 'off') {
+		if ('off' === method) {
 			// remove loading state of ajax container if exists
 			if (this.$cont) {
 				this.$cont.classList.remove('is-loading');
