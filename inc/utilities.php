@@ -198,7 +198,7 @@ if ( ! function_exists( 'get_theme_manifest' ) ) :
 	function get_theme_manifest() {
 
 		// Helpers to define the path.
-    	$directory = get_template_directory();
+    		$directory = get_template_directory();
 
 		// Define the path.
 		$path = $directory . '/dist/manifest.json';
@@ -207,9 +207,9 @@ if ( ! function_exists( 'get_theme_manifest' ) ) :
 
 		require_once $path;
 
-    	$contents = ob_get_clean();
+    		$contents = ob_get_clean();
 
-    	return json_decode( $contents, true );
+    		return json_decode( $contents, true );
 	}
 
 endif;
