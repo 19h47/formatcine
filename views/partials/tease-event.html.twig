@@ -30,7 +30,7 @@ Tease: Event
 						target="_blank"
 						rel="noopener"
 					>
-						{{- __( 'En savoir plus' ) -}}
+						{{- __( 'Learn more', 'frmtcn' ) -}}
 						{% include 'svg/use.html.twig' with { classes: [ 'Tease-event__read-more__icon' ], icon: 'arrow' } %}
 					</a>
 				{% endif %}
@@ -39,7 +39,7 @@ Tease: Event
 		</div>
 	{% else %}
 		<div class="col-12">
-			<p>{{- __( 'Aucun événement à afficher' ) -}}</p>
+			<p>{{- __( 'There are no events to display', 'frmtcn' ) -}}</p>
 		</div>
 	{% endfor %}
 </div>

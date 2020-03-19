@@ -104,7 +104,7 @@ class Post {
 		foreach ( $columns as $key => $value ) {
 
 			if ( end( $keys ) === $key ) {
-				$new_columns['event_date'] = __( 'Date de l\'événement', 'formatcine' );
+				$new_columns['event_date'] = __( 'Event date', 'frmtcn' );
 			}
 
 			$new_columns[ $key ] = $value;

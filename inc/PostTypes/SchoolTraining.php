@@ -52,30 +52,34 @@ class SchoolTraining {
 	 */
 	public function register_post_type() {
 		$labels = array(
-			'name'                  => _x( 'Formations scolaires', 'Formation Nom pluriel', 'Formatcine' ),
-			'singular_name'         => _x( 'Formation scolaire ', 'Formation Nom singulier', 'Formatcine' ),
-			'menu_name'             => __( 'Formations scolaires', 'Formatcine' ),
-			'name_admin_bar'        => __( 'Formation', 'Formatcine' ),
-			'all_items'             => __( 'Toutes les formations scolaires', 'Formatcine' ),
-			'add_new_item'          => __( 'Ajouter une nouvelle formation scolaire', 'Formatcine' ),
-			'add_new'               => __( 'Ajouter', 'Formatcine' ),
-			'new_item'              => __( 'Nouvelle formation scolaire', 'Formatcine' ),
-			'edit_item'             => __( 'Modifier la formation scolaire', 'Formatcine' ),
-			'update_item'           => __( 'Mettre à jour la formation scolaire', 'Formatcine' ),
-			'view_item'             => __( 'Voir la formation scolaire', 'Formatcine' ),
-			'view_items'            => __( 'Voir les formations scolaires', 'Formatcine' ),
-			'search_items'          => __( 'Chercher parmi les formations', 'Formatcine' ),
-			'not_found'             => __( 'Aucune formation scolaire trouvée.', 'Formatcine' ),
-			'not_found_in_trash'    => __( 'Aucune formation scolaire trouvée dans la corbeille.', 'Formatcine' ),
-			'featured_image'        => __( 'Image à la une', 'Formatcine' ),
-			'set_featured_image'    => __( 'Mettre une image à la une', 'Formatcine' ),
-			'remove_featured_image' => __( 'Retirer l\'image mise en avant', 'Formatcine' ),
-			'use_featured_image'    => __( 'Mettre une image à la une', 'Formatcine' ),
-			'insert_into_item'      => __( 'Insérer dans la formation scolaire', 'Formatcine' ),
-			'uploaded_to_this_item' => __( 'Ajouter à cette formation scolaire', 'Formatcine' ),
-			'items_list'            => __( 'Liste des formations', 'Formatcine' ),
-			'items_list_navigation' => __( 'Navigation de liste des formations scolaires', 'Formatcine' ),
-			'filter_items_list'     => __( 'Filtrer la liste des formations scolaires', 'Formatcine' ),
+			'name'                     => _x( 'Schools training', 'school training general', 'frmtcn' ),
+			'singular_name'            => _x( 'School training', 'school training singular', 'frmtcn' ),
+			'add_new'                  => __( 'Add New', 'frmtcn' ),
+			'add_new_item'             => __( 'Add New School training', 'frmtcn' ),
+			'edit_item'                => __( 'Edit School training', 'frmtcn' ),
+			'new_item'                 => __( 'New School training', 'frmtcn' ),
+			'view_item'                => __( 'View School training', 'frmtcn' ),
+			'view_items'               => __( 'View schools training', 'frmtcn' ),
+			'search_items'             => __( 'Search School training', 'frmtcn' ),
+			'not_found'                => __( 'No school training found.', 'frmtcn' ),
+			'not_found_in_trash'       => __( 'No school training found in Trash.', 'frmtcn' ),
+			'parent_item_colon'        => __( 'Parent School training:', 'frmtcn' ),
+			'all_items'                => __( 'All schools training', 'frmtcn' ),
+			'archives'                 => __( 'School training Archives', 'frmtcn' ),
+			'attributes'               => __( 'School training Attributes', 'frmtcn' ),
+			'featured_image'           => _x( 'Featured Image', 'school training', 'frmtcn' ),
+			'set_featured_image'       => _x( 'Set featured image', 'school training', 'frmtcn' ),
+			'remove_featured_image'    => _x( 'Remove featured image', 'school training', 'frmtcn' ),
+			'use_featured_image'       => _x( 'Use as featured image', 'school training', 'frmtcn' ),
+			'insert_into_item'         => __( 'Insert into school training', 'frmtcn' ),
+			'uploaded_to_this_item'    => __( 'Uploaded to this school training', 'frmtcn' ),
+			'items_list'               => __( 'Schools training list', 'frmtcn' ),
+			'items_list_navigation'    => __( 'Schools training list navigation', 'frmtcn' ),
+			'item_published'           => __( 'School training published.', 'frmtcn' ),
+			'item_published_privately' => __( 'School training published privately.', 'frmtcn' ),
+			'item_reverted_to_draft'   => __( 'School training reverted to draft.', 'frmtcn' ),
+			'item_scheduled'           => __( 'School training scheduled.', 'frmtcn' ),
+			'item_updated'             => __( 'School training updated.', 'frmtcn' ),
 		);
 
 		$rewrite = array(
@@ -170,7 +174,7 @@ class SchoolTraining {
 			if ( 'title' === $key ) {
 				$new_columns['taxonomy-season']       = $taxonomy_seasons;
 				$new_columns['taxonomy-school_class'] = $taxonomy_school_class;
-				$new_columns['movies']                = __( 'Films' );
+				$new_columns['movies']                = __( 'Movies', 'frmtcn' );
 			}
 			$new_columns[ $key ] = $value;
 		}
@@ -200,8 +204,7 @@ class SchoolTraining {
 					$output = array();
 
 					foreach ( $movies as $movie ) {
-						$html  = '<a href="' . get_edit_post_link( $movie->ID );
-						$html .= '">' . $movie->post_title . '</a>';
+						$html = edit_post_link( $movie->post_title, '', '', $movie->ID );
 
 						array_push( $output, $html );
 					}

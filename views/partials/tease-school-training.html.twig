@@ -15,14 +15,7 @@ Tease: School training
 			<article id="school_training-{{ school_training.id }}" class="Tease-school-training">
 
 				<div class="Tease-school-training__thumbnail">
-					{% if school_training.thumbnail %}
-					<img
-						src="{{ TimberImage( school_training ).src }}"
-						alt="{{ TimberImage( school_training ).alt }}"
-						width="{{ TimberImage( school_training ).width }}"
-						height="{{ TimberImage( school_training ).height }}"
-					/>
-					{% endif %}
+					{% include 'partials/image.html.twig' with { image: school_training.thumbnail } %}
 				</div>
 
 				{# Date #}
@@ -55,7 +48,7 @@ Tease: School training
 					class="Tease-school-training__read-more color-secondary background-color-secondary-hover border-color-secondary-hover"
 					target="_blank"
 				>
-					{{- __( 'Programme', 'formatcine' ) -}}
+					{{- __( 'Programming', 'frmtcn' ) -}}
 					<svg class="Tease-school-training__read-more__icon">
 						<use xlink:href="{{ theme.link }}/dist/icons.svg#arrow"></use>
 					</svg>

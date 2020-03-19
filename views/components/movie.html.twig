@@ -19,13 +19,13 @@ views/components/movie
 <article class="Movie outline-color-secondary" itemscope itemtype="http://schema.org/Movie">
 
 	<div class="Movie__thumbnail">
-		<meta itemprop="image" content="{{ TimberImage( movie.thumbnail ).src }}">
+		<meta itemprop="image" content="{{ Image( movie.thumbnail ).src }}">
 
 		<p class="Movie__quarter background-color-secondary">
 			{{- programming.get_field( 'quarter' ).label -}}
 		</p>
 
-		<img src="{{ TimberImage( movie.thumbnail ).src( 'medium' ) }}" alt="" />
+		{% include 'partials/image.html.twig' with { image: movie.thumbnail } %}
 	</div>
 
 	<div class="Movie__content">
@@ -69,9 +69,9 @@ views/components/movie
 				<meta itemprop="embedUrl" content="{{ movie.get_field( 'summary' ) }}">
 				<meta itemprop="description" content="{{ movie.get_field( 'trailer' ) }}">
 				<meta itemprop="name" content="{{ movie.title }}">
-				<meta itemprop="thumbnailUrl" content="{{ TimberImage( movie.thumbnail ).src }}">
+				<meta itemprop="thumbnailUrl" content="{{ Image( movie.thumbnail ).src }}">
 				<meta itemprop="uploadDate" content="{{ movie.post_date }}">
-				{{-__( 'Visionner la bande annonce', 'formatcine' ) -}}
+				{{-__( 'Visionner la bande annonce', 'frmtcn' ) -}}
 			</a>
 		{% endif %}
 

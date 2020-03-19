@@ -18,8 +18,8 @@ function frmtcn_customize_contact( $wp_customize ) {
 	$wp_customize->add_section(
 		'contact',
 		array(
-			'title'       => __( 'Coordonnées', 'frmtcn' ),
-			'description' => __( 'Réglages des coordonnées', 'frmtcn' ),
+			'title'       => __( 'Contact details', 'frmtcn' ),
+			'description' => __( 'Contact details settings', 'frmtcn' ),
 		)
 	);
 
@@ -35,8 +35,8 @@ function frmtcn_customize_contact( $wp_customize ) {
 	$wp_customize->add_control(
 		'address',
 		array(
-			'label'       => __( 'Adresse', 'frmtcn' ),
-			'description' => __( 'Indiquer l\'adresse postale', 'frmtcn' ),
+			'label'       => __( 'Address', 'frmtcn' ),
+			'description' => __( 'Indicate postal address', 'frmtcn' ),
 			'type'        => 'textarea',
 			'section'     => 'contact',
 			'settings'    => 'address',
@@ -55,8 +55,8 @@ function frmtcn_customize_contact( $wp_customize ) {
 	$wp_customize->add_control(
 		'email_addresses',
 		array(
-			'label'       => __( 'Adresses emails', 'frmtcn' ),
-			'description' => __( 'Indiquer les adresses emails de contact du site séparées par des virgules', 'frmtcn' ),
+			'label'       => __( 'Email addresses', 'frmtcn' ),
+			'description' => __( 'Indicate the site contact email addresses separated by commas', 'frmtcn' ),
 			'section'     => 'contact',
 			'settings'    => 'email_addresses',
 		)
@@ -74,8 +74,8 @@ function frmtcn_customize_contact( $wp_customize ) {
 	$wp_customize->add_control(
 		'phone',
 		array(
-			'label'       => __( 'Numéro de téléphone', 'frmtcn' ),
-			'description' => __( 'Indiquer le numéro de téléphone', 'frmtcn' ),
+			'label'       => __( 'Phone number', 'frmtcn' ),
+			'description' => __( 'Indicate telephone number', 'frmtcn' ),
 			'section'     => 'contact',
 			'settings'    => 'phone',
 		)
@@ -94,7 +94,7 @@ function frmtcn_customize_contact( $wp_customize ) {
 		'facebook',
 		array(
 			'label'       => __( 'Facebook', 'frmtcn' ),
-			'description' => __( 'Indiquer l\'URL du compte Facebook', 'frmtcn' ),
+			'description' => __( 'Indicate the URL of the Facebook account', 'frmtcn' ),
 			'section'     => 'contact',
 			'settings'    => 'facebook',
 		)
@@ -113,7 +113,7 @@ function frmtcn_customize_contact( $wp_customize ) {
 		'twitter',
 		array(
 			'label'       => __( 'Twitter', 'frmtcn' ),
-			'description' => __( 'Indiquer l\'URL du compte Twitter', 'frmtcn' ),
+			'description' => __( 'Indicate the URL of the Twitter account', 'frmtcn' ),
 			'section'     => 'contact',
 			'settings'    => 'twitter',
 		)
@@ -132,7 +132,7 @@ function frmtcn_customize_contact( $wp_customize ) {
 		'instagram',
 		array(
 			'label'       => __( 'Instagram', 'frmtcn' ),
-			'description' => __( 'Indiquer l\'URL du compte Instagram', 'frmtcn' ),
+			'description' => __( 'Indicate the URL of the Instagram account', 'frmtcn' ),
 			'section'     => 'contact',
 			'settings'    => 'instagram',
 		)
@@ -151,7 +151,7 @@ function frmtcn_customize_contact( $wp_customize ) {
 		'pinterest',
 		array(
 			'label'       => __( 'Pinterest', 'frmtcn' ),
-			'description' => __( 'Indiquer l\'URL du compte Pinterest', 'frmtcn' ),
+			'description' => __( 'Indicate the URL of the Pinterest account', 'frmtcn' ),
 			'section'     => 'contact',
 			'settings'    => 'pinterest',
 		)
@@ -170,7 +170,7 @@ function frmtcn_customize_contact( $wp_customize ) {
 		'youtube',
 		array(
 			'label'       => __( 'YouTube', 'frmtcn' ),
-			'description' => __( 'Indiquer l\'URL du compte YouTube', 'frmtcn' ),
+			'description' => __( 'Indicate the URL of the YouTube account', 'frmtcn' ),
 			'section'     => 'contact',
 			'settings'    => 'youtube',
 		)

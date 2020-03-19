@@ -7,6 +7,8 @@
 
 namespace Formatcine\Taxonomies;
 
+use WP_Query;
+
 /**
  * SchoolClass tag class
  */
@@ -47,26 +49,28 @@ class SchoolClass {
 	public function register_taxonomy() {
 
 		$labels = array(
-			'name'                       => _x( 'Classes', 'Taxonomy General Name', 'frmtcn' ),
-			'singular_name'              => _x( 'Classe', 'Taxonomy Singular Name', 'frmtcn' ),
-			'menu_name'                  => __( 'Classes', 'frmtcn' ),
-			'all_items'                  => __( 'Toutes les classes', 'frmtcn' ),
-			'parent_item'                => __( 'Classe parente', 'frmtcn' ),
-			'parent_item_colon'          => __( 'Classe parente :', 'frmtcn' ),
-			'new_item_name'              => __( 'Nom de la nouvelle classe', 'frmtcn' ),
-			'add_new_item'               => __( 'Ajouter une nouvelle classe', 'frmtcn' ),
-			'edit_item'                  => __( 'Éditer la classe', 'frmtcn' ),
-			'update_item'                => __( 'Mettre à jour la classe', 'frmtcn' ),
-			'view_item'                  => __( 'Voir la classe', 'frmtcn' ),
-			'separate_items_with_commas' => __( 'Séparer les classes par des virgules', 'frmtcn' ),
-			'add_or_remove_items'        => __( 'Ajouter ou supprimer une classe', 'frmtcn' ),
-			'choose_from_most_used'      => __( 'Choisir parmi les classes les plus utilisées', 'frmtcn' ),
-			'popular_items'              => __( 'Classe populaire', 'frmtcn' ),
-			'search_items'               => __( 'Classes recherchées', 'frmtcn' ),
-			'not_found'                  => __( 'Aucune classe n\'a été trouvée', 'frmtcn' ),
-			'no_terms'                   => __( 'Pas de classe', 'frmtcn' ),
-			'items_list'                 => __( 'Liste des classes', 'frmtcn' ),
-			'items_list_navigation'      => __( 'Liste de navigation des classes', 'frmtcn' ),
+			'name'                       => _x( 'Classes', 'school class general', 'frmtcn' ),
+			'singular_name'              => _x( 'Class', 'school class singular', 'frmtcn' ),
+			'search_items'               => __( 'Search Classes', 'frmtcn' ),
+			'all_items'                  => __( 'All Classes', 'frmtcn' ),
+			'popular_items'              => __( 'Popular Classes', 'frmtcn' ),
+			'parent_item'                => __( 'Parent Class', 'frmtcn' ),
+			'parent_item_colon'          => __( 'Parent Class:', 'frmtcn' ),
+			'edit_item'                  => __( 'Edit Class', 'frmtcn' ),
+			'view_item'                  => __( 'View Class', 'frmtcn' ),
+			'update_item'                => __( 'Update Class', 'frmtcn' ),
+			'add_new_item'               => __( 'Add New Class', 'frmtcn' ),
+			'new_item_name'              => __( 'New Class Name', 'frmtcn' ),
+			'separate_items_with_commas' => __( 'Separate classes with commas', 'frmtcn' ),
+			'add_or_remove_items'        => __( 'Add or remove classes', 'frmtcn' ),
+			'choose_from_most_used'      => __( 'Choose from the most used classes', 'frmtcn' ),
+			'not_found'                  => __( 'No class found in Trash.', 'frmtcn' ),
+			'no_terms'                   => __( 'No class found.', 'frmtcn' ),
+			'items_list_navigation'      => __( 'Classes list navigation', 'frmtcn' ),
+			'items_list'                 => __( 'Classes list', 'frmtcn' ),
+			/* translators: Tab heading when selecting from the most used terms. */
+			'most_used'                  => _x( 'Most Used', 'class', 'frmtcn' ),
+			'back_to_items'              => __( '&larr; Back to Classes', 'frmtcn' ),
 		);
 
 		$args = array(
@@ -97,8 +101,8 @@ class SchoolClass {
 		foreach ( $columns as $key => $value ) {
 
 			if ( 'posts' === $key ) {
-				$new_columns['programming'] = __( 'Programmation' );
-				$new_columns['training']    = __( 'Formation' );
+				$new_columns['programming'] = __( 'Programming', 'frmtcn' );
+				$new_columns['training']    = __( 'Training', 'frmtcn' );
 			}
 			$new_columns[ $key ] = $value;
 		}

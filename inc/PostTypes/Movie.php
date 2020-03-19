@@ -61,30 +61,34 @@ class Movie {
 	 */
 	public function register_post_type() {
 		$labels = array(
-			'name'                  => _x( 'Films', 'Film Nom pluriel', 'frmtcn' ),
-			'singular_name'         => _x( 'Film', 'Film Nom singulier', 'frmtcn' ),
-			'menu_name'             => __( 'Films', 'frmtcn' ),
-			'name_admin_bar'        => __( 'Film', 'frmtcn' ),
-			'all_items'             => __( 'Tous les films', 'frmtcn' ),
-			'add_new_item'          => __( 'Ajouter un nouveau film', 'frmtcn' ),
-			'add_new'               => __( 'Ajouter', 'frmtcn' ),
-			'new_item'              => __( 'Nouveau film', 'frmtcn' ),
-			'edit_item'             => __( 'Modifier le film', 'frmtcn' ),
-			'update_item'           => __( 'Mettre à jour le film', 'frmtcn' ),
-			'view_item'             => __( 'Voir le film', 'frmtcn' ),
-			'view_items'            => __( 'Voir les films', 'frmtcn' ),
-			'search_items'          => __( 'Chercher parmi les films', 'frmtcn' ),
-			'not_found'             => __( 'Aucun film trouvé.', 'frmtcn' ),
-			'not_found_in_trash'    => __( 'Aucun film trouvé dans la corbeille.', 'frmtcn' ),
-			'featured_image'        => __( 'Image à la une', 'frmtcn' ),
-			'set_featured_image'    => __( 'Mettre une image à la une', 'frmtcn' ),
-			'remove_featured_image' => __( 'Retirer l\'image mise en avant', 'frmtcn' ),
-			'use_featured_image'    => __( 'Mettre une image à la une', 'frmtcn' ),
-			'insert_into_item'      => __( 'Insérer dans le film', 'frmtcn' ),
-			'uploaded_to_this_item' => __( 'Ajouter à ce film', 'frmtcn' ),
-			'items_list'            => __( 'Liste des films', 'frmtcn' ),
-			'items_list_navigation' => __( 'Navigation de liste des films', 'frmtcn' ),
-			'filter_items_list'     => __( 'Filtrer la liste des films', 'frmtcn' ),
+			'name'                     => _x( 'Movies', 'movie type general', 'frmtcn' ),
+			'singular_name'            => _x( 'Movie', 'movie type singular', 'frmtcn' ),
+			'add_new'                  => __( 'Add New', 'frmtcn' ),
+			'add_new_item'             => __( 'Add New Movie', 'frmtcn' ),
+			'edit_item'                => __( 'Edit Movie', 'frmtcn' ),
+			'new_item'                 => __( 'New Movie', 'frmtcn' ),
+			'view_item'                => __( 'View Movie', 'frmtcn' ),
+			'view_items'               => __( 'View Movies', 'frmtcn' ),
+			'search_items'             => __( 'Search Movies', 'frmtcn' ),
+			'not_found'                => __( 'No movie found.', 'frmtcn' ),
+			'not_found_in_trash'       => __( 'No movie found in Trash.', 'frmtcn' ),
+			'parent_item_colon'        => __( 'Parent Movie:', 'frmtcn' ),
+			'all_items'                => __( 'All movies', 'frmtcn' ),
+			'archives'                 => __( 'Movie Archives', 'frmtcn' ),
+			'attributes'               => __( 'Movie Attributes', 'frmtcn' ),
+			'insert_into_item'         => __( 'Insert into movie', 'frmtcn' ),
+			'uploaded_to_this_item'    => __( 'Uploaded to this movie', 'frmtcn' ),
+			'featured_image'           => _x( 'Featured Image', 'movie', 'frmtcn' ),
+			'set_featured_image'       => _x( 'Set featured image', 'movie', 'frmtcn' ),
+			'remove_featured_image'    => _x( 'Remove featured image', 'movie', 'frmtcn' ),
+			'use_featured_image'       => _x( 'Use as featured image', 'movie', 'frmtcn' ),
+			'items_list_navigation'    => __( 'Movie list navigation', 'frmtcn' ),
+			'items_list'               => __( 'Movie list', 'frmtcn' ),
+			'item_published'           => __( 'Movie published.', 'frmtcn' ),
+			'item_published_privately' => __( 'Movie published privately.', 'frmtcn' ),
+			'item_reverted_to_draft'   => __( 'Movie reverted to draft.', 'frmtcn' ),
+			'item_scheduled'           => __( 'Movie scheduled.', 'frmtcn' ),
+			'item_updated'             => __( 'Movie updated.', 'frmtcn' ),
 		);
 
 		$rewrite = array(
@@ -96,7 +100,6 @@ class Movie {
 
 		$args = array(
 			'label'               => 'film',
-			'description'         => __( 'Les films', 'frmtcn' ),
 			'labels'              => $labels,
 			'supports'            => array( 'title', 'revisions', 'thumbnail' ),
 			'taxonomies'          => array(),
@@ -168,13 +171,13 @@ class Movie {
 
 		foreach ( $columns as $key => $value ) {
 			if ( 'title' === $key ) {
-				$new_columns['poster'] = __( 'Affiche' );
+				$new_columns['poster'] = __( 'Poster', 'frmtcn' );
 			}
 			$new_columns[ $key ] = $value;
 		}
 
-		$new_columns['release_year'] = __( 'Année de sortie' );
-		$new_columns['running_time'] = __( 'Durée' );
+		$new_columns['release_year'] = __( 'Release year', 'frmtcn' );
+		$new_columns['running_time'] = __( 'Duration', 'frmtcn' );
 
 		return $new_columns;
 	}

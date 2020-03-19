@@ -1,0 +1,1037 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Format'ciné\n"
+"POT-Creation-Date: 2020-03-19 15:13+0100\n"
+"PO-Revision-Date: 2020-03-19 14:58+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"X-Poedit-Basepath: ../../../../../..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: vendor\n"
+"X-Poedit-SearchPathExcluded-2: node_modules\n"
+
+#: 404.php:16
+msgid "Oops! Cette page ne peut pas être trouvée."
+msgstr ""
+
+#: inc/Admin.php:48
+msgid ""
+"Thank you for creating with <a href=\"http://www.19h47.fr/\" target=\"_blank"
+"\">19h47</a> and <a href=\"http://www.mokacreation.com/\" target=\"_blank"
+"\">Moka Création</a>. ✌️"
+msgstr ""
+
+#: inc/App.php:292
+msgid "Partager sur Facebook"
+msgstr ""
+
+#: inc/App.php:297
+msgid "Partager sur Twitter"
+msgstr ""
+
+#: inc/App.php:302
+msgid "Partager sur Google+"
+msgstr ""
+
+#: inc/App.php:307
+msgid "Partager par Mail"
+msgstr ""
+
+#: inc/App.php:356
+msgid "Main"
+msgstr ""
+
+#: inc/PostTypes/AdultTraining.php:45
+msgctxt "Formation adulte Nom pluriel"
+msgid "Formations adultes"
+msgstr ""
+
+#: inc/PostTypes/AdultTraining.php:46
+msgctxt "Formation adulte Nom singulier"
+msgid "Formation adulte "
+msgstr ""
+
+#: inc/PostTypes/AdultTraining.php:47
+msgid "Formations adultes"
+msgstr ""
+
+#: inc/PostTypes/AdultTraining.php:48 inc/PostTypes/SchoolTraining.php:58
+#: inc/Taxonomies/SchoolClass.php:101 inc/Taxonomies/Season.php:55
+msgid "Formation"
+msgstr ""
+
+#: inc/PostTypes/AdultTraining.php:49
+msgid "Toutes les formations adultes"
+msgstr ""
+
+#: inc/PostTypes/AdultTraining.php:50
+msgid "Ajouter une nouvelle formation adulte"
+msgstr ""
+
+#: inc/PostTypes/AdultTraining.php:51 inc/PostTypes/Movie.php:70
+#: inc/PostTypes/Programming.php:56 inc/PostTypes/SchoolTraining.php:61
+msgid "Ajouter"
+msgstr ""
+
+#: inc/PostTypes/AdultTraining.php:52
+msgid "Nouvelle formation adulte"
+msgstr ""
+
+#: inc/PostTypes/AdultTraining.php:53
+msgid "Modifier la formation adulte"
+msgstr ""
+
+#: inc/PostTypes/AdultTraining.php:54
+msgid "Mettre à jour la formation adulte"
+msgstr ""
+
+#: inc/PostTypes/AdultTraining.php:55
+msgid "Voir la formation adulte"
+msgstr ""
+
+#: inc/PostTypes/AdultTraining.php:56
+msgid "Voir les formations adultes"
+msgstr ""
+
+#: inc/PostTypes/AdultTraining.php:57 inc/PostTypes/SchoolTraining.php:67
+msgid "Chercher parmi les formations"
+msgstr ""
+
+#: inc/PostTypes/AdultTraining.php:58
+msgid "Aucune formation adulte trouvée."
+msgstr ""
+
+#: inc/PostTypes/AdultTraining.php:59
+msgid "Aucune formation adulte trouvée dans la corbeille."
+msgstr ""
+
+#: inc/PostTypes/AdultTraining.php:60 inc/PostTypes/Movie.php:79
+#: inc/PostTypes/Programming.php:65 inc/PostTypes/SchoolTraining.php:70
+msgid "Image à la une"
+msgstr ""
+
+#: inc/PostTypes/AdultTraining.php:61 inc/PostTypes/AdultTraining.php:63
+#: inc/PostTypes/Movie.php:80 inc/PostTypes/Movie.php:82
+#: inc/PostTypes/Programming.php:66 inc/PostTypes/Programming.php:68
+#: inc/PostTypes/SchoolTraining.php:71 inc/PostTypes/SchoolTraining.php:73
+msgid "Mettre une image à la une"
+msgstr ""
+
+#: inc/PostTypes/AdultTraining.php:62 inc/PostTypes/Movie.php:81
+#: inc/PostTypes/Programming.php:67 inc/PostTypes/SchoolTraining.php:72
+msgid "Retirer l'image mise en avant"
+msgstr ""
+
+#: inc/PostTypes/AdultTraining.php:64
+msgid "Insérer dans la formation adulte"
+msgstr ""
+
+#: inc/PostTypes/AdultTraining.php:65
+msgid "Ajouter à cette formation adulte"
+msgstr ""
+
+#: inc/PostTypes/AdultTraining.php:66 inc/PostTypes/SchoolTraining.php:76
+msgid "Liste des formations"
+msgstr ""
+
+#: inc/PostTypes/AdultTraining.php:67
+msgid "Navigation de liste des formations adultes"
+msgstr ""
+
+#: inc/PostTypes/AdultTraining.php:68
+msgid "Filtrer la liste des formations adultes"
+msgstr ""
+
+#: inc/PostTypes/AdultTraining.php:80
+msgid "Les formations adultes"
+msgstr ""
+
+#: inc/PostTypes/Movie.php:64
+msgctxt "Film Nom pluriel"
+msgid "Films"
+msgstr ""
+
+#: inc/PostTypes/Movie.php:65
+msgctxt "Film Nom singulier"
+msgid "Film"
+msgstr ""
+
+#: inc/PostTypes/Movie.php:66 inc/PostTypes/SchoolTraining.php:173
+msgid "Films"
+msgstr ""
+
+#: inc/PostTypes/Movie.php:67 inc/PostTypes/Programming.php:161
+msgid "Film"
+msgstr ""
+
+#: inc/PostTypes/Movie.php:68
+msgid "Tous les films"
+msgstr ""
+
+#: inc/PostTypes/Movie.php:69
+msgid "Ajouter un nouveau film"
+msgstr ""
+
+#: inc/PostTypes/Movie.php:71
+msgid "Nouveau film"
+msgstr ""
+
+#: inc/PostTypes/Movie.php:72
+msgid "Modifier le film"
+msgstr ""
+
+#: inc/PostTypes/Movie.php:73
+msgid "Mettre à jour le film"
+msgstr ""
+
+#: inc/PostTypes/Movie.php:74
+msgid "Voir le film"
+msgstr ""
+
+#: inc/PostTypes/Movie.php:75
+msgid "Voir les films"
+msgstr ""
+
+#: inc/PostTypes/Movie.php:76
+msgid "Chercher parmi les films"
+msgstr ""
+
+#: inc/PostTypes/Movie.php:77
+msgid "Aucun film trouvé."
+msgstr ""
+
+#: inc/PostTypes/Movie.php:78
+msgid "Aucun film trouvé dans la corbeille."
+msgstr ""
+
+#: inc/PostTypes/Movie.php:83
+msgid "Insérer dans le film"
+msgstr ""
+
+#: inc/PostTypes/Movie.php:84
+msgid "Ajouter à ce film"
+msgstr ""
+
+#: inc/PostTypes/Movie.php:85
+msgid "Liste des films"
+msgstr ""
+
+#: inc/PostTypes/Movie.php:86
+msgid "Navigation de liste des films"
+msgstr ""
+
+#: inc/PostTypes/Movie.php:87
+msgid "Filtrer la liste des films"
+msgstr ""
+
+#: inc/PostTypes/Movie.php:99
+msgid "Les films"
+msgstr ""
+
+#: inc/PostTypes/Movie.php:171
+msgid "Affiche"
+msgstr ""
+
+#: inc/PostTypes/Movie.php:176
+msgid "Année de sortie"
+msgstr ""
+
+#: inc/PostTypes/Movie.php:177
+msgid "Durée"
+msgstr ""
+
+#: inc/PostTypes/Page.php:85
+msgid "Couleurs"
+msgstr ""
+
+#: inc/PostTypes/Post.php:107
+msgid "Date de l'événement"
+msgstr ""
+
+#: inc/PostTypes/Programming.php:50
+msgctxt "Programmation Nom pluriel"
+msgid "Programmations"
+msgstr ""
+
+#: inc/PostTypes/Programming.php:51
+msgctxt "Programmation Nom singulier"
+msgid "Programmation"
+msgstr ""
+
+#: inc/PostTypes/Programming.php:52
+msgid "Programmations"
+msgstr ""
+
+#: inc/PostTypes/Programming.php:53 inc/Taxonomies/SchoolClass.php:100
+#: inc/Taxonomies/Season.php:54 views/partials/programming.html.twig:17
+msgid "Programmation"
+msgstr ""
+
+#: inc/PostTypes/Programming.php:54
+msgid "Toutes les programmations"
+msgstr ""
+
+#: inc/PostTypes/Programming.php:55
+msgid "Ajouter une nouvelle programmation"
+msgstr ""
+
+#: inc/PostTypes/Programming.php:57
+msgid "Nouvelle programmation"
+msgstr ""
+
+#: inc/PostTypes/Programming.php:58
+msgid "Modifier la programmation"
+msgstr ""
+
+#: inc/PostTypes/Programming.php:59
+msgid "Mettre à jour la programmation"
+msgstr ""
+
+#: inc/PostTypes/Programming.php:60
+msgid "Voir la programmation"
+msgstr ""
+
+#: inc/PostTypes/Programming.php:61
+msgid "Voir les programmations"
+msgstr ""
+
+#: inc/PostTypes/Programming.php:62
+msgid "Chercher parmi les programmations"
+msgstr ""
+
+#: inc/PostTypes/Programming.php:63
+msgid "Aucune programmation trouvée."
+msgstr ""
+
+#: inc/PostTypes/Programming.php:64
+msgid "Aucune programmation trouvée dans la corbeille."
+msgstr ""
+
+#: inc/PostTypes/Programming.php:69
+msgid "Insérer dans la programmation"
+msgstr ""
+
+#: inc/PostTypes/Programming.php:70
+msgid "Ajouter à cette programmation"
+msgstr ""
+
+#: inc/PostTypes/Programming.php:71
+msgid "Liste des programmations"
+msgstr ""
+
+#: inc/PostTypes/Programming.php:72
+msgid "Navigation de liste des programmations"
+msgstr ""
+
+#: inc/PostTypes/Programming.php:73
+msgid "Filtrer la liste des programmations"
+msgstr ""
+
+#: inc/PostTypes/Programming.php:85
+msgid "Les programmations"
+msgstr ""
+
+#: inc/PostTypes/Programming.php:159
+msgid "Trimestres"
+msgstr ""
+
+#: inc/PostTypes/SchoolTraining.php:55
+msgctxt "Formation Nom pluriel"
+msgid "Formations scolaires"
+msgstr ""
+
+#: inc/PostTypes/SchoolTraining.php:56
+msgctxt "Formation Nom singulier"
+msgid "Formation scolaire "
+msgstr ""
+
+#: inc/PostTypes/SchoolTraining.php:57
+msgid "Formations scolaires"
+msgstr ""
+
+#: inc/PostTypes/SchoolTraining.php:59
+msgid "Toutes les formations scolaires"
+msgstr ""
+
+#: inc/PostTypes/SchoolTraining.php:60
+msgid "Ajouter une nouvelle formation scolaire"
+msgstr ""
+
+#: inc/PostTypes/SchoolTraining.php:62
+msgid "Nouvelle formation scolaire"
+msgstr ""
+
+#: inc/PostTypes/SchoolTraining.php:63
+msgid "Modifier la formation scolaire"
+msgstr ""
+
+#: inc/PostTypes/SchoolTraining.php:64
+msgid "Mettre à jour la formation scolaire"
+msgstr ""
+
+#: inc/PostTypes/SchoolTraining.php:65
+msgid "Voir la formation scolaire"
+msgstr ""
+
+#: inc/PostTypes/SchoolTraining.php:66
+msgid "Voir les formations scolaires"
+msgstr ""
+
+#: inc/PostTypes/SchoolTraining.php:68
+msgid "Aucune formation scolaire trouvée."
+msgstr ""
+
+#: inc/PostTypes/SchoolTraining.php:69
+msgid "Aucune formation scolaire trouvée dans la corbeille."
+msgstr ""
+
+#: inc/PostTypes/SchoolTraining.php:74
+msgid "Insérer dans la formation scolaire"
+msgstr ""
+
+#: inc/PostTypes/SchoolTraining.php:75
+msgid "Ajouter à cette formation scolaire"
+msgstr ""
+
+#: inc/PostTypes/SchoolTraining.php:77
+msgid "Navigation de liste des formations scolaires"
+msgstr ""
+
+#: inc/PostTypes/SchoolTraining.php:78
+msgid "Filtrer la liste des formations scolaires"
+msgstr ""
+
+#: inc/PostTypes/SchoolTraining.php:90
+msgid "Les formations scolaires"
+msgstr ""
+
+#: inc/Taxonomies/AdultTrainingCategory.php:46
+msgctxt "Taxonomy General Name"
+msgid "Catégories de formation"
+msgstr ""
+
+#: inc/Taxonomies/AdultTrainingCategory.php:47
+msgctxt "Taxonomy Singular Name"
+msgid "Catégorie de formation"
+msgstr ""
+
+#: inc/Taxonomies/AdultTrainingCategory.php:48
+msgid "Catégories de formation"
+msgstr ""
+
+#: inc/Taxonomies/AdultTrainingCategory.php:49
+msgid "Toutes les catégories de formation"
+msgstr ""
+
+#: inc/Taxonomies/AdultTrainingCategory.php:50
+msgid "Catégorie de formation parente"
+msgstr ""
+
+#: inc/Taxonomies/AdultTrainingCategory.php:51
+msgid "Catégorie de formation parente :"
+msgstr ""
+
+#: inc/Taxonomies/AdultTrainingCategory.php:52
+msgid "Nom de la nouvelle catégorie de formation"
+msgstr ""
+
+#: inc/Taxonomies/AdultTrainingCategory.php:53
+msgid "Ajouter une nouvelle catégorie de formation"
+msgstr ""
+
+#: inc/Taxonomies/AdultTrainingCategory.php:54
+msgid "Éditer la catégorie de formation"
+msgstr ""
+
+#: inc/Taxonomies/AdultTrainingCategory.php:55
+msgid "Mettre à jour la catégorie de formation"
+msgstr ""
+
+#: inc/Taxonomies/AdultTrainingCategory.php:56
+msgid "Voir la catégorie de formation"
+msgstr ""
+
+#: inc/Taxonomies/AdultTrainingCategory.php:57
+msgid "Séparer les catégories de formation par des virgules"
+msgstr ""
+
+#: inc/Taxonomies/AdultTrainingCategory.php:58
+msgid "Ajouter ou supprimer une catégorie de formation"
+msgstr ""
+
+#: inc/Taxonomies/AdultTrainingCategory.php:59
+msgid "Choisir parmi les catégories de formation les plus utilisées"
+msgstr ""
+
+#: inc/Taxonomies/AdultTrainingCategory.php:60
+msgid "Catégorie de formation populaire"
+msgstr ""
+
+#: inc/Taxonomies/AdultTrainingCategory.php:61
+msgid "Catégories de formation recherchées"
+msgstr ""
+
+#: inc/Taxonomies/AdultTrainingCategory.php:62
+msgid "Aucune catégorie de formation n'a été trouvée"
+msgstr ""
+
+#: inc/Taxonomies/AdultTrainingCategory.php:63
+msgid "Pas de catégorie de formation"
+msgstr ""
+
+#: inc/Taxonomies/AdultTrainingCategory.php:64
+msgid "Liste des catégories de formation"
+msgstr ""
+
+#: inc/Taxonomies/AdultTrainingCategory.php:65
+msgid "Liste de navigation des catégories de formation"
+msgstr ""
+
+#: inc/Taxonomies/Country.php:47
+msgctxt "Taxonomy General Name"
+msgid "Pays"
+msgstr ""
+
+#: inc/Taxonomies/Country.php:48
+msgctxt "Taxonomy Singular Name"
+msgid "Pays"
+msgstr ""
+
+#: inc/Taxonomies/Country.php:49
+msgid "Pays"
+msgstr ""
+
+#: inc/Taxonomies/Country.php:50
+msgid "Tous les pays"
+msgstr ""
+
+#: inc/Taxonomies/Country.php:51
+msgid "Pays parent"
+msgstr ""
+
+#: inc/Taxonomies/Country.php:52
+msgid "Pays parent :"
+msgstr ""
+
+#: inc/Taxonomies/Country.php:53
+msgid "Nom du nouveau pays"
+msgstr ""
+
+#: inc/Taxonomies/Country.php:54
+msgid "Ajouter un nouveau pays"
+msgstr ""
+
+#: inc/Taxonomies/Country.php:55
+msgid "Éditer le pays"
+msgstr ""
+
+#: inc/Taxonomies/Country.php:56
+msgid "Mettre à jour le pays"
+msgstr ""
+
+#: inc/Taxonomies/Country.php:57
+msgid "Voir le pays"
+msgstr ""
+
+#: inc/Taxonomies/Country.php:58
+msgid "Séparer les pays par des virgules"
+msgstr ""
+
+#: inc/Taxonomies/Country.php:59
+msgid "Ajouter ou supprimer un pays"
+msgstr ""
+
+#: inc/Taxonomies/Country.php:60
+msgid "Choisir parmi les pays les plus utilisés"
+msgstr ""
+
+#: inc/Taxonomies/Country.php:61
+msgid "Pays populaire"
+msgstr ""
+
+#: inc/Taxonomies/Country.php:62
+msgid "Pays recherchés"
+msgstr ""
+
+#: inc/Taxonomies/Country.php:63
+msgid "Aucun pays n'a été trouvé"
+msgstr ""
+
+#: inc/Taxonomies/Country.php:64
+msgid "Pas de pays"
+msgstr ""
+
+#: inc/Taxonomies/Country.php:65
+msgid "Liste des pays"
+msgstr ""
+
+#: inc/Taxonomies/Country.php:66
+msgid "Liste de navigation des pays"
+msgstr ""
+
+#: inc/Taxonomies/Director.php:45
+msgctxt "Taxonomy General Name"
+msgid "Réalisateur·trice·s"
+msgstr ""
+
+#: inc/Taxonomies/Director.php:46
+msgctxt "Taxonomy Singular Name"
+msgid "Réalisateur·trice"
+msgstr ""
+
+#: inc/Taxonomies/Director.php:47
+msgid "Réalisateur·trice·s"
+msgstr ""
+
+#: inc/Taxonomies/Director.php:48
+msgid "Tous·tes les réalisateurs·trices"
+msgstr ""
+
+#: inc/Taxonomies/Director.php:49
+msgid "Réalisateur·trice parent·e"
+msgstr ""
+
+#: inc/Taxonomies/Director.php:50
+msgid "Réalisateur·trice parent·e :"
+msgstr ""
+
+#: inc/Taxonomies/Director.php:51
+msgid "Nom du·de la nouveau·elle réalisateur·trice"
+msgstr ""
+
+#: inc/Taxonomies/Director.php:52
+msgid "Ajouter un·e nouveau·elle réalisateur·trice"
+msgstr ""
+
+#: inc/Taxonomies/Director.php:53
+msgid "Éditer le·a réalisateur·trice"
+msgstr ""
+
+#: inc/Taxonomies/Director.php:54
+msgid "Mettre à jour le·a réalisateur·trice"
+msgstr ""
+
+#: inc/Taxonomies/Director.php:55
+msgid "Voir le·a réalisateur·trice"
+msgstr ""
+
+#: inc/Taxonomies/Director.php:56
+msgid "Séparer les réalisateurs·trices par des virgules"
+msgstr ""
+
+#: inc/Taxonomies/Director.php:57
+msgid "Ajouter ou supprimer un·e réalisateur·trice"
+msgstr ""
+
+#: inc/Taxonomies/Director.php:58
+msgid "Choisir parmi les réalisateurs·trices les plus utilisé·e·s"
+msgstr ""
+
+#: inc/Taxonomies/Director.php:59
+msgid "Réalisateur·trice populaire"
+msgstr ""
+
+#: inc/Taxonomies/Director.php:60
+msgid "Réalisateur·trice·s recherchés"
+msgstr ""
+
+#: inc/Taxonomies/Director.php:61
+msgid "Aucun réalisateur·trice n'a été trouvé·e"
+msgstr ""
+
+#: inc/Taxonomies/Director.php:62
+msgid "Pas de réalisateur·trice"
+msgstr ""
+
+#: inc/Taxonomies/Director.php:63
+msgid "Liste des réalisateur·trice·s"
+msgstr ""
+
+#: inc/Taxonomies/Director.php:64
+msgid "Liste de navigation des réalisateur·trice·s"
+msgstr ""
+
+#: inc/Taxonomies/SchoolClass.php:50
+msgctxt "Taxonomy General Name"
+msgid "Classes"
+msgstr ""
+
+#: inc/Taxonomies/SchoolClass.php:51
+msgctxt "Taxonomy Singular Name"
+msgid "Classe"
+msgstr ""
+
+#: inc/Taxonomies/SchoolClass.php:52
+msgid "Classes"
+msgstr ""
+
+#: inc/Taxonomies/SchoolClass.php:53
+msgid "Toutes les classes"
+msgstr ""
+
+#: inc/Taxonomies/SchoolClass.php:54
+msgid "Classe parente"
+msgstr ""
+
+#: inc/Taxonomies/SchoolClass.php:55
+msgid "Classe parente :"
+msgstr ""
+
+#: inc/Taxonomies/SchoolClass.php:56
+msgid "Nom de la nouvelle classe"
+msgstr ""
+
+#: inc/Taxonomies/SchoolClass.php:57
+msgid "Ajouter une nouvelle classe"
+msgstr ""
+
+#: inc/Taxonomies/SchoolClass.php:58
+msgid "Éditer la classe"
+msgstr ""
+
+#: inc/Taxonomies/SchoolClass.php:59
+msgid "Mettre à jour la classe"
+msgstr ""
+
+#: inc/Taxonomies/SchoolClass.php:60
+msgid "Voir la classe"
+msgstr ""
+
+#: inc/Taxonomies/SchoolClass.php:61
+msgid "Séparer les classes par des virgules"
+msgstr ""
+
+#: inc/Taxonomies/SchoolClass.php:62
+msgid "Ajouter ou supprimer une classe"
+msgstr ""
+
+#: inc/Taxonomies/SchoolClass.php:63
+msgid "Choisir parmi les classes les plus utilisées"
+msgstr ""
+
+#: inc/Taxonomies/SchoolClass.php:64
+msgid "Classe populaire"
+msgstr ""
+
+#: inc/Taxonomies/SchoolClass.php:65
+msgid "Classes recherchées"
+msgstr ""
+
+#: inc/Taxonomies/SchoolClass.php:66
+msgid "Aucune classe n'a été trouvée"
+msgstr ""
+
+#: inc/Taxonomies/SchoolClass.php:67
+msgid "Pas de classe"
+msgstr ""
+
+#: inc/Taxonomies/SchoolClass.php:68
+msgid "Liste des classes"
+msgstr ""
+
+#: inc/Taxonomies/SchoolClass.php:69
+msgid "Liste de navigation des classes"
+msgstr ""
+
+#: inc/Taxonomies/Season.php:127
+msgctxt "Taxonomy General Name"
+msgid "Saisons"
+msgstr ""
+
+#: inc/Taxonomies/Season.php:128
+msgctxt "Taxonomy Singular Name"
+msgid "Saison"
+msgstr ""
+
+#: inc/Taxonomies/Season.php:129
+msgid "Saisons"
+msgstr ""
+
+#: inc/Taxonomies/Season.php:130
+msgid "Toutes les saisons"
+msgstr ""
+
+#: inc/Taxonomies/Season.php:131
+msgid "Saison parente"
+msgstr ""
+
+#: inc/Taxonomies/Season.php:132
+msgid "Saison parente :"
+msgstr ""
+
+#: inc/Taxonomies/Season.php:133
+msgid "Nom de la nouvelle saison"
+msgstr ""
+
+#: inc/Taxonomies/Season.php:134
+msgid "Ajouter une nouvelle saison"
+msgstr ""
+
+#: inc/Taxonomies/Season.php:135
+msgid "Éditer l'saison"
+msgstr ""
+
+#: inc/Taxonomies/Season.php:136
+msgid "Mettre à jour l'saison"
+msgstr ""
+
+#: inc/Taxonomies/Season.php:137
+msgid "Voir l'saison"
+msgstr ""
+
+#: inc/Taxonomies/Season.php:138
+msgid "Séparer les saisons par des virgules"
+msgstr ""
+
+#: inc/Taxonomies/Season.php:139
+msgid "Ajouter ou supprimer une saison"
+msgstr ""
+
+#: inc/Taxonomies/Season.php:140
+msgid "Choisir parmi les saisons les plus utilisées"
+msgstr ""
+
+#: inc/Taxonomies/Season.php:141
+msgid "Saison populaire"
+msgstr ""
+
+#: inc/Taxonomies/Season.php:142
+msgid "Saisons recherchées"
+msgstr ""
+
+#: inc/Taxonomies/Season.php:143
+msgid "Aucun saison n'a été trouvée"
+msgstr ""
+
+#: inc/Taxonomies/Season.php:144
+msgid "Pas d'saison"
+msgstr ""
+
+#: inc/Taxonomies/Season.php:145
+msgid "Liste des saisons"
+msgstr ""
+
+#: inc/Taxonomies/Season.php:146
+msgid "Liste de navigation des saisons"
+msgstr ""
+
+#: inc/customizer/contact.php:21
+msgid "Coordonnées"
+msgstr ""
+
+#: inc/customizer/contact.php:22
+msgid "Réglages des coordonnées"
+msgstr ""
+
+#: inc/customizer/contact.php:38
+msgid "Adresse"
+msgstr ""
+
+#: inc/customizer/contact.php:39
+msgid "Indiquer l'adresse postale"
+msgstr ""
+
+#: inc/customizer/contact.php:58
+msgid "Adresses emails"
+msgstr ""
+
+#: inc/customizer/contact.php:59
+msgid ""
+"Indiquer les adresses emails de contact du site séparées par des virgules"
+msgstr ""
+
+#: inc/customizer/contact.php:77
+msgid "Numéro de téléphone"
+msgstr ""
+
+#: inc/customizer/contact.php:78
+msgid "Indiquer le numéro de téléphone"
+msgstr ""
+
+#: inc/customizer/contact.php:96
+msgid "Facebook"
+msgstr ""
+
+#: inc/customizer/contact.php:97
+msgid "Indiquer l'URL du compte Facebook"
+msgstr ""
+
+#: inc/customizer/contact.php:115
+msgid "Twitter"
+msgstr ""
+
+#: inc/customizer/contact.php:116
+msgid "Indiquer l'URL du compte Twitter"
+msgstr ""
+
+#: inc/customizer/contact.php:134
+msgid "Instagram"
+msgstr ""
+
+#: inc/customizer/contact.php:135
+msgid "Indiquer l'URL du compte Instagram"
+msgstr ""
+
+#: inc/customizer/contact.php:153
+msgid "Pinterest"
+msgstr ""
+
+#: inc/customizer/contact.php:154
+msgid "Indiquer l'URL du compte Pinterest"
+msgstr ""
+
+#: inc/customizer/contact.php:172
+msgid "YouTube"
+msgstr ""
+
+#: inc/customizer/contact.php:173
+msgid "Indiquer l'URL du compte YouTube"
+msgstr ""
+
+#: views/components/contact.html.twig:15
+msgid "Nos partenaires"
+msgstr ""
+
+#: views/components/contact.html.twig:19
+msgid "Mentions légales"
+msgstr ""
+
+#: views/components/contact.html.twig:23
+msgid "Conception :"
+msgstr ""
+
+#: views/components/menu.html.twig:74
+msgid "Association"
+msgstr ""
+
+#: views/components/movie.html.twig:74
+msgid "Visionner la bande annonce"
+msgstr ""
+
+#: views/pages/college-au-cinema-37.html.twig:70
+#: views/pages/college-au-cinema-37.html.twig:113
+msgid ""
+"Les\n"
+"journées de\n"
+"formation\n"
+msgstr ""
+
+#: views/pages/college-au-cinema-37.html.twig:88
+msgid "Toutes"
+msgstr ""
+
+#: views/pages/formations-pour-les-enseignants.html.twig:27
+#: views/pages/formations-professionnelles.html.twig:22
+msgid "Formations pour les enseignants"
+msgstr ""
+
+#: views/pages/formations-pour-les-enseignants.html.twig:31
+#: views/pages/formations-professionnelles.html.twig:25
+msgid "Formations professionnelles"
+msgstr ""
+
+#: views/pages/formations-pour-les-enseignants.html.twig:49
+msgid ""
+"Notre association organise en Touraine depuis vingt cinq ans des stages de "
+"un à trois jours dans le domaine du cinéma et de l'audiovisuel. Les "
+"enseignants hors département de l'Indre-et-Loire peuvent s'y inscrire sous "
+"certaines conditions (nous contacter)."
+msgstr ""
+
+#: views/pages/formations-pour-les-enseignants.html.twig:59
+msgid "Stages et formations"
+msgstr ""
+
+#: views/pages/formations-pour-les-enseignants.html.twig:94
+#: views/pages/formations-professionnelles.html.twig:126
+msgid "Formulaire d'inscription"
+msgstr ""
+
+#: views/pages/formations-professionnelles.html.twig:57
+msgid "Dernières réalisations des stagiaires"
+msgstr ""
+
+#: views/pages/formations-professionnelles.html.twig:64
+msgid "Stages et inscriptions"
+msgstr ""
+
+#: views/pages/formations-professionnelles.html.twig:105
+msgid "Contenu"
+msgstr ""
+
+#: views/pages/front-page.html.twig:21
+msgid "De chaque côté de"
+msgstr ""
+
+#: views/pages/front-page.html.twig:22
+msgid "L\\’écran"
+msgstr ""
+
+#: views/pages/front-page.html.twig:88 views/pages/front-page.html.twig:123
+msgid ""
+"Les\n"
+"événements"
+msgstr ""
+
+#: views/pages/front-page.html.twig:90 views/pages/front-page.html.twig:125
+msgid ""
+"Toute l’année, retrouvez des manifestations organisées avec nos partenaires "
+"sur différents thèmes."
+msgstr ""
+
+#: views/pages/front-page.html.twig:115
+msgid "Tout public"
+msgstr ""
+
+#: views/partials/adult-training-comments.html.twig:11
+msgid "Commentaires de stagiaires"
+msgstr ""
+
+#: views/partials/tease-event.html.twig:33
+msgid "En savoir plus"
+msgstr ""
+
+#: views/partials/tease-event.html.twig:42
+msgid "Aucun événement à afficher"
+msgstr ""
+
+#: views/partials/tease-school-training.html.twig:58
+msgid "Programme"
+msgstr ""
+
+#: views/partials/tease-school-training.html.twig:70
+msgid "Aucune Journée de formation à afficher"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Format'ciné"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://www.formatcine.fr"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Format'ciné is a French association promoting cinema in the Indre et Loire "
+"region, here's their website."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid ""
+"<a href=\"http://www.19h47.fr/\">19h47</a>, <a href=\"http://www."
+"mokacreation.com/\">Moka Création</a>"
+msgstr ""

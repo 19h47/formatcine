@@ -51,8 +51,8 @@ class Season {
 
 		foreach ( $columns as $key => $value ) {
 			if ( 'posts' === $key ) {
-				$new_columns['programming'] = __( 'Programmation' );
-				$new_columns['training']    = __( 'Formation' );
+				$new_columns['programming'] = __( 'Programming', 'frmtcn' );
+				$new_columns['training']    = __( 'Training', 'frmtcn' );
 			}
 			$new_columns[ $key ] = $value;
 		}
@@ -124,26 +124,27 @@ class Season {
 	 */
 	public function register_taxonomy() {
 		$labels = array(
-			'name'                       => _x( 'Saisons', 'Taxonomy General Name', 'frmtcn' ),
-			'singular_name'              => _x( 'Saison', 'Taxonomy Singular Name', 'frmtcn' ),
-			'menu_name'                  => __( 'Saisons', 'frmtcn' ),
-			'all_items'                  => __( 'Toutes les saisons', 'frmtcn' ),
-			'parent_item'                => __( 'Saison parente', 'frmtcn' ),
-			'parent_item_colon'          => __( 'Saison parente :', 'frmtcn' ),
-			'new_item_name'              => __( 'Nom de la nouvelle saison', 'frmtcn' ),
-			'add_new_item'               => __( 'Ajouter une nouvelle saison', 'frmtcn' ),
-			'edit_item'                  => __( 'Éditer l\'saison', 'frmtcn' ),
-			'update_item'                => __( 'Mettre à jour l\'saison', 'frmtcn' ),
-			'view_item'                  => __( 'Voir l\'saison', 'frmtcn' ),
-			'separate_items_with_commas' => __( 'Séparer les saisons par des virgules', 'frmtcn' ),
-			'add_or_remove_items'        => __( 'Ajouter ou supprimer une saison', 'frmtcn' ),
-			'choose_from_most_used'      => __( 'Choisir parmi les saisons les plus utilisées', 'frmtcn' ),
-			'popular_items'              => __( 'Saison populaire', 'frmtcn' ),
-			'search_items'               => __( 'Saisons recherchées', 'frmtcn' ),
-			'not_found'                  => __( 'Aucun saison n\'a été trouvée', 'frmtcn' ),
-			'no_terms'                   => __( 'Pas d\'saison', 'frmtcn' ),
-			'items_list'                 => __( 'Liste des saisons', 'frmtcn' ),
-			'items_list_navigation'      => __( 'Liste de navigation des saisons', 'frmtcn' ),
+			'name'                       => _x( 'Seasons', 'season general name', 'frmtcn' ),
+			'singular_name'              => _x( 'Season', 'season singular name', 'frmtcn' ),
+			'search_items'               => __( 'Search Seasons', 'frmtcn' ),
+			'all_items'                  => __( 'All seasons', 'frmtcn' ),
+			'popular_items'              => __( 'Popular Seasons', 'frmtcn' ),
+			'parent_item'                => __( 'Parent Season', 'frmtcn' ),
+			'parent_item_colon'          => __( 'Parent Season:', 'frmtcn' ),
+			'edit_item'                  => __( 'Edit Season', 'frmtcn' ),
+			'view_item'                  => __( 'View Season', 'frmtcn' ),
+			'update_item'                => __( 'Update Season', 'frmtcn' ),
+			'add_new_item'               => __( 'Add New season', 'frmtcn' ),
+			'separate_items_with_commas' => __( 'Separate seasons with commas', 'frmtcn' ),
+			'add_or_remove_items'        => __( 'Add or remove seasons', 'frmtcn' ),
+			'choose_from_most_used'      => __( 'Choose from the most used seasons', 'frmtcn' ),
+			'not_found'                  => __( 'No season found in Trash.', 'frmtcn' ),
+			'no_terms'                   => __( 'No season found.', 'frmtcn' ),
+			'items_list_navigation'      => __( 'Seasons list navigation', 'frmtcn' ),
+			'items_list'                 => __( 'Seasons list', 'frmtcn' ),
+			/* translators: Tab heading when selecting from the most used terms. */
+			'most_used'                  => _x( 'Most Used', 'season', 'frmtcn' ),
+			'back_to_items'              => __( '&larr; Back to Seasons', 'frmtcn' ),
 		);
 
 		$args = array(

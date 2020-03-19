@@ -13,7 +13,7 @@ $context = Timber::context();
 
 $context['post'] = array(
 	'post_title'   => '404',
-	'content' => __( 'Oops! Cette page ne peut pas être trouvée.', 'Formatcine' ),
+	'content' => __( 'Oops! That page can&rsquo;t be found.', 'Formatcine' ),
 );
 
 $templates = array( 'index.html.twig' );

@@ -47,30 +47,34 @@ class Programming {
 	 */
 	public function register_post_type() {
 		$labels = array(
-			'name'                  => _x( 'Programmations', 'Programmation Nom pluriel', 'frmtcn' ),
-			'singular_name'         => _x( 'Programmation', 'Programmation Nom singulier', 'frmtcn' ),
-			'menu_name'             => __( 'Programmations', 'frmtcn' ),
-			'name_admin_bar'        => __( 'Programmation', 'frmtcn' ),
-			'all_items'             => __( 'Toutes les programmations', 'frmtcn' ),
-			'add_new_item'          => __( 'Ajouter une nouvelle programmation', 'frmtcn' ),
-			'add_new'               => __( 'Ajouter', 'frmtcn' ),
-			'new_item'              => __( 'Nouvelle programmation', 'frmtcn' ),
-			'edit_item'             => __( 'Modifier la programmation', 'frmtcn' ),
-			'update_item'           => __( 'Mettre à jour la programmation', 'frmtcn' ),
-			'view_item'             => __( 'Voir la programmation', 'frmtcn' ),
-			'view_items'            => __( 'Voir les programmations', 'frmtcn' ),
-			'search_items'          => __( 'Chercher parmi les programmations', 'frmtcn' ),
-			'not_found'             => __( 'Aucune programmation trouvée.', 'frmtcn' ),
-			'not_found_in_trash'    => __( 'Aucune programmation trouvée dans la corbeille.', 'frmtcn' ),
-			'featured_image'        => __( 'Image à la une', 'frmtcn' ),
-			'set_featured_image'    => __( 'Mettre une image à la une', 'frmtcn' ),
-			'remove_featured_image' => __( 'Retirer l\'image mise en avant', 'frmtcn' ),
-			'use_featured_image'    => __( 'Mettre une image à la une', 'frmtcn' ),
-			'insert_into_item'      => __( 'Insérer dans la programmation', 'frmtcn' ),
-			'uploaded_to_this_item' => __( 'Ajouter à cette programmation', 'frmtcn' ),
-			'items_list'            => __( 'Liste des programmations', 'frmtcn' ),
-			'items_list_navigation' => __( 'Navigation de liste des programmations', 'frmtcn' ),
-			'filter_items_list'     => __( 'Filtrer la liste des programmations', 'frmtcn' ),
+			'name'                     => _x( 'Programming', 'programming type general', 'frmtcn' ),
+			'singular_name'            => _x( 'Programming', 'programming type singular', 'frmtcn' ),
+			'add_new'                  => __( 'Add New', 'frmtcn' ),
+			'add_new_item'             => __( 'Add New Programming', 'frmtcn' ),
+			'edit_item'                => __( 'Edit Programming', 'frmtcn' ),
+			'new_item'                 => __( 'New Programming', 'frmtcn' ),
+			'view_item'                => __( 'View Programming', 'frmtcn' ),
+			'view_items'               => __( 'View programming', 'frmtcn' ),
+			'search_items'             => __( 'Search programming', 'frmtcn' ),
+			'not_found'                => __( 'No programming found.', 'frmtcn' ),
+			'not_found_in_trash'       => __( 'No programming in Trash.', 'frmtcn' ),
+			'parent_item_colon'        => __( 'Parent programming:', 'frmtcn' ),
+			'all_items'                => __( 'All Programming', 'frmtcn' ),
+			'archives'                 => __( 'Programming Archives', 'frmtcn' ),
+			'attributes'               => __( 'Programming Attributes', 'frmtcn' ),
+			'featured_image'           => _x( 'Featured Image', 'programming', 'frmtcn' ),
+			'set_featured_image'       => _x( 'Set featured image', 'programming', 'frmtcn' ),
+			'remove_featured_image'    => _x( 'Remove featured image', 'programming', 'frmtcn' ),
+			'use_featured_image'       => _x( 'Use as featured image', 'programming', 'frmtcn' ),
+			'insert_into_item'         => __( 'Insert into programming', 'frmtcn' ),
+			'uploaded_to_this_item'    => __( 'Uploaded to this programming', 'frmtcn' ),
+			'items_list'               => __( 'Programming list', 'frmtcn' ),
+			'items_list_navigation'    => __( 'Programming list navigation', 'frmtcn' ),
+			'item_published'           => __( 'Programming published.', 'frmtcn' ),
+			'item_published_privately' => __( 'Programming published privately.', 'frmtcn' ),
+			'item_reverted_to_draft'   => __( 'Programming reverted to draft.', 'frmtcn' ),
+			'item_scheduled'           => __( 'Programming scheduled.', 'frmtcn' ),
+			'item_updated'             => __( 'Programming updated.', 'frmtcn' ),
 		);
 
 		$rewrite = array(
@@ -82,7 +86,6 @@ class Programming {
 
 		$args = array(
 			'label'               => 'programmation',
-			'description'         => __( 'Les programmations', 'frmtcn' ),
 			'labels'              => $labels,
 			'supports'            => array( '' ),
 			'taxonomies'          => array( 'school_tag', 'year' ),
@@ -156,9 +159,9 @@ class Programming {
 		foreach ( $columns as $key => $value ) {
 			if ( 'title' === $key ) {
 				$new_columns['taxonomy-season']       = $taxonomy_seasons;
-				$new_columns['quarter']               = __( 'Trimestres' );
+				$new_columns['quarter']               = __( 'Quarters', 'frmtcn' );
 				$new_columns['taxonomy-school_class'] = $taxonomy_school_class;
-				$new_columns['movie']                 = __( 'Film' );
+				$new_columns['movie']                 = __( 'Movie', 'frmtcn' );
 			}
 			$new_columns[ $key ] = $value;
 		}
@@ -183,16 +186,13 @@ class Programming {
 		switch ( $column_name ) {
 			case 'movie':
 				$movie = get_field( 'movie', $post_id );
-				$html  = '';
+				$html = '—';
 
 				if ( $movie ) {
-					$html  = '<a href="' . get_edit_post_link( $post_id );
-					$html .= "\">$movie->post_title</a>";
-				} else {
-					$html = '—';
+					$html = edit_post_link( $movie->post_title, '', '', $post_id );
 				}
 
-				echo esc_html( $html );
+				echo $html;
 
 				break;
 
@@ -231,7 +231,7 @@ class Programming {
 		$post_data = filter_input_array( INPUT_POST, FILTER_SANITIZE_STRING );
 
 		// Grab some field value to serve as the post_title.
-		$title = 'Programmation';
+		$title = __( 'Programming', 'frmtcn' );
 
 		/**
 		 * Record the manually created post title to $data['post_title'] so

@@ -289,22 +289,17 @@ class App extends Timber {
 		$shares = array(
 			array(
 				'slug' => 'facebook',
-				'name' => __( 'Partager sur Facebook' ),
+				'name' => __( 'Share on Facebook', 'frmtcn' ),
 				'url'  => 'https://www.facebook.com/sharer.php?u=',
 			),
 			array(
 				'slug' => 'twitter',
-				'name' => __( 'Partager sur Twitter' ),
+				'name' => __( 'Share on Twitter', 'frmtcn' ),
 				'url'  => 'https://twitter.com/intent/tweet?url=',
 			),
 			array(
-				'slug' => 'google-plus',
-				'name' => __( 'Partager sur Google+' ),
-				'url'  => 'https://plus.google.com/share?url=',
-			),
-			array(
 				'slug' => 'envelope',
-				'name' => __( 'Partager par Mail' ),
+				'name' => __( 'Share by email' ),
 				'url'  => 'mailto:?&amp;body=',
 			),
 		);
@@ -369,6 +364,13 @@ class App extends Timber {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
 		add_action( 'wp_head', array( $this, 'main_color' ) );
+
+		add_action(
+			'after_setup_theme',
+			function() {
+				load_theme_textdomain( 'frmtcn', get_template_directory() . '/languages' );
+			}
+		);
 	}
 
 
