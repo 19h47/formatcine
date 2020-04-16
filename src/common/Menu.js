@@ -4,12 +4,10 @@ import App from '../App';
 
 const $body = $('body');
 
-
 class Menu {
 	constructor() {
 		this.is_open = $body.hasClass('menu--is-open');
 	}
-
 
 	/**
 	 * Menu.setupEvents
@@ -25,7 +23,6 @@ class Menu {
 			});
 	}
 
-
 	/**
 	 * Menu.toggle
 	 */
@@ -37,7 +34,6 @@ class Menu {
 		return this.open();
 	}
 
-
 	/**
 	 * Menu.open
 	 */
@@ -48,15 +44,11 @@ class Menu {
 
 		this.is_open = true;
 
-
-		$body
-			.addClass('menu--is-open')
-			.trigger('open.menu');
+		$body.addClass('menu--is-open').trigger('open.menu');
 
 		// When menu is open, disable scroll
 		App.disableScroll();
 	}
-
 
 	/**
 	 * Menu.close
@@ -68,14 +60,11 @@ class Menu {
 
 		this.is_open = false;
 
-		$body
-			.removeClass('menu--is-open')
-			.trigger('close.menu');
+		$body.removeClass('menu--is-open').trigger('close.menu');
 
 		// When menu is closed, enable scroll
 		App.enableScroll();
 	}
 }
-
 
 export default Menu;

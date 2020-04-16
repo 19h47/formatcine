@@ -31,7 +31,9 @@ function activeFilter() {
 
 		schoolClasses.some(el => {
 			currentContainer = e;
-			$(currentContainer).find('.js-movie-slider-container').slick('refresh');
+			$(currentContainer)
+				.find('.js-movie-slider-container')
+				.slick('refresh');
 			return 0 <= categories.indexOf(el) ? currentContainer.classList.add('is-active') : '';
 		});
 	});
@@ -49,16 +51,17 @@ sliders.forEach(slider => {
 		nextArrow: $slider.find('.js-movie-next'),
 		prevArrow: $slider.find('.js-movie-previous'),
 		mobileFirst: true,
-		responsive: [{
-			breakpoint: 991,
-			settings: {
-				centerMode: true,
-				centerPadding: `${100 / 3}%`,
+		responsive: [
+			{
+				breakpoint: 991,
+				settings: {
+					centerMode: true,
+					centerPadding: `${100 / 3}%`,
+				},
 			},
-		}],
+		],
 	});
 });
-
 
 filters.forEach(filter => {
 	filter.addEventListener('click', activeFilter);

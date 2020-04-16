@@ -65,6 +65,7 @@ class App extends Timber {
 	/**
 	 * Initialize the class and set its properties.
 	 *
+	 * @param string $theme_name The theme name.
 	 * @param string $theme_version The theme version.
 	 * @access public
 	 */
@@ -448,7 +449,7 @@ class App extends Timber {
 		// Theme stylesheet.
 		wp_register_style(
 			$this->theme_name . '-global',
-			get_template_directory_uri() . '/dist/' . $this->theme_manifest['main.css'],
+			get_template_directory_uri() . '/' . $this->theme_manifest['main.css'],
 			array(),
 			$this->get_theme_version()
 		);
@@ -474,7 +475,7 @@ class App extends Timber {
 
 		wp_register_script(
 			$this->theme_name . '-main',
-			get_template_directory_uri() . '/dist/' . $this->theme_manifest['main.js'],
+			get_template_directory_uri() . '/' . $this->theme_manifest['main.js'],
 			array(),
 			$this->get_theme_version(),
 			true

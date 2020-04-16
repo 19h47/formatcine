@@ -1,7 +1,7 @@
 {#
 
 @package 	Format'ciné
-@author 	Jérémy Levron <jeremylevron@19h47.fr> (http://19h47.fr)
+@author 	Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
 @file 		/views/pages/formations-pour-les-enseignants
 
 #}
@@ -24,11 +24,11 @@
 				<div class="Page-list-adjacent">
 
 					<p class="Page-list-adjacent__item Page-list-adjacent__item--is-active background-color-main background-color-main-hover">
-						{{- __( 'Formations pour les enseignants' ) -}}
+						{{- __( 'Formations pour les enseignants', 'frmtcn' ) -}}
 					</p>
 
-					<a class="Page-list-adjacent__item background-color-main background-color-main-hover" href="{{ function( 'get_permalink', 193 ) }}">
-						{{- __( 'Formations professionnelles' ) -}}
+					<a class="Page-list-adjacent__item background-color-main background-color-main-hover" href="{{ fn( 'get_permalink', 193 ) }}">
+						{{- __( 'Formations professionnelles', 'frmtcn' ) -}}
 					</a>
 
 				</div>
@@ -46,7 +46,7 @@
 		<div class="row">
 			<div class="col-12">
 				<p class="Page-introduction font-semibold">
-					{{- __( 'Notre association organise en Touraine depuis vingt cinq ans des stages de un à trois jours dans le domaine du cinéma et de l\'audiovisuel. Les enseignants hors département de l\'Indre-et-Loire peuvent s\'y inscrire sous certaines conditions (nous contacter).' ) -}}
+					{{- __( 'Notre association organise en Touraine depuis vingt cinq ans des stages de un à trois jours dans le domaine du cinéma et de l\'audiovisuel. Les enseignants hors département de l\'Indre-et-Loire peuvent s\'y inscrire sous certaines conditions (nous contacter).', 'frmtcn' ) -}}
 				</p>
 			</div>
 		</div>
@@ -56,7 +56,7 @@
 	<div class="Site-container">
 		<div class="row">
 			<div class="col-12 text-align-center">
-				<h2 class="Site-title-underline">{{- __( 'Stages et formations' ) }}</h2>
+				<h2 class="Site-title-underline">{{- __( 'Stages et formations', 'frmtcn' ) }}</h2>
 			</div>
 		</div>
 	</div>
@@ -71,7 +71,7 @@
 
 						<img
 						 	class="Adult-training-teachers__thumbnail"
-							src="{{ TimberImage( adult_training.thumbnail ).src }}"
+							src="{{ Image( adult_training.thumbnail ).src }}"
 							width="90"
 							height="60"
 						>
@@ -87,12 +87,12 @@
 
 						{% if adult_training.get_field( 'document' ) %}
 
-						<a
-							class="Adult-training-teachers__link background-color-secondary"
-							href="{{ adult_training.get_field( 'document' ).url }}"
-						>
-							{{ _e( 'Formulaire d\'inscription' ) }}
-						</a>
+							<a
+								class="Adult-training-teachers__link background-color-secondary"
+								href="{{ adult_training.get_field( 'document' ).url }}"
+							>
+								{{ __( 'Formulaire d\'inscription', 'frmtcn' ) }}
+							</a>
 
 						{% endif %}
 

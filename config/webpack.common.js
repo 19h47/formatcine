@@ -1,27 +1,45 @@
 /**
  *
- * @file webpack.common.js
- * @author Jérémy Levron <jeremylevron@19h47.fr> (http://19h47.fr)
+ * @file   webpack.common.js
+ * @author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
  */
 
 // Node modules
 const path = require('path');
 
+/**
+ * Resolve
+ *
+ * @param {string} dir Dir.
+ * @return {string} Dir.
+ */
+function resolve(dir) {
+	return path.join(__dirname, '..', dir);
+}
+
 // Plugins
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require('webpack');
 const ManifestPlugin = require('webpack-manifest-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
+const dotenv = require('dotenv').config({ path: resolve('.env') });
 
-function resolve (dir) {
-	return path.join(__dirname, '..', dir)
-}
+// Manifest plugin
+const manifestPlugin = new ManifestPlugin({
+	publicPath: 'dist/',
+});
+
+const devServer = {
+	contentBase: resolve('views/index.html'),
+	watchContentBase: true,
+	port: 9001,
+	// hot: true,
+};
 
 module.exports = {
-	optimization: {
-		splitChunks: {
-			name: 'common'
-		}
+	devServer,
+	output: {
+		publicPath: process.env.PUBLIC_PATH,
 	},
 	resolve: {
 		alias: {
@@ -50,115 +68,141 @@ module.exports = {
 			fonts: resolve('src/fonts'),
 
 			// stylesheets
-			stylesheets: resolve('src/stylesheets')
-		}
+			stylesheets: resolve('src/stylesheets'),
+		},
 	},
 	module: {
-		rules: [{
-			enforce: 'pre',
-			test: /\.js$/,
-			exclude: /node_modules/,
-			loader: 'eslint-loader'
-		},
-		{
-			test: /\.js$/,
-			exclude: /node_modules/,
-			loader: 'babel-loader',
-		},
-		{
-			test: /\.(woff2?|eot|ttf|otf|woff|svg)?$/,
-			exclude: [/img/, /icons/],
-			use: [{
-				loader: 'file-loader',
-				options: {
-					name: '[name].[ext]',
-					outputPath: 'fonts/',
-					publicPath: '../fonts/',
-				},
-			}]
-		},
-		{
-			test: /\.svg$/,
-			exclude: [/img/, /fonts/],
-			use: [{
-				loader: 'svg-sprite-loader',
-				options: {
-					spriteFilename: 'icons.svg',
-					extract: true
-				},
-			},
-			'svg-transform-loader',
-			'svgo-loader'
-		]},
-		{
-			test: /\.svg$/,
-			exclude: [/fonts/, /icons/],
-			use: [{
-				loader: 'file-loader',
-				options: {
-					outputPath: 'img/svg'
-				}
+		rules: [
+			{
+				enforce: 'pre',
+				test: /\.js$/,
+				exclude: [/node_modules/, /vendors/],
+				loader: 'eslint-loader',
 			},
 			{
-				loader: 'svgo-loader',
-				options: {
-					plugins: [
-						{
-							removeTitle: true
-						},
-						{
-							convertColors: {
-								shorthex: false
-							}
-						},
-						{
-							convertPathData: false
-						}
-					]
-				}
-			}]
-		},
-		{
-			test: /\.(gif|png|jpe?g)$/i,
-			use: [{
-				loader: 'file-loader',
-				options: {
-					outputPath: 'img/',
-					name: '[ext]/[hash].[ext]',
-					publicPath: '../img/',
-				},
+				test: /\.js$/,
+				exclude: /node_modules/,
+				loader: 'babel-loader',
 			},
 			{
-				loader: 'image-webpack-loader',
-				options: {
-					mozjpeg: {
-						progressive: true,
-						quality: [65]
+				test: /\.(woff2?|eot|ttf|otf|woff|svg)?$/,
+				exclude: [/img/, /icons/],
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: '[name].[ext]',
+							outputPath: 'fonts/',
+							publicPath: '../fonts/',
+						},
 					},
-					optipng: {
-						enabled: false
+				],
+			},
+			{
+				test: /\.svg$/,
+				exclude: [/img/, /fonts/],
+				use: [
+					{
+						loader: 'svg-sprite-loader',
+						options: {
+							spriteFilename: 'icons.svg',
+							extract: true,
+						},
 					},
-					pngquant: {
-						quality: [0.65, 0.9],
-						speed: 4
+					'svg-transform-loader',
+					'svgo-loader',
+				],
+			},
+			{
+				test: /\.svg$/,
+				exclude: [/fonts/, /icons/],
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							outputPath: 'img/svg',
+							name: '[name].[ext]',
+						},
 					},
-					gifsicle: {
-						interlaced: false
-					}
-				}
-			}]
-		}]
+					{
+						loader: 'svgo-loader',
+						options: {
+							plugins: [
+								{
+									removeTitle: true,
+								},
+								{
+									convertColors: {
+										shorthex: false,
+									},
+								},
+								{
+									convertPathData: false,
+								},
+							],
+						},
+					},
+				],
+			},
+			{
+				test: /\.(mp4|webm|ogg|mp3|wav|flac|aac|ogv)(\?.*)?$/,
+				use: [
+					{
+						loader: 'url-loader',
+						options: {
+							limit: 100000,
+							name: '[name].[ext]',
+							publicPath: resolve('src/videos'),
+							outputPath: 'videos/',
+						},
+					},
+				],
+			},
+			{
+				test: /\.(gif|png|jpe?g)$/i,
+				exclude: [/animations/],
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							outputPath: 'img/',
+							name: '[ext]/[name].[ext]',
+							// publicPath: '../img/',
+						},
+					},
+					{
+						loader: 'image-webpack-loader',
+						options: {
+							mozjpeg: {
+								progressive: true,
+								quality: [65],
+							},
+							optipng: {
+								enabled: false,
+							},
+							pngquant: {
+								quality: [0.65, 0.9],
+								speed: 4,
+							},
+							gifsicle: {
+								interlaced: false,
+							},
+						},
+					},
+				],
+			},
+		],
 	},
 	plugins: [
-		new CleanWebpackPlugin(),
-		new ManifestPlugin(),
-		new SpriteLoaderPlugin({
-			plainSprite: true
-		}),
+		manifestPlugin,
+		new SpriteLoaderPlugin({ plainSprite: true }),
 		new WebpackNotifierPlugin({
 			title: 'Webpack',
 			excludeWarnings: true,
-			alwaysNotify: true
+			alwaysNotify: true,
+		}),
+		new webpack.DefinePlugin({
+			'process.env': dotenv.parsed,
 		}),
 	],
 };

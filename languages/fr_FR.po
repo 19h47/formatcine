@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Format'ciné\n"
-"POT-Creation-Date: 2020-03-19 22:45+0100\n"
-"PO-Revision-Date: 2020-03-20 08:57+0100\n"
+"POT-Creation-Date: 2020-04-01 12:33+0200\n"
+"PO-Revision-Date: 2020-04-16 13:41+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -34,19 +34,19 @@ msgid ""
 "\">Moka Création</a>. ✌️"
 msgstr ""
 
-#: inc/App.php:292
+#: inc/App.php:293
 msgid "Share on Facebook"
 msgstr "Partager sur Facebook"
 
-#: inc/App.php:297
+#: inc/App.php:298
 msgid "Share on Twitter"
 msgstr "Partager sur Twitter"
 
-#: inc/App.php:302
+#: inc/App.php:303
 msgid "Share by email"
 msgstr "Partager par email"
 
-#: inc/App.php:351
+#: inc/App.php:352
 msgid "Main"
 msgstr "Principal"
 
@@ -60,8 +60,8 @@ msgctxt "adult training type singular"
 msgid "Adult training"
 msgstr "Formation adulte"
 
-#: inc/PostTypes/AdultTraining.php:47 inc/PostTypes/Movie.php:66
-#: inc/PostTypes/Programming.php:52 inc/PostTypes/SchoolTraining.php:57
+#: inc/PostTypes/AdultTraining.php:47 inc/PostTypes/Movie.php:68
+#: inc/PostTypes/Programming.php:55 inc/PostTypes/SchoolTraining.php:57
 msgid "Add New"
 msgstr "Ajouter"
 
@@ -169,133 +169,133 @@ msgstr "Programmation adulte planifiée."
 msgid "Adult training updated."
 msgstr "Programmation adulte mise à jour."
 
-#: inc/PostTypes/Movie.php:64
+#: inc/PostTypes/Movie.php:66
 msgctxt "movie type general"
 msgid "Movies"
 msgstr "Films"
 
-#: inc/PostTypes/Movie.php:65
+#: inc/PostTypes/Movie.php:67
 msgctxt "movie type singular"
 msgid "Movie"
 msgstr "Film"
 
-#: inc/PostTypes/Movie.php:67
+#: inc/PostTypes/Movie.php:69
 msgid "Add New Movie"
 msgstr "Ajouter un nouveau film"
 
-#: inc/PostTypes/Movie.php:68
+#: inc/PostTypes/Movie.php:70
 msgid "Edit Movie"
 msgstr "Modifier le film"
 
-#: inc/PostTypes/Movie.php:69
+#: inc/PostTypes/Movie.php:71
 msgid "New Movie"
 msgstr "Nouveau film"
 
-#: inc/PostTypes/Movie.php:70
+#: inc/PostTypes/Movie.php:72
 msgid "View Movie"
 msgstr "Voir le film"
 
-#: inc/PostTypes/Movie.php:71
+#: inc/PostTypes/Movie.php:73
 msgid "View Movies"
 msgstr "Voir les films"
 
-#: inc/PostTypes/Movie.php:72
+#: inc/PostTypes/Movie.php:74
 msgid "Search Movies"
 msgstr "Rechercher dans les articles"
 
-#: inc/PostTypes/Movie.php:73
+#: inc/PostTypes/Movie.php:75
 msgid "No movie found."
 msgstr "Aucun film trouvé."
 
-#: inc/PostTypes/Movie.php:74
+#: inc/PostTypes/Movie.php:76
 msgid "No movie found in Trash."
 msgstr "Aucun film trouvé dans la corbeille."
 
-#: inc/PostTypes/Movie.php:75
+#: inc/PostTypes/Movie.php:77
 msgid "Parent Movie:"
 msgstr "Film parent :"
 
-#: inc/PostTypes/Movie.php:76
+#: inc/PostTypes/Movie.php:78
 msgid "All movies"
 msgstr "Tous les films"
 
-#: inc/PostTypes/Movie.php:77
+#: inc/PostTypes/Movie.php:79
 msgid "Movie Archives"
 msgstr "Archives des films"
 
-#: inc/PostTypes/Movie.php:78
+#: inc/PostTypes/Movie.php:80
 msgid "Movie Attributes"
 msgstr "Attributs de films"
 
-#: inc/PostTypes/Movie.php:79
+#: inc/PostTypes/Movie.php:81
 msgid "Insert into movie"
 msgstr "Insérer dans le film"
 
-#: inc/PostTypes/Movie.php:80
+#: inc/PostTypes/Movie.php:82
 msgid "Uploaded to this movie"
 msgstr "Téléversé sur ce film"
 
-#: inc/PostTypes/Movie.php:81
+#: inc/PostTypes/Movie.php:83
 msgctxt "movie"
 msgid "Featured Image"
 msgstr "Image mise en avant"
 
-#: inc/PostTypes/Movie.php:82
+#: inc/PostTypes/Movie.php:84
 msgctxt "movie"
 msgid "Set featured image"
 msgstr "Définir l’image mise en avant"
 
-#: inc/PostTypes/Movie.php:83
+#: inc/PostTypes/Movie.php:85
 msgctxt "movie"
 msgid "Remove featured image"
 msgstr "Supprimer l’image mise en avant"
 
-#: inc/PostTypes/Movie.php:84
+#: inc/PostTypes/Movie.php:86
 msgctxt "movie"
 msgid "Use as featured image"
 msgstr "Utiliser comme image mise en avant"
 
-#: inc/PostTypes/Movie.php:85
+#: inc/PostTypes/Movie.php:87
 msgid "Movie list navigation"
 msgstr "Navigation de la liste des films"
 
-#: inc/PostTypes/Movie.php:86
+#: inc/PostTypes/Movie.php:88
 msgid "Movie list"
 msgstr "Liste des films"
 
-#: inc/PostTypes/Movie.php:87
+#: inc/PostTypes/Movie.php:89
 msgid "Movie published."
 msgstr "Film mis en ligne."
 
-#: inc/PostTypes/Movie.php:88
+#: inc/PostTypes/Movie.php:90
 msgid "Movie published privately."
 msgstr "Film mis en ligne en privé."
 
-#: inc/PostTypes/Movie.php:89
+#: inc/PostTypes/Movie.php:91
 msgid "Movie reverted to draft."
 msgstr "Film reconverti en brouillon."
 
-#: inc/PostTypes/Movie.php:90
+#: inc/PostTypes/Movie.php:92
 msgid "Movie scheduled."
 msgstr "Film planifié."
 
-#: inc/PostTypes/Movie.php:91
+#: inc/PostTypes/Movie.php:93
 msgid "Movie updated."
 msgstr "Film mis à jour."
 
-#: inc/PostTypes/Movie.php:174
+#: inc/PostTypes/Movie.php:176
 msgid "Poster"
 msgstr "Affiche"
 
-#: inc/PostTypes/Movie.php:179
+#: inc/PostTypes/Movie.php:181
 msgid "Release year"
 msgstr "Année de sortie"
 
-#: inc/PostTypes/Movie.php:180
+#: inc/PostTypes/Movie.php:182
 msgid "Duration"
 msgstr "Durée"
 
-#: inc/PostTypes/Page.php:85
+#: inc/PostTypes/Page.php:87
 msgid "Colors"
 msgstr "Couleurs"
 
@@ -303,129 +303,129 @@ msgstr "Couleurs"
 msgid "Event date"
 msgstr "Date de l’événement"
 
-#: inc/PostTypes/Programming.php:50
+#: inc/PostTypes/Programming.php:53
 msgctxt "programming type general"
 msgid "Programming"
 msgstr "Programmations"
 
-#: inc/PostTypes/Programming.php:51
+#: inc/PostTypes/Programming.php:54
 msgctxt "programming type singular"
 msgid "Programming"
 msgstr "Programmation"
 
-#: inc/PostTypes/Programming.php:53
+#: inc/PostTypes/Programming.php:56
 msgid "Add New Programming"
 msgstr "Ajouter une nouvelle programmation"
 
-#: inc/PostTypes/Programming.php:54
+#: inc/PostTypes/Programming.php:57
 msgid "Edit Programming"
 msgstr "Modifier la programmation"
 
-#: inc/PostTypes/Programming.php:55
+#: inc/PostTypes/Programming.php:58
 msgid "New Programming"
 msgstr "Nouvelle programmation"
 
-#: inc/PostTypes/Programming.php:56
+#: inc/PostTypes/Programming.php:59
 msgid "View Programming"
 msgstr "Voir la programmation"
 
-#: inc/PostTypes/Programming.php:57
+#: inc/PostTypes/Programming.php:60
 msgid "View programming"
 msgstr "Voir les programmations"
 
-#: inc/PostTypes/Programming.php:58
+#: inc/PostTypes/Programming.php:61
 msgid "Search programming"
 msgstr "Rechercher dans les programmations"
 
-#: inc/PostTypes/Programming.php:59
+#: inc/PostTypes/Programming.php:62
 msgid "No programming found."
 msgstr "Aucune programmation trouvée."
 
-#: inc/PostTypes/Programming.php:60
+#: inc/PostTypes/Programming.php:63
 msgid "No programming in Trash."
 msgstr "Aucune programmation trouvée dans la corbeille."
 
-#: inc/PostTypes/Programming.php:61
+#: inc/PostTypes/Programming.php:64
 msgid "Parent programming:"
 msgstr "Programmation parente :"
 
-#: inc/PostTypes/Programming.php:62
+#: inc/PostTypes/Programming.php:65
 msgid "All Programming"
 msgstr "Toutes les programmations"
 
-#: inc/PostTypes/Programming.php:63
+#: inc/PostTypes/Programming.php:66
 msgid "Programming Archives"
 msgstr "Archives des programmations"
 
-#: inc/PostTypes/Programming.php:64
+#: inc/PostTypes/Programming.php:67
 msgid "Programming Attributes"
 msgstr "Attributs de programmations"
 
-#: inc/PostTypes/Programming.php:65
+#: inc/PostTypes/Programming.php:68
 msgctxt "programming"
 msgid "Featured Image"
 msgstr "Image mise en avant"
 
-#: inc/PostTypes/Programming.php:66
+#: inc/PostTypes/Programming.php:69
 msgctxt "programming"
 msgid "Set featured image"
 msgstr "Définir l’image mise en avant"
 
-#: inc/PostTypes/Programming.php:67
+#: inc/PostTypes/Programming.php:70
 msgctxt "programming"
 msgid "Remove featured image"
 msgstr "Supprimer l’image mise en avant"
 
-#: inc/PostTypes/Programming.php:68
+#: inc/PostTypes/Programming.php:71
 msgctxt "programming"
 msgid "Use as featured image"
 msgstr "Utiliser comme image mise en avant"
 
-#: inc/PostTypes/Programming.php:69
+#: inc/PostTypes/Programming.php:72
 msgid "Insert into programming"
 msgstr "Insérer dans la programmation"
 
-#: inc/PostTypes/Programming.php:70
+#: inc/PostTypes/Programming.php:73
 msgid "Uploaded to this programming"
 msgstr "Téléversé sur cette programmation"
 
-#: inc/PostTypes/Programming.php:71
+#: inc/PostTypes/Programming.php:74
 msgid "Programming list"
 msgstr "Liste des programmations"
 
-#: inc/PostTypes/Programming.php:72
+#: inc/PostTypes/Programming.php:75
 msgid "Programming list navigation"
 msgstr "Navigation de la liste des programmations"
 
-#: inc/PostTypes/Programming.php:73
+#: inc/PostTypes/Programming.php:76
 msgid "Programming published."
 msgstr "Programmation mise en ligne."
 
-#: inc/PostTypes/Programming.php:74
+#: inc/PostTypes/Programming.php:77
 msgid "Programming published privately."
 msgstr "Programmation mise en ligne en privé."
 
-#: inc/PostTypes/Programming.php:75
+#: inc/PostTypes/Programming.php:78
 msgid "Programming reverted to draft."
 msgstr "Programmation reconvertie en brouillon."
 
-#: inc/PostTypes/Programming.php:76
+#: inc/PostTypes/Programming.php:79
 msgid "Programming scheduled."
 msgstr "Programmation planifiée."
 
-#: inc/PostTypes/Programming.php:77
+#: inc/PostTypes/Programming.php:80
 msgid "Programming updated."
 msgstr "Programmation mise à jour."
 
-#: inc/PostTypes/Programming.php:162
+#: inc/PostTypes/Programming.php:165
 msgid "Quarters"
 msgstr "Trimestres"
 
-#: inc/PostTypes/Programming.php:164
+#: inc/PostTypes/Programming.php:167
 msgid "Movie"
 msgstr "Film"
 
-#: inc/PostTypes/Programming.php:234 inc/Taxonomies/SchoolClass.php:102
+#: inc/PostTypes/Programming.php:240 inc/Taxonomies/SchoolClass.php:104
 #: inc/Taxonomies/Season.php:54 views/partials/programming.html.twig:17
 #: views/partials/tease-school-training.html.twig:51
 msgid "Programming"
@@ -553,10 +553,15 @@ msgstr ""
 msgid "Movies"
 msgstr "Films"
 
+#: inc/PostTypes/SchoolTraining.php:248 inc/Taxonomies/SchoolClass.php:105
+#: inc/Taxonomies/Season.php:55
+msgid "Training"
+msgstr "Formation"
+
 #: inc/Taxonomies/AdultTrainingCategory.php:46
 msgctxt "adult training category general name"
 msgid "Categories"
-msgstr "Caétgories"
+msgstr "Catégories"
 
 #: inc/Taxonomies/AdultTrainingCategory.php:47
 msgctxt "adult training category singular name"
@@ -817,179 +822,175 @@ msgstr "Les plus utilisé·e·s"
 msgid "&larr; Back to Directors"
 msgstr "&larr; Retour aux réalisateur·trice·s"
 
-#: inc/Taxonomies/SchoolClass.php:50
+#: inc/Taxonomies/SchoolClass.php:52
 msgctxt "school class general"
 msgid "Classes"
 msgstr "Classes"
 
-#: inc/Taxonomies/SchoolClass.php:51
+#: inc/Taxonomies/SchoolClass.php:53
 msgctxt "school class singular"
 msgid "Class"
 msgstr "Classe"
 
-#: inc/Taxonomies/SchoolClass.php:52
+#: inc/Taxonomies/SchoolClass.php:54
 msgid "Search Classes"
 msgstr "Rechercher dans les classes"
 
-#: inc/Taxonomies/SchoolClass.php:53
+#: inc/Taxonomies/SchoolClass.php:55
 msgid "All Classes"
 msgstr "Toutes les classes"
 
-#: inc/Taxonomies/SchoolClass.php:54
+#: inc/Taxonomies/SchoolClass.php:56
 msgid "Popular Classes"
 msgstr "Classes populaires"
 
-#: inc/Taxonomies/SchoolClass.php:55
+#: inc/Taxonomies/SchoolClass.php:57
 msgid "Parent Class"
 msgstr "Classe parent"
 
-#: inc/Taxonomies/SchoolClass.php:56
+#: inc/Taxonomies/SchoolClass.php:58
 msgid "Parent Class:"
 msgstr "Classe parent :"
 
-#: inc/Taxonomies/SchoolClass.php:57
+#: inc/Taxonomies/SchoolClass.php:59
 msgid "Edit Class"
 msgstr "Modifier la classe"
 
-#: inc/Taxonomies/SchoolClass.php:58
+#: inc/Taxonomies/SchoolClass.php:60
 msgid "View Class"
 msgstr "Voir la classe"
 
-#: inc/Taxonomies/SchoolClass.php:59
+#: inc/Taxonomies/SchoolClass.php:61
 msgid "Update Class"
 msgstr "Mettre à jour la classe"
 
-#: inc/Taxonomies/SchoolClass.php:60
+#: inc/Taxonomies/SchoolClass.php:62
 msgid "Add New Class"
 msgstr "Ajouter une nouvelle classe"
 
-#: inc/Taxonomies/SchoolClass.php:61
+#: inc/Taxonomies/SchoolClass.php:63
 msgid "New Class Name"
 msgstr "Nom de la nouvelle classe"
 
-#: inc/Taxonomies/SchoolClass.php:62
+#: inc/Taxonomies/SchoolClass.php:64
 msgid "Separate classes with commas"
 msgstr "Séparez les classes par des virgules"
 
-#: inc/Taxonomies/SchoolClass.php:63
+#: inc/Taxonomies/SchoolClass.php:65
 msgid "Add or remove classes"
 msgstr "Ajouter ou retirer des classes"
 
-#: inc/Taxonomies/SchoolClass.php:64
+#: inc/Taxonomies/SchoolClass.php:66
 msgid "Choose from the most used classes"
 msgstr "Choisir parmi les classes les plus utilisés"
 
-#: inc/Taxonomies/SchoolClass.php:65
+#: inc/Taxonomies/SchoolClass.php:67
 msgid "No class found in Trash."
 msgstr "Aucun film trouvé dans la corbeille."
 
-#: inc/Taxonomies/SchoolClass.php:66
+#: inc/Taxonomies/SchoolClass.php:68
 msgid "No class found."
 msgstr "Aucun pays trouvé."
 
-#: inc/Taxonomies/SchoolClass.php:67
+#: inc/Taxonomies/SchoolClass.php:69
 msgid "Classes list navigation"
 msgstr "Navigation de la liste des classes"
 
-#: inc/Taxonomies/SchoolClass.php:68
+#: inc/Taxonomies/SchoolClass.php:70
 msgid "Classes list"
 msgstr "Liste des classes"
 
 #. translators: Tab heading when selecting from the most used terms.
-#: inc/Taxonomies/SchoolClass.php:70
+#: inc/Taxonomies/SchoolClass.php:72
 msgctxt "class"
 msgid "Most Used"
 msgstr "Les plus utilisées"
 
-#: inc/Taxonomies/SchoolClass.php:71
+#: inc/Taxonomies/SchoolClass.php:73
 msgid "&larr; Back to Classes"
 msgstr "&larr; Retour aux classes"
 
-#: inc/Taxonomies/SchoolClass.php:103 inc/Taxonomies/Season.php:55
-msgid "Training"
-msgstr "Formation"
-
-#: inc/Taxonomies/Season.php:127
+#: inc/Taxonomies/Season.php:121
 msgctxt "season general name"
 msgid "Seasons"
 msgstr "Saisons"
 
-#: inc/Taxonomies/Season.php:128
+#: inc/Taxonomies/Season.php:122
 msgctxt "season singular name"
 msgid "Season"
 msgstr "Saison"
 
-#: inc/Taxonomies/Season.php:129
+#: inc/Taxonomies/Season.php:123
 msgid "Search Seasons"
 msgstr "Rechercher dans les classes"
 
-#: inc/Taxonomies/Season.php:130
+#: inc/Taxonomies/Season.php:124
 msgid "All seasons"
 msgstr "Toutes les saisons"
 
-#: inc/Taxonomies/Season.php:131
+#: inc/Taxonomies/Season.php:125
 msgid "Popular Seasons"
 msgstr "Saisons populaires"
 
-#: inc/Taxonomies/Season.php:132
+#: inc/Taxonomies/Season.php:126
 msgid "Parent Season"
 msgstr "Saison parente"
 
-#: inc/Taxonomies/Season.php:133
+#: inc/Taxonomies/Season.php:127
 msgid "Parent Season:"
 msgstr "Saison parente :"
 
-#: inc/Taxonomies/Season.php:134
+#: inc/Taxonomies/Season.php:128
 msgid "Edit Season"
 msgstr "Modifier la saison"
 
-#: inc/Taxonomies/Season.php:135
+#: inc/Taxonomies/Season.php:129
 msgid "View Season"
 msgstr "Voir la saison"
 
-#: inc/Taxonomies/Season.php:136
+#: inc/Taxonomies/Season.php:130
 msgid "Update Season"
 msgstr "Mettre à jour la saison"
 
-#: inc/Taxonomies/Season.php:137
+#: inc/Taxonomies/Season.php:131
 msgid "Add New season"
 msgstr "Ajouter une nouvelle saison"
 
-#: inc/Taxonomies/Season.php:138
+#: inc/Taxonomies/Season.php:132
 msgid "Separate seasons with commas"
 msgstr "Séparez les saisons par des virgules"
 
-#: inc/Taxonomies/Season.php:139
+#: inc/Taxonomies/Season.php:133
 msgid "Add or remove seasons"
 msgstr "Ajouter ou retirer des saisons"
 
-#: inc/Taxonomies/Season.php:140
+#: inc/Taxonomies/Season.php:134
 msgid "Choose from the most used seasons"
 msgstr "Choisir parmi les saisons les plus utilisées"
 
-#: inc/Taxonomies/Season.php:141
+#: inc/Taxonomies/Season.php:135
 msgid "No season found in Trash."
 msgstr "Aucune saison trouvée dans la corbeille."
 
-#: inc/Taxonomies/Season.php:142
+#: inc/Taxonomies/Season.php:136
 msgid "No season found."
 msgstr "Aucune saison trouvée."
 
-#: inc/Taxonomies/Season.php:143
+#: inc/Taxonomies/Season.php:137
 msgid "Seasons list navigation"
 msgstr "Navigation de la liste des saisons"
 
-#: inc/Taxonomies/Season.php:144
+#: inc/Taxonomies/Season.php:138
 msgid "Seasons list"
 msgstr "Liste des saisons"
 
 #. translators: Tab heading when selecting from the most used terms.
-#: inc/Taxonomies/Season.php:146
+#: inc/Taxonomies/Season.php:140
 msgctxt "season"
 msgid "Most Used"
 msgstr "Les plus utilisées"
 
-#: inc/Taxonomies/Season.php:147
+#: inc/Taxonomies/Season.php:141
 msgid "&larr; Back to Seasons"
 msgstr "&larr; Retour aux saisons"
 
@@ -1065,6 +1066,10 @@ msgstr "YouTube"
 #: inc/customizer/contact.php:173
 msgid "Indicate the URL of the YouTube account"
 msgstr "Indiquer l’URL du compte YouTube"
+
+#: views/components/contact.html.twig:13
+msgid "All rights reserved"
+msgstr "Tous droits réservés"
 
 #: views/components/contact.html.twig:15
 msgid "Our partners"

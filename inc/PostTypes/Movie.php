@@ -1,4 +1,4 @@
-<?php
+<?php // phpcs:ignore
 /**
  * Class Movie
  *
@@ -6,6 +6,8 @@
  */
 
 namespace Formatcine\PostTypes;
+
+use Timber\{ Timber };
 
 /**
  * Movie class
@@ -186,45 +188,41 @@ class Movie {
 	/**
 	 * Render custom columns
 	 *
-	 * @param arr $column_name Array of column name.
-	 * @param int $post_id The post ID.
+	 * @param string $column_name Array of column name.
+	 * @param int    $post_id The post ID.
+	 *
+	 * @return void
 	 */
-	public function render_custom_columns( $column_name, $post_id ) {
+	public function render_custom_columns( string $column_name, int $post_id ) : void {
 		switch ( $column_name ) {
 			case 'poster':
-				$html = '';
+				$html = '—';
 
 				if ( get_the_post_thumbnail( $post_id ) ) {
-					$html .= '<a href="' . get_edit_post_link( $post_id ) . '">';
-					$html .= get_the_post_thumbnail( $post_id, 'thumbnail' );
-					$html .= '</a>';
-				} else {
-					$html .= '—';
+					$html = Timber::compile(
+						'partials/post-link.html.twig',
+						array(
+							'link'    => get_edit_post_link( $post_id ),
+							'content' => get_the_post_thumbnail( $post_id, 'thumbnail' ),
+						),
+					);
 				}
-				echo $html;
+
+				Timber::render_string( $html );
 
 				break;
 
 			case 'release_year':
-				$html = '';
-				if ( get_field( 'release_year', $post_id ) ) {
-					$html .= get_field( 'release_year', $post_id );
-				} else {
-					$html .= '—';
-				}
-				echo $html;
+				$release_year = get_field( 'release_year', $post_id );
+
+				Timber::render_string( $release_year ? $release_year : '—' );
 
 				break;
 
 			case 'running_time':
-				$html = '';
+				$running_time = get_field( 'running_time', $post_id );
 
-				if ( get_field( 'running_time', $post_id ) ) {
-					$html .= get_field( 'running_time', $post_id );
-				} else {
-					$html .= '—';
-				}
-				echo $html;
+				Timber::render_string( $running_time ? $running_time : '—' );
 
 				break;
 		}

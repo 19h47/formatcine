@@ -1,4 +1,4 @@
-<?php
+<?php // phpcs:ignore
 /**
  * Class Adult Training
  *
@@ -70,9 +70,6 @@ class AdultTraining {
 			'item_reverted_to_draft'   => __( 'Adult training reverted to draft.', 'frmtcn' ),
 			'item_scheduled'           => __( 'Adult training scheduled.', 'frmtcn' ),
 			'item_updated'             => __( 'Adult training updated.', 'frmtcn' ),
-
-
-
 		);
 
 		$rewrite = array(

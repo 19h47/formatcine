@@ -10,10 +10,11 @@ add_filter( 'body_class', 'custom_body_class' );
 /**
  * Custom body class
  *
- * @param arr $classes Array of body classes.
- * @return $classes
+ * @param array $classes Array of body classes.
+ *
+ * @return array $classes
  */
-function custom_body_class( $classes ) {
+function custom_body_class( array $classes ) : array {
 
 	// Home.
 	if ( is_front_page() ) {

@@ -36,36 +36,39 @@ export default class Events {
 	 * Events.setupEvents
 	 */
 	setupEvents() {
-		this.$element.addEventListener('click', event => {
-			const { target } = event;
+		this.$element.addEventListener(
+			'click',
+			event => {
+				const { target } = event;
 
-			if (target === this.category.button) {
-				return false;
-			}
+				if (target === this.category.button) {
+					return false;
+				}
 
-			if (!target.classList.contains('js-events-button')) {
-				return false;
-			}
+				if (!target.classList.contains('js-events-button')) {
+					return false;
+				}
 
-			// Remove all `is-active` classes
-			for (let i = 0; i < this.buttonFilters.length; i += 1) {
-				this.buttonFilters[i].classList.remove('is-active');
-			}
+				// Remove all `is-active` classes
+				for (let i = 0; i < this.buttonFilters.length; i += 1) {
+					this.buttonFilters[i].classList.remove('is-active');
+				}
 
-			// Update count, offset
-			// this.count = e.target.dataset.count;
-			// this.offset = 0;
+				// Update count, offset
+				// this.count = e.target.dataset.count;
+				// this.offset = 0;
 
-			// Stock current term_id
-			this.category = {
-				button: target,
-				id: target.dataset.categoryId,
-			};
+				// Stock current term_id
+				this.category = {
+					button: target,
+					id: target.dataset.categoryId,
+				};
 
-			return this.filter();
-		}, { passive: true });
+				return this.filter();
+			},
+			{ passive: true },
+		);
 	}
-
 
 	/**
 	 * Events.filter
@@ -79,7 +82,6 @@ export default class Events {
 			// finally update things
 			.finally(this.update.bind(this));
 	}
-
 
 	/**
 	 * Events.load
@@ -102,7 +104,6 @@ export default class Events {
 		return fetch(request, init);
 	}
 
-
 	/**
 	 * Events.replace
 	 */
@@ -114,7 +115,6 @@ export default class Events {
 		this.$cont.innerHTML = html;
 	}
 
-
 	/**
 	 * Events.update
 	 */
@@ -123,7 +123,6 @@ export default class Events {
 		// ensure everything is unlocked
 		this.lock('off');
 	}
-
 
 	/**
 	 * Events.lock

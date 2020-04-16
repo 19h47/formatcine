@@ -1,4 +1,4 @@
-<?php
+<?php // phpcs:ignore
 /**
  * Class Season
  *
@@ -6,6 +6,8 @@
  */
 
 namespace Formatcine\Taxonomies;
+
+use WP_Query;
 
 /**
  * Season tag class
@@ -62,18 +64,20 @@ class Season {
 	/**
 	 * Render custom columns
 	 *
-	 * @param str $content The content.
-	 * @param arr $column_name Array of column name.
-	 * @param int $term_id The post ID.
+	 * @param string $content The content.
+	 * @param string $column_name Array of column name.
+	 * @param int    $term_id The post ID.
+	 *
+	 * @return void
 	 */
-	public function render_custom_columns( $content, $column_name, $term_id ) {
+	public function render_custom_columns( string $content, string $column_name, int $term_id ) : void {
 
 		switch ( $column_name ) {
 			case 'training':
 				$query = new WP_Query(
 					array(
-						'post_type' => 'training',
-						'tax_query' => array(
+						'post_type' => 'school_training',
+						'tax_query' => array( // phpcs:ignore
 							array(
 								'taxonomy' => 'season',
 								'field'    => 'id',
@@ -83,11 +87,7 @@ class Season {
 					)
 				);
 
-				if ( $query ) {
-					echo (int) $query->post_count;
-				} else {
-					echo '—';
-				}
+				echo (int) $query->post_count;
 
 				break;
 
@@ -95,7 +95,7 @@ class Season {
 				$query = new WP_Query(
 					array(
 						'post_type' => 'programming',
-						'tax_query' => array(
+						'tax_query' => array( // phpcs:ignore
 							array(
 								'taxonomy' => 'season',
 								'field'    => 'id',
@@ -105,11 +105,7 @@ class Season {
 					)
 				);
 
-				if ( $query ) {
-					echo (int) $query->post_count;
-				} else {
-					echo '—';
-				}
+				echo (int) $query->post_count;
 
 				break;
 		}

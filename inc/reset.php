@@ -2,22 +2,26 @@
 /**
  * Reset
  *
- * @package Formatcine
+ * @category Reset
+ * @package  Formatcine
+ * @author   Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
+ * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
  */
 
-// Remove Get Shortlink.
 add_filter( 'pre_get_shortlink', '__return_empty_string' );
-
-// Disable Canonical meta from Yoast SEO Plugin.
 add_filter( 'wpseo_canonical', '__return_false' );
+
+add_filter( 'wpcf7_load_js', '__return_false' );
+add_filter( 'wpcf7_load_css', '__return_false' );
 
 
 /**
  * Disable emojicons.
  *
- * @see http://wordpress.stackexchange.com/questions/185577/disable-emojicons-introduced-with-wp-4-2
+ * @see    http://wordpress.stackexchange.com/questions/185577/disable-emojicons-introduced-with-wp-4-2
+ * @return void
  */
-function disable_wp_emojicons() {
+function frmtcn_disable_wp_emojicons() {
 	// All actions related to emojis.
 	remove_action( 'admin_print_styles', 'print_emoji_styles' );
 	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
@@ -32,14 +36,16 @@ function disable_wp_emojicons() {
 }
 
 if ( ! is_admin() ) {
-	add_action( 'init', 'disable_wp_emojicons' );
+	add_action( 'init', 'frmtcn_disable_wp_emojicons' );
 }
 
 
 /**
  * Remove unnecessary metas from <head>.
+ *
+ * @return void
  */
-function remove_some_metas() {
+function frmtcn_remove_some_metas() {
 	remove_action( 'wp_head', 'rsd_link' );
 	remove_action( 'wp_head', 'wlwmanifest_link' );
 	remove_action( 'wp_head', 'wp_shortlink_wp_head' );
@@ -49,4 +55,4 @@ function remove_some_metas() {
 	remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
 	remove_action( 'wp_head', 'rel_canonical' );
 }
-// add_action( 'after_setup_theme', 'remove_some_metas' );
+add_action( 'after_setup_theme', 'frmtcn_remove_some_metas' );

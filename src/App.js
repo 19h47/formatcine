@@ -1,12 +1,14 @@
 import config from './config';
 
-
 /**
  * App
  */
 class App {
 	constructor() {
-		console.log('%c🔥 Moka Création x 19h47 🔥', 'background-color:#000;color:#fff;padding:0.5em 1em;');
+		console.log(
+			'%c🔥 Moka Création x 19h47 🔥',
+			'background-color:#000;color:#fff;padding:0.5em 1em;',
+		);
 	}
 
 	/**
@@ -32,7 +34,6 @@ class App {
 
 		App.resetScroll(config.body.scroll.left, config.body.scroll.top);
 	}
-
 
 	/**
 	 * App.enableScroll
@@ -61,7 +62,6 @@ class App {
 			App.resetScroll(config.body.scroll.left, currentPosition);
 		}
 	}
-
 
 	/**
 	 * App.resetScroll

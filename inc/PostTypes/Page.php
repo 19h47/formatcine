@@ -1,4 +1,4 @@
-<?php
+<?php // phpcs:ignore
 /**
  * Class Page
  *
@@ -6,6 +6,8 @@
  */
 
 namespace Formatcine\PostTypes;
+
+use Timber\{ Timber };
 
 /**
  * Page class
@@ -94,19 +96,18 @@ class Page {
 	/**
 	 * Render column color
 	 *
-	 * @param  str $color Color.
-	 * @param  int $id    Post ID.
-	 * @return $html
+	 * @param  string $color Color.
+	 * @param  int    $id    Post ID.
+	 * @return string
 	 */
-	public function render_column_page_color( $color, $id ) {
-		$html  = '<a id="page_color-' . $id . '" ';
-		$html .= 'title="' . $color . '" ';
-		$html .= 'href="' . get_edit_post_link( $id ) . '"';
-		$html .= 'class="color-indicator" style="background-color:';
-		$html .= $color;
-		$html .= '"></a>';
+	public function render_column_page_color( string $color, int $id ) : string {
+		$data = array(
+			'id'    => $id,
+			'color' => $color,
+			'link'  => get_edit_post_link( $id ),
+		);
 
-		return $html;
+		return Timber::compile( 'partials/column-page-color.html.twig', $data );
 	}
 
 
@@ -123,7 +124,7 @@ class Page {
 		switch ( $column_name ) {
 			case 'page_color':
 				$parent_id = get_post_ancestors( $post );
-				$html      = '';
+				$html      = '—';
 
 				$data_color_main      = get_post_meta( $post_id, 'page_color_main', true );
 				$data_color_secondary = get_post_meta( $post_id, 'page_color_secondary', true );
@@ -131,7 +132,7 @@ class Page {
 
 				if ( $data_color_main || $data_color_secondary ) {
 
-					$html .= $data_color_main
+					$html  = $data_color_main
 						? $this->render_column_page_color( $data_color_main, $post_id )
 						: '';
 					$html .= $data_color_secondary
@@ -147,7 +148,7 @@ class Page {
 					$data_color_secondary = get_field( 'page_color_secondary', $parent_id[0] );
 					$data_color_ternary   = get_field( 'page_color_ternary', $parent_id[0] );
 
-					$html .= $data_color_main
+					$html  = $data_color_main
 						? $this->render_column_page_color( $data_color_main, $post_id )
 						: '';
 					$html .= $data_color_secondary
@@ -157,10 +158,9 @@ class Page {
 						? $this->render_column_page_color( $data_color_ternary, $post_id )
 						: '';
 
-				} else {
-					$html .= '—';
 				}
-				echo $html;
+
+				Timber::render_string( $html );
 
 				break;
 		}

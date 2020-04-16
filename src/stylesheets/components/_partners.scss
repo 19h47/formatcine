@@ -4,8 +4,8 @@
  * @uses .Partners
  */
 .Partners {
-	@include margin( bottom 90px );
-	
+	@include margin(bottom 90px);
+
 	/**
 	 * Partners-item
 	 *
@@ -13,8 +13,12 @@
 	 */
 	&-item {
 		@extend %text-transform-uppercase, %font-weight-semibold, .d-block;
-		@include font( 18, 29.99, 100 );
+		@include font(18, 29.99, 100);
 
-		color: the_color( gray, dark );
+		color: the_color(gray, dark);
+
+		&:hover {
+			@extend %text-decoration-underline;
+		}
 	}
 }

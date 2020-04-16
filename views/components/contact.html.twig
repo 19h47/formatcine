@@ -6,11 +6,11 @@
 #}
 {% apply spaceless %}
 
-	© 2017 <a href="{{ site.url }}">Format’ciné</a>
+	© {{ 'now' | date( 'Y' ) }} <a href="{{ site.url }}">Format'ciné</a>
 
 	&nbsp;&mdash;&nbsp;
 
-	Tous droits réservés&nbsp;&nbsp;|&nbsp;&nbsp;
+	{{ __( 'All rights reserved', 'frmtcn' ) }}&nbsp;&nbsp;|&nbsp;&nbsp;
 
 	<a href="{{ site.url }}/nos-partenaires">{{- __( 'Our partners', 'frmtcn' ) }}</a>
 

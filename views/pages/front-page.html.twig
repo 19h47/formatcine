@@ -2,7 +2,7 @@
 
 @file 		/views/pages/front-page
 @package 	Formatcine
-@author 	Jérémy Levron <jeremylevron@19h47.fr> (http://19h47.fr)
+@author 	Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
 
 #}
 {% extends 'index.html.twig' %}
@@ -15,26 +15,26 @@
 				<div class="col-12 h-100">
 					<div class="d-table w-100 h-100">
 						<div class="d-table-cell vertical-align-middle text-align-center">
-							<img class="image-mobile" src="{{ manifest['img/svg/home-mobile-top.svg'] }}" alt="" />
+							<img class="image-mobile" src="{{ theme.link }}/{{ manifest['img/svg/home-mobile-top.svg'] }}" alt="" />
 
 							<h1 class="title">
-								<span>{{ __( 'De chaque côté de' ) }}</span>
-								<span>{{ __( 'L\’écran' ) }}</span>
+								<span>{{ __( 'De chaque côté de', 'frmtcn' ) }}</span>
+								<span>{{ __( 'L\’écran', 'frmtcn' ) }}</span>
 							</h1>
 
-							<img class="image-mobile" src="{{ manifest['img/svg/home-mobile-bottom.svg'] }}" alt="" />
+							<img class="image-mobile" src="{{ theme.link }}/{{ manifest['img/svg/home-mobile-bottom.svg'] }}" alt="" />
 						</div>
 					</div>
 
 					<div class="Slider-images js-slider-home d-none d-md-block">
 						<div>
-							<img class="image" loading="lazy" src="{{ manifest['img/svg/home-slider-01.svg'] }}" alt="" />
+							<img class="image" loading="lazy" src="{{ theme.link }}/{{ manifest['img/svg/home-slider-01.svg'] }}" alt="" />
 						</div>
 						<div>
-							<img class="image" loading="lazy" src="{{ manifest['img/svg/home-slider-02.svg'] }}" alt="" />
+							<img class="image" loading="lazy" src="{{ theme.link }}/{{ manifest['img/svg/home-slider-02.svg'] }}" alt="" />
 						</div>
 						<div>
-							<img class="image" loading="lazy" src="{{ manifest['img/svg/home-slider-03.svg'] }}" alt="" />
+							<img class="image" loading="lazy" src="{{ theme.link }}/{{ manifest['img/svg/home-slider-03.svg'] }}" alt="" />
 						</div>
 					</div>
 				</div>

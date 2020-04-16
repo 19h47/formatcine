@@ -2,85 +2,85 @@
  * Tease event
  */
 .Tease-event {
-
 	@include padding(
-		top $grid-gutter-width
-		right ( $grid-gutter-width / 2 )
-		bottom $grid-gutter-width
-		left ( $grid-gutter-width / 2 )
+		top $grid-gutter-width right ($grid-gutter-width / 2) bottom $grid-gutter-width left
+			($grid-gutter-width / 2)
 	);
 	width: 100%;
-
-	@include media-breakpoint-up( md ) {
-		@include margin(
-			right #{ ( $grid-gutter-width / 2 ) * -1 }
-			left #{ $grid-gutter-width * -1 }
-		);
-
-		width: calc( 100% + #{ $grid-gutter-width } );
-
-	}
-
 
 	&__date {
 		@extend %font-weight-semibold, %margin-y-0;
 
-		color: the_color( gray, very-dark-mostly-black );
+		color: the_color(gray, very-dark-mostly-black);
 		font-size: 18px;
 		line-height: normal;
 
-		&:first-letter { text-transform: uppercase; }
+		&:first-letter {
+			text-transform: uppercase;
+		}
 
-		@at-root .has-background-color & { color: the_color( white ); }
+		@at-root .has-background-color & {
+			color: the_color(white);
+		}
 	}
 
 	&__title {
 		@extend %font-weight-extrabold;
-		@include font( 24.98, 29.97, 0 );
+		@include font(24.98, 29.97, 0);
 
-		color: the_color( gray, very-dark-mostly-black );
+		color: the_color(gray, very-dark-mostly-black);
 
-		@at-root .has-background-color & { color: the_color( white ); }
+		@at-root .has-background-color & {
+			color: the_color(white);
+		}
 	}
 
 	&__description {
-		@include font( 16.03, 20.03 );
+		@include font(16.03, 20.03);
 
-		color: the_color( gray, very-dark );
+		color: the_color(gray, very-dark);
 		text-transform: none;
 
-		@at-root .has-background-color & { color: the_color( white ); }
+		@at-root .has-background-color & {
+			color: the_color(white);
+		}
 	}
 
 	&__read-more {
-		@extend %font-weight-semibold, %Transition-ease, .d-block, .d-md-inline-block, %text-align-center;
-		@include font( 13.74, 25, 25 );
-		@include padding( right 5px left 5px );
+		@extend %font-weight-semibold,
+			%Transition-ease,
+			.d-block,
+			.d-md-inline-block,
+			%text-align-center;
+		@include font(13.74, 25, 25);
+		@include padding(right 5px left 5px);
 
 		border: {
 			color: currentColor;
 			style: solid;
 			width: 1px;
 		}
-		color: the_color( gray, very-dark-mostly-black );
+		color: the_color(gray, very-dark-mostly-black);
 		width: 100%;
 
-		@include media-breakpoint-up( md ) {
+		@include media-breakpoint-up(md) {
 			width: auto;
 		}
 
-		@at-root .has-background-color & { color: the_color( white ); }
+		@at-root .has-background-color & {
+			color: the_color(white);
+		}
 
 		&:hover,
 		&:focus {
 			// background: { color: the_color( gray, very-dark-mostly-black ); }
 			// border: { color: the_color( gray, very-dark-mostly-black ); }
-			color: the_color( white );
+			color: the_color(white);
 		}
 
 		&__icon {
 			@extend .d-inline-block, %vertical-align-middle;
-			@include margin( left 4px );
+			@include margin(left 4px);
 
 			max-width: 10px;
 			max-height: 8px;

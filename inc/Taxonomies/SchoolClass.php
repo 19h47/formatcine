@@ -1,4 +1,4 @@
-<?php
+<?php // phpcs:ignore
 /**
  * Class School Class
  *
@@ -27,10 +27,10 @@ class SchoolClass {
 	/**
 	 * Construct function
 	 *
-	 * @param str $theme_version The theme version.
+	 * @param string $theme_version The theme version.
 	 * @access public
 	 */
-	public function __construct( $theme_version ) {
+	public function __construct( string $theme_version ) {
 		$this->theme_version = $theme_version;
 
 		add_action( 'init', array( $this, 'register_taxonomy' ) );
@@ -91,10 +91,10 @@ class SchoolClass {
 	/**
 	 * Add custom columns
 	 *
-	 * @param arr $columns Array of columns.
+	 * @param array $columns Array of columns.
 	 * @access public
 	 */
-	public function add_custom_columns( $columns ) {
+	public function add_custom_columns( array $columns ) {
 
 		$new_columns = array();
 
@@ -112,17 +112,19 @@ class SchoolClass {
 	/**
 	 * Render custom columns
 	 *
-	 * @param str $content The content.
-	 * @param arr $column_name Array of column name.
-	 * @param int $term_id The post ID.
+	 * @param string $content The content.
+	 * @param string $column_name Array of column name.
+	 * @param int    $term_id The post ID.
+	 *
+	 * @return void
 	 */
-	public function render_custom_columns( $content, $column_name, $term_id ) {
+	public function render_custom_columns( string $content, string $column_name, int $term_id ) : void {
 		switch ( $column_name ) {
 			case 'training':
 				$query = new WP_Query(
 					array(
-						'post_type' => 'training',
-						'tax_query' => array(
+						'post_type' => 'school_training',
+						'tax_query' => array( // phpcs:ignore
 							array(
 								'taxonomy' => 'school_class',
 								'field'    => 'id',
@@ -132,18 +134,15 @@ class SchoolClass {
 					)
 				);
 
-				if ( $query ) {
-					echo (int) $query->post_count;
-				} else {
-					echo '—';
-				}
+				echo (int) $query->post_count;
+
 				break;
 
 			case 'programming':
 				$query = new WP_Query(
 					array(
 						'post_type' => 'programming',
-						'tax_query' => array(
+						'tax_query' => array( // phpcs:ignore
 							array(
 								'taxonomy' => 'school_class',
 								'field'    => 'id',
@@ -153,11 +152,7 @@ class SchoolClass {
 					)
 				);
 
-				if ( $query ) {
-					echo (int) $query->post_count;
-				} else {
-					echo '—';
-				}
+				echo (int) $query->post_count;
 
 				break;
 		}

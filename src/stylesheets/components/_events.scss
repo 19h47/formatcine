@@ -28,7 +28,7 @@
 
 		opacity: 1;
 
-		.col-md-4:nth-child( 3n + 1 ) { clear:left; }
+		// .col-md-4:nth-child( 3n + 1 ) { clear:left; }
 
 		&.is-loading { opacity: .3; }
 	}

@@ -1,4 +1,4 @@
-<?php
+<?php // phpcs:ignore
 /**
  * Class School Training
  *
@@ -186,10 +186,10 @@ class SchoolTraining {
 	/**
 	 * Render custom columns
 	 *
-	 * @param str $column_name Column name.
-	 * @param int $post_id The post ID.
+	 * @param string $column_name Column name.
+	 * @param int    $post_id The post ID.
 	 */
-	public function render_custom_columns( $column_name, $post_id ) {
+	public function render_custom_columns( string $column_name, int $post_id ) {
 
 		global $typenow;
 
@@ -199,19 +199,27 @@ class SchoolTraining {
 
 		switch ( $column_name ) {
 			case 'movies':
-				if ( get_field( 'movies', $post_id ) ) {
-					$movies = get_field( 'movies', $post_id );
-					$output = array();
+				$movies = get_field( 'movies', $post_id );
+				$html   = array( '–' );
+
+				if ( $movies ) {
+					$html = array();
 
 					foreach ( $movies as $movie ) {
-						$html = edit_post_link( $movie->post_title, '', '', $movie->ID );
-
-						array_push( $output, $html );
+						array_push(
+							$html,
+							Timber::compile(
+								'partials/post-link.html.twig',
+								array(
+									'link'    => get_edit_post_link( $movie->ID ),
+									'content' => $movie->post_title,
+								)
+							)
+						);
 					}
-					echo join( '<br>', $output );
-				} else {
-					echo '—';
 				}
+
+				Timber::render_string( join( '<br>', $html ) );
 
 				break;
 		}
@@ -237,7 +245,7 @@ class SchoolTraining {
 		$post_data = filter_input_array( INPUT_POST, FILTER_SANITIZE_STRING );
 
 		// Grab some field value to serve as the post_title.
-		$title = 'Formation';
+		$title = __( 'Training', 'frmtcn' );
 
 		/**
 		 * Record the manually created post title to $data['post_title'] so

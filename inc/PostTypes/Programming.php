@@ -1,4 +1,4 @@
-<?php
+<?php // phpcs:ignore
 /**
  * Class Programming
  *
@@ -6,6 +6,9 @@
  */
 
 namespace Formatcine\PostTypes;
+
+use Timber\{ Timber };
+use WP_Post;
 
 /**
  * Programming class
@@ -186,24 +189,27 @@ class Programming {
 		switch ( $column_name ) {
 			case 'movie':
 				$movie = get_field( 'movie', $post_id );
-				$html = '—';
+				$html  = '—';
 
-				if ( $movie ) {
-					$html = edit_post_link( $movie->post_title, '', '', $post_id );
+				if ( $movie instanceof WP_Post ) {
+					$html = Timber::compile(
+						'partials/post-link.html.twig',
+						array(
+							'link'    => get_edit_post_link( $post_id ),
+							'content' => $movie->post_title,
+						)
+					);
 				}
 
-				echo $html;
+				Timber::render_string( $html );
 
 				break;
 
 			case 'quarter':
 				$quarter = get_field( 'quarter', $post_id );
 
-				if ( $quarter ) {
-					echo esc_html( $quarter['label'] );
-				} else {
-					echo '—';
-				}
+				Timber::render_string( $quarter ? $quarter['label'] : '—' );
+
 				break;
 		}
 	}
@@ -215,11 +221,11 @@ class Programming {
 	 * Manually create the post title and post name since this content type
 	 * doesn't have post title field.
 	 *
-	 * @param  arr $data Array of data.
-	 * @param  arr $postarr Array of post.
-	 * @return arr
+	 * @param  array $data Array of data.
+	 * @param  array $postarr Array of post.
+	 * @return array $data
 	 */
-	public function change_title( $data, $postarr ) {
+	public function change_title( array $data, array $postarr ) : array {
 
 		$screen = get_current_screen();
 

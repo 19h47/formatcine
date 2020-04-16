@@ -123,13 +123,9 @@ class Post {
 
 		switch ( $column_name ) {
 			case 'event_date':
-				if ( get_field( 'event_date', $post_id ) ) {
+				$event_date = get_field( 'event_date', $post_id );
 
-					return the_field( 'event_date', $post_id );
-
-				} else {
-					return '—';
-				}
+				Timber::render_string( $event_date ? $event_date : '—' );
 		}
 	}
 

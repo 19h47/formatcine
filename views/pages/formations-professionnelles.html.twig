@@ -2,7 +2,7 @@
 
 @file 			/views/pages/formations-professionnelles
 @package 		frmtcn
-@author 		Jérémy Levron <jeremylevron@19h47.fr> (http://19h47.fr)
+@author 		Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
 
 #}
 {% extends 'index.html.twig' %}
@@ -77,7 +77,7 @@
 						{% if adult_training.thumbnail %}
 							<img
 								class="Adult-training-professional__thumbnail"
-								src="{{ TimberImage( adult_training.thumbnail ).src }}"
+								src="{{ Image( adult_training.thumbnail ).src }}"
 								alt="{{ adult_training.post_title }}"
 								width="90"
 								height="60"

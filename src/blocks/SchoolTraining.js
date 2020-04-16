@@ -36,34 +36,39 @@ export default class SchoolTraining {
 	 * SchoolTraining.setupEvents
 	 */
 	setupEvents() {
-		this.$element.addEventListener('click', e => {
-			if (e.target === this.school_class.button) {
-				return;
-			}
+		this.$element.addEventListener(
+			'click',
+			e => {
+				if (e.target === this.school_class.button) {
+					return;
+				}
 
-			// If element hasn't 'js-school-trainings-button' class
-			if (!e.target.classList.contains('js-school-trainings-button')) {
-				return;
-			}
+				// If element hasn't 'js-school-trainings-button' class
+				if (!e.target.classList.contains('js-school-trainings-button')) {
+					return;
+				}
 
-			// Remove all `is-active` classes
-			this.buttonFilters.forEach(buttonFilter => {
-				buttonFilter.classList.remove('is-active');
-			});
+				// Remove all `is-active` classes
+				this.buttonFilters.forEach(buttonFilter => {
+					buttonFilter.classList.remove('is-active');
+				});
 
-			// Update season
-			this.season = e.target.dataset.season;
+				// Update season
+				this.season = e.target.dataset.season;
 
-			// Stock current term_id
-			this.school_class = {
-				button: e.target,
-				ids: e.target.dataset.schoolClassIds ? JSON.parse(e.target.dataset.schoolClassIds) : null,
-			};
+				// Stock current term_id
+				this.school_class = {
+					button: e.target,
+					ids: e.target.dataset.schoolClassIds
+						? JSON.parse(e.target.dataset.schoolClassIds)
+						: null,
+				};
 
-			this.filter();
-		}, { passive: true });
+				this.filter();
+			},
+			{ passive: true },
+		);
 	}
-
 
 	/**
 	 * SchoolTraining.filter
@@ -77,7 +82,6 @@ export default class SchoolTraining {
 			// finally update things
 			.finally(this.update.bind(this));
 	}
-
 
 	/**
 	 * SchoolTraining.load
@@ -104,7 +108,6 @@ export default class SchoolTraining {
 		return fetch(request, init);
 	}
 
-
 	/**
 	 * SchoolTraining.replace
 	 */
@@ -116,7 +119,6 @@ export default class SchoolTraining {
 		this.$cont.innerHTML = html;
 	}
 
-
 	/**
 	 * SchoolTraining.update
 	 */
@@ -125,7 +127,6 @@ export default class SchoolTraining {
 		// ensure everything is unlocked
 		this.lock('off');
 	}
-
 
 	/**
 	 * SchoolTraining.lock
