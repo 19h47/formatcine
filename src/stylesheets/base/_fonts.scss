@@ -18,7 +18,6 @@
  *
  */
 
-
 /**
  * Font face mixin
  *
@@ -39,43 +38,25 @@
 ) {
 	@font-face {
 		font-family: $font-family;
-			src: url('#{ $file-path }#{ $font-family-namespace }/#{ $font-weight }/#{ unquote( $font-family-namespace ) }-#{ $font-weight }.eot');
-			src:
-				url('#{ $file-path }#{ $font-family-namespace }/#{ $font-weight }/#{ $font-family-namespace }-#{ $font-weight }.eot?#iefix') format('embedded-opentype'),
-				url('#{ $file-path }#{ $font-family-namespace }/#{ $font-weight }/#{ $font-family-namespace }-#{ $font-weight }.woff') format('woff'),
-				url('#{ $file-path }#{ $font-family-namespace }/#{ $font-weight }/#{ $font-family-namespace }-#{ $font-weight }.ttf') format('truetype'),
-				url('#{ $file-path }#{ $font-family-namespace }/#{ $font-weight }/#{ $font-family-namespace }-#{ $font-weight }.svg##{ $font-family-namespace }' ) format('svg');
+		src: url('#{ $file-path }#{ $font-family-namespace }/#{ $font-weight }/#{ unquote( $font-family-namespace ) }-#{ $font-weight }.eot');
+		src: url('#{ $file-path }#{ $font-family-namespace }/#{ $font-weight }/#{ $font-family-namespace }-#{ $font-weight }.eot?#iefix')
+				format('embedded-opentype'),
+			url('#{ $file-path }#{ $font-family-namespace }/#{ $font-weight }/#{ $font-family-namespace }-#{ $font-weight }.woff')
+				format('woff'),
+			url('#{ $file-path }#{ $font-family-namespace }/#{ $font-weight }/#{ $font-family-namespace }-#{ $font-weight }.ttf')
+				format('truetype'),
+			url('#{ $file-path }#{ $font-family-namespace }/#{ $font-weight }/#{ $font-family-namespace }-#{ $font-weight }.svg##{ $font-family-namespace }')
+				format('svg');
 		font-weight: $font-weight;
 		font-style: $font-style;
 		font-display: swap;
 	}
 }
 
+@include font-face('Akrobat', 'akrobat', map-get($directories, fonts), 800);
 
-@include font-face(
-	'Akrobat',
-	'akrobat',
-	map-get( $directories, fonts ),
-	800
-);
+@include font-face('Akrobat', 'akrobat', map-get($directories, fonts), 600);
 
-@include font-face(
-	'Akrobat',
-	'akrobat',
-	map-get( $directories, fonts ),
-	600
-);
+@include font-face('Akrobat', 'akrobat', map-get($directories, fonts), 400);
 
-@include font-face(
-	'Akrobat',
-	'akrobat',
-	map-get( $directories, fonts ),
-	400
-);
-
-@include font-face(
-	'Perfograma',
-	'perfograma',
-	map-get( $directories, fonts ),
-	400
-);
+@include font-face('Perfograma', 'perfograma', map-get($directories, fonts), 400);

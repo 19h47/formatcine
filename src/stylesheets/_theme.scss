@@ -1,18 +1,17 @@
-
 $properties: color border-color background-color fill outline-color;
 $colors: main secondary ternary;
 
 @each $property in $properties {
-    @each $color in $colors {
-        .#{ $property }-#{ $color } {
-            #{ $property }: var( --#{ $color }, the_color( black ) );
+	@each $color in $colors {
+		.#{ $property }-#{ $color } {
+			#{ $property }: var(--#{$color}, the_color(black));
 
-            &-hover{
-                &:focus,
-                &:hover {
-                    #{ $property }: var( --#{ $color } )!important;
-                }
-            }
-        }
-    }
+			&-hover {
+				&:focus,
+				&:hover {
+					#{ $property }: var(--#{$color}) !important;
+				}
+			}
+		}
+	}
 }

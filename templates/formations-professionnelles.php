@@ -13,7 +13,7 @@ $context['adult_trainings'] = Timber::get_posts(
 	array(
 		'post_type'   => 'adult_training',
 		'post_status' => 'publish',
-		'tax_query'   => array(
+		'tax_query'   => array( // phpcs:ignore
 			array(
 				'taxonomy' => 'adult_training_category',
 				'field'    => 'term_id',

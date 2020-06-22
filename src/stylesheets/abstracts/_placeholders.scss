@@ -5,32 +5,28 @@
  * @author  Jérémy Levron <jeremyjeremy@19h47.fr> (http://19h47.fr)
  */
 %Position {
-
-    /**
+	/**
      * Absolute
      *
      * Set element to position absolute, top 0, right 0, bottom 0, left 0
      *
      * @uses @extend %Position-absolute
      */
-    &-absolute-center {
-    	@include absolute( top 0 right 0 bottom 0 left 0 );
-    }
+	&-absolute-center {
+		@include absolute(top 0 right 0 bottom 0 left 0);
+	}
 
-
-
-    /**
+	/**
      * Absolute
      *
      * Set element to position fixed, top 0, right 0, bottom 0, left 0
      *
      * @uses @extend %Position-fixed
      */
-    &-fixed-center {
-    	@include fixed( top 0 right 0 bottom 0 left 0 );
-    }
+	&-fixed-center {
+		@include fixed(top 0 right 0 bottom 0 left 0);
+	}
 }
-
 
 /**
  * Placeholder background
@@ -39,47 +35,42 @@
  * @author  Jérémy Levron <jeremyjeremy@19h47.fr> (http://19h47.fr)
  */
 %Background {
-
-    /**
+	/**
      * Background cover and center
      *
      * @uses @extend %Background-cover-center
      */
-    &-cover-center {
-    	background: {
-        	position: center;
-        	size: cover;
-        }
-    }
+	&-cover-center {
+		background: {
+			position: center;
+			size: cover;
+		}
+	}
 
-
-    /**
+	/**
      * Background size cover
      *
      * @uses @extend %Background-cover-center
      */
-    &-size-cover {
-        background: {
-            size: cover;
-        }
-    }
+	&-size-cover {
+		background: {
+			size: cover;
+		}
+	}
 
-
-    /**
+	/**
      * Background current color
      *
      * Set background color to current color
      *
      * @uses @extend %Background-current-color
      */
-    &-current-color {
-
-        background: {
-            color: currentColor;
-        }
-    }
+	&-current-color {
+		background: {
+			color: currentColor;
+		}
+	}
 }
-
 
 /**
  * Placeholder reset
@@ -88,73 +79,66 @@
  * @author  Jérémy Levron <jeremyjeremy@19h47.fr> (http://19h47.fr)
  */
 %Reset {
-
-    /**
+	/**
      * Reset scale
      *
      * Turn scale to 1
      *
      * @uses @extend %Reset-scale
      */
-    &-scale {
-        transform: scale( 1 );
-    }
+	&-scale {
+		transform: scale(1);
+	}
 
-
-    /**
+	/**
      * Reset scale and rotate
      *
      * @uses @extend %Reset-scale-rotate;
      */
-    &-scale-rotate {
-        transform: scale( 1 ) rotate( 0 );
-    }
+	&-scale-rotate {
+		transform: scale(1) rotate(0);
+	}
 
-
-    /**
+	/**
      * Reset translate3d
      *
      * @uses @extend %Reset-translate3d
      */
-    &-translate3d {
-        transform: translate3d( 0, 0, 0 );
-    }
+	&-translate3d {
+		transform: translate3d(0, 0, 0);
+	}
 
-
-    /**
+	/**
      * Reset scaleY
      *
      * @uses @extend %Reset-scale-y
      */
-    &-scaleY {
-        transform: scaleY( 1 );
-    }
+	&-scaleY {
+		transform: scaleY(1);
+	}
 
-
-    /**
+	/**
      * Reset opacity
      *
      * Turn opacity to 1
      *
      * @uses @extend %Reset-opacity
      */
-    &-opacity {
-        opacity: 1;
-    }
+	&-opacity {
+		opacity: 1;
+	}
 
-
-    /**
+	/**
      * Reset visibility
      *
      * Turn visibility to visible
      *
      * @uses @extend %Reset-visible
      */
-    &-visibility {
-        visibility: visible;
-    }
+	&-visibility {
+		visibility: visible;
+	}
 }
-
 
 /**
  * Placeholder hover
@@ -163,23 +147,21 @@
  * @author Jérémy Levron <jeremyjeremy@19h47.fr> (http://19h47.fr)
  */
 %Hover {
-
-    /**
+	/**
      * Hover opacity
      *
      * Turn opacity to 1 on hover
      *
      * @uses @extend %Hover-opacity
      */
-    &-opacity {
-        transition: map-get( $easings, ease );
+	&-opacity {
+		transition: map-get($easings, ease);
 
-        &:hover {
-           @extend %Reset-opacity;
-        }
-    }
+		&:hover {
+			@extend %Reset-opacity;
+		}
+	}
 }
-
 
 /**
  * Placeholder cursor
@@ -188,27 +170,24 @@
  * @author  Jérémy Levron <jeremyjeremy@19h47.fr> (http://19h47.fr)
  */
 %Cursor {
-
-    /**
+	/**
      * Cursor pointer
      *
      * @uses %Cursor-pointer
      */
-    &-pointer {
-        cursor: pointer;
-    }
+	&-pointer {
+		cursor: pointer;
+	}
 
-
-    /**
+	/**
      * Cursor auto
      *
      * @uses %Cursor-auto
      */
-    &-auto {
-        cursor: auto;
-    }
+	&-auto {
+		cursor: auto;
+	}
 }
-
 
 /**
  * Placeholder filter
@@ -217,17 +196,15 @@
  * @author Jérémy Levron <jeremyjeremy@19h47.fr> (http://19h47.fr)
  */
 %Filter {
-
-    /**
+	/**
      * Grayscale
      *
      * @uses @extend %Filter-grayscale
      */
-    &-grayscale {
-        filter: grayscale( 100% );
-    }
+	&-grayscale {
+		filter: grayscale(100%);
+	}
 }
-
 
 /**
  * Transition placeholder
@@ -239,11 +216,10 @@
  * @see abstract/_variables.scss
  */
 @each $transition, $property in $easings {
-    %Transition-#{ $transition } {
-        transition: $property;
-    }
+	%Transition-#{ $transition } {
+		transition: $property;
+	}
 }
-
 
 /**
  * Placeholder pointer events
@@ -253,15 +229,14 @@
  */
 $pointer-events-values: none auto;
 @each $value in $pointer-events-values {
-    %Pointer-events {
-
-        /**
+	%Pointer-events {
+		/**
          * Pointer events #{ $value }
          *
          * @uses %Pointer-events-#{ $value }
          */
-        &-#{ $value } {
-            pointer-events: #{ $value };
-        }
-    }
+		&-#{ $value } {
+			pointer-events: #{$value};
+		}
+	}
 }

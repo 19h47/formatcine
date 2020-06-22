@@ -201,28 +201,31 @@
         },
         {
             "name": "composer/installers",
-            "version": "v1.8.0",
+            "version": "v1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "7d610d50aae61ae7ed6675e58efeabdf279bb5e3"
+                "reference": "b93bcf0fa1fccb0b7d176b0967d969691cd74cca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/7d610d50aae61ae7ed6675e58efeabdf279bb5e3",
-                "reference": "7d610d50aae61ae7ed6675e58efeabdf279bb5e3",
+                "url": "https://api.github.com/repos/composer/installers/zipball/b93bcf0fa1fccb0b7d176b0967d969691cd74cca",
+                "reference": "b93bcf0fa1fccb0b7d176b0967d969691cd74cca",
                 "shasum": ""
             },
             "require": {
-                "composer-plugin-api": "^1.0"
+                "composer-plugin-api": "^1.0 || ^2.0"
             },
             "replace": {
                 "roundcube/plugin-installer": "*",
                 "shama/baton": "*"
             },
             "require-dev": {
-                "composer/composer": "1.0.*@dev",
-                "phpunit/phpunit": "^4.8.36"
+                "composer/composer": "1.6.* || 2.0.*@dev",
+                "composer/semver": "1.0.* || 2.0.*@dev",
+                "phpunit/phpunit": "^4.8.36",
+                "sebastian/comparator": "^1.2.4",
+                "symfony/process": "^2.3"
             },
             "type": "composer-plugin",
             "extra": {
@@ -321,20 +324,30 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2020-02-07T10:39:20+00:00"
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-04-07T06:57:05+00:00"
         },
         {
             "name": "phpoption/phpoption",
-            "version": "1.7.3",
+            "version": "1.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/php-option.git",
-                "reference": "4acfd6a4b33a509d8c88f50e5222f734b6aeebae"
+                "reference": "b2ada2ad5d8a32b89088b8adc31ecd2e3a13baf3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/4acfd6a4b33a509d8c88f50e5222f734b6aeebae",
-                "reference": "4acfd6a4b33a509d8c88f50e5222f734b6aeebae",
+                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/b2ada2ad5d8a32b89088b8adc31ecd2e3a13baf3",
+                "reference": "b2ada2ad5d8a32b89088b8adc31ecd2e3a13baf3",
                 "shasum": ""
             },
             "require": {
@@ -376,20 +389,30 @@
                 "php",
                 "type"
             ],
-            "time": "2020-03-21T18:07:53+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/phpoption/phpoption",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-06-07T10:40:07+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
-            "version": "v1.15.0",
+            "version": "v1.17.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-ctype.git",
-                "reference": "4719fa9c18b0464d399f1a63bf624b42b6fa8d14"
+                "reference": "2edd75b8b35d62fd3eeabba73b26b8f1f60ce13d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/4719fa9c18b0464d399f1a63bf624b42b6fa8d14",
-                "reference": "4719fa9c18b0464d399f1a63bf624b42b6fa8d14",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/2edd75b8b35d62fd3eeabba73b26b8f1f60ce13d",
+                "reference": "2edd75b8b35d62fd3eeabba73b26b8f1f60ce13d",
                 "shasum": ""
             },
             "require": {
@@ -401,7 +424,11 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.15-dev"
+                    "dev-master": "1.17-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
                 }
             },
             "autoload": {
@@ -434,20 +461,34 @@
                 "polyfill",
                 "portable"
             ],
-            "time": "2020-02-27T09:26:54+00:00"
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-06-06T08:46:27+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.15.0",
+            "version": "v1.17.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "81ffd3a9c6d707be22e3012b827de1c9775fc5ac"
+                "reference": "7110338d81ce1cbc3e273136e4574663627037a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/81ffd3a9c6d707be22e3012b827de1c9775fc5ac",
-                "reference": "81ffd3a9c6d707be22e3012b827de1c9775fc5ac",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/7110338d81ce1cbc3e273136e4574663627037a7",
+                "reference": "7110338d81ce1cbc3e273136e4574663627037a7",
                 "shasum": ""
             },
             "require": {
@@ -459,7 +500,11 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.15-dev"
+                    "dev-master": "1.17-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
                 }
             },
             "autoload": {
@@ -493,20 +538,34 @@
                 "portable",
                 "shim"
             ],
-            "time": "2020-03-09T19:04:49+00:00"
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-06-06T08:46:27+00:00"
         },
         {
             "name": "timber/timber",
-            "version": "1.15.2",
+            "version": "1.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/timber/timber.git",
-                "reference": "c0856786f5f2bb9bbcca9febc1ae8998d912734b"
+                "reference": "cdae62c0108cd60c256e9bb00d634645eb0127c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/timber/timber/zipball/c0856786f5f2bb9bbcca9febc1ae8998d912734b",
-                "reference": "c0856786f5f2bb9bbcca9febc1ae8998d912734b",
+                "url": "https://api.github.com/repos/timber/timber/zipball/cdae62c0108cd60c256e9bb00d634645eb0127c0",
+                "reference": "cdae62c0108cd60c256e9bb00d634645eb0127c0",
                 "shasum": ""
             },
             "require": {
@@ -523,7 +582,7 @@
                 "squizlabs/php_codesniffer": "3.*",
                 "wp-coding-standards/wpcs": "^2.0",
                 "wpackagist-plugin/advanced-custom-fields": "5.*",
-                "wpackagist-plugin/co-authors-plus": "3.2.*"
+                "wpackagist-plugin/co-authors-plus": "3.2.*|3.4.*"
             },
             "suggest": {
                 "satooshi/php-coveralls": "1.0.* for code coverage"
@@ -558,7 +617,7 @@
                 "timber",
                 "twig"
             ],
-            "time": "2020-03-24T17:38:21+00:00"
+            "time": "2020-05-18T19:28:12+00:00"
         },
         {
             "name": "twig/twig",
@@ -678,27 +737,27 @@
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v3.6.2",
+            "version": "v3.6.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "786a947e57086cf236cefdee80784634224b99fa"
+                "reference": "4669484ccbc38fe7c4e0c50456778f2010566aad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/786a947e57086cf236cefdee80784634224b99fa",
-                "reference": "786a947e57086cf236cefdee80784634224b99fa",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/4669484ccbc38fe7c4e0c50456778f2010566aad",
+                "reference": "4669484ccbc38fe7c4e0c50456778f2010566aad",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.4 || ^7.0",
-                "phpoption/phpoption": "^1.5",
-                "symfony/polyfill-ctype": "^1.9"
+                "php": "^5.4 || ^7.0 || ^8.0",
+                "phpoption/phpoption": "^1.5.2",
+                "symfony/polyfill-ctype": "^1.16"
             },
             "require-dev": {
                 "ext-filter": "*",
                 "ext-pcre": "*",
-                "phpunit/phpunit": "^4.8.35 || ^5.0 || ^6.0 || ^7.0"
+                "phpunit/phpunit": "^4.8.35 || ^5.7.27 || ^6.5.6 || ^7.0"
             },
             "suggest": {
                 "ext-filter": "Required to use the boolean validator.",
@@ -737,7 +796,17 @@
                 "env",
                 "environment"
             ],
-            "time": "2020-03-27T23:36:02+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/vlucas/phpdotenv",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-06-02T14:08:54+00:00"
         }
     ],
     "packages-dev": [
@@ -809,16 +878,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.5.4",
+            "version": "3.5.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "dceec07328401de6211037abbb18bda423677e26"
+                "reference": "73e2e7f57d958e7228fce50dc0c61f58f017f9f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/dceec07328401de6211037abbb18bda423677e26",
-                "reference": "dceec07328401de6211037abbb18bda423677e26",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/73e2e7f57d958e7228fce50dc0c61f58f017f9f6",
+                "reference": "73e2e7f57d958e7228fce50dc0c61f58f017f9f6",
                 "shasum": ""
             },
             "require": {
@@ -856,20 +925,20 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2020-01-30T22:20:29+00:00"
+            "time": "2020-04-17T01:09:41+00:00"
         },
         {
             "name": "wp-coding-standards/wpcs",
-            "version": "2.2.1",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress-Coding-Standards.git",
-                "reference": "b5a453203114cc2284b1a614c4953456fbe4f546"
+                "reference": "7da1894633f168fe244afc6de00d141f27517b62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress-Coding-Standards/zipball/b5a453203114cc2284b1a614c4953456fbe4f546",
-                "reference": "b5a453203114cc2284b1a614c4953456fbe4f546",
+                "url": "https://api.github.com/repos/WordPress/WordPress-Coding-Standards/zipball/7da1894633f168fe244afc6de00d141f27517b62",
+                "reference": "7da1894633f168fe244afc6de00d141f27517b62",
                 "shasum": ""
             },
             "require": {
@@ -879,6 +948,7 @@
             "require-dev": {
                 "dealerdirect/phpcodesniffer-composer-installer": "^0.5 || ^0.6",
                 "phpcompatibility/php-compatibility": "^9.0",
+                "phpcsstandards/phpcsdevtools": "^1.0",
                 "phpunit/phpunit": "^4.0 || ^5.0 || ^6.0 || ^7.0"
             },
             "suggest": {
@@ -901,7 +971,7 @@
                 "standards",
                 "wordpress"
             ],
-            "time": "2020-02-04T02:52:06+00:00"
+            "time": "2020-05-13T23:57:56+00:00"
         }
     ],
     "aliases": [],
@@ -912,5 +982,6 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }

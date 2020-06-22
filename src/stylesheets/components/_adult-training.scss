@@ -4,7 +4,7 @@
  * @uses .Adult-training
  */
 .Adult-training {
-	@include margin( top 50px bottom 50px );
+	@include margin(top 50px bottom 50px);
 
 	/**
 	 * Adult training teachers
@@ -14,19 +14,11 @@
 	 */
 	&-teachers {
 		@extend %text-align-center;
-		@include padding(
-			top 40px
-			right $grid-gutter-width
-			bottom 50px
-			left $grid-gutter-width
-		);
-		@include margin(
-			bottom $grid-gutter-width
-		);
+		@include padding(top 40px right $grid-gutter-width bottom 50px left $grid-gutter-width);
+		@include margin(bottom $grid-gutter-width);
 
-		background-color: the_color( gray, very-light );
-	    height: 100%;
-
+		background-color: the_color(gray, very-light);
+		height: 100%;
 
 		/**
 		 * Thumbnail
@@ -37,20 +29,15 @@
 			@extend .d-inline, %vertical-align-middle;
 		}
 
-
 		/**
 		 * Title
 		 *
 		 * @uses .Adult-training-teachers__title
 		 */
 		&__title {
-			@include font( 25, 30 );
-			@include margin(
-				top $grid-gutter-width
-				bottom $grid-gutter-width
-			);
+			@include font(25, 30);
+			@include margin(top $grid-gutter-width bottom $grid-gutter-width);
 		}
-
 
 		/**
 		 * Content
@@ -58,9 +45,8 @@
 		 * @uses .Adult-training-teachers__content
 		 */
 		&__content {
-			@include font( 16, 20 );
+			@include font(16, 20);
 		}
-
 
 		/**
 		 * Link
@@ -69,35 +55,26 @@
 		 */
 		&__link {
 			@extend %font-weight-extrabold, %text-transform-uppercase, .d-block, .d-md-inline-block;
-			@include padding( right 10px left 10px );
-			@include font( 18, 30, 50 );
+			@include padding(right 10px left 10px);
+			@include font(18, 30, 50);
 
-			color: the_color( white );
+			color: the_color(white);
 			width: 100%;
 
-			@include media-breakpoint-up( md ) {
+			@include media-breakpoint-up(md) {
 				width: auto;
 			}
 		}
 	}
-
 
 	/**
 	 * Professional
 	 */
 	&-professional {
 		@extend %text-align-center;
-		@include padding(
-			top 40px
-			right $grid-gutter-width
-			bottom 50px
-			left $grid-gutter-width
-		);
-		@include margin(
-			bottom $grid-gutter-width
-		);
-		background-color: the_color( gray, very-light );
-
+		@include padding(top 40px right $grid-gutter-width bottom 50px left $grid-gutter-width);
+		@include margin(bottom $grid-gutter-width);
+		background-color: the_color(gray, very-light);
 
 		/**
 		 * Thumbnail
@@ -108,7 +85,6 @@
 			@extend .d-inline, %vertical-align-middle;
 		}
 
-
 		/**
 		 * Title
 		 *
@@ -116,13 +92,9 @@
 		 */
 		&__title {
 			@extend %font-weight-extrabold;
-			@include font( 25, 30 );
-			@include margin(
-				top $grid-gutter-width
-				bottom 0
-			);
+			@include font(25, 30);
+			@include margin(top $grid-gutter-width bottom 0);
 		}
-
 
 		/**
 		 * Number days
@@ -130,10 +102,9 @@
 		 * @uses .Adult-training-teachers__number-days
 		 */
 		&__number-days {
-			@include font( 25, 30 );
-			@include margin( top 0 );
+			@include font(25, 30);
+			@include margin(top 0);
 		}
-
 
 		/**
 		 * Post content
@@ -141,9 +112,8 @@
 		 * @uses .Adult-training-professional__post-content
 		 */
 		&__post-content {
-			@include font( 16, 20 );
+			@include font(16, 20);
 		}
-
 
 		/**
 		 * Contents
@@ -151,13 +121,11 @@
 		 * @uses .Adult-training-professional__contents
 		 */
 		&__contents {
-
 			&__title {
 				@extend %text-transform-uppercase, %font-weight-extrabold;
-				@include font( 18, 30, 100 );
+				@include font(18, 30, 100);
 			}
 		}
-
 
 		/**
 		 * Content
@@ -165,21 +133,21 @@
 		 * @uses .Adult-training-professional__content
 		 */
 		&__content {
-			@include margin( top $grid-gutter-width bottom $grid-gutter-width );
-			@include font( 16, 20 );
-			color: the_color( gray, very-dark );
+			@include margin(top $grid-gutter-width bottom $grid-gutter-width);
+			@include font(16, 20);
+			color: the_color(gray, very-dark);
 
 			&__title {
 				@extend %font-weight-semibold;
-				@include font( 18, 22 );
-				@include margin( bottom 0 );
+				@include font(18, 22);
+				@include margin(bottom 0);
 
-				color: the_color( gray, very-dark-mostly-black );
+				color: the_color(gray, very-dark-mostly-black);
 
 				span {
 					@extend .d-inline-block, %vertical-align-middle;
-					@include size( 22px );
-					@include margin( right 10px );
+					@include size(22px);
+					@include margin(right 10px);
 
 					border: {
 						color: currentColor;
@@ -191,14 +159,13 @@
 			}
 		}
 
-
 		/**
 		 * Document
 		 *
 		 * @uses .Adult-training-professional__document
 		 */
 		&__document {
-			@include margin( bottom 0 );
+			@include margin(bottom 0);
 		}
 	}
 
@@ -209,10 +176,12 @@
 	 */
 	&-comments {
 		@extend %text-align-center;
-		@include padding( bottom $grid-gutter-width );
-		@include margin( top $grid-gutter-width * 2 bottom $grid-gutter-width * 2 );
+		@include padding(bottom $grid-gutter-width);
+		@include margin(top $grid-gutter-width * 2 bottom $grid-gutter-width * 2);
 
-		.slick-track { @extend %margin-0; }
+		.slick-track {
+			@extend %margin-0;
+		}
 
 		/**
 		 * Title
@@ -221,11 +190,10 @@
 		 */
 		&__title {
 			@extend %text-transform-uppercase, %font-weight-extrabold, %margin-top-0;
-			@include font( 29.93, 29.95, 50 );
-			transform: translate3d( 0, -50%, 0 );
+			@include font(29.93, 29.95, 50);
+			transform: translate3d(0, -50%, 0);
 		}
 	}
-
 
 	/**
 	 * Comment
@@ -234,22 +202,23 @@
 	 * @author Jérémy Levron <jeremylevron@19h47.fr> (http://19h47.fr)
 	 */
 	&-comment {
-
 		/**
 		 * Post
 		 *
 		 * @uses .Adult-training-comment__post
 		 */
 		&__post {
-			@extend %font-weight-semibold, %text-transform-uppercase, .d-inline-block, %margin-top-0;
-			@include padding( right $grid-gutter-width / 4 left $grid-gutter-width / 4 );
-			@include letter-spacing( 100 );
-			@include margin( right $grid-gutter-width / 2 left $grid-gutter-width / 2 );
+			@extend %font-weight-semibold,
+				%text-transform-uppercase,
+				.d-inline-block,
+				%margin-top-0;
+			@include padding(right $grid-gutter-width / 4 left $grid-gutter-width / 4);
+			@include letter-spacing(100);
+			@include margin(right $grid-gutter-width / 2 left $grid-gutter-width / 2);
 
 			font-size: 14px;
-			color: the_color( white );
+			color: the_color(white);
 		}
-
 
 		/**
 		 * Content
@@ -258,12 +227,11 @@
 		 */
 		&__content {
 			@extend %margin-bottom-0;
-			@include font( 15.98, 19.97 );
-			@include margin( right $grid-gutter-width / 2 left $grid-gutter-width / 2 );
+			@include font(15.98, 19.97);
+			@include margin(right $grid-gutter-width / 2 left $grid-gutter-width / 2);
 
-			color: the_color( gray, very-dark-mostly-black );
+			color: the_color(gray, very-dark-mostly-black);
 		}
-
 
 		/**
 		 * Author
@@ -272,10 +240,11 @@
 		 */
 		&__author {
 			@extend %font-weight-extrabold;
-			@include font( 15.98, 19.97 );
-			@include margin( top $grid-gutter-width right $grid-gutter-width / 2 left $grid-gutter-width / 2 );
+			@include font(15.98, 19.97);
+			@include margin(
+				top $grid-gutter-width right $grid-gutter-width / 2 left $grid-gutter-width / 2
+			);
 		}
-
 
 		/**
 		 * Author url
@@ -288,7 +257,6 @@
 			text-decoration: underline;
 		}
 
-
 		/**
 		 * Origin
 		 *
@@ -299,25 +267,28 @@
 		}
 	}
 
-
 	/**
 	 * Conclusion
 	 *
 	 * @uses .Adult-training-conclusion
 	 */
 	&-conclusion {
-		@include margin( bottom $grid-gutter-width * 2 );
+		@include margin(bottom $grid-gutter-width * 2);
 		@extend %text-align-center;
 
-		p { @extend %font-weight-semibold; }
+		p {
+			@extend %font-weight-semibold;
+		}
 		p span {
 			@extend %margin-top-0;
-			@include font( 55, 20 );
+			@include font(55, 20);
 		}
-		p:first-child { @extend %margin-0; }
-		p:nth-child( 2 ) {
+		p:first-child {
+			@extend %margin-0;
+		}
+		p:nth-child(2) {
 			@extend %margin-top-0;
-			@include font( 16, 20 );
+			@include font(16, 20);
 		}
 	}
 }

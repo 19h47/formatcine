@@ -4,29 +4,25 @@
  * @uses .Programming
  */
 .Programming {
-
 	/**
 	 * Movie container
 	 */
 	&__movie-container {
 		@extend %position-relative;
-		@include margin(
-			top $grid-gutter-width / 2
-			bottom $grid-gutter-width / 2
-		);
+		@include margin(top $grid-gutter-width / 2 bottom $grid-gutter-width / 2);
 
 		&__inner {
 			transition: {
-				duration: .3s;
+				duration: 0.3s;
 				timing-function: ease;
 				property: opacity;
 			}
-			@include autoAlpha( 0 );
+			@include autoAlpha(0);
 			height: 0;
 
 			&.is-active {
 				@extend .d-block;
-				@include autoAlpha( 1 );
+				@include autoAlpha(1);
 				height: auto;
 			}
 		}
@@ -39,9 +35,8 @@
 	 */
 	&-title {
 		@extend %text-align-center;
-		@include margin( top 90px );
+		@include margin(top 90px);
 	}
-
 
 	/**
 	 * Programming filters
@@ -50,9 +45,8 @@
 	 */
 	&-filters {
 		@extend %text-align-center;
-		@include margin( top $grid-gutter-width bottom 50px );
+		@include margin(top $grid-gutter-width bottom 50px);
 	}
-
 
 	/**
 	 * Programming filter
@@ -60,20 +54,29 @@
 	 * @uses .Programming-filter
 	 */
 	&-filter {
-		@extend %text-transform-uppercase, %Transition-ease, %font-weight-extrabold, .d-inline-block;
-		@include font( 18, 30, 50 );
-		@include padding( right 10px left 10px );
-		@include margin( top 5px bottom 5px );
+		@extend %text-transform-uppercase,
+			%Transition-ease,
+			%font-weight-extrabold,
+			.d-inline-block;
+		@include font(18, 30, 50);
+		@include padding(right 10px left 10px);
+		@include margin(top 5px bottom 5px);
 
-		color: the_color( gray, very-dark-mostly-black );
+		color: the_color(gray, very-dark-mostly-black);
 
-		&:first-child { @include margin( top 0 ); }
-		&:last-child { @include margin( bottom 0 ); }
+		&:first-child {
+			@include margin(top 0);
+		}
+		&:last-child {
+			@include margin(bottom 0);
+		}
 
 		&:hover,
 		&.is-active {
-			color: the_color( white );
-			background: { color: the_color( violet, slightly-desaturated ); }
+			color: the_color(white);
+			background: {
+				color: the_color(violet, slightly-desaturated);
+			}
 		}
 	}
 
@@ -83,34 +86,29 @@
 	 * @uses .Programming__navigation
 	 */
 	&__navigation {
-		@include absolute( top 0 right 0 left 0 );
-		@include margin(
-			top #{ ( 250 / 2 ) }px
-			// right $grid-gutter-width / 2
-			// left $grid-gutter-width / 2
-		);
+		@include absolute(top 0 right 0 left 0);
+		@include margin(top #{(250 / 2)}px);
 		z-index: 50;
-
 
 		&__button {
 			@extend .d-inline-block, %vertical-align-middle;
-			@include size( 25px );
+			@include size(25px);
 
 			&--previous {
 				@extend %float-left;
-				transform: rotate( 180deg );
+				transform: rotate(180deg);
 			}
 
 			&--next {
 				@extend %float-right;
-				@include margin( right -1px );
+				@include margin(right -1px);
 			}
 
 			svg {
 				@extend .d-block;
-				@include margin( top auto right auto bottom auto left auto );
+				@include margin(top auto right auto bottom auto left auto);
 
-				fill: the_color( white );
+				fill: the_color(white);
 
 				max-width: 10px;
 				max-height: 8px;

@@ -10,11 +10,10 @@
 	&--menu {
 		@extend .justify-content-center;
 		@extend %padding-0;
-		@include margin( top #{ $base-line-height * 8.5 }px bottom 0 );
+		@include margin(top #{$base-line-height * 8.5}px bottom 0);
 
-		color: the_color( white );
+		color: the_color(white);
 	}
-
 
 	/**
 	 * Header
@@ -24,10 +23,10 @@
 	&--header {
 		@extend .justify-content-end;
 		@extend %padding-0;
-		@include margin( top 0 );
+		@include margin(top 0);
 
-		color: the_color( gray, dark ); }
-
+		color: the_color(gray, dark);
+	}
 
 	/**
 	 * Item
@@ -36,15 +35,19 @@
 	 */
 	&-item {
 		@extend %margin-y-0;
-		@include size( $grid-gutter-width );
-		@include margin( right 7.5px left 7.5px );
+		@include size($grid-gutter-width);
+		@include margin(right 7.5px left 7.5px);
 
-		&:first-child { @extend %margin-left-0; }
-		&:last-child { @extend %margin-right-0; }
+		&:first-child {
+			@extend %margin-left-0;
+		}
+		&:last-child {
+			@extend %margin-right-0;
+		}
 
 		a {
 			@extend .d-block;
-			@include size( 100% );
+			@include size(100%);
 
 			&:hover,
 			&:focus {

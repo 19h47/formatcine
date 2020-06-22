@@ -4,16 +4,15 @@
  * @uses .Discovery
  */
 .Discovery {
-	@include margin( top 75px bottom 75px );
+	@include margin(top 75px bottom 75px);
 
 	.title {
-		@extend
-			%font-weight-extrabold,
+		@extend %font-weight-extrabold,
 			%text-transform-uppercase,
 			%position-relative,
 			.d-inline,
 			%margin-y-0;
-		@include font( 30, 55, 50 );
+		@include font(30, 55, 50);
 
 		border: {
 			bottom: {
@@ -22,17 +21,16 @@
 				width: 3px;
 			}
 		}
-		color: the_color( gray, very-dark-mostly-black );
+		color: the_color(gray, very-dark-mostly-black);
 	}
 
 	.description {
 		@extend %font-weight-semibold, %text-transform-uppercase;
-		@include font( 18.01, 30.02, 100 );
-		@include margin( top 2em bottom 2em );
+		@include font(18.01, 30.02, 100);
+		@include margin(top 2em bottom 2em);
 
-		color: the_color( gray, dark );
+		color: the_color(gray, dark);
 	}
-
 
 	/**
 	 * Item
@@ -41,15 +39,15 @@
 	 */
 	.item {
 		@extend %text-align-center;
-		@include margin( top $grid-gutter-width bottom $grid-gutter-width );
+		@include margin(top $grid-gutter-width bottom $grid-gutter-width);
 
-		@include media-breakpoint-up( md ) {
-			@include margin( top 0 bottom 0 );
+		@include media-breakpoint-up(md) {
+			@include margin(top 0 bottom 0);
 		}
 
 		.pictogram {
 			@extend .d-inline-block, %vertical-align-middle;
-			@include margin( bottom 1em );
+			@include margin(bottom 1em);
 
 			max-width: 77px;
 			max-height: 75px;
@@ -64,12 +62,11 @@
 			line-height: normal;
 		}
 		.description {
-			@include font( 16, 20, 0 );
-			@include margin( top 1em bottom 0 );
+			@include font(16, 20, 0);
+			@include margin(top 1em bottom 0);
 
-			color: the_color( gray, very-dark );
+			color: the_color(gray, very-dark);
 			text-transform: none;
-
 		}
 	}
 }

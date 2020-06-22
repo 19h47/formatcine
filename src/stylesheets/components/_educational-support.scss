@@ -2,10 +2,12 @@
  * Educational support
  */
 .Educational-support {
-	@include padding( top 75px bottom 75px );
+	@include padding(top 75px bottom 75px);
 
-	background: { color: the_color( gray, very-light ); }
-	
+	background: {
+		color: the_color(gray, very-light);
+	}
+
 	/**
 	 * Introduction
 	 *
@@ -13,13 +15,12 @@
 	 */
 	&__introduction {
 		@extend %font-weight-semibold, %text-transform-uppercase;
-		@include font( 18, 30.01, 100 );
-		@include margin( top 2em );
+		@include font(18, 30.01, 100);
+		@include margin(top 2em);
 
-		color: the_color( gray, dark );
+		color: the_color(gray, dark);
 	}
 
-	
 	/**
 	 * Content
 	 *
@@ -27,11 +28,10 @@
 	 */
 	&__content {
 		@extend %font-weight-semibold;
-		@include font( 16, 20 );
+		@include font(16, 20);
 
-		color: the_color( gray, very-dark );
+		color: the_color(gray, very-dark);
 	}
-
 
 	/**
 	 * Information
@@ -40,12 +40,16 @@
 	 */
 	&__information {
 		@extend %font-weight-semibold;
-		
-		p span { @include font( 55, 20 ); }
-		p:first-child { @extend %margin-0; }
-		p:nth-child( 2 ) { 
-			@extend %margin-top-0; 
-			@include font( 16, 20 );
+
+		p span {
+			@include font(55, 20);
+		}
+		p:first-child {
+			@extend %margin-0;
+		}
+		p:nth-child(2) {
+			@extend %margin-top-0;
+			@include font(16, 20);
 		}
 	}
 }

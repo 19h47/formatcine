@@ -5,10 +5,10 @@
  */
 .Logo {
 	@extend .d-inline-block;
-	@include margin( top $grid-gutter-width );
+	@include margin(top $grid-gutter-width);
 
-	@include media-breakpoint-up( md ) {
-		@include margin( top 0 );
+	@include media-breakpoint-up(md) {
+		@include margin(top 0);
 	}
 
 	svg {

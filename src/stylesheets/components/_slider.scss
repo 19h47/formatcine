@@ -2,10 +2,9 @@
  * Slider
  */
 .Slider {
-
 	// height: 225px;
 
-	@include media-breakpoint-up( sm ) {
+	@include media-breakpoint-up(sm) {
 		height: 550px;
 	}
 
@@ -17,24 +16,23 @@
 	.title {
 		@extend %margin-y-0, %font-weight-regular;
 
-		color: the_color( white );
+		color: the_color(white);
 		line-height: normal;
 
-		span:nth-child( 1 ) {
+		span:nth-child(1) {
 			@extend %text-transform-uppercase, .d-block;
-			@include letter-spacing( 400 );
-			@include margin( bottom 20px );
+			@include letter-spacing(400);
+			@include margin(bottom 20px);
 
 			font-size: 24.09px;
 		}
-		span:nth-child( 2 ) {
+		span:nth-child(2) {
 			@extend %font-family-decor, .d-block;
-			@include letter-spacing( 75 );
+			@include letter-spacing(75);
 
 			font-size: 40.15px;
 		}
 	}
-
 
 	/**
 	 * Image
@@ -42,13 +40,8 @@
 	 * .Slider .image
 	 */
 	.image {
-		@extend
-			.d-block,
-			%Pointer-events-none;
-		@include margin(
-			right auto
-			left auto
-		);
+		@extend .d-block, %Pointer-events-none;
+		@include margin(right auto left auto);
 
 		max-width: 100%;
 		max-height: 100%;
@@ -56,37 +49,23 @@
 		object-fit: contain;
 	}
 
-
 	&-images {
 		@extend %Position-absolute-center;
-		@include margin(
-			top 64px
-			bottom 64px
-		);
-		@include padding(
-			right $grid-gutter-width / 2
-			left $grid-gutter-width / 2
-		);
+		@include margin(top 64px bottom 64px);
+		@include padding(right $grid-gutter-width / 2 left $grid-gutter-width / 2);
 
 		.slick-list {
 			height: 100%;
 		}
 	}
 
-
 	/**
 	 * Image moblile
 	 */
 	.image-mobile {
 		@extend .d-md-none;
-		@include margin(
-			top $grid-gutter-width
-			bottom $grid-gutter-width
-		);
-		@include padding(
-			right $grid-gutter-width
-			left $grid-gutter-width
-		);
-		@include size( 100%, auto );
+		@include margin(top $grid-gutter-width bottom $grid-gutter-width);
+		@include padding(right $grid-gutter-width left $grid-gutter-width);
+		@include size(100%, auto);
 	}
 }

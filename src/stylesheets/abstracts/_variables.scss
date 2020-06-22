@@ -2,7 +2,6 @@
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
 
-
 /**
  * Color variation
  *
@@ -15,60 +14,50 @@
  * @author Jérémy Levron <levronjeremy@19h47.fr>
  */
 $color-variations: (
-
 	black: #000000,
-
 	// blanc (fond1)
-	white: #ffffff,
-
+		white: #ffffff,
 	red: (
 		strong: #ff0000,
 	),
-
 	blue: (
 		pure: #0075e3,
-
 		// partie générale (accueil, mentions légales, partenaires) : bleu/violet
-		// violet clair (contour, picto, menu, footer, fond événement)
-		moderate: #6666d5,
-
-		  // violet foncé (baseline logo, fond photo d'accueil, fond événement)
-		very-dark-desaturated: #343471
+			// violet clair (contour, picto, menu, footer, fond événement)
+			moderate: #6666d5,
+		// violet foncé (baseline logo, fond photo d'accueil, fond événement)
+			very-dark-desaturated: #343471,
 	),
 	cyan: (
 		// partie formations : turquoise
-		moderate: #55cdb9,
-		dark: #009696
+			moderate: #55cdb9,
+		dark: #009696,
 	),
 	gray: (
 		// gris clair (infos header, chapeaux)
-		dark: #969696,
-
+			dark: #969696,
 		// noir (titres)
-		very-dark-mostly-black: #1e1e1e,
-
+			very-dark-mostly-black: #1e1e1e,
 		// gris foncé (textes)
-		very-dark: #646464,
-
+			very-dark: #646464,
 		// gris très clair (fond2)
-		very-light: #ebebeb
+			very-light: #ebebeb,
 	),
 	violet: (
 		// partie collège au cinéma : mauve
-		slightly-desaturated: #965fb4
+			slightly-desaturated: #965fb4,
 	),
 	yellow: (
 		// partie ateliers: jaune
-		vivid: #ffc80a
+			vivid: #ffc80a,
 	),
 	magenta: (
-		dark-moderate: #6E3278
+		dark-moderate: #6e3278,
 	),
 	orange: (
-		vivid: #FF960A
-	)
+		vivid: #ff960a,
+	),
 );
-
 
 /**
  * Font
@@ -86,13 +75,21 @@ $font: (
 	 * @uses map-get( $font, $key ) to retrieve font value from map
 	 * @type map
 	 */
-	families: (
-		body: ( 'Akrobat', serif ),
-		title: ( 'Akrobat', sans-serif ),
-		decor: ( 'Perfograma', sans-serif )
-	),
-
-
+		families:
+		(
+			body: (
+				'Akrobat',
+				serif,
+			),
+			title: (
+				'Akrobat',
+				sans-serif,
+			),
+			decor: (
+				'Perfograma',
+				sans-serif,
+			),
+		),
 	/**
 	 * Font weight
 	 *
@@ -102,28 +99,27 @@ $font: (
 	 * @type map
 	 * @author Jérémy Levron <levronjeremy@19h47.fr>
 	 */
-	weights: (
-		extralight: 100,
-		light: 200,
-		book: 300,
-		regular: 400,
-		medium: 500,
-		semibold: 600,
-		bold: 700,
-		extrabold: 800,
-		extrablack: 900
-	)
+		weights:
+		(
+			extralight: 100,
+			light: 200,
+			book: 300,
+			regular: 400,
+			medium: 500,
+			semibold: 600,
+			bold: 700,
+			extrabold: 800,
+			extrablack: 900,
+		)
 );
-
 
 /**
  * Base font size and base line height
  */
 $base-font-size: 16;
-$base-font-size-px: #{ $base-font-size }px;
+$base-font-size-px: #{$base-font-size}px;
 $base-line-height: 20;
-$base-line-height-px: #{ $base-line-height }px;
-
+$base-line-height-px: #{$base-line-height}px;
 
 /**
  * Prototype width
@@ -132,7 +128,6 @@ $base-line-height-px: #{ $base-line-height }px;
  */
 $psd-width-unitless: 1440;
 $psd-width: $psd-width-unitless * 1px;
-
 
 /**
  * Directories
@@ -152,7 +147,6 @@ $directories: (
 	gif: '~gif/',
 );
 
-
 /**
  * State classes
  *
@@ -170,7 +164,6 @@ $state-classes: (
 	single-menu-open: single-menu--is-open,
 	bottom: is-bottom,
 );
-
 
 /**
  * Spacers

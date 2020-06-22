@@ -6,10 +6,8 @@
 .Movie {
 	@extend %Transition-ease;
 
-	@at-root
-		.slick-active &,
+	@at-root .slick-active &,
 		.slick-center & {
-
 		outline: {
 			style: solid;
 			width: $grid-gutter-width / 2;
@@ -23,13 +21,10 @@
 	 */
 	&__content {
 		@include padding(
-			top $grid-gutter-width / 2
-			right $grid-gutter-width / 2
-			bottom $grid-gutter-width / 2
-			left $grid-gutter-width / 2
+			top $grid-gutter-width / 2 right $grid-gutter-width / 2 bottom $grid-gutter-width / 2
+				left $grid-gutter-width / 2
 		);
 	}
-
 
 	/**
 	 * Quarter
@@ -37,23 +32,23 @@
 	 * @uses .Movie__quarter
 	 */
 	&__quarter {
-		@extend %font-weight-extrabold, %text-transform-uppercase, %margin-bottom-0, %Transition-ease;
-		@include absolute( top 0 left 0 );
-		@include autoAlpha( 0 );
-		@include font( 18.14, 40, 50 );
-		@include margin(
-			top $grid-gutter-width / -2
-			left $grid-gutter-width / -2
-		);
-		@include padding( right $grid-gutter-width / 2 left $grid-gutter-width / 2 );
+		@extend %font-weight-extrabold,
+			%text-transform-uppercase,
+			%margin-bottom-0,
+			%Transition-ease;
+		@include absolute(top 0 left 0);
+		@include autoAlpha(0);
+		@include font(18.14, 40, 50);
+		@include margin(top $grid-gutter-width / -2 left $grid-gutter-width / -2);
+		@include padding(right $grid-gutter-width / 2 left $grid-gutter-width / 2);
 
-		color: the_color( white );
+		color: the_color(white);
 
-		@at-root
-				.slick-active &,
-				.slick-center & { @include autoAlpha( 1 ); }
+		@at-root .slick-active &,
+			.slick-center & {
+			@include autoAlpha(1);
+		}
 	}
-
 
 	/**
 	 * Thumbnail
@@ -64,16 +59,17 @@
 		@extend %position-relative;
 
 		height: 250px;
-		background: { color: the_color( gray, dark); }
+		background: {
+			color: the_color(gray, dark);
+		}
 
 		img {
 			@extend .d-inline-block, %vertical-align-middle;
-			@include size( 100% );
+			@include size(100%);
 
 			object-fit: cover;
 		}
 	}
-
 
 	/**
 	 * Title
@@ -82,9 +78,8 @@
 	 */
 	&__title {
 		@extend %font-weight-extrabold, %margin-y-0;
-		@include font( 25, 30 );
+		@include font(25, 30);
 	}
-
 
 	/**
 	 * Directors
@@ -93,9 +88,8 @@
 	 */
 	&__directors {
 		@extend %font-weight-semibold, %margin-y-0;
-		@include font( 20, 24 );
+		@include font(20, 24);
 	}
-
 
 	/**
 	 * Meta
@@ -104,12 +98,11 @@
 	 */
 	&__meta {
 		@extend %text-transform-uppercase, %font-weight-extrabold;
-		@include font( 15.99, 21.52, 100 );
-		@include margin( top $grid-gutter-width / 1.5 bottom $grid-gutter-width );
+		@include font(15.99, 21.52, 100);
+		@include margin(top $grid-gutter-width / 1.5 bottom $grid-gutter-width);
 
-		color: the_color( gray, very-dark-mostly-black );
+		color: the_color(gray, very-dark-mostly-black);
 	}
-
 
 	/**
 	 * Summary
@@ -117,12 +110,11 @@
 	 * @uses .Movie__summary
 	 */
 	&__summary {
-		@include font( 16.01, 20.01 );
-		@include margin( top $grid-gutter-width );
+		@include font(16.01, 20.01);
+		@include margin(top $grid-gutter-width);
 
-		color: the_color( gray, very-dark );
+		color: the_color(gray, very-dark);
 	}
-
 
 	/**
 	 * Review
@@ -131,9 +123,8 @@
 	 */
 	&__review {
 		@extend %font-weight-extrabold;
-		@include font( 16.01, 20.01 );
+		@include font(16.01, 20.01);
 	}
-
 
 	/**
 	 * Document
@@ -141,11 +132,15 @@
 	 * @uses .Movie__document
 	 */
 	&__document {
-		@extend .d-block, .d-md-inline-block, %font-weight-semibold, %Transition-ease, %text-align-center;
+		@extend .d-block,
+			.d-md-inline-block,
+			%font-weight-semibold,
+			%Transition-ease,
+			%text-align-center;
 		// @include autoAlpha( 0 );
-		@include font( 13.74, 29.45, 25 );
-		@include margin( top 10px bottom 10px );
-		@include padding( right 5px left 5px );
+		@include font(13.74, 29.45, 25);
+		@include margin(top 10px bottom 10px);
+		@include padding(right 5px left 5px);
 
 		border: {
 			style: solid;
@@ -153,16 +148,18 @@
 		}
 		width: 100%;
 
-		@include media-breakpoint-up( md ) {
+		@include media-breakpoint-up(md) {
 			width: auto;
 
-			@include margin( top 0 right 10px );
+			@include margin(top 0 right 10px);
 
-			&:last-child { @include margin( right 0 ); }
+			&:last-child {
+				@include margin(right 0);
+			}
 		}
 
 		&:hover {
-			color: the_color( white );
+			color: the_color(white);
 		}
 
 		// @at-root
@@ -170,14 +167,12 @@
 		// 	.slick-center & { @include autoAlpha( 1 ); }
 	}
 
-
 	/**
 	 * Documents
 	 *
 	 * @uses .Movie__documents
 	 */
-	&__documents {}
-
+	// &__documents {}
 
 	/**
 	 * Trailer
@@ -190,15 +185,15 @@
 
 		font-size: 13.95px;
 		line-height: normal;
-		color: the_color( gray, dark );
+		color: the_color(gray, dark);
 
 		&::before {
 			@extend .d-inline-block;
-			@include margin( right 5px );
-			@include size( 15px, 10px );
+			@include margin(right 5px);
+			@include size(15px, 10px);
 
 			background: {
-				image: url( '#{ map-get( $directories, svg ) }youtube.svg' );
+				image: url('#{ map-get( $directories, svg ) }youtube.svg');
 			}
 			content: '';
 		}

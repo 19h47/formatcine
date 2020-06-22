@@ -14,11 +14,11 @@ $context['school_trainings'] = Timber::get_posts(
 	array(
 		'post_type'     => 'school_training',
 		'post_status'   => 'publish',
-		'meta_key'      => 'formation_date',
+		'meta_key'      => 'formation_date', // phpcs:ignore
 		'orderby'       => 'meta_value',
 		'order'         => 'ASC',
 		'post_per_page' => 6,
-		'tax_query'     => array(
+		'tax_query'     => array( // phpcs:ignore
 			array(
 				'taxonomy' => 'season',
 				'field'    => 'term_id',
@@ -66,7 +66,7 @@ $context['programmings'] = Timber::get_posts(
 	array(
 		'post_type'   => 'programming',
 		'post_status' => 'publish',
-		'meta_query'  => array(
+		'meta_query'  => array(  // phpcs:ignore
 			'relation'            => 'AND',
 			'quarter_clause'      => array(
 				'key' => 'quarter',
@@ -79,7 +79,7 @@ $context['programmings'] = Timber::get_posts(
 			'school_class_clause' => 'ASC',
 			'quarter_clause'      => 'ASC',
 		),
-		'tax_query'   => array(
+		'tax_query'   => array(  // phpcs:ignore
 			array(
 				'taxonomy' => 'season',
 				'field'    => 'term_id',

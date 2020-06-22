@@ -5,15 +5,8 @@
  */
 .Reports {
 	@extend %text-align-center;
-	@include margin( 
-		top $grid-gutter-width * 2 
-		// bottom 70px
-	);
-	@include padding( 
-		right $grid-gutter-width
-		left $grid-gutter-width
-		bottom 50px 
-	);
+	@include margin(top $grid-gutter-width * 2);
+	@include padding(right $grid-gutter-width left $grid-gutter-width bottom 50px);
 
 	/**
 	 * Title
@@ -22,12 +15,12 @@
 	 */
 	&__title {
 		@extend %text-transform-uppercase, %font-weight-extrabold, %text-align-center;
-		@include font( 18, 30, 50 );
-		@include margin( top $grid-gutter-width / -2 );
+		@include font(18, 30, 50);
+		@include margin(top $grid-gutter-width / -2);
 
-		color: the_color( gray, very-dark-mostly-black );
+		color: the_color(gray, very-dark-mostly-black);
 	}
-	
+
 	/**
 	 * Subheading
 	 *
@@ -39,33 +32,34 @@
 		line-height: normal;
 	}
 
-	
 	/**
 	 * Content
 	 *
 	 * @uses Reports__content
 	 */
 	&__content {
-		@include margin( top 2em bottom 2em );
-		@include font( 16, 20 );
+		@include margin(top 2em bottom 2em);
+		@include font(16, 20);
 
-		color: the_color( gray, very-dark-mostly-black );
+		color: the_color(gray, very-dark-mostly-black);
 	}
 
-	
 	/**
 	 * Label
 	 *
 	 * @uses .Reports__label
 	 */
 	&__label {
-		@extend %font-weight-extrabold, %text-transform-uppercase, .d-inline-block, %Transition-ease;
-		@include margin( right auto left auto );
-		@include padding( top 2px right 9px bottom 2px left 9px );
-		@include font( 18, 30, 50 );
-		
-		color: the_color( white );
-		border: { 
+		@extend %font-weight-extrabold,
+			%text-transform-uppercase,
+			.d-inline-block,
+			%Transition-ease;
+		@include margin(right auto left auto);
+		@include padding(top 2px right 9px bottom 2px left 9px);
+		@include font(18, 30, 50);
+
+		color: the_color(white);
+		border: {
 			color: transparent;
 			style: solid;
 			width: 3px;
@@ -73,7 +67,9 @@
 
 		&:hover {
 			// color: the_color( gray, very-dark-mostly-black );
-			background: { color: transparent; }
+			background: {
+				color: transparent;
+			}
 			// border: { color: the_color( gray, very-dark-mostly-black ); }
 		}
 	}
