@@ -67,9 +67,9 @@
 				<div class="col-12 col-md-4">
 					<h2 class="margin-y-0">
 						<span class="Site-title-underline">
-							{{- __( 'Les\njournées de\nformation\n' ) | nl2br -}}
+							{{- __( 'Les\njournées de\nformation\n', 'formatcine' ) | nl2br -}}
 						</span>
-						<span class="Site-title-underline color-gray-dark">{{ season.name }}</span>
+						<span class="Site-title-underline color-gray-dark">{{- season.name -}}</span>
 					</h2>
 				</div>
 			</div>
@@ -85,7 +85,7 @@
 								class="color-secondary is-active js-school-trainings-button"
 								data-season="{{ season.term_id }}"
 							>
-								{{- __( 'Toutes' ) -}}</button>
+								{{- __( 'Toutes', 'formatcine' ) -}}</button>
 						</li>
 
 						{% for school_class in school_classes %}
@@ -110,7 +110,7 @@
 				<div class="col-12 col-md-4 d-none d-md-block">
 					<h2 class="margin-y-0">
 						<span class="Site-title-underline">
-							{{- __( 'Les\njournées de\nformation\n' ) | nl2br -}}
+							{{- __( 'Les\njournées de\nformation\n', 'formatcine' ) | nl2br -}}
 						</span>
 						<span class="Site-title-underline color-gray-dark">{{- season.name -}}</span>
 					</h2>

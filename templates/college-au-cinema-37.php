@@ -33,7 +33,8 @@ $school_classes = get_terms(
 	array(
 		'taxonomy'   => 'school_class',
 		'hide_empty' => false,
-		'orderby'    => 'menu_order',
+		'meta_key'   => 'term_order', // phpcs:ignore
+		'orderby'    => 'meta_value',
 	)
 );
 
@@ -54,7 +55,7 @@ foreach ( $school_classes as $school_class ) {
 		array_push( $context['school_classes']['sixieme-cinquieme']['term_ids'], $school_class->term_id );
 		array_push( $context['school_classes']['sixieme-cinquieme']['names'], $school_class->name );
 	}
-
+	
 	if ( 'quatrieme' === $school_class->slug || 'troisieme' === $school_class->slug ) {
 		array_push( $context['school_classes']['quatrieme-troisieme']['term_ids'], $school_class->term_id );
 		array_push( $context['school_classes']['quatrieme-troisieme']['names'], $school_class->name );

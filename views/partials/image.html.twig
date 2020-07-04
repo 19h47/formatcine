@@ -8,9 +8,9 @@
  #
  #}
 {% if image %}
-	<picture>
-		<source srcset="{{ Image( image ).src | towebp }}" type="image/webp">
-		<source srcset="{{ Image( image ).src }}" type="{{ Image( image ).sizes.medium['mime-type'] }}">
+	{# <picture> #}
+		{# <source srcset="{{ Image( image ).src | towebp }}" type="image/webp"> #}
+		{# <source srcset="{{ Image( image ).src }}" type="{{ Image( image ).sizes.medium['mime-type'] }}"> #}
 		<img
 		 	class="{{ classes ? classes | join( ' ' ) }}"
 			loading="{{ loading | default( 'lazy' ) }}"
@@ -20,5 +20,5 @@
 			height="{{ Image( image ).height }}"
 			{{ attributes ? attributes | map( ( value, key ) => "#{key}=\"#{value}\"" ) | join( ' ' )  | raw }}
 		>
-	</picture>
+	{# </picture> #}
 {% endif %}
