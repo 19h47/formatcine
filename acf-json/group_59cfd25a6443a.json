@@ -1,0 +1,123 @@
+{
+    "key": "group_59cfd25a6443a",
+    "title": "Informations sur la formation scolaire",
+    "fields": [
+        {
+            "key": "field_59cfd262f9600",
+            "label": "Date",
+            "name": "formation_date",
+            "type": "date_picker",
+            "instructions": "Indiquer la date de la formation",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "l j F Y",
+            "return_format": "l j F Y",
+            "first_day": 1
+        },
+        {
+            "key": "field_59cfd2addec40",
+            "label": "Film",
+            "name": "movies",
+            "type": "post_object",
+            "instructions": "Choisir le ou les films de la formation",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "movie"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "object",
+            "ui": 1
+        },
+        {
+            "key": "field_59cfd572f9a51",
+            "label": "Saison",
+            "name": "season",
+            "type": "taxonomy",
+            "instructions": "Indiquer la saison de la formation",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "season",
+            "field_type": "select",
+            "allow_null": 0,
+            "add_term": 1,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "object",
+            "multiple": 0
+        },
+        {
+            "key": "field_59cfe0fc8a984",
+            "label": "Classe scolaire",
+            "name": "classes",
+            "type": "taxonomy",
+            "instructions": "Ajouter le ou les classes concernées par la formation",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "school_class",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "add_term": 1,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "object",
+            "multiple": 0
+        },
+        {
+            "key": "field_59cfd3b135edb",
+            "label": "Programme",
+            "name": "program",
+            "type": "url",
+            "instructions": "Lien vers le programme de la formation",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "0",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "Lien du programme"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "school_training"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1593769861
+}
