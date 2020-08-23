@@ -26,13 +26,13 @@ Tease: School training
 				{% set movies = [] %}
 				{% set directors = [] %}
 
-				{% for movie in school_training.get_field( 'movies' ) %}
+				{% for movie in school_training.meta( 'movies' ) %}
 
 					{% set movies = movies | merge( [ movie.title ] ) %}
 
-					{% for director in movie.get_field('director') %}
+					{% for director in movie.meta('director') %}
 						{% if loop.last and not loop.first %}
-							{% set directors = directors | merge( [ 'et ' ~ director.name ] ) %}
+							{% set directors = directors | merge( [ __( 'and', 'formatcine' ) ~ ' ' ~ director.name ] ) %}
 						{% else %}
 							{% set directors = directors | merge( [ director.name ] ) %}
 						{% endif %}
@@ -43,16 +43,18 @@ Tease: School training
 				{{ movies ? '<h3 class="Tease-school-training__title">' ~ movies | join( ', ' ) ~ '</h3>' : '' }}
 				{{ directors ? '<p class="Tease-school-training__director">De&nbsp;' ~ directors | join(', ') ~ '</p>' : '' }}
 
-				<a
-					href="{{ school_training.program }}"
-					class="Tease-school-training__read-more color-secondary background-color-secondary-hover border-color-secondary-hover"
-					target="_blank"
-				>
-					{{- __( 'Programming', 'frmtcn' ) -}}
-					<svg class="Tease-school-training__read-more__icon">
-						<use xlink:href="{{ theme.link }}/dist/icons.svg#arrow"></use>
-					</svg>
-				</a>
+				{% if school_training.program %}
+					<a
+						href="{{ school_training.program }}"
+						class="Tease-school-training__read-more color-secondary background-color-secondary-hover border-color-secondary-hover"
+						target="_blank"
+					>
+						{{- __( 'Programming', 'formatcine' ) -}}
+						<svg class="Tease-school-training__read-more__icon">
+							<use xlink:href="{{ theme.link }}/dist/icons.svg#arrow"></use>
+						</svg>
+					</a>
+				{% endif %}
 			</article>
 		</div>
 
@@ -60,7 +62,7 @@ Tease: School training
 
 	{% else %}
 		<div class="col-12">
-			<p>{{- __( 'Aucune Journée de formation à afficher' ) -}}</p>
+			<p>{{- __( 'No training days to display', 'formatcine' ) -}}</p>
 		</div>
 	{% endfor %}
 </div>

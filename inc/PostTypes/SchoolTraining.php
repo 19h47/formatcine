@@ -52,34 +52,34 @@ class SchoolTraining {
 	 */
 	public function register_post_type() {
 		$labels = array(
-			'name'                     => _x( 'Schools training', 'school training general', 'frmtcn' ),
-			'singular_name'            => _x( 'School training', 'school training singular', 'frmtcn' ),
-			'add_new'                  => __( 'Add New', 'frmtcn' ),
-			'add_new_item'             => __( 'Add New School training', 'frmtcn' ),
-			'edit_item'                => __( 'Edit School training', 'frmtcn' ),
-			'new_item'                 => __( 'New School training', 'frmtcn' ),
-			'view_item'                => __( 'View School training', 'frmtcn' ),
-			'view_items'               => __( 'View schools training', 'frmtcn' ),
-			'search_items'             => __( 'Search School training', 'frmtcn' ),
-			'not_found'                => __( 'No school training found.', 'frmtcn' ),
-			'not_found_in_trash'       => __( 'No school training found in Trash.', 'frmtcn' ),
-			'parent_item_colon'        => __( 'Parent School training:', 'frmtcn' ),
-			'all_items'                => __( 'All schools training', 'frmtcn' ),
-			'archives'                 => __( 'School training Archives', 'frmtcn' ),
-			'attributes'               => __( 'School training Attributes', 'frmtcn' ),
-			'featured_image'           => _x( 'Featured Image', 'school training', 'frmtcn' ),
-			'set_featured_image'       => _x( 'Set featured image', 'school training', 'frmtcn' ),
-			'remove_featured_image'    => _x( 'Remove featured image', 'school training', 'frmtcn' ),
-			'use_featured_image'       => _x( 'Use as featured image', 'school training', 'frmtcn' ),
-			'insert_into_item'         => __( 'Insert into school training', 'frmtcn' ),
-			'uploaded_to_this_item'    => __( 'Uploaded to this school training', 'frmtcn' ),
-			'items_list'               => __( 'Schools training list', 'frmtcn' ),
-			'items_list_navigation'    => __( 'Schools training list navigation', 'frmtcn' ),
-			'item_published'           => __( 'School training published.', 'frmtcn' ),
-			'item_published_privately' => __( 'School training published privately.', 'frmtcn' ),
-			'item_reverted_to_draft'   => __( 'School training reverted to draft.', 'frmtcn' ),
-			'item_scheduled'           => __( 'School training scheduled.', 'frmtcn' ),
-			'item_updated'             => __( 'School training updated.', 'frmtcn' ),
+			'name'                     => _x( 'Schools training', 'school training general', 'formatcine' ),
+			'singular_name'            => _x( 'School training', 'school training singular', 'formatcine' ),
+			'add_new'                  => __( 'Add New', 'formatcine' ),
+			'add_new_item'             => __( 'Add New School training', 'formatcine' ),
+			'edit_item'                => __( 'Edit School training', 'formatcine' ),
+			'new_item'                 => __( 'New School training', 'formatcine' ),
+			'view_item'                => __( 'View School training', 'formatcine' ),
+			'view_items'               => __( 'View schools training', 'formatcine' ),
+			'search_items'             => __( 'Search School training', 'formatcine' ),
+			'not_found'                => __( 'No school training found.', 'formatcine' ),
+			'not_found_in_trash'       => __( 'No school training found in Trash.', 'formatcine' ),
+			'parent_item_colon'        => __( 'Parent School training:', 'formatcine' ),
+			'all_items'                => __( 'All schools training', 'formatcine' ),
+			'archives'                 => __( 'School training Archives', 'formatcine' ),
+			'attributes'               => __( 'School training Attributes', 'formatcine' ),
+			'featured_image'           => _x( 'Featured Image', 'school training', 'formatcine' ),
+			'set_featured_image'       => _x( 'Set featured image', 'school training', 'formatcine' ),
+			'remove_featured_image'    => _x( 'Remove featured image', 'school training', 'formatcine' ),
+			'use_featured_image'       => _x( 'Use as featured image', 'school training', 'formatcine' ),
+			'insert_into_item'         => __( 'Insert into school training', 'formatcine' ),
+			'uploaded_to_this_item'    => __( 'Uploaded to this school training', 'formatcine' ),
+			'items_list'               => __( 'Schools training list', 'formatcine' ),
+			'items_list_navigation'    => __( 'Schools training list navigation', 'formatcine' ),
+			'item_published'           => __( 'School training published.', 'formatcine' ),
+			'item_published_privately' => __( 'School training published privately.', 'formatcine' ),
+			'item_reverted_to_draft'   => __( 'School training reverted to draft.', 'formatcine' ),
+			'item_scheduled'           => __( 'School training scheduled.', 'formatcine' ),
+			'item_updated'             => __( 'School training updated.', 'formatcine' ),
 		);
 
 		$rewrite = array(
@@ -174,7 +174,7 @@ class SchoolTraining {
 			if ( 'title' === $key ) {
 				$new_columns['taxonomy-season']       = $taxonomy_seasons;
 				$new_columns['taxonomy-school_class'] = $taxonomy_school_class;
-				$new_columns['movies']                = __( 'Movies', 'frmtcn' );
+				$new_columns['movies']                = __( 'Movies', 'formatcine' );
 			}
 			$new_columns[ $key ] = $value;
 		}
@@ -245,7 +245,7 @@ class SchoolTraining {
 		$post_data = filter_input_array( INPUT_POST, FILTER_SANITIZE_STRING );
 
 		// Grab some field value to serve as the post_title.
-		$title = __( 'Training', 'frmtcn' );
+		$title = __( 'Training', 'formatcine' );
 
 		/**
 		 * Record the manually created post title to $data['post_title'] so
@@ -342,7 +342,7 @@ class SchoolTraining {
 		}
 
 		$context                     = Timber::get_context();
-		$context['school_trainings'] = Timber::get_posts( $args );
+		$context['school_trainings'] = Timber::get_posts( $args, 'Formatcine\Models\SchoolTrainingPost' );
 
 		Timber::render( 'partials/tease-school-training.html.twig', $context );
 

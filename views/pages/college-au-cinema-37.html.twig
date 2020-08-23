@@ -21,7 +21,7 @@
 		{% include 'components/post-content.html.twig' %}
 	{% endif %}
 
-	{% include 'partials/programming.html.twig' %}
+	{% include 'partials/programming.html.twig' with { programmings: post.programmings } %}
 
 	{# Educational support #}
 	<section class="Educational-support">
@@ -67,7 +67,7 @@
 				<div class="col-12 col-md-4">
 					<h2 class="margin-y-0">
 						<span class="Site-title-underline">
-							{{- __( 'Les\njournées de\nformation\n', 'formatcine' ) | nl2br -}}
+							{{- __( 'Training\ndays\n', 'formatcine' ) | nl2br -}}
 						</span>
 						<span class="Site-title-underline color-gray-dark">{{- season.name -}}</span>
 					</h2>
@@ -85,11 +85,10 @@
 								class="color-secondary is-active js-school-trainings-button"
 								data-season="{{ season.term_id }}"
 							>
-								{{- __( 'Toutes', 'formatcine' ) -}}</button>
+								{{- __( 'All', 'formatcine' ) -}}</button>
 						</li>
 
 						{% for school_class in school_classes %}
-
 							<li class="item">
 								<button
 									type="button"
@@ -100,7 +99,6 @@
 									{{- school_class.names | join( ' | ' ) -}}
 								</button>
 							</li>
-
 						{% endfor %}
 					</ul>
 				</div>
@@ -110,12 +108,12 @@
 				<div class="col-12 col-md-4 d-none d-md-block">
 					<h2 class="margin-y-0">
 						<span class="Site-title-underline">
-							{{- __( 'Les\njournées de\nformation\n', 'formatcine' ) | nl2br -}}
+							{{- __( 'Training\ndays\n', 'formatcine' ) | nl2br -}}
 						</span>
 						<span class="Site-title-underline color-gray-dark">{{- season.name -}}</span>
 					</h2>
 					<p class="description font-semibold">
-						{{- post.get_field( 'school-trainings_description' ) -}}
+						{{- post.meta( 'school-trainings_description' ) -}}
 					</p>
 				</div>
 
@@ -126,7 +124,7 @@
 		</div>
 
 
-		{%- include 'partials/reports.html.twig' with { report: post.get_field( 'report' ) } only -%}
+		{%- include 'partials/reports.html.twig' with { report: post.meta( 'report' ) } only -%}
 	</section>
 
 {% endblock %}

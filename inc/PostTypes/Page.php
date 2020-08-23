@@ -84,7 +84,7 @@ class Page {
 
 		foreach ( $columns as $key => $value ) {
 			if ( 'author' === $key ) {
-				$new_columns['page_color'] = __( 'Colors', 'frmtcn' );
+				$new_columns['page_color'] = __( 'Colors', 'formatcine' );
 			}
 			$new_columns[ $key ] = $value;
 		}

@@ -28,9 +28,9 @@ Tease: Event
 						class="Tease-event__read-more background-color-main-hover border-color-main-hover"
 						href="{{ post.event_read_more }}"
 						target="_blank"
-						rel="noopener"
+						rel="noopener noreferer"
 					>
-						{{- __( 'Learn more', 'frmtcn' ) -}}
+						{{- __( 'Learn more', 'formatcine' ) -}}
 						{% include 'svg/use.html.twig' with { classes: [ 'Tease-event__read-more__icon' ], icon: 'arrow' } %}
 					</a>
 				{% endif %}
@@ -39,7 +39,7 @@ Tease: Event
 		</div>
 	{% else %}
 		<div class="col-12">
-			<p>{{- __( 'There are no events to display', 'frmtcn' ) -}}</p>
+			<p>{{- __( 'There are no events to display', 'formatcine' ) -}}</p>
 		</div>
 	{% endfor %}
 </div>

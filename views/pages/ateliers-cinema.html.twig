@@ -19,12 +19,10 @@
 
 				<div class="col-12 col-md-4">
 
-					<a class="Workshops-link" target="_blank" href="{{ workshop.document.url }}" title="{{ workshop.document.title }}">
+					<a class="Workshops-link" target="_blank" rel="noopener noreferer" href="{{ workshop.document.url }}" title="{{ workshop.document.title }}">
 
 						<div>
-							<svg class="">
-								  <use xlink:href="{{ theme.link }}/dist/icons.svg#{{ workshop.icon }}"></use>
-							</svg>
+							<svg><use xlink:href="{{ theme.link }}/dist/icons.svg#{{ workshop.icon }}"></use></svg>
 						</div>
 
 						<p class="Workshops-link__label">{{- workshop.name -}}</p>

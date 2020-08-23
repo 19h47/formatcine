@@ -60,12 +60,15 @@
 					{% include 'components/socials.twig' with { prefix: 'header' } %}
 
 					<p class="Site-header-contact__address">
-						<a href="{{ 'https://www.google.com/maps/search/?api=1&query=' ~ contact.address -}}" target="_blank" rel="noopener">
+						<a href="{{ 'https://www.google.com/maps/search/?api=1&query=' ~ contact.address -}}" target="_blank" rel="noreferer noopener">
 							{{- contact.address | nl2br -}}
 						</a>
 					</p>
 					<p class="Site-header-contact__phone">
-						<a href="{{ 'tel:' ~ contact.phone }}" target="_phone">{{- contact.phone -}}</a></p>
+						<a href="{{ 'tel:' ~ contact.phone }}" target="_phone" rel="noreferer noopener">
+							{{- contact.phone -}}
+						</a>
+					</p>
 				</div>
 
 			</header>

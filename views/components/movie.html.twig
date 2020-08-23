@@ -22,7 +22,7 @@ views/components/movie
 		<meta itemprop="image" content="{{ Image( movie.thumbnail ).src }}">
 
 		<p class="Movie__quarter background-color-secondary">
-			{{- programming.get_field( 'quarter' ).label -}}
+			{{- programming.meta( 'quarter' ).label -}}
 		</p>
 
 		{% include 'partials/image.html.twig' with { image: movie.thumbnail } %}
@@ -33,54 +33,54 @@ views/components/movie
 		<h3 class="Movie__title color-secondary" itemprop="name">{{- movie.title -}}</h3>
 
 		{# Directors #}
-		{% if directors %}
+		{% if movie.directors %}
 			<p class="Movie__directors" itemprop="director" itemscope itemtype="http://schema.org/Person">
-				{{ directors | map( director => "<meta itemprop=\"name\" content=\"#{ director }\">" ) | join() }}
-				De&nbsp;{{ directors | join( ', ' ) }}
+				{{- movie.directors | map( director => "<meta itemprop=\"name\" content=\"#{ director }\">" ) | join() -}}
+
+				{{- __( 'By', 'formatcine' ) }}
+				{% for director in movie.directors %}
+					{% if loop.last and not loop.first %}
+						{{- __( 'and', 'formatcine' ) }}&nbsp;{{ director }}
+					{% elseif movie.directors | length > 2 %}
+					 	{{- director }},&nbsp;
+					{% else %}
+						{{ director }}
+					{% endif %}
+				{% endfor %}
 			</p>
 		{% endif %}
 
 
-		<div class="Movie__meta">
-			<meta itemprop="dateCreated" content="{{ movie.release_year }}"> 
-			<meta itemprop="countryOfOrigin" content="{{ countries | join('-') }}">
-			<meta itemprop="duration" content="{{ movie.get_field( 'running_time' ) }}">
-
-			{% set meta = [] %}
-			{% set meta = meta | merge( [ countries ? countries | join('-') ] ) %}
-			{% set meta = meta | merge( [ movie.release_year ] ) %}
-			{% set meta = meta | merge( [ movie.get_field( 'running_time' ) ] ) %}
-
-			{% if movie.version %}
-				{% set meta = meta | merge( [  movie.version | join( '-' ) ] ) %}
-			{% endif %}
-
-			{{- meta | join( '&nbsp;|&nbsp;' ) -}}
+		<div class="Movie__facts">
+			<meta itemprop="dateCreated" content="{{ movie.release_year }}">
+			<meta itemprop="countryOfOrigin" content="{{ movie.countries | join( '-' ) }}">
+			<meta itemprop="duration" content="{{ movie.running_time }}">
+			{{- movie.facts -}}
 		</div>
 
 		{# Trailer #}
-		{% if movie.get_field( 'trailer' ) %}
+		{% if movie.meta( 'trailer' ) %}
 			<a
 				class="Movie__trailer"
-				href="{{ movie.get_field( 'trailer' ) }}"
+				href="{{ movie.meta( 'trailer' ) }}"
 				target="_blank"
 				itemprop="trailer" itemscope itemtype="http://schema.org/VideoObject"
 			>
-				<meta itemprop="embedUrl" content="{{ movie.get_field( 'summary' ) }}">
-				<meta itemprop="description" content="{{ movie.get_field( 'trailer' ) }}">
+				<meta itemprop="embedUrl" content="{{ movie.meta( 'summary' ) }}">
+				<meta itemprop="description" content="{{ movie.meta( 'trailer' ) }}">
 				<meta itemprop="name" content="{{ movie.title }}">
 				<meta itemprop="thumbnailUrl" content="{{ Image( movie.thumbnail ).src }}">
 				<meta itemprop="uploadDate" content="{{ movie.post_date }}">
-				{{-__( 'Visionner la bande annonce', 'frmtcn' ) -}}
+				{{-__( 'Watch the trailer', 'formatcine' ) -}}
 			</a>
 		{% endif %}
 
-		<p class="Movie__summary" itemprop="abstract">{{- movie.get_field( 'summary' ) -}}</p>
-		<p class="Movie__review color-main" itemprop="about">{{- movie.get_field( 'review' ) -}}</p>
+		<p class="Movie__summary" itemprop="abstract">{{- movie.meta( 'summary' ) -}}</p>
+		<p class="Movie__review color-main" itemprop="about">{{- movie.meta( 'review' ) -}}</p>
 
-		{% if movie.get_field( 'documents' ) %}
+		{% if movie.meta( 'documents' ) %}
 			<div class="Movie__documents">
-				{{- movie.get_field( 'documents' ) | map( d => _self.document( d.link, d.label ) ) | join -}}
+				{{- movie.meta( 'documents' ) | map( d => _self.document( d.link, d.label ) ) | join -}}
 			</div>
 		{% endif %}
 	</div>

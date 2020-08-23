@@ -5,10 +5,12 @@
  * @package Formatcine
  */
 
+use Formatcine\Models\{ CollegeInCinemaPost };
+
 $season = get_field( 'season', $post );
 
 $context                     = Timber::get_context();
-$context['post']             = new TimberPost();
+$context['post']             = new CollegeInCinemaPost();
 $context['season']           = $season;
 $context['school_trainings'] = Timber::get_posts(
 	array(
@@ -55,40 +57,12 @@ foreach ( $school_classes as $school_class ) {
 		array_push( $context['school_classes']['sixieme-cinquieme']['term_ids'], $school_class->term_id );
 		array_push( $context['school_classes']['sixieme-cinquieme']['names'], $school_class->name );
 	}
-	
+
 	if ( 'quatrieme' === $school_class->slug || 'troisieme' === $school_class->slug ) {
 		array_push( $context['school_classes']['quatrieme-troisieme']['term_ids'], $school_class->term_id );
 		array_push( $context['school_classes']['quatrieme-troisieme']['names'], $school_class->name );
 	}
 }
-
-// Programming.
-$context['programmings'] = Timber::get_posts(
-	array(
-		'post_type'   => 'programming',
-		'post_status' => 'publish',
-		'meta_query'  => array(  // phpcs:ignore
-			'relation'            => 'AND',
-			'quarter_clause'      => array(
-				'key' => 'quarter',
-			),
-			'school_class_clause' => array(
-				'key' => 'school_class',
-			),
-		),
-		'orderby'     => array(
-			'school_class_clause' => 'ASC',
-			'quarter_clause'      => 'ASC',
-		),
-		'tax_query'   => array(  // phpcs:ignore
-			array(
-				'taxonomy' => 'season',
-				'field'    => 'term_id',
-				'terms'    => $season ? $season->term_id : null,
-			),
-		),
-	)
-);
 
 
 $templates = array( 'pages/college-au-cinema-37.html.twig' );

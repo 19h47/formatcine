@@ -63,34 +63,34 @@ class Movie {
 	 */
 	public function register_post_type() {
 		$labels = array(
-			'name'                     => _x( 'Movies', 'movie type general', 'frmtcn' ),
-			'singular_name'            => _x( 'Movie', 'movie type singular', 'frmtcn' ),
-			'add_new'                  => __( 'Add New', 'frmtcn' ),
-			'add_new_item'             => __( 'Add New Movie', 'frmtcn' ),
-			'edit_item'                => __( 'Edit Movie', 'frmtcn' ),
-			'new_item'                 => __( 'New Movie', 'frmtcn' ),
-			'view_item'                => __( 'View Movie', 'frmtcn' ),
-			'view_items'               => __( 'View Movies', 'frmtcn' ),
-			'search_items'             => __( 'Search Movies', 'frmtcn' ),
-			'not_found'                => __( 'No movie found.', 'frmtcn' ),
-			'not_found_in_trash'       => __( 'No movie found in Trash.', 'frmtcn' ),
-			'parent_item_colon'        => __( 'Parent Movie:', 'frmtcn' ),
-			'all_items'                => __( 'All movies', 'frmtcn' ),
-			'archives'                 => __( 'Movie Archives', 'frmtcn' ),
-			'attributes'               => __( 'Movie Attributes', 'frmtcn' ),
-			'insert_into_item'         => __( 'Insert into movie', 'frmtcn' ),
-			'uploaded_to_this_item'    => __( 'Uploaded to this movie', 'frmtcn' ),
-			'featured_image'           => _x( 'Featured Image', 'movie', 'frmtcn' ),
-			'set_featured_image'       => _x( 'Set featured image', 'movie', 'frmtcn' ),
-			'remove_featured_image'    => _x( 'Remove featured image', 'movie', 'frmtcn' ),
-			'use_featured_image'       => _x( 'Use as featured image', 'movie', 'frmtcn' ),
-			'items_list_navigation'    => __( 'Movie list navigation', 'frmtcn' ),
-			'items_list'               => __( 'Movie list', 'frmtcn' ),
-			'item_published'           => __( 'Movie published.', 'frmtcn' ),
-			'item_published_privately' => __( 'Movie published privately.', 'frmtcn' ),
-			'item_reverted_to_draft'   => __( 'Movie reverted to draft.', 'frmtcn' ),
-			'item_scheduled'           => __( 'Movie scheduled.', 'frmtcn' ),
-			'item_updated'             => __( 'Movie updated.', 'frmtcn' ),
+			'name'                     => _x( 'Movies', 'movie type general', 'formatcine' ),
+			'singular_name'            => _x( 'Movie', 'movie type singular', 'formatcine' ),
+			'add_new'                  => __( 'Add New', 'formatcine' ),
+			'add_new_item'             => __( 'Add New Movie', 'formatcine' ),
+			'edit_item'                => __( 'Edit Movie', 'formatcine' ),
+			'new_item'                 => __( 'New Movie', 'formatcine' ),
+			'view_item'                => __( 'View Movie', 'formatcine' ),
+			'view_items'               => __( 'View Movies', 'formatcine' ),
+			'search_items'             => __( 'Search Movies', 'formatcine' ),
+			'not_found'                => __( 'No movie found.', 'formatcine' ),
+			'not_found_in_trash'       => __( 'No movie found in Trash.', 'formatcine' ),
+			'parent_item_colon'        => __( 'Parent Movie:', 'formatcine' ),
+			'all_items'                => __( 'All movies', 'formatcine' ),
+			'archives'                 => __( 'Movie Archives', 'formatcine' ),
+			'attributes'               => __( 'Movie Attributes', 'formatcine' ),
+			'insert_into_item'         => __( 'Insert into movie', 'formatcine' ),
+			'uploaded_to_this_item'    => __( 'Uploaded to this movie', 'formatcine' ),
+			'featured_image'           => _x( 'Featured Image', 'movie', 'formatcine' ),
+			'set_featured_image'       => _x( 'Set featured image', 'movie', 'formatcine' ),
+			'remove_featured_image'    => _x( 'Remove featured image', 'movie', 'formatcine' ),
+			'use_featured_image'       => _x( 'Use as featured image', 'movie', 'formatcine' ),
+			'items_list_navigation'    => __( 'Movie list navigation', 'formatcine' ),
+			'items_list'               => __( 'Movie list', 'formatcine' ),
+			'item_published'           => __( 'Movie published.', 'formatcine' ),
+			'item_published_privately' => __( 'Movie published privately.', 'formatcine' ),
+			'item_reverted_to_draft'   => __( 'Movie reverted to draft.', 'formatcine' ),
+			'item_scheduled'           => __( 'Movie scheduled.', 'formatcine' ),
+			'item_updated'             => __( 'Movie updated.', 'formatcine' ),
 		);
 
 		$rewrite = array(
@@ -173,13 +173,13 @@ class Movie {
 
 		foreach ( $columns as $key => $value ) {
 			if ( 'title' === $key ) {
-				$new_columns['poster'] = __( 'Poster', 'frmtcn' );
+				$new_columns['poster'] = __( 'Poster', 'formatcine' );
 			}
 			$new_columns[ $key ] = $value;
 		}
 
-		$new_columns['release_year'] = __( 'Release year', 'frmtcn' );
-		$new_columns['running_time'] = __( 'Duration', 'frmtcn' );
+		$new_columns['release_year'] = __( 'Release year', 'formatcine' );
+		$new_columns['running_time'] = __( 'Duration', 'formatcine' );
 
 		return $new_columns;
 	}

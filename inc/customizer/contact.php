@@ -18,8 +18,8 @@ function frmtcn_customize_contact( $wp_customize ) {
 	$wp_customize->add_section(
 		'contact',
 		array(
-			'title'       => __( 'Contact details', 'frmtcn' ),
-			'description' => __( 'Contact details settings', 'frmtcn' ),
+			'title'       => __( 'Contact details', 'formatcine' ),
+			'description' => __( 'Contact details settings', 'formatcine' ),
 		)
 	);
 
@@ -35,8 +35,8 @@ function frmtcn_customize_contact( $wp_customize ) {
 	$wp_customize->add_control(
 		'address',
 		array(
-			'label'       => __( 'Address', 'frmtcn' ),
-			'description' => __( 'Indicate postal address', 'frmtcn' ),
+			'label'       => __( 'Address', 'formatcine' ),
+			'description' => __( 'Indicate postal address', 'formatcine' ),
 			'type'        => 'textarea',
 			'section'     => 'contact',
 			'settings'    => 'address',
@@ -55,8 +55,8 @@ function frmtcn_customize_contact( $wp_customize ) {
 	$wp_customize->add_control(
 		'email_addresses',
 		array(
-			'label'       => __( 'Email addresses', 'frmtcn' ),
-			'description' => __( 'Indicate the site contact email addresses separated by commas', 'frmtcn' ),
+			'label'       => __( 'Email addresses', 'formatcine' ),
+			'description' => __( 'Indicate the site contact email addresses separated by commas', 'formatcine' ),
 			'section'     => 'contact',
 			'settings'    => 'email_addresses',
 		)
@@ -74,8 +74,8 @@ function frmtcn_customize_contact( $wp_customize ) {
 	$wp_customize->add_control(
 		'phone',
 		array(
-			'label'       => __( 'Phone number', 'frmtcn' ),
-			'description' => __( 'Indicate telephone number', 'frmtcn' ),
+			'label'       => __( 'Phone number', 'formatcine' ),
+			'description' => __( 'Indicate telephone number', 'formatcine' ),
 			'section'     => 'contact',
 			'settings'    => 'phone',
 		)
@@ -93,8 +93,8 @@ function frmtcn_customize_contact( $wp_customize ) {
 	$wp_customize->add_control(
 		'facebook',
 		array(
-			'label'       => __( 'Facebook', 'frmtcn' ),
-			'description' => __( 'Indicate the URL of the Facebook account', 'frmtcn' ),
+			'label'       => __( 'Facebook', 'formatcine' ),
+			'description' => __( 'Indicate the URL of the Facebook account', 'formatcine' ),
 			'section'     => 'contact',
 			'settings'    => 'facebook',
 		)
@@ -112,8 +112,8 @@ function frmtcn_customize_contact( $wp_customize ) {
 	$wp_customize->add_control(
 		'twitter',
 		array(
-			'label'       => __( 'Twitter', 'frmtcn' ),
-			'description' => __( 'Indicate the URL of the Twitter account', 'frmtcn' ),
+			'label'       => __( 'Twitter', 'formatcine' ),
+			'description' => __( 'Indicate the URL of the Twitter account', 'formatcine' ),
 			'section'     => 'contact',
 			'settings'    => 'twitter',
 		)
@@ -131,8 +131,8 @@ function frmtcn_customize_contact( $wp_customize ) {
 	$wp_customize->add_control(
 		'instagram',
 		array(
-			'label'       => __( 'Instagram', 'frmtcn' ),
-			'description' => __( 'Indicate the URL of the Instagram account', 'frmtcn' ),
+			'label'       => __( 'Instagram', 'formatcine' ),
+			'description' => __( 'Indicate the URL of the Instagram account', 'formatcine' ),
 			'section'     => 'contact',
 			'settings'    => 'instagram',
 		)
@@ -150,8 +150,8 @@ function frmtcn_customize_contact( $wp_customize ) {
 	$wp_customize->add_control(
 		'pinterest',
 		array(
-			'label'       => __( 'Pinterest', 'frmtcn' ),
-			'description' => __( 'Indicate the URL of the Pinterest account', 'frmtcn' ),
+			'label'       => __( 'Pinterest', 'formatcine' ),
+			'description' => __( 'Indicate the URL of the Pinterest account', 'formatcine' ),
 			'section'     => 'contact',
 			'settings'    => 'pinterest',
 		)
@@ -169,8 +169,8 @@ function frmtcn_customize_contact( $wp_customize ) {
 	$wp_customize->add_control(
 		'youtube',
 		array(
-			'label'       => __( 'YouTube', 'frmtcn' ),
-			'description' => __( 'Indicate the URL of the YouTube account', 'frmtcn' ),
+			'label'       => __( 'YouTube', 'formatcine' ),
+			'description' => __( 'Indicate the URL of the YouTube account', 'formatcine' ),
 			'section'     => 'contact',
 			'settings'    => 'youtube',
 		)

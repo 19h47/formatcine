@@ -3,7 +3,7 @@
 Programming
 
 @file /views/partials/programming
-@package    frmtcn
+@package    formatcine
 @subpackage 19h47
 @author     Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
 
@@ -14,7 +14,7 @@ Programming
 		<div class="Programming-title row">
 			<div class="col-12">
 				<h2 class="Site-title-underline">
-					{{- __( 'Programming', 'frmtcn' ) ~ ' ' ~ season.name -}}
+					{{- __( 'Programming', 'formatcine' ) ~ ' ' ~ season.name -}}
 				</h2>
 			</div>
 		</div>
@@ -30,7 +30,7 @@ Programming
 						>
 							{{- school_class.names | join( ' | ' ) -}}
 						</button>
-						{{ loop.last ? '' : '<br>' }}
+						{{- loop.last ? '' : '<br>' -}}
 					{% endfor %}
 				{% endapply %}
 			</div>
@@ -52,40 +52,18 @@ Programming
 					{% for programming in programmings %}
 
 
-						{% set directors = [] %}
-						{% set countries = [] %}
-						{% set current_school_classes = [] %}
-						{% set movie = programming.get_field( 'movie' ) %}
-
-						{% for director in movie.get_field( 'director' ) %}
-							{% if loop.last and not loop.first %}
-								{% set directors = directors | merge( [ 'et ' ~ director.name ] ) %}
-							{% else %}
-								{% set directors = directors | merge( [ director.name ] ) %}
-							{% endif %}
-						{% endfor %}
-
-						{% for country in movie.get_field( 'country' ) %}
-							{% set countries = countries | merge( [ country.name ] ) %}
-						{% endfor %}
-
-						{% for school_class in programming.get_field( 'school_class' ) %}
-							{% set current_school_classes = current_school_classes | merge( [ school_class.slug ] ) %}
-						{% endfor %}
-
-
 						{# `Sixième` or `Cinquième` class #}
-						{% if 'sixieme' in current_school_classes or 'cinquieme' in current_school_classes %}
+						{% if 'sixieme' in programming.current_school_classes or 'cinquieme' in programming.current_school_classes %}
 							<div class="col-12">
-								{%- include 'components/movie.html.twig' -%}
+								{%- include 'components/movie.html.twig' with { movie: programming.movie } -%}
 							</div>
 						{% endif %}
 
 
 						{# `Quatrième` or `Troisième` class #}
-						{% if 'quatrieme' in current_school_classes or 'troisieme' in current_school_classes %}
+						{% if 'quatrieme' in programming.current_school_classes or 'troisieme' in programming.current_school_classes %}
 							<div class="col-12">
-								{%- include 'components/movie.html.twig' -%}
+								{%- include 'components/movie.html.twig' with { movie: programming.movie } -%}
 							</div>
 						{% endif %}
 

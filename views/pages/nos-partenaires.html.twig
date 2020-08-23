@@ -1,7 +1,7 @@
 {#
 
 
-@file 		/views/pages/nos-partenaires.html.twig
+@file 		/views/pages/nos-partenaires
 @package 	frmtcn
 @author 	Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
 
@@ -17,7 +17,7 @@
 			<div class="col-12 text-align-center">
 				{% for partner in post.get_field( 'partners' ) %}
 					{%- if partner.link -%}
-						<a class="Partners-item" href="{{ partner.link }}" target="_blank">
+						<a class="Partners-item" href="{{ partner.link }}" target="_blank" rel="noreferer noopener">
 					{%- else -%}
 						 <p class="Partners-item margin-0">
 					{%- endif -%}

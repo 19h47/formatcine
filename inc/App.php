@@ -290,12 +290,12 @@ class App extends Timber {
 		$shares = array(
 			array(
 				'slug' => 'facebook',
-				'name' => __( 'Share on Facebook', 'frmtcn' ),
+				'name' => __( 'Share on Facebook', 'formatcine' ),
 				'url'  => 'https://www.facebook.com/sharer.php?u=',
 			),
 			array(
 				'slug' => 'twitter',
-				'name' => __( 'Share on Twitter', 'frmtcn' ),
+				'name' => __( 'Share on Twitter', 'formatcine' ),
 				'url'  => 'https://twitter.com/intent/tweet?url=',
 			),
 			array(
@@ -369,7 +369,7 @@ class App extends Timber {
 		add_action(
 			'after_setup_theme',
 			function() {
-				load_theme_textdomain( 'frmtcn', get_template_directory() . '/languages' );
+				load_theme_textdomain( 'formatcine', get_template_directory() . '/languages' );
 			}
 		);
 	}

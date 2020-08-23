@@ -79,7 +79,7 @@
                 "id": ""
             },
             "display_format": "G:i",
-            "return_format": "G\\hi"
+            "return_format": "G:i"
         },
         {
             "key": "field_59cfc9ca99337",
@@ -154,11 +154,11 @@
                 "vost": "VOST"
             },
             "allow_custom": 0,
-            "save_custom": 0,
             "default_value": [],
             "layout": "horizontal",
             "toggle": 0,
-            "return_format": "array"
+            "return_format": "value",
+            "save_custom": 0
         },
         {
             "key": "field_59cffb27de96c",
@@ -232,7 +232,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1550611712
+    "modified": 1598198258
 }

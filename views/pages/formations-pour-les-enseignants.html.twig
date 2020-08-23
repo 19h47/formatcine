@@ -24,11 +24,11 @@
 				<div class="Page-list-adjacent">
 
 					<p class="Page-list-adjacent__item Page-list-adjacent__item--is-active background-color-main background-color-main-hover">
-						{{- __( 'Formations pour les enseignants', 'frmtcn' ) -}}
+						{{- __( 'Training for teachers', 'formatcine' ) -}}
 					</p>
 
 					<a class="Page-list-adjacent__item background-color-main background-color-main-hover" href="{{ fn( 'get_permalink', 193 ) }}">
-						{{- __( 'Formations professionnelles', 'frmtcn' ) -}}
+						{{- __( 'Professional training', 'formatcine' ) -}}
 					</a>
 
 				</div>
@@ -46,7 +46,7 @@
 		<div class="row">
 			<div class="col-12">
 				<p class="Page-introduction font-semibold">
-					{{- __( 'Notre association organise en Touraine depuis vingt cinq ans des stages de un à trois jours dans le domaine du cinéma et de l\'audiovisuel. Les enseignants hors département de l\'Indre-et-Loire peuvent s\'y inscrire sous certaines conditions (nous contacter).', 'frmtcn' ) -}}
+					{{- __( 'Notre association organise en Touraine depuis vingt cinq ans des stages de un à trois jours dans le domaine du cinéma et de l\'audiovisuel. Les enseignants hors département de l\'Indre-et-Loire peuvent s\'y inscrire sous certaines conditions (nous contacter).', 'formatcine' ) -}}
 				</p>
 			</div>
 		</div>
@@ -56,7 +56,7 @@
 	<div class="Site-container">
 		<div class="row">
 			<div class="col-12 text-align-center">
-				<h2 class="Site-title-underline">{{- __( 'Stages et formations', 'frmtcn' ) }}</h2>
+				<h2 class="Site-title-underline">{{- __( 'Stages et formations', 'formatcine' ) }}</h2>
 			</div>
 		</div>
 	</div>
@@ -68,14 +68,12 @@
 					<article class="Adult-training-teachers">
 						{# <pre>{{ adult_training | print_r }}</pre> #}
 						{% if adult_training.thumbnail %}
-
-						<img
-						 	class="Adult-training-teachers__thumbnail"
-							src="{{ Image( adult_training.thumbnail ).src }}"
-							width="90"
-							height="60"
-						>
-
+							<img
+								class="Adult-training-teachers__thumbnail"
+								src="{{ Image( adult_training.thumbnail ).src }}"
+								width="90"
+								height="60"
+							>
 						{% endif %}
 
 						<h2 class="Adult-training-teachers__title">
@@ -85,15 +83,13 @@
 							{{- adult_training.post_content -}}
 						</p>
 
-						{% if adult_training.get_field( 'document' ) %}
-
+						{% if adult_training.meta( 'document' ) %}
 							<a
 								class="Adult-training-teachers__link background-color-secondary"
-								href="{{ adult_training.get_field( 'document' ).url }}"
+								href="{{ adult_training.meta( 'document' ).url }}"
 							>
-								{{ __( 'Formulaire d\'inscription', 'frmtcn' ) }}
+								{{ __( 'Registration Form', 'formatcine' ) }}
 							</a>
-
 						{% endif %}
 
 					</article>
@@ -106,7 +102,7 @@
 		<div class="row">
 			<div class="col-12 color-main">
 				<p><span>+</span></p>
-				<p>{{- 'En plus de ces stages, l\'association Format\'Ciné offre la possibilité d\'assister à la rencontre professionnelle organisée par la NEF Animation en octobre à l\'abbaye de Fontevraud.' -}}</p>
+				<p>{{- 'En plus de ces stages, l\'association Format\'Ciné offre la possibilité d\'assister à la rencontre professionnelle organisée par la NEF Animation en octobre à l\'abbaye de Fontevraud.', 'formatcine' -}}</p>
 			</div>
 		</div>
 	</div>

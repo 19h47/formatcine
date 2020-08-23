@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Format'ciné\n"
-"POT-Creation-Date: 2020-04-01 12:33+0200\n"
-"PO-Revision-Date: 2020-04-16 13:41+0200\n"
+"POT-Creation-Date: 2020-08-23 13:32+0200\n"
+"PO-Revision-Date: 2020-08-23 14:22+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -10,14 +10,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
-"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: vendor\n"
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
@@ -426,8 +426,8 @@ msgid "Movie"
 msgstr "Film"
 
 #: inc/PostTypes/Programming.php:240 inc/Taxonomies/SchoolClass.php:104
-#: inc/Taxonomies/Season.php:54 views/partials/programming.html.twig:17
-#: views/partials/tease-school-training.html.twig:51
+#: inc/Taxonomies/Season.php:56 views/partials/programming.html.twig:17
+#: views/partials/tease-school-training.html.twig:52
 msgid "Programming"
 msgstr "Programmation"
 
@@ -554,7 +554,7 @@ msgid "Movies"
 msgstr "Films"
 
 #: inc/PostTypes/SchoolTraining.php:248 inc/Taxonomies/SchoolClass.php:105
-#: inc/Taxonomies/Season.php:55
+#: inc/Taxonomies/Season.php:57
 msgid "Training"
 msgstr "Formation"
 
@@ -910,87 +910,87 @@ msgstr "Les plus utilisées"
 msgid "&larr; Back to Classes"
 msgstr "&larr; Retour aux classes"
 
-#: inc/Taxonomies/Season.php:121
+#: inc/Taxonomies/Season.php:123
 msgctxt "season general name"
 msgid "Seasons"
 msgstr "Saisons"
 
-#: inc/Taxonomies/Season.php:122
+#: inc/Taxonomies/Season.php:124
 msgctxt "season singular name"
 msgid "Season"
 msgstr "Saison"
 
-#: inc/Taxonomies/Season.php:123
+#: inc/Taxonomies/Season.php:125
 msgid "Search Seasons"
 msgstr "Rechercher dans les classes"
 
-#: inc/Taxonomies/Season.php:124
+#: inc/Taxonomies/Season.php:126
 msgid "All seasons"
 msgstr "Toutes les saisons"
 
-#: inc/Taxonomies/Season.php:125
+#: inc/Taxonomies/Season.php:127
 msgid "Popular Seasons"
 msgstr "Saisons populaires"
 
-#: inc/Taxonomies/Season.php:126
+#: inc/Taxonomies/Season.php:128
 msgid "Parent Season"
 msgstr "Saison parente"
 
-#: inc/Taxonomies/Season.php:127
+#: inc/Taxonomies/Season.php:129
 msgid "Parent Season:"
 msgstr "Saison parente :"
 
-#: inc/Taxonomies/Season.php:128
+#: inc/Taxonomies/Season.php:130
 msgid "Edit Season"
 msgstr "Modifier la saison"
 
-#: inc/Taxonomies/Season.php:129
+#: inc/Taxonomies/Season.php:131
 msgid "View Season"
 msgstr "Voir la saison"
 
-#: inc/Taxonomies/Season.php:130
+#: inc/Taxonomies/Season.php:132
 msgid "Update Season"
 msgstr "Mettre à jour la saison"
 
-#: inc/Taxonomies/Season.php:131
+#: inc/Taxonomies/Season.php:133
 msgid "Add New season"
 msgstr "Ajouter une nouvelle saison"
 
-#: inc/Taxonomies/Season.php:132
+#: inc/Taxonomies/Season.php:134
 msgid "Separate seasons with commas"
 msgstr "Séparez les saisons par des virgules"
 
-#: inc/Taxonomies/Season.php:133
+#: inc/Taxonomies/Season.php:135
 msgid "Add or remove seasons"
 msgstr "Ajouter ou retirer des saisons"
 
-#: inc/Taxonomies/Season.php:134
+#: inc/Taxonomies/Season.php:136
 msgid "Choose from the most used seasons"
 msgstr "Choisir parmi les saisons les plus utilisées"
 
-#: inc/Taxonomies/Season.php:135
+#: inc/Taxonomies/Season.php:137
 msgid "No season found in Trash."
 msgstr "Aucune saison trouvée dans la corbeille."
 
-#: inc/Taxonomies/Season.php:136
+#: inc/Taxonomies/Season.php:138
 msgid "No season found."
 msgstr "Aucune saison trouvée."
 
-#: inc/Taxonomies/Season.php:137
+#: inc/Taxonomies/Season.php:139
 msgid "Seasons list navigation"
 msgstr "Navigation de la liste des saisons"
 
-#: inc/Taxonomies/Season.php:138
+#: inc/Taxonomies/Season.php:140
 msgid "Seasons list"
 msgstr "Liste des saisons"
 
 #. translators: Tab heading when selecting from the most used terms.
-#: inc/Taxonomies/Season.php:140
+#: inc/Taxonomies/Season.php:142
 msgctxt "season"
 msgid "Most Used"
 msgstr "Les plus utilisées"
 
-#: inc/Taxonomies/Season.php:141
+#: inc/Taxonomies/Season.php:143
 msgid "&larr; Back to Seasons"
 msgstr "&larr; Retour aux saisons"
 
@@ -1083,6 +1083,10 @@ msgstr "Mentions légales"
 msgid "Design:"
 msgstr "Conception :"
 
+#: views/components/menu.html.twig:15
+msgid "Fermer le menu"
+msgstr ""
+
 #: views/components/menu.html.twig:74
 msgid "Association"
 msgstr ""
@@ -1094,24 +1098,24 @@ msgstr ""
 #: views/pages/college-au-cinema-37.html.twig:70
 #: views/pages/college-au-cinema-37.html.twig:113
 msgid ""
+"Training\n"
+"days\n"
+msgstr ""
 "Les\n"
 "journées de\n"
 "formation\n"
-msgstr ""
 
 #: views/pages/college-au-cinema-37.html.twig:88
-msgid "Toutes"
-msgstr ""
+msgid "All"
+msgstr "Toutes"
 
 #: views/pages/formations-pour-les-enseignants.html.twig:27
-#: views/pages/formations-professionnelles.html.twig:22
-msgid "Formations pour les enseignants"
-msgstr ""
+msgid "Training for teachers"
+msgstr "Formations pour les enseignants"
 
 #: views/pages/formations-pour-les-enseignants.html.twig:31
-#: views/pages/formations-professionnelles.html.twig:25
-msgid "Formations professionnelles"
-msgstr ""
+msgid "Professional training"
+msgstr "Formations professionnelles"
 
 #: views/pages/formations-pour-les-enseignants.html.twig:49
 msgid ""
@@ -1125,9 +1129,44 @@ msgstr ""
 msgid "Stages et formations"
 msgstr ""
 
-#: views/pages/formations-pour-les-enseignants.html.twig:94
+#: views/pages/formations-pour-les-enseignants.html.twig:91
 #: views/pages/formations-professionnelles.html.twig:126
-msgid "Formulaire d'inscription"
+msgid "Registration Form"
+msgstr "Formulaire d’inscription"
+
+#: views/pages/formations-professionnelles.html.twig:22
+msgid "Formations pour les enseignants"
+msgstr ""
+
+#: views/pages/formations-professionnelles.html.twig:25
+msgid "Formations professionnelles"
+msgstr ""
+
+#: views/pages/formations-professionnelles.html.twig:43
+msgid ""
+"Notre association, qui organise depuis vingt cinq ans des stages dans le "
+"domaine du cinéma et de l'audiovisuel, bénéficie d'un numéro "
+"d'enregistrement permettant une prise en charge financière par les "
+"Organismes Paritaires Collecteurs Agréés (OPCA)."
+msgstr ""
+
+#: views/pages/formations-professionnelles.html.twig:46
+msgid ""
+"Salariés, travailleurs indépendants, professionnels libéraux, fonctionnaires "
+"de la fonction publique :"
+msgstr ""
+
+#: views/pages/formations-professionnelles.html.twig:49
+msgid ""
+"Les objectifs pédagogiques de nos stages pratiques de cinéma sont d'une part "
+"de dépasser progressivement certaines réticences dans le domaine de la "
+"créativité, d'autre part de favoriser le travail en équipe autour de la "
+"création de toutes pièces d'un court métrage. Encadrés par des "
+"professionnels du cinéma, ils permettent de (re)donner confiance en soi aux "
+"participants et de les (re)dynamiser par la réussite d'une création "
+"collective. Aucune compétence artistique n'est pré-requise. À l'issue des "
+"stages, les stagiaires auront découvert les différentes étapes de la "
+"réalisation d'un film ainsi que différentes techniques du cinéma."
 msgstr ""
 
 #: views/pages/formations-professionnelles.html.twig:57
@@ -1135,34 +1174,38 @@ msgid "Latest achievements of interns"
 msgstr "Dernières réalisations des stagiaires"
 
 #: views/pages/formations-professionnelles.html.twig:64
-msgid "Stages et inscriptions"
-msgstr ""
+msgid "Internships and registrations"
+msgstr "Stages et inscriptions"
+
+#: views/pages/formations-professionnelles.html.twig:93
+msgid "days"
+msgstr "jours"
 
 #: views/pages/formations-professionnelles.html.twig:105
-msgid "Contenu"
-msgstr ""
+msgid "Content"
+msgstr "Contenu"
 
 #: views/pages/front-page.html.twig:21
-msgid "De chaque côté de"
-msgstr ""
+msgid "On either side of"
+msgstr "De chaque côté de"
 
 #: views/pages/front-page.html.twig:22
-msgid "L\\’écran"
-msgstr ""
+msgid "The screen"
+msgstr "L’écran"
 
-#: views/pages/front-page.html.twig:88 views/pages/front-page.html.twig:123
+#: views/pages/front-page.html.twig:88 views/pages/front-page.html.twig:124
 msgid "The events"
 msgstr "Les évènements"
 
-#: views/pages/front-page.html.twig:90 views/pages/front-page.html.twig:125
+#: views/pages/front-page.html.twig:90 views/pages/front-page.html.twig:126
 msgid ""
 "Toute l’année, retrouvez des manifestations organisées avec nos partenaires "
 "sur différents thèmes."
 msgstr ""
 
 #: views/pages/front-page.html.twig:115
-msgid "Tout public"
-msgstr ""
+msgid "For all"
+msgstr "Tout public"
 
 #: views/partials/adult-training-comments.html.twig:11
 msgid "Commentaires de stagiaires"
@@ -1176,9 +1219,13 @@ msgstr "En savoir plus"
 msgid "There are no events to display"
 msgstr "Aucun événement à afficher"
 
-#: views/partials/tease-school-training.html.twig:63
-msgid "Aucune Journée de formation à afficher"
-msgstr ""
+#: views/partials/tease-school-training.html.twig:35
+msgid "and"
+msgstr "et"
+
+#: views/partials/tease-school-training.html.twig:64
+msgid "No training days to display"
+msgstr "Aucune Journée de formation à afficher"
 
 #. Theme Name of the plugin/theme
 msgid "Format'ciné"
@@ -1201,6 +1248,16 @@ msgid ""
 msgstr ""
 "<a href=\"http://www.19h47.fr/\">19h47</a>, <a href=\"https://www."
 "mokacreation.com/\">Moka Création</a>"
+
+#, fuzzy
+#~| msgid ""
+#~| "Training\n"
+#~| "days\n"
+#~ msgid "Training days"
+#~ msgstr ""
+#~ "Les\n"
+#~ "journées de\n"
+#~ "formation\n"
 
 #~ msgctxt "adult training category general name"
 #~ msgid "Adults training categories"

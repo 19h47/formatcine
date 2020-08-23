@@ -92,11 +92,11 @@
 	}
 
 	/**
-	 * Meta
+	 * Facts
 	 *
-	 * @uses .Movie__meta
+	 * @uses .Movie__facts
 	 */
-	&__meta {
+	&__facts {
 		@extend %text-transform-uppercase, %font-weight-extrabold;
 		@include font(15.99, 21.52, 100);
 		@include margin(top $grid-gutter-width / 1.5 bottom $grid-gutter-width);
