@@ -2,10 +2,10 @@
 /**
  * Class Programming
  *
- * @package Formatcine
+ * @package FormatCine
  */
 
-namespace Formatcine\PostTypes;
+namespace FormatCine\Core;
 
 use Timber\{ Timber };
 use WP_Post;
@@ -16,26 +16,12 @@ use WP_Post;
 class Programming {
 
 	/**
-	 * The version of the theme.
+	 * Runs initialization tasks.
 	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      string    $version    The current version of this theme.
-	 */
-	private $theme_version;
-
-	/**
-	 * Construct function
-	 *
-	 * @param string $theme_version The theme version.
 	 * @access public
 	 */
-	public function __construct( string $theme_version ) {
-		$this->theme_version = $theme_version;
-
-		$this->register_post_type();
-
-		add_action( 'init', array( $this, 'register_post_type' ) );
+	public function run() {
+		add_action( 'init', array( $this, 'register' ), 10, 0 );
 		add_action( 'admin_head', array( $this, 'admin_css' ) );
 
 		add_filter( 'manage_programming_posts_columns', array( $this, 'add_custom_columns' ) );
@@ -47,8 +33,11 @@ class Programming {
 
 	/**
 	 * Register Custom Post Type
+	 *
+	 * @return void
+	 * @access public
 	 */
-	public function register_post_type() {
+	public function register() : void {
 		$labels = array(
 			'name'                     => _x( 'Programming', 'programming type general', 'formatcine' ),
 			'singular_name'            => _x( 'Programming', 'programming type singular', 'formatcine' ),

@@ -2,10 +2,10 @@
 /**
  * Class Adult Training
  *
- * @package Formatcine
+ * @package FormatCine
  */
 
-namespace Formatcine\PostTypes;
+namespace FormatCine\Core;
 
 /**
  * Adult Training class
@@ -13,34 +13,22 @@ namespace Formatcine\PostTypes;
 class AdultTraining {
 
 	/**
-	 * The version of the theme.
+	 * Runs initialization tasks.
 	 *
-	 * @since  1.0.0
-	 * @access private
-	 * @var    string $version The current version of this theme.
-	 */
-	private $theme_version;
-
-
-	/**
-	 * Construct function
-	 *
-	 * @param string $theme_version Theme version.
 	 * @access public
 	 */
-	public function __construct( string $theme_version ) {
-		$this->theme_version = $theme_version;
-
-		$this->register_post_type();
-
-		add_action( 'init', array( $this, 'register_post_type' ) );
+	public function run() {
+		add_action( 'init', array( $this, 'register' ), 10, 0 );
 	}
 
 
 	/**
 	 * Register Custom Post Type
+	 *
+	 * @return void
+	 * @access public
 	 */
-	public function register_post_type() {
+	public function register() : void {
 		$labels = array(
 			'name'                     => _x( 'Adults training', 'adult training type general', 'formatcine' ),
 			'singular_name'            => _x( 'Adult training', 'adult training type singular', 'formatcine' ),

@@ -2,10 +2,10 @@
 /**
  * Class Post
  *
- * @package Formatcine
+ * @package FormatCine
  */
 
-namespace Formatcine\PostTypes;
+namespace FormatCine\Core;
 
 use Timber\{ Timber };
 use WP_Post;
@@ -16,22 +16,11 @@ use WP_Post;
 class Post {
 
 	/**
-	 * The version of the theme.
+	 * Runs initialization tasks.
 	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      string    $version    The current version of this theme.
-	 */
-	private $theme_version;
-
-	/**
-	 * Construct function
-	 *
-	 * @param str $theme_version Theme version.
 	 * @access public
 	 */
-	public function __construct( $theme_version ) {
-		$this->theme_version = $theme_version;
+	public function run() {
 		add_filter( 'manage_post_posts_columns', array( $this, 'add_custom_columns' ) );
 
 		add_action( 'manage_post_posts_custom_column', array( $this, 'render_custom_columns' ), 10, 2 );

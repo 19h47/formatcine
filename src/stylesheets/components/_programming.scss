@@ -8,7 +8,7 @@
 	 * Movie container
 	 */
 	&__movie-container {
-		@extend %position-relative;
+		@extend %position-relative, %overflow-md-hidden;
 		@include margin(top $grid-gutter-width / 2 bottom $grid-gutter-width / 2);
 
 		&__inner {

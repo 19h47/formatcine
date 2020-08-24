@@ -2,10 +2,10 @@
 /**
  * Class School Training
  *
- * @package Formatcine
+ * @package FormatCine
  */
 
-namespace Formatcine\PostTypes;
+namespace FormatCine\Core;
 
 use Timber\{ Timber };
 
@@ -15,26 +15,12 @@ use Timber\{ Timber };
 class SchoolTraining {
 
 	/**
-	 * The version of the theme.
+	 * Runs initialization tasks.
 	 *
-	 * @since  1.0.0
-	 * @access private
-	 * @var    string $theme_version The current version of this theme.
-	 */
-	private $theme_version;
-
-	/**
-	 * Construct function
-	 *
-	 * @param string $theme_version The theme version.
 	 * @access public
 	 */
-	public function __construct( string $theme_version ) {
-		$this->theme_version = $theme_version;
-
-		$this->register_post_type();
-
-		add_action( 'init', array( $this, 'register_post_type' ) );
+	public function run() {
+		add_action( 'init', array( $this, 'register' ) );
 		add_action( 'admin_head', array( $this, 'admin_css' ) );
 
 		add_filter( 'manage_school_training_posts_columns', array( $this, 'add_custom_columns' ) );
@@ -47,10 +33,14 @@ class SchoolTraining {
 		add_filter( 'wp_insert_post_data', array( $this, 'change_title' ), 99, 2 );
 	}
 
+
 	/**
 	 * Register Custom Post Type
+	 *
+	 * @return void
+	 * @access public
 	 */
-	public function register_post_type() {
+	public function register() : void {
 		$labels = array(
 			'name'                     => _x( 'Schools training', 'school training general', 'formatcine' ),
 			'singular_name'            => _x( 'School training', 'school training singular', 'formatcine' ),
@@ -342,7 +332,7 @@ class SchoolTraining {
 		}
 
 		$context                     = Timber::get_context();
-		$context['school_trainings'] = Timber::get_posts( $args, 'Formatcine\Models\SchoolTrainingPost' );
+		$context['school_trainings'] = Timber::get_posts( $args, 'FormatCine\Models\SchoolTrainingPost' );
 
 		Timber::render( 'partials/tease-school-training.html.twig', $context );
 

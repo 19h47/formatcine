@@ -2,10 +2,10 @@
 /**
  * Class Adult Training Category
  *
- * @package Formatcine
+ * @package FormatCine
  */
 
-namespace Formatcine\Taxonomies;
+namespace FormatCine\Core;
 
 /**
  * Adult Training Category tag class
@@ -13,34 +13,22 @@ namespace Formatcine\Taxonomies;
 class AdultTrainingCategory {
 
 	/**
-	 * The version of the theme.
+	 * Runs initialization tasks.
 	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      string    $version    The current version of this theme.
-	 */
-	private $theme_version;
-
-	/**
-	 * Construct function
-	 *
-	 * @param str $theme_version Theme version.
 	 * @access public
 	 */
-	public function __construct( $theme_version ) {
-		$this->theme_version = $theme_version;
-
-		add_action( 'init', array( $this, 'register_taxonomy' ) );
+	public function run() {
+		add_action( 'init', array( $this, 'register' ) );
 	}
 
 
 	/**
-	 * Register Custom Taxonomy
+	 * Register
 	 *
 	 * @access public
 	 * @return void
 	 */
-	public function register_taxonomy() {
+	public function register() {
 
 		$labels = array(
 			'name'                       => _x( 'Categories', 'adult training category general name', 'formatcine' ),

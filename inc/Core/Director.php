@@ -2,10 +2,10 @@
 /**
  * Class Director
  *
- * @package Formatcine
+ * @package FormatCine
  */
 
-namespace Formatcine\Taxonomies;
+namespace FormatCine\Core;
 
 /**
  * Director tag class
@@ -13,25 +13,12 @@ namespace Formatcine\Taxonomies;
 class Director {
 
 	/**
-	 * The version of the theme.
+	 * Runs initialization tasks.
 	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      string    $version    The current version of this theme.
-	 */
-	private $theme_version;
-
-
-	/**
-	 * Construct function
-	 *
-	 * @param str $theme_version The theme version.
 	 * @access public
 	 */
-	public function __construct( $theme_version ) {
-		$this->theme_version = $theme_version;
-
-		add_action( 'init', array( $this, 'register_taxonomy' ) );
+	public function run() {
+		add_action( 'init', array( $this, 'register' ) );
 	}
 
 	/**
@@ -40,7 +27,7 @@ class Director {
 	 * @access public
 	 * @return void
 	 */
-	public function register_taxonomy() {
+	public function register() {
 		$labels = array(
 			'name'                       => _x( 'Directors', 'director general name', 'formatcine' ),
 			'singular_name'              => _x( 'Director', 'director singular name', 'formatcine' ),

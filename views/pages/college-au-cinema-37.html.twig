@@ -21,7 +21,7 @@
 		{% include 'components/post-content.html.twig' %}
 	{% endif %}
 
-	{% include 'partials/programming.html.twig' with { programmings: post.programmings } %}
+	{% include 'partials/programming.html.twig' with { programmings: post.programmings, school_classes: post.school_classes } %}
 
 	{# Educational support #}
 	<section class="Educational-support">
@@ -69,7 +69,7 @@
 						<span class="Site-title-underline">
 							{{- __( 'Training\ndays\n', 'formatcine' ) | nl2br -}}
 						</span>
-						<span class="Site-title-underline color-gray-dark">{{- season.name -}}</span>
+						<span class="Site-title-underline color-gray-dark">{{- post.season.name -}}</span>
 					</h2>
 				</div>
 			</div>
@@ -83,18 +83,18 @@
 							<button
 								type="button"
 								class="color-secondary is-active js-school-trainings-button"
-								data-season="{{ season.term_id }}"
+								data-season="{{ post.season.term_id }}"
 							>
 								{{- __( 'All', 'formatcine' ) -}}</button>
 						</li>
 
-						{% for school_class in school_classes %}
+						{% for school_class in post.school_classes %}
 							<li class="item">
 								<button
 									type="button"
 									class="color-secondary js-school-trainings-button"
 									data-school-class-ids="[{{ school_class.term_ids | join( ',' ) }}]"
-									data-season="{{ season.term_id }}"
+									data-season="{{ post.season.term_id }}"
 								>
 									{{- school_class.names | join( ' | ' ) -}}
 								</button>
@@ -110,7 +110,7 @@
 						<span class="Site-title-underline">
 							{{- __( 'Training\ndays\n', 'formatcine' ) | nl2br -}}
 						</span>
-						<span class="Site-title-underline color-gray-dark">{{- season.name -}}</span>
+						<span class="Site-title-underline color-gray-dark">{{- post.season.name -}}</span>
 					</h2>
 					<p class="description font-semibold">
 						{{- post.meta( 'school-trainings_description' ) -}}
@@ -118,7 +118,7 @@
 				</div>
 
 				<div class="col-12 col-md-8 School-trainings-tease-container js-school-trainings-container">
-					{% include 'partials/tease-school-training.html.twig' %}
+					{% include 'partials/tease-school-training.html.twig' with { school_trainings: post.school_trainings } %}
 				</div>
 			</div>
 		</div>

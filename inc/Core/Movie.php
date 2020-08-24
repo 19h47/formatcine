@@ -2,10 +2,10 @@
 /**
  * Class Movie
  *
- * @package Formatcine
+ * @package FormatCine
  */
 
-namespace Formatcine\PostTypes;
+namespace FormatCine\Core;
 
 use Timber\{ Timber };
 
@@ -15,32 +15,19 @@ use Timber\{ Timber };
 class Movie {
 
 	/**
-	 * The version of the theme.
+	 * Runs initialization tasks.
 	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      string    $version    The current version of this theme.
-	 */
-	private $theme_version;
-
-	/**
-	 * Construct function
-	 *
-	 * @param  string $theme_version Theme version.
 	 * @access public
 	 */
-	public function __construct( string $theme_version ) {
-		$this->theme_version = $theme_version;
-
-		$this->register_post_type();
-
-		add_action( 'init', array( $this, 'register_post_type' ) );
+	public function run() {
+		add_action( 'init', array( $this, 'register' ), 10, 0 );
 		add_action( 'admin_head', array( $this, 'css' ) );
 		add_action( 'admin_head', array( $this, 'custom_post_type_css' ) );
 
 		add_filter( 'manage_movie_posts_columns', array( $this, 'add_custom_columns' ) );
 		add_action( 'manage_movie_posts_custom_column', array( $this, 'render_custom_columns' ), 10, 2 );
 	}
+
 
 	/**
 	 * CSS for movie CPT
@@ -60,8 +47,11 @@ class Movie {
 
 	/**
 	 * Register Custom Post Type
+	 *
+	 * @return void
+	 * @access public
 	 */
-	public function register_post_type() {
+	public function register() : void {
 		$labels = array(
 			'name'                     => _x( 'Movies', 'movie type general', 'formatcine' ),
 			'singular_name'            => _x( 'Movie', 'movie type singular', 'formatcine' ),

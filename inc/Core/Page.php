@@ -2,10 +2,10 @@
 /**
  * Class Page
  *
- * @package Formatcine
+ * @package FormatCine
  */
 
-namespace Formatcine\PostTypes;
+namespace FormatCine\Core;
 
 use Timber\{ Timber };
 
@@ -15,27 +15,15 @@ use Timber\{ Timber };
 class Page {
 
 	/**
-	 * The version of the theme.
+	 * Runs initialization tasks.
 	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      string    $version    The current version of this theme.
-	 */
-	private $theme_version;
-
-	/**
-	 * Construct function
-	 *
-	 * @param str $theme_version Theme version.
 	 * @access public
 	 */
-	public function __construct( $theme_version ) {
-		$this->theme_version = $theme_version;
-
-		add_filter( 'manage_page_posts_columns', array( $this, 'add_custom_columns' ) );
-
+	public function run() {
 		add_action( 'manage_page_posts_custom_column', array( $this, 'render_custom_columns' ), 10, 2 );
 		add_action( 'admin_head', array( $this, 'css' ) );
+
+		add_filter( 'manage_page_posts_columns', array( $this, 'add_custom_columns' ) );
 	}
 
 

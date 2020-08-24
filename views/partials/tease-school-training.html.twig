@@ -8,7 +8,6 @@ Tease: School training
 
 #}
 <div class="row">
-	{# <pre>{{school_trainings|print_r}}</pre> #}
 	{% for school_training in school_trainings %}
 
 		<div class="col-12 col-md-4">
@@ -23,25 +22,8 @@ Tease: School training
 					{{- school_training.formation_date | date( 'l j F Y' ) -}}
 				</p>
 
-				{% set movies = [] %}
-				{% set directors = [] %}
-
-				{% for movie in school_training.meta( 'movies' ) %}
-
-					{% set movies = movies | merge( [ movie.title ] ) %}
-
-					{% for director in movie.meta('director') %}
-						{% if loop.last and not loop.first %}
-							{% set directors = directors | merge( [ __( 'and', 'formatcine' ) ~ ' ' ~ director.name ] ) %}
-						{% else %}
-							{% set directors = directors | merge( [ director.name ] ) %}
-						{% endif %}
-					{% endfor %}
-
-				{% endfor %}
-
-				{{ movies ? '<h3 class="Tease-school-training__title">' ~ movies | join( ', ' ) ~ '</h3>' : '' }}
-				{{ directors ? '<p class="Tease-school-training__director">De&nbsp;' ~ directors | join(', ') ~ '</p>' : '' }}
+				{{- school_training.movies ? "<h3 class=\"Tease-school-training__title\">#{  school_training.movies | join( ', ' ) }</h3>" : '' -}}
+				{{- school_training.directors ? "<p class=\"Tease-school-training__director\">#{ school_training.directors }</p>" : '' -}}
 
 				{% if school_training.program %}
 					<a
@@ -58,7 +40,7 @@ Tease: School training
 			</article>
 		</div>
 
-		{{ loop.index is divisible by( 3 ) and not loop.last ? '</div><div class="row">' : '' }}
+		{{- loop.index is divisible by( 3 ) and not loop.last ? '</div><div class="row">' : '' -}}
 
 	{% else %}
 		<div class="col-12">

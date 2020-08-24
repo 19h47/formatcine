@@ -188,28 +188,34 @@ function frmtcn_embed_oembed_html( $html, $url, $attr, $post_id ) {
 }
 
 
-if ( ! function_exists( 'get_theme_manifest' ) ) :
+/**
+ * Get theme manifest
+ *
+ * @return bool|array
+ */
+function get_theme_manifest() {
+	$file = get_template_directory() . '/dist/manifest.json';
 
-	/**
-	 * Get theme manifest
-	 *
-	 * @return arr
-	 */
-	function get_theme_manifest() {
+	return json_decode( file_get_contents( $file ), true ); // phpcs:ignore
+}
 
-		// Helpers to define the path.
-    		$directory = get_template_directory();
+/**
+ * Retrieve the version number of the theme.
+ *
+ * @since  1.0.0
+ * @return string The version number of the theme.
+ */
+function get_theme_version() : string {
+	return wp_get_theme()->Version;
+}
 
-		// Define the path.
-		$path = $directory . '/dist/manifest.json';
 
-		ob_start();
-
-		require_once $path;
-
-    		$contents = ob_get_clean();
-
-    		return json_decode( $contents, true );
-	}
-
-endif;
+/**
+ * Retrieve the name of the theme.
+ *
+ * @since  1.0.0
+ * @return string The name of the theme.
+ */
+function get_theme_name() : string {
+	return wp_get_theme()->Name;
+}

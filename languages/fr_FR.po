@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Format'ciné\n"
-"POT-Creation-Date: 2020-08-23 13:32+0200\n"
-"PO-Revision-Date: 2020-08-23 14:22+0200\n"
+"POT-Creation-Date: 2020-08-23 18:03+0200\n"
+"PO-Revision-Date: 2020-08-23 21:53+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -1091,12 +1091,21 @@ msgstr ""
 msgid "Association"
 msgstr ""
 
+#: views/components/movie.html.twig:40
+msgid "By"
+msgstr "De"
+
+#: views/components/movie.html.twig:43
+#: views/partials/tease-school-training.html.twig:35
+msgid "and"
+msgstr "et"
+
 #: views/components/movie.html.twig:74
-msgid "Visionner la bande annonce"
-msgstr ""
+msgid "Watch the trailer"
+msgstr "Visionner la bande annonce"
 
 #: views/pages/college-au-cinema-37.html.twig:70
-#: views/pages/college-au-cinema-37.html.twig:113
+#: views/pages/college-au-cinema-37.html.twig:111
 msgid ""
 "Training\n"
 "days\n"
@@ -1130,7 +1139,7 @@ msgid "Stages et formations"
 msgstr ""
 
 #: views/pages/formations-pour-les-enseignants.html.twig:91
-#: views/pages/formations-professionnelles.html.twig:126
+#: views/pages/formations-professionnelles.html.twig:124
 msgid "Registration Form"
 msgstr "Formulaire d’inscription"
 
@@ -1219,11 +1228,7 @@ msgstr "En savoir plus"
 msgid "There are no events to display"
 msgstr "Aucun événement à afficher"
 
-#: views/partials/tease-school-training.html.twig:35
-msgid "and"
-msgstr "et"
-
-#: views/partials/tease-school-training.html.twig:64
+#: views/partials/tease-school-training.html.twig:65
 msgid "No training days to display"
 msgstr "Aucune Journée de formation à afficher"
 

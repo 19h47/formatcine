@@ -2,10 +2,10 @@
 /**
  * Class Admin
  *
- * @package Formatcine
+ * @package FormatCine
  */
 
-namespace Formatcine;
+namespace FormatCine\Custom;
 
 /**
  * Admin class
@@ -15,24 +15,11 @@ namespace Formatcine;
 class Admin {
 
 	/**
-	 * The version of the theme.
+	 * Run default hooks and actions for WordPress
 	 *
-	 * @since  1.0.0
-	 * @access private
-	 * @var    string    $version    The current version of this theme.
+	 * @return void
 	 */
-	private $theme_version;
-
-
-	/**
-	 * Construct function
-	 *
-	 * @param str $theme_version The theme version.
-	 * @access public
-	 */
-	public function __construct( $theme_version ) {
-		$this->theme_version = $theme_version;
-
+	public function run() : void {
 		add_filter( 'admin_footer_text', array( $this, 'set_admin_footer_text' ) );
 		add_filter( 'upload_mimes', array( $this, 'upload_mimes_svg' ) );
 	}
@@ -45,7 +32,7 @@ class Admin {
 	 * @access public
 	 */
 	public function set_admin_footer_text() {
-		return __( 'Thank you for creating with <a href="http://www.19h47.fr/" target="_blank">19h47</a> and <a href="http://www.mokacreation.com/" target="_blank">Moka Création</a>. ✌️' );
+		return __( 'Thank you for creating with <a href="http://www.19h47.fr/" target="_blank">19h47</a> and <a href="http://www.mokacreation.com/" target="_blank">Moka Création</a>. ✌️', 'formatcine' );
 	}
 
 	/**
