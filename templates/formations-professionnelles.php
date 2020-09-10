@@ -5,9 +5,11 @@
  * @package Formatcine
  */
 
+use Timber\{ Timber, Post };
+
 $context           = Timber::get_context();
-$context['post']   = new TimberPost();
-$context['parent'] = new TimberPost( $post->post_parent );
+$context['post']   = new Post();
+$context['parent'] = new Post( $post->post_parent );
 
 $context['adult_trainings'] = Timber::get_posts(
 	array(

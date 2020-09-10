@@ -34,23 +34,9 @@
 		{% include 'components/post-content.html.twig' %}
 	{% endif %}
 
+	{% include 'partials/page-introduction.html.twig' with { introduction: post.meta( 'introduction' ) } %}
 
 	<div class="Site-container">
-		<div class="row">
-			<div class="col-12">
-				<div class="Page-introduction font-semibold">
-					<p>
-						{{- __( 'Notre association, qui organise depuis vingt cinq ans des stages dans le domaine du cinéma et de l\'audiovisuel, bénéficie d\'un numéro d\'enregistrement permettant une prise en charge financière par les Organismes Paritaires Collecteurs Agréés (OPCA).', 'formatcine' ) -}}
-					</p>
-					<p class="h2 font-bold">
-						{{- __( 'Salariés, travailleurs indépendants, professionnels libéraux, fonctionnaires de la fonction publique :', 'formatcine' ) -}}
-					</p>
-					<p>
-						{{- __( 'Les objectifs pédagogiques de nos stages pratiques de cinéma sont d\'une part de dépasser progressivement certaines réticences dans le domaine de la créativité, d\'autre part de favoriser le travail en équipe autour de la création de toutes pièces d\'un court métrage. Encadrés par des professionnels du cinéma, ils permettent de (re)donner confiance en soi aux participants et de les (re)dynamiser par la réussite d\'une création collective. Aucune compétence artistique n\'est pré-requise. À l\'issue des stages, les stagiaires auront découvert les différentes étapes de la réalisation d\'un film ainsi que différentes techniques du cinéma.', 'formatcine' ) -}}
-					</p>
-				</div>
-			</div>
-		</div>
 		<div class="row">
 			<div class="col-12 text-align-center">
 				<a class="Page-button background-color-secondary border-color-secondary color-secondary-hover" href="{{ function( 'get_permalink', 183 ) }}">

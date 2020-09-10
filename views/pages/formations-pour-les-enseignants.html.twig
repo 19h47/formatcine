@@ -41,17 +41,7 @@
 		{% include 'components/post-content.html.twig' %}
 	{% endif %}
 
-
-	<div class="Site-container">
-		<div class="row">
-			<div class="col-12">
-				<p class="Page-introduction font-semibold">
-					{{- __( 'Notre association organise en Touraine depuis vingt cinq ans des stages de un à trois jours dans le domaine du cinéma et de l\'audiovisuel. Les enseignants hors département de l\'Indre-et-Loire peuvent s\'y inscrire sous certaines conditions (nous contacter).', 'formatcine' ) -}}
-				</p>
-			</div>
-		</div>
-	</div>
-
+	{% include 'partials/page-introduction.html.twig' with { introduction: post.meta( 'introduction' ) } %}
 
 	<div class="Site-container">
 		<div class="row">

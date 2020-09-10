@@ -9,9 +9,9 @@ namespace FormatCine\Setup;
 
 use FormatCine\Core\{ Transients };
 use Timber\{ Timber };
-use Dotenv;
+use Dotenv\{ Dotenv };
 
-$dotenv = Dotenv\Dotenv::create( get_template_directory() );
+$dotenv = Dotenv::createImmutable( get_template_directory() );
 $dotenv->load();
 
 /**
