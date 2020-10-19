@@ -38,7 +38,7 @@
 	 * @uses .School-trainings-filters
 	 */
 	&-filters {
-		@extend %list-style-type-none, %margin-md-y-0, %text-align-md-right, %padding-left-0;
+		@extend %list-style-type-none, %margin-y-md-0, %text-align-md-right, %padding-left-0;
 
 		@include margin(top $grid-gutter-width bottom $grid-gutter-width);
 

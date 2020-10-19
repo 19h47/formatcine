@@ -41,7 +41,7 @@
 	 * @uses .Events-filters
 	 */
 	&-filters {
-		@extend %list-style-type-none, %margin-md-y-0, %text-align-md-right;
+		@extend %list-style-type-none, %margin-y-md-0, %text-align-md-right;
 
 		@include margin(top $grid-gutter-width bottom $grid-gutter-width);
 
