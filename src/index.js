@@ -1,7 +1,7 @@
 import './stylesheets/styles.scss';
 
-import Events from 'Blocks/Events';
-import SchoolTraining from 'Blocks/SchoolTraining';
+import Events from 'blocks/Events';
+import SchoolTraining from 'blocks/SchoolTraining';
 
 import App from './App';
 
@@ -12,17 +12,17 @@ const bodyClasses = document.body.className.split(' ');
 
 // Collège au cinéma 37
 if (bodyClasses.includes('page-template-college-au-cinema-37')) {
-	import('Blocks/movie' /* webpackChunkName: "movie", webpackPreload: true */); // eslint-disable-line no-unused-expressions
+	import('blocks/movie' /* webpackChunkName: "movie", webpackPreload: true */); // eslint-disable-line no-unused-expressions
 }
 
 // Formations pour les adultes
 if (bodyClasses.includes('parent-pageid-181')) {
-	import('Blocks/adult-training' /* webpackChunkName: "adult-training", webpackPreload: true */); // eslint-disable-line no-unused-expressions
+	import('blocks/adult-training' /* webpackChunkName: "adult-training", webpackPreload: true */); // eslint-disable-line no-unused-expressions
 }
 
 // Home
 if (bodyClasses.includes('home')) {
-	import('Blocks/home' /* webpackChunkName: "home", webpackPreload: true */); // eslint-disable-line no-unused-expressions
+	import('blocks/home' /* webpackChunkName: "home", webpackPreload: true */); // eslint-disable-line no-unused-expressions
 }
 
 require.context('svg/', true);

@@ -1,7 +1,7 @@
 /**
  * Guid
  */
-export default () => {
+const Guid = () => {
 	// show/hide guides with CMD+;
 	document.addEventListener('keydown', e => {
 		const $guid = document.querySelector('.Guid');
@@ -11,3 +11,5 @@ export default () => {
 		}
 	});
 };
+
+export default Guid;

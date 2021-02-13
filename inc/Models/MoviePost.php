@@ -79,7 +79,7 @@ class MoviePost extends Post {
 		$facts = array();
 
 		if ( $this->countries() ) {
-			array_push( $facts, implode( $this->countries(), '-' ) );
+			array_push( $facts, implode( '-', $this->countries() ) );
 		}
 
 		if ( $this->release_year() ) {
@@ -91,9 +91,9 @@ class MoviePost extends Post {
 		}
 
 		if ( $this->version() ) {
-			array_push( $facts, implode( $this->version(), '-' ) );
+			array_push( $facts, implode( '-', $this->version() ) );
 		}
 
-		return implode( $facts, '&nbsp;|&nbsp;' );
+		return implode( '&nbsp;|&nbsp;', $facts );
 	}
 }

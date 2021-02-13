@@ -40,15 +40,10 @@ class Enqueue {
 		// Remove wp-embed script from WordPress.
 		wp_deregister_script( 'wp-embed' );
 
-		// Remove native version of jQuery and use custom CDN version instead.
-		if ( 'true' === getenv( 'PRODUCTION' ) ) {
-			wp_deregister_script( 'jquery' );
-		}
-
 		wp_register_script( // phpcs:ignore
 			get_theme_name() . '-main',
 			get_template_directory_uri() . '/' . get_theme_manifest()['main.js'],
-			array(),
+			array( 'jquery' ),
 			null,
 			true
 		);

@@ -48,6 +48,6 @@ class SchoolTrainingPost extends Post {
 			}
 		}
 
-		return implode( $array, ' ' );
+		return implode( ' ', $array );
 	}
 }

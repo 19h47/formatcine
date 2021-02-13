@@ -1,76 +1,68 @@
 /**
+ * Common
  *
- * @file   webpack.common.js
+ * @file webpack.config.common.js
  * @author Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
  */
 
-// Node modules
-const path = require('path');
-
-/**
- * Resolve
- *
- * @param {string} dir Dir.
- * @return {string} Dir.
- */
-function resolve(dir) {
-	return path.join(__dirname, '..', dir);
-}
+const webpack = require('webpack');
 
 // Plugins
-const webpack = require('webpack');
-const ManifestPlugin = require('webpack-manifest-plugin');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
-const dotenv = require('dotenv').config({ path: resolve('.env') });
+
+const dotenv = require('dotenv');
+
+const resolve = require('./webpack.utils');
+
+dotenv.config({ path: resolve('.env') });
 
 // Manifest plugin
-const manifestPlugin = new ManifestPlugin({
+const manifestPlugin = new WebpackManifestPlugin({
 	publicPath: 'dist/',
 });
 
-const devServer = {
-	contentBase: resolve('views/index.html'),
-	watchContentBase: true,
-	port: 9001,
-	// hot: true,
-};
-
 module.exports = {
-	devServer,
 	output: {
+		path: resolve('/dist'),
 		publicPath: process.env.PUBLIC_PATH,
+	},
+	externals: {
+		jquery: 'jQuery',
+		$: 'jQuery',
 	},
 	resolve: {
 		alias: {
 			'@': resolve('src'),
 
-			// js
-			Blocks: resolve('src/blocks'),
-			Common: resolve('src/common'),
-			Pages: resolve('src/pages'),
-			Transitions: resolve('src/transitions'),
-			Utils: resolve('src/utils'),
-
-			// img
-			img: resolve('src/img'),
-			png: resolve('src/img/png'),
-			jpg: resolve('src/img/jpg'),
-			svg: resolve('src/img/svg'),
-
-			// videos
+			// scripts
+			scripts: resolve('src/scripts'),
+			blocks: resolve('src/blocks'),
+			abstracts: resolve('src/scripts/abstracts'),
+			common: resolve('src/scripts/common'),
+			modules: resolve('src/scripts/modules'),
+			pages: resolve('src/scripts/pages'),
+			transitions: resolve('src/scripts/transitions'),
+			factories: resolve('src/scripts/factories'),
+			services: resolve('src/scripts/services'),
+			utils: resolve('src/scripts/utils'),
+			polyfills: resolve('src/scripts/polyfills'),
+			vendors: resolve('src/scripts/vendors'),
 			videos: resolve('src/videos'),
-
-			// icons
-			icons: resolve('src/icons'),
-
-			// fonts
-			fonts: resolve('src/fonts'),
 
 			// stylesheets
 			stylesheets: resolve('src/stylesheets'),
+
+			// img
+			jpg: resolve('src/img/jpg'),
+			png: resolve('src/img/png'),
+			gif: resolve('src/img/gif'),
+			svg: resolve('src/img/svg'),
+			icons: resolve('src/icons'),
 		},
 	},
+
 	module: {
 		rules: [
 			{

@@ -7,11 +7,11 @@
  * @package Formatcine
  */
 
-use Timber\{ Timber, Post };
+use Timber\{ Timber };
 
-$context         = Timber::get_context();
-$context['post'] = new Post();
+$filenames = array( 'index.html.twig' );
 
-$templates = array( 'index.html.twig' );
+$data         = Timber::context();
+$data['post'] = Timber::get_post();
 
-Timber::render( $templates, $context );
+Timber::render( $filenames, $data );

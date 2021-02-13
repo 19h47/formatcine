@@ -3,7 +3,7 @@
  *
  * global shared variables
  */
-export default {
+const config = {
 	body: {
 		scroll: {
 			left: 0,
@@ -12,3 +12,5 @@ export default {
 	},
 	html: document.documentElement,
 };
+
+export default config;

@@ -1,15 +1,14 @@
 {
 	"name": "19h47/formatcine",
 	"require": {
-		"timber/timber": "^1.17",
+		"timber/timber": "1.17.0",
 		"vlucas/phpdotenv": "^4.1",
 		"cocur/slugify": "^3.0",
 		"19h47/set-glance-items": "dev-master"
 	},
 	"require-dev": {
-		"dealerdirect/phpcodesniffer-composer-installer": "^0.6.2",
-		"squizlabs/php_codesniffer": "^3.5",
-		"wp-coding-standards/wpcs": "^2.2"
+		"wp-coding-standards/wpcs": "^2.2",
+		"squizlabs/php_codesniffer": "^3.5"
 	},
 	"repositories": [
 		{

@@ -105,12 +105,13 @@ class Movie {
 			'menu_position'       => 5,
 			'menu_icon'           => 'dashicons-tickets-alt',
 			'can_export'          => true,
-			'has_archive'         => true,
-			'exclude_from_search' => false,
-			'publicly_queryable'  => true,
+			'has_archive'         => false,
+			'exclude_from_search' => true,
+			'publicly_queryable'  => false,
 			'rewrite'             => $rewrite,
 			'capability_type'     => 'post',
 		);
+
 		register_post_type( 'movie', $args );
 	}
 
