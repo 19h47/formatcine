@@ -2,8 +2,8 @@
 /**
  * Bootstraps WordPress theme related functions, most importantly enqueuing javascript and styles.
  *
- * @package FormatCine
- * @subpackage FormatCine/Init
+ * @package WordPress
+ * @subpackage Formatcine
  */
 
 namespace FormatCine;

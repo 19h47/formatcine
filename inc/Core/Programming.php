@@ -2,7 +2,8 @@
 /**
  * Class Programming
  *
- * @package FormatCine
+ * @package WordPress
+ * @subpackage Formatcine
  */
 
 namespace FormatCine\Core;
@@ -135,7 +136,7 @@ class Programming {
 	/**
 	 * Add custom columns
 	 *
-	 * @param arr $columns Array of columns.
+	 * @param array $columns Array of columns.
 	 */
 	public function add_custom_columns( $columns ) {
 

@@ -2,7 +2,8 @@
 /**
  * Menus
  *
- * @package FormatCine
+ * @package WordPress
+ * @subpackage Formatcine
  */
 
 namespace FormatCine\Setup;

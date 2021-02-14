@@ -2,9 +2,10 @@
 /**
  * College In CinemaPost
  *
- * PHP version 7.3.8
+ * PHP version 8.0.0
  *
- * @package Formatcine
+ * @package WordPress
+ * @subpackage Formatcine
  */
 
 namespace Formatcine\Models;

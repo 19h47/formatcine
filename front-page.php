@@ -2,17 +2,18 @@
 /**
  * Front page
  *
- * @author  Jérémy Levron <jeremylevron@19h47.fr> (http://19h47.fr)
- * @file    front-page.php
- * @package Formatcine
+ * @author  Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
+ * @package WordPress
+ * @subpackage Formatcine
  */
 
-use Timber\{ Timber, Post, Helper };
+use Timber\{ Timber };
 
+$filenems = array( 'pages/front-page.html.twig' );
 
-$context          = Timber::get_context();
-$context['post']  = new Post();
-$context['posts'] = Helper::transient(
+$data          = Timber::context();
+$data['post']  = Timber::get_post();
+$data['posts'] = Helper::transient(
 	'formatcine_front_page_posts',
 	function() {
 		$posts = Timber::get_posts(
@@ -30,8 +31,6 @@ $context['posts'] = Helper::transient(
 	},
 );
 
-$context['events']['categories'] = get_terms( array( 'taxonomy' => 'category' ) );
+$data['events']['categories'] = get_terms( array( 'taxonomy' => 'category' ) );
 
-$templates = array( 'pages/front-page.html.twig' );
-
-Timber::render( $templates, $context );
+Timber::render( $filenems, $data );

@@ -2,8 +2,8 @@
 /**
  * Mostly involved with cleaning up default WordPress cruft.
  *
- * @package FormatCine
- * @subpackage FormatCine/Setup/WordPress
+ * @package WordPress
+ * @subpackage Formatcine
  */
 
 namespace FormatCine\Setup;

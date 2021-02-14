@@ -2,7 +2,8 @@
 /**
  * Class Adult Training Category
  *
- * @package FormatCine
+ * @package WordPress
+ * @subpackage Formatcine
  */
 
 namespace FormatCine\Core;
@@ -28,7 +29,7 @@ class AdultTrainingCategory {
 	 * @access public
 	 * @return void
 	 */
-	public function register() {
+	public function register() : void {
 
 		$labels = array(
 			'name'                       => _x( 'Categories', 'adult training category general name', 'formatcine' ),

@@ -2,7 +2,8 @@
 /**
  * Class Adult Training
  *
- * @package FormatCine
+ * @package WordPress
+ * @subpackage Formatcine
  */
 
 namespace FormatCine\Core;

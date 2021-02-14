@@ -2,7 +2,8 @@
 /**
  * Class Director
  *
- * @package FormatCine
+ * @package WordPress
+ * @subpackage Formatcine
  */
 
 namespace FormatCine\Core;
@@ -27,7 +28,7 @@ class Director {
 	 * @access public
 	 * @return void
 	 */
-	public function register() {
+	public function register() : void {
 		$labels = array(
 			'name'                       => _x( 'Directors', 'director general name', 'formatcine' ),
 			'singular_name'              => _x( 'Director', 'director singular name', 'formatcine' ),

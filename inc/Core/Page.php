@@ -2,7 +2,8 @@
 /**
  * Class Page
  *
- * @package FormatCine
+ * @package WordPress
+ * @subpackage Formatcine
  */
 
 namespace FormatCine\Core;

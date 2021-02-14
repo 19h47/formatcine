@@ -2,8 +2,8 @@
 /**
  * ACF
  *
- * @package FormatCine
- * @subpackage FormatCine/Plugins/WooCommerce
+ * @package WordPress
+ * @subpackage Formatcine
  */
 
 namespace FormatCine\Plugins;

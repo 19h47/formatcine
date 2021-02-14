@@ -2,7 +2,8 @@
 /**
  * Utitlities
  *
- * @package Formatcine
+ * @package WordPress
+ * @subpackage Formatcine
  */
 
 if ( ! function_exists( 'get_html_class' ) ) :

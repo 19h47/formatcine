@@ -3,7 +3,8 @@
  * Contact
  *
  * @category Customizer
- * @package  FormatCine
+ * @package WordPress
+ * @subpackage Formatcine
  * @author   Jérémy Levron <jeremylevron@19h47.fr> (https://19h47.fr)
  * @license  http://opensource.org/licenses/gpl-license.php GNU Public License
  */
