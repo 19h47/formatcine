@@ -43,7 +43,7 @@ class Init {
 			Setup\Theme::class,
 			Setup\WordPress::class,
 			Plugins\ACF::class,
-			Plugins\SetGlanceItems::class,
+			// Plugins\SetGlanceItems::class,
 		);
 	}
 

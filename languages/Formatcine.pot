@@ -1,17 +1,17 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Format'ciné\n"
-"POT-Creation-Date: 2020-03-19 15:13+0100\n"
-"PO-Revision-Date: 2020-03-19 14:58+0100\n"
+"POT-Creation-Date: 2022-01-09 14:11+0100\n"
+"PO-Revision-Date: 2022-01-09 14:06+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
-"X-Poedit-Basepath: ../../../../../..\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -20,980 +20,1167 @@ msgstr ""
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
-"X-Poedit-SearchPathExcluded-1: vendor\n"
-"X-Poedit-SearchPathExcluded-2: node_modules\n"
+"X-Poedit-SearchPathExcluded-1: node_modules\n"
+"X-Poedit-SearchPathExcluded-2: src\n"
+"X-Poedit-SearchPathExcluded-3: languages\n"
+"X-Poedit-SearchPathExcluded-4: acf-json\n"
+"X-Poedit-SearchPathExcluded-5: node_modules\n"
+"X-Poedit-SearchPathExcluded-6: vendor\n"
 
 #: 404.php:16
-msgid "Oops! Cette page ne peut pas être trouvée."
+msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: inc/Admin.php:48
+#: inc/Api/Customizer/Contact.php:41
+msgid "Contact details"
+msgstr ""
+
+#: inc/Api/Customizer/Contact.php:42
+msgid "Contact details settings"
+msgstr ""
+
+#: inc/Api/Customizer/Contact.php:58
+msgid "Address"
+msgstr ""
+
+#: inc/Api/Customizer/Contact.php:59
+msgid "Indicate postal address"
+msgstr ""
+
+#: inc/Api/Customizer/Contact.php:78
+msgid "Email addresses"
+msgstr ""
+
+#: inc/Api/Customizer/Contact.php:79
+msgid "Indicate the site contact email addresses separated by commas"
+msgstr ""
+
+#: inc/Api/Customizer/Contact.php:97
+msgid "Phone number"
+msgstr ""
+
+#: inc/Api/Customizer/Contact.php:98
+msgid "Indicate telephone number"
+msgstr ""
+
+#: inc/Api/Customizer/Contact.php:116
+msgid "Facebook"
+msgstr ""
+
+#: inc/Api/Customizer/Contact.php:117
+msgid "Indicate the URL of the Facebook account"
+msgstr ""
+
+#: inc/Api/Customizer/Contact.php:135
+msgid "Twitter"
+msgstr ""
+
+#: inc/Api/Customizer/Contact.php:136
+msgid "Indicate the URL of the Twitter account"
+msgstr ""
+
+#: inc/Api/Customizer/Contact.php:154
+msgid "Instagram"
+msgstr ""
+
+#: inc/Api/Customizer/Contact.php:155
+msgid "Indicate the URL of the Instagram account"
+msgstr ""
+
+#: inc/Api/Customizer/Contact.php:173
+msgid "Pinterest"
+msgstr ""
+
+#: inc/Api/Customizer/Contact.php:174
+msgid "Indicate the URL of the Pinterest account"
+msgstr ""
+
+#: inc/Api/Customizer/Contact.php:192
+msgid "YouTube"
+msgstr ""
+
+#: inc/Api/Customizer/Contact.php:193
+msgid "Indicate the URL of the YouTube account"
+msgstr ""
+
+#: inc/Core/AdultTraining.php:34
+msgctxt "adult training type general"
+msgid "Adults training"
+msgstr ""
+
+#: inc/Core/AdultTraining.php:35
+msgctxt "adult training type singular"
+msgid "Adult training"
+msgstr ""
+
+#: inc/Core/AdultTraining.php:36 inc/Core/Movie.php:59
+#: inc/Core/Programming.php:45 inc/Core/SchoolTraining.php:48
+msgid "Add New"
+msgstr ""
+
+#: inc/Core/AdultTraining.php:37
+msgid "Add New Adult training"
+msgstr ""
+
+#: inc/Core/AdultTraining.php:38
+msgid "Edit Adult training"
+msgstr ""
+
+#: inc/Core/AdultTraining.php:39
+msgid "New Adult training"
+msgstr ""
+
+#: inc/Core/AdultTraining.php:40
+msgid "View Adult training"
+msgstr ""
+
+#: inc/Core/AdultTraining.php:41
+msgid "View Adults training"
+msgstr ""
+
+#: inc/Core/AdultTraining.php:42
+msgid "Search Adult training"
+msgstr ""
+
+#: inc/Core/AdultTraining.php:43
+msgid "No adult training found."
+msgstr ""
+
+#: inc/Core/AdultTraining.php:44
+msgid "No adult training in Trash."
+msgstr ""
+
+#: inc/Core/AdultTraining.php:45
+msgid "Parent Adult training:"
+msgstr ""
+
+#: inc/Core/AdultTraining.php:46
+msgid "All adults training"
+msgstr ""
+
+#: inc/Core/AdultTraining.php:47
+msgid "Adult training Archives"
+msgstr ""
+
+#: inc/Core/AdultTraining.php:48
+msgid "Adult training Attributes"
+msgstr ""
+
+#: inc/Core/AdultTraining.php:49
+msgctxt "adult training"
+msgid "Featured Image"
+msgstr ""
+
+#: inc/Core/AdultTraining.php:50
+msgctxt "adult training"
+msgid "Set featured image"
+msgstr ""
+
+#: inc/Core/AdultTraining.php:51
+msgctxt "adult training"
+msgid "Remove featured image"
+msgstr ""
+
+#: inc/Core/AdultTraining.php:52
+msgctxt "adult training"
+msgid "Use as featured image"
+msgstr ""
+
+#: inc/Core/AdultTraining.php:53
+msgid "Insert into adult training"
+msgstr ""
+
+#: inc/Core/AdultTraining.php:54
+msgid "Uploaded to this adult training"
+msgstr ""
+
+#: inc/Core/AdultTraining.php:55
+msgid "Adults training list"
+msgstr ""
+
+#: inc/Core/AdultTraining.php:56
+msgid "Adults training list navigation"
+msgstr ""
+
+#: inc/Core/AdultTraining.php:57
+msgid "Adult training published."
+msgstr ""
+
+#: inc/Core/AdultTraining.php:58
+msgid "Adult training published privately."
+msgstr ""
+
+#: inc/Core/AdultTraining.php:59
+msgid "Adult training reverted to draft."
+msgstr ""
+
+#: inc/Core/AdultTraining.php:60
+msgid "Adult training scheduled."
+msgstr ""
+
+#: inc/Core/AdultTraining.php:61
+msgid "Adult training updated."
+msgstr ""
+
+#: inc/Core/AdultTrainingCategory.php:35
+msgctxt "adult training category general name"
+msgid "Categories"
+msgstr ""
+
+#: inc/Core/AdultTrainingCategory.php:36
+msgctxt "adult training category singular name"
+msgid "Category"
+msgstr ""
+
+#: inc/Core/AdultTrainingCategory.php:37
+msgid "Search Categories"
+msgstr ""
+
+#: inc/Core/AdultTrainingCategory.php:38
+msgid "All Categories"
+msgstr ""
+
+#: inc/Core/AdultTrainingCategory.php:39
+msgid "Popular Categories"
+msgstr ""
+
+#: inc/Core/AdultTrainingCategory.php:40
+msgid "Parent Category"
+msgstr ""
+
+#: inc/Core/AdultTrainingCategory.php:41
+msgid "Parent Category:"
+msgstr ""
+
+#: inc/Core/AdultTrainingCategory.php:42
+msgid "Edit Category"
+msgstr ""
+
+#: inc/Core/AdultTrainingCategory.php:43
+msgid "View Category"
+msgstr ""
+
+#: inc/Core/AdultTrainingCategory.php:44
+msgid "Update Category"
+msgstr ""
+
+#: inc/Core/AdultTrainingCategory.php:45
+msgid "Add New Category"
+msgstr ""
+
+#: inc/Core/AdultTrainingCategory.php:46
+msgid "New Category Name"
+msgstr ""
+
+#: inc/Core/AdultTrainingCategory.php:47
+msgid "Separate categories with commas"
+msgstr ""
+
+#: inc/Core/AdultTrainingCategory.php:48
+msgid "Add or remove categories"
+msgstr ""
+
+#: inc/Core/AdultTrainingCategory.php:49
+msgid "Choose from the most used categories"
+msgstr ""
+
+#: inc/Core/AdultTrainingCategory.php:50
+msgid "No adult training category found in Trash."
+msgstr ""
+
+#: inc/Core/AdultTrainingCategory.php:51
+msgid "No adult training category found."
+msgstr ""
+
+#: inc/Core/AdultTrainingCategory.php:52
+msgid "Categories list navigation"
+msgstr ""
+
+#: inc/Core/AdultTrainingCategory.php:53
+msgid "Categories list"
+msgstr ""
+
+#. translators: Tab heading when selecting from the most used terms.
+#: inc/Core/AdultTrainingCategory.php:55
+msgctxt "adult training category"
+msgid "Most Used"
+msgstr ""
+
+#: inc/Core/AdultTrainingCategory.php:56
+msgid "&larr; Back to Adults training categories"
+msgstr ""
+
+#: inc/Core/Country.php:36
+msgctxt "country general name"
+msgid "Countries"
+msgstr ""
+
+#: inc/Core/Country.php:37
+msgctxt "country singular name"
+msgid "Country"
+msgstr ""
+
+#: inc/Core/Country.php:38
+msgid "Search Countries"
+msgstr ""
+
+#: inc/Core/Country.php:39
+msgid "All Countries"
+msgstr ""
+
+#: inc/Core/Country.php:40
+msgid "Popular Countries"
+msgstr ""
+
+#: inc/Core/Country.php:41
+msgid "Parent Country"
+msgstr ""
+
+#: inc/Core/Country.php:42
+msgid "Parent Country:"
+msgstr ""
+
+#: inc/Core/Country.php:43
+msgid "Edit Country"
+msgstr ""
+
+#: inc/Core/Country.php:44
+msgid "View Country"
+msgstr ""
+
+#: inc/Core/Country.php:45
+msgid "Update Country"
+msgstr ""
+
+#: inc/Core/Country.php:46
+msgid "Add New Country"
+msgstr ""
+
+#: inc/Core/Country.php:47
+msgid "New Country Name"
+msgstr ""
+
+#: inc/Core/Country.php:48
+msgid "Separate countries with commas"
+msgstr ""
+
+#: inc/Core/Country.php:49
+msgid "Add or remove countries"
+msgstr ""
+
+#: inc/Core/Country.php:50
+msgid "Choose from the most used countries"
+msgstr ""
+
+#: inc/Core/Country.php:51
+msgid "No coutries found."
+msgstr ""
+
+#: inc/Core/Country.php:52
+msgid "No countries"
+msgstr ""
+
+#: inc/Core/Country.php:53
+msgid "Countries list navigation"
+msgstr ""
+
+#: inc/Core/Country.php:54
+msgid "Countries list"
+msgstr ""
+
+#. translators: Tab heading when selecting from the most used terms.
+#: inc/Core/Country.php:56
+msgctxt "country"
+msgid "Most Used"
+msgstr ""
+
+#: inc/Core/Country.php:57
+msgid "&larr; Back to Countries"
+msgstr ""
+
+#: inc/Core/Director.php:33
+msgctxt "director general name"
+msgid "Directors"
+msgstr ""
+
+#: inc/Core/Director.php:34
+msgctxt "director singular name"
+msgid "Director"
+msgstr ""
+
+#: inc/Core/Director.php:35
+msgid "Search Directors"
+msgstr ""
+
+#: inc/Core/Director.php:36
+msgid "All Directors"
+msgstr ""
+
+#: inc/Core/Director.php:37
+msgid "Popular Directors"
+msgstr ""
+
+#: inc/Core/Director.php:38
+msgid "Parent Director"
+msgstr ""
+
+#: inc/Core/Director.php:39
+msgid "Parent Director:"
+msgstr ""
+
+#: inc/Core/Director.php:40
+msgid "Edit Director"
+msgstr ""
+
+#: inc/Core/Director.php:41
+msgid "View Director"
+msgstr ""
+
+#: inc/Core/Director.php:42
+msgid "Update Director"
+msgstr ""
+
+#: inc/Core/Director.php:43
+msgid "Add New Director"
+msgstr ""
+
+#: inc/Core/Director.php:44
+msgid "New Director Name"
+msgstr ""
+
+#: inc/Core/Director.php:45
+msgid "Separate directors with commas"
+msgstr ""
+
+#: inc/Core/Director.php:46
+msgid "Add or remove directors"
+msgstr ""
+
+#: inc/Core/Director.php:47
+msgid "Choose from the most used directors"
+msgstr ""
+
+#: inc/Core/Director.php:48
+msgid "No director found in Trash."
+msgstr ""
+
+#: inc/Core/Director.php:49
+msgid "No director found."
+msgstr ""
+
+#: inc/Core/Director.php:50
+msgid "Directors list navigation"
+msgstr ""
+
+#: inc/Core/Director.php:51
+msgid "Directors list"
+msgstr ""
+
+#. translators: Tab heading when selecting from the most used terms.
+#: inc/Core/Director.php:53
+msgctxt "director"
+msgid "Most Used"
+msgstr ""
+
+#: inc/Core/Director.php:54
+msgid "&larr; Back to Directors"
+msgstr ""
+
+#: inc/Core/Movie.php:57
+msgctxt "movie type general"
+msgid "Movies"
+msgstr ""
+
+#: inc/Core/Movie.php:58
+msgctxt "movie type singular"
+msgid "Movie"
+msgstr ""
+
+#: inc/Core/Movie.php:60
+msgid "Add New Movie"
+msgstr ""
+
+#: inc/Core/Movie.php:61
+msgid "Edit Movie"
+msgstr ""
+
+#: inc/Core/Movie.php:62
+msgid "New Movie"
+msgstr ""
+
+#: inc/Core/Movie.php:63
+msgid "View Movie"
+msgstr ""
+
+#: inc/Core/Movie.php:64
+msgid "View Movies"
+msgstr ""
+
+#: inc/Core/Movie.php:65
+msgid "Search Movies"
+msgstr ""
+
+#: inc/Core/Movie.php:66
+msgid "No movie found."
+msgstr ""
+
+#: inc/Core/Movie.php:67
+msgid "No movie found in Trash."
+msgstr ""
+
+#: inc/Core/Movie.php:68
+msgid "Parent Movie:"
+msgstr ""
+
+#: inc/Core/Movie.php:69
+msgid "All movies"
+msgstr ""
+
+#: inc/Core/Movie.php:70
+msgid "Movie Archives"
+msgstr ""
+
+#: inc/Core/Movie.php:71
+msgid "Movie Attributes"
+msgstr ""
+
+#: inc/Core/Movie.php:72
+msgid "Insert into movie"
+msgstr ""
+
+#: inc/Core/Movie.php:73
+msgid "Uploaded to this movie"
+msgstr ""
+
+#: inc/Core/Movie.php:74
+msgctxt "movie"
+msgid "Featured Image"
+msgstr ""
+
+#: inc/Core/Movie.php:75
+msgctxt "movie"
+msgid "Set featured image"
+msgstr ""
+
+#: inc/Core/Movie.php:76
+msgctxt "movie"
+msgid "Remove featured image"
+msgstr ""
+
+#: inc/Core/Movie.php:77
+msgctxt "movie"
+msgid "Use as featured image"
+msgstr ""
+
+#: inc/Core/Movie.php:78
+msgid "Movie list navigation"
+msgstr ""
+
+#: inc/Core/Movie.php:79
+msgid "Movie list"
+msgstr ""
+
+#: inc/Core/Movie.php:80
+msgid "Movie published."
+msgstr ""
+
+#: inc/Core/Movie.php:81
+msgid "Movie published privately."
+msgstr ""
+
+#: inc/Core/Movie.php:82
+msgid "Movie reverted to draft."
+msgstr ""
+
+#: inc/Core/Movie.php:83
+msgid "Movie scheduled."
+msgstr ""
+
+#: inc/Core/Movie.php:84
+msgid "Movie updated."
+msgstr ""
+
+#: inc/Core/Movie.php:168
+msgid "Poster"
+msgstr ""
+
+#: inc/Core/Movie.php:173
+msgid "Release year"
+msgstr ""
+
+#: inc/Core/Movie.php:174
+msgid "Duration"
+msgstr ""
+
+#: inc/Core/Page.php:76
+msgid "Colors"
+msgstr ""
+
+#: inc/Core/Post.php:97
+msgid "Event date"
+msgstr ""
+
+#: inc/Core/Programming.php:43
+msgctxt "programming type general"
+msgid "Programming"
+msgstr ""
+
+#: inc/Core/Programming.php:44
+msgctxt "programming type singular"
+msgid "Programming"
+msgstr ""
+
+#: inc/Core/Programming.php:46
+msgid "Add New Programming"
+msgstr ""
+
+#: inc/Core/Programming.php:47
+msgid "Edit Programming"
+msgstr ""
+
+#: inc/Core/Programming.php:48
+msgid "New Programming"
+msgstr ""
+
+#: inc/Core/Programming.php:49
+msgid "View Programming"
+msgstr ""
+
+#: inc/Core/Programming.php:50
+msgid "View programming"
+msgstr ""
+
+#: inc/Core/Programming.php:51
+msgid "Search programming"
+msgstr ""
+
+#: inc/Core/Programming.php:52
+msgid "No programming found."
+msgstr ""
+
+#: inc/Core/Programming.php:53
+msgid "No programming in Trash."
+msgstr ""
+
+#: inc/Core/Programming.php:54
+msgid "Parent programming:"
+msgstr ""
+
+#: inc/Core/Programming.php:55
+msgid "All Programming"
+msgstr ""
+
+#: inc/Core/Programming.php:56
+msgid "Programming Archives"
+msgstr ""
+
+#: inc/Core/Programming.php:57
+msgid "Programming Attributes"
+msgstr ""
+
+#: inc/Core/Programming.php:58
+msgctxt "programming"
+msgid "Featured Image"
+msgstr ""
+
+#: inc/Core/Programming.php:59
+msgctxt "programming"
+msgid "Set featured image"
+msgstr ""
+
+#: inc/Core/Programming.php:60
+msgctxt "programming"
+msgid "Remove featured image"
+msgstr ""
+
+#: inc/Core/Programming.php:61
+msgctxt "programming"
+msgid "Use as featured image"
+msgstr ""
+
+#: inc/Core/Programming.php:62
+msgid "Insert into programming"
+msgstr ""
+
+#: inc/Core/Programming.php:63
+msgid "Uploaded to this programming"
+msgstr ""
+
+#: inc/Core/Programming.php:64
+msgid "Programming list"
+msgstr ""
+
+#: inc/Core/Programming.php:65
+msgid "Programming list navigation"
+msgstr ""
+
+#: inc/Core/Programming.php:66
+msgid "Programming published."
+msgstr ""
+
+#: inc/Core/Programming.php:67
+msgid "Programming published privately."
+msgstr ""
+
+#: inc/Core/Programming.php:68
+msgid "Programming reverted to draft."
+msgstr ""
+
+#: inc/Core/Programming.php:69
+msgid "Programming scheduled."
+msgstr ""
+
+#: inc/Core/Programming.php:70
+msgid "Programming updated."
+msgstr ""
+
+#: inc/Core/Programming.php:155
+msgid "Quarters"
+msgstr ""
+
+#: inc/Core/Programming.php:157
+msgid "Movie"
+msgstr ""
+
+#: inc/Core/Programming.php:230 inc/Core/SchoolClass.php:92
+#: inc/Core/Season.php:44 views/partials/programming.html.twig:17
+#: views/partials/tease-school-training.html.twig:34
+msgid "Programming"
+msgstr ""
+
+#: inc/Core/SchoolClass.php:40
+msgctxt "school class general"
+msgid "Classes"
+msgstr ""
+
+#: inc/Core/SchoolClass.php:41
+msgctxt "school class singular"
+msgid "Class"
+msgstr ""
+
+#: inc/Core/SchoolClass.php:42
+msgid "Search Classes"
+msgstr ""
+
+#: inc/Core/SchoolClass.php:43
+msgid "All Classes"
+msgstr ""
+
+#: inc/Core/SchoolClass.php:44
+msgid "Popular Classes"
+msgstr ""
+
+#: inc/Core/SchoolClass.php:45
+msgid "Parent Class"
+msgstr ""
+
+#: inc/Core/SchoolClass.php:46
+msgid "Parent Class:"
+msgstr ""
+
+#: inc/Core/SchoolClass.php:47
+msgid "Edit Class"
+msgstr ""
+
+#: inc/Core/SchoolClass.php:48
+msgid "View Class"
+msgstr ""
+
+#: inc/Core/SchoolClass.php:49
+msgid "Update Class"
+msgstr ""
+
+#: inc/Core/SchoolClass.php:50
+msgid "Add New Class"
+msgstr ""
+
+#: inc/Core/SchoolClass.php:51
+msgid "New Class Name"
+msgstr ""
+
+#: inc/Core/SchoolClass.php:52
+msgid "Separate classes with commas"
+msgstr ""
+
+#: inc/Core/SchoolClass.php:53
+msgid "Add or remove classes"
+msgstr ""
+
+#: inc/Core/SchoolClass.php:54
+msgid "Choose from the most used classes"
+msgstr ""
+
+#: inc/Core/SchoolClass.php:55
+msgid "No class found in Trash."
+msgstr ""
+
+#: inc/Core/SchoolClass.php:56
+msgid "No class found."
+msgstr ""
+
+#: inc/Core/SchoolClass.php:57
+msgid "Classes list navigation"
+msgstr ""
+
+#: inc/Core/SchoolClass.php:58
+msgid "Classes list"
+msgstr ""
+
+#. translators: Tab heading when selecting from the most used terms.
+#: inc/Core/SchoolClass.php:60
+msgctxt "class"
+msgid "Most Used"
+msgstr ""
+
+#: inc/Core/SchoolClass.php:61
+msgid "&larr; Back to Classes"
+msgstr ""
+
+#: inc/Core/SchoolClass.php:93 inc/Core/SchoolTraining.php:239
+#: inc/Core/Season.php:45
+msgid "Training"
+msgstr ""
+
+#: inc/Core/SchoolTraining.php:46
+msgctxt "school training general"
+msgid "Schools training"
+msgstr ""
+
+#: inc/Core/SchoolTraining.php:47
+msgctxt "school training singular"
+msgid "School training"
+msgstr ""
+
+#: inc/Core/SchoolTraining.php:49
+msgid "Add New School training"
+msgstr ""
+
+#: inc/Core/SchoolTraining.php:50
+msgid "Edit School training"
+msgstr ""
+
+#: inc/Core/SchoolTraining.php:51
+msgid "New School training"
+msgstr ""
+
+#: inc/Core/SchoolTraining.php:52
+msgid "View School training"
+msgstr ""
+
+#: inc/Core/SchoolTraining.php:53
+msgid "View schools training"
+msgstr ""
+
+#: inc/Core/SchoolTraining.php:54
+msgid "Search School training"
+msgstr ""
+
+#: inc/Core/SchoolTraining.php:55
+msgid "No school training found."
+msgstr ""
+
+#: inc/Core/SchoolTraining.php:56
+msgid "No school training found in Trash."
+msgstr ""
+
+#: inc/Core/SchoolTraining.php:57
+msgid "Parent School training:"
+msgstr ""
+
+#: inc/Core/SchoolTraining.php:58
+msgid "All schools training"
+msgstr ""
+
+#: inc/Core/SchoolTraining.php:59
+msgid "School training Archives"
+msgstr ""
+
+#: inc/Core/SchoolTraining.php:60
+msgid "School training Attributes"
+msgstr ""
+
+#: inc/Core/SchoolTraining.php:61
+msgctxt "school training"
+msgid "Featured Image"
+msgstr ""
+
+#: inc/Core/SchoolTraining.php:62
+msgctxt "school training"
+msgid "Set featured image"
+msgstr ""
+
+#: inc/Core/SchoolTraining.php:63
+msgctxt "school training"
+msgid "Remove featured image"
+msgstr ""
+
+#: inc/Core/SchoolTraining.php:64
+msgctxt "school training"
+msgid "Use as featured image"
+msgstr ""
+
+#: inc/Core/SchoolTraining.php:65
+msgid "Insert into school training"
+msgstr ""
+
+#: inc/Core/SchoolTraining.php:66
+msgid "Uploaded to this school training"
+msgstr ""
+
+#: inc/Core/SchoolTraining.php:67
+msgid "Schools training list"
+msgstr ""
+
+#: inc/Core/SchoolTraining.php:68
+msgid "Schools training list navigation"
+msgstr ""
+
+#: inc/Core/SchoolTraining.php:69
+msgid "School training published."
+msgstr ""
+
+#: inc/Core/SchoolTraining.php:70
+msgid "School training published privately."
+msgstr ""
+
+#: inc/Core/SchoolTraining.php:71
+msgid "School training reverted to draft."
+msgstr ""
+
+#: inc/Core/SchoolTraining.php:72
+msgid "School training scheduled."
+msgstr ""
+
+#: inc/Core/SchoolTraining.php:73
+msgid "School training updated."
+msgstr ""
+
+#: inc/Core/SchoolTraining.php:85
+msgid "Les formations scolaires"
+msgstr ""
+
+#: inc/Core/SchoolTraining.php:168
+msgid "Movies"
+msgstr ""
+
+#: inc/Core/Season.php:112
+msgctxt "season general name"
+msgid "Seasons"
+msgstr ""
+
+#: inc/Core/Season.php:113
+msgctxt "season singular name"
+msgid "Season"
+msgstr ""
+
+#: inc/Core/Season.php:114
+msgid "Search Seasons"
+msgstr ""
+
+#: inc/Core/Season.php:115
+msgid "All seasons"
+msgstr ""
+
+#: inc/Core/Season.php:116
+msgid "Popular Seasons"
+msgstr ""
+
+#: inc/Core/Season.php:117
+msgid "Parent Season"
+msgstr ""
+
+#: inc/Core/Season.php:118
+msgid "Parent Season:"
+msgstr ""
+
+#: inc/Core/Season.php:119
+msgid "Edit Season"
+msgstr ""
+
+#: inc/Core/Season.php:120
+msgid "View Season"
+msgstr ""
+
+#: inc/Core/Season.php:121
+msgid "Update Season"
+msgstr ""
+
+#: inc/Core/Season.php:122
+msgid "Add New season"
+msgstr ""
+
+#: inc/Core/Season.php:123
+msgid "Separate seasons with commas"
+msgstr ""
+
+#: inc/Core/Season.php:124
+msgid "Add or remove seasons"
+msgstr ""
+
+#: inc/Core/Season.php:125
+msgid "Choose from the most used seasons"
+msgstr ""
+
+#: inc/Core/Season.php:126
+msgid "No season found in Trash."
+msgstr ""
+
+#: inc/Core/Season.php:127
+msgid "No season found."
+msgstr ""
+
+#: inc/Core/Season.php:128
+msgid "Seasons list navigation"
+msgstr ""
+
+#: inc/Core/Season.php:129
+msgid "Seasons list"
+msgstr ""
+
+#. translators: Tab heading when selecting from the most used terms.
+#: inc/Core/Season.php:131
+msgctxt "season"
+msgid "Most Used"
+msgstr ""
+
+#: inc/Core/Season.php:132
+msgid "&larr; Back to Seasons"
+msgstr ""
+
+#: inc/Custom/Admin.php:35
 msgid ""
 "Thank you for creating with <a href=\"http://www.19h47.fr/\" target=\"_blank"
 "\">19h47</a> and <a href=\"http://www.mokacreation.com/\" target=\"_blank"
 "\">Moka Création</a>. ✌️"
 msgstr ""
 
-#: inc/App.php:292
-msgid "Partager sur Facebook"
+#: inc/Models/SchoolTrainingPost.php:44 views/components/movie.html.twig:43
+msgid "and"
 msgstr ""
 
-#: inc/App.php:297
-msgid "Partager sur Twitter"
-msgstr ""
-
-#: inc/App.php:302
-msgid "Partager sur Google+"
-msgstr ""
-
-#: inc/App.php:307
-msgid "Partager par Mail"
-msgstr ""
-
-#: inc/App.php:356
+#: inc/Setup/Menus.php:34
 msgid "Main"
 msgstr ""
 
-#: inc/PostTypes/AdultTraining.php:45
-msgctxt "Formation adulte Nom pluriel"
-msgid "Formations adultes"
+#: inc/Setup/Theme.php:277
+msgid "Share on Facebook"
 msgstr ""
 
-#: inc/PostTypes/AdultTraining.php:46
-msgctxt "Formation adulte Nom singulier"
-msgid "Formation adulte "
+#: inc/Setup/Theme.php:282
+msgid "Share on Twitter"
 msgstr ""
 
-#: inc/PostTypes/AdultTraining.php:47
-msgid "Formations adultes"
+#: inc/Setup/Theme.php:287
+msgid "Share by email"
 msgstr ""
 
-#: inc/PostTypes/AdultTraining.php:48 inc/PostTypes/SchoolTraining.php:58
-#: inc/Taxonomies/SchoolClass.php:101 inc/Taxonomies/Season.php:55
-msgid "Formation"
-msgstr ""
-
-#: inc/PostTypes/AdultTraining.php:49
-msgid "Toutes les formations adultes"
-msgstr ""
-
-#: inc/PostTypes/AdultTraining.php:50
-msgid "Ajouter une nouvelle formation adulte"
-msgstr ""
-
-#: inc/PostTypes/AdultTraining.php:51 inc/PostTypes/Movie.php:70
-#: inc/PostTypes/Programming.php:56 inc/PostTypes/SchoolTraining.php:61
-msgid "Ajouter"
-msgstr ""
-
-#: inc/PostTypes/AdultTraining.php:52
-msgid "Nouvelle formation adulte"
-msgstr ""
-
-#: inc/PostTypes/AdultTraining.php:53
-msgid "Modifier la formation adulte"
-msgstr ""
-
-#: inc/PostTypes/AdultTraining.php:54
-msgid "Mettre à jour la formation adulte"
-msgstr ""
-
-#: inc/PostTypes/AdultTraining.php:55
-msgid "Voir la formation adulte"
-msgstr ""
-
-#: inc/PostTypes/AdultTraining.php:56
-msgid "Voir les formations adultes"
-msgstr ""
-
-#: inc/PostTypes/AdultTraining.php:57 inc/PostTypes/SchoolTraining.php:67
-msgid "Chercher parmi les formations"
-msgstr ""
-
-#: inc/PostTypes/AdultTraining.php:58
-msgid "Aucune formation adulte trouvée."
-msgstr ""
-
-#: inc/PostTypes/AdultTraining.php:59
-msgid "Aucune formation adulte trouvée dans la corbeille."
-msgstr ""
-
-#: inc/PostTypes/AdultTraining.php:60 inc/PostTypes/Movie.php:79
-#: inc/PostTypes/Programming.php:65 inc/PostTypes/SchoolTraining.php:70
-msgid "Image à la une"
-msgstr ""
-
-#: inc/PostTypes/AdultTraining.php:61 inc/PostTypes/AdultTraining.php:63
-#: inc/PostTypes/Movie.php:80 inc/PostTypes/Movie.php:82
-#: inc/PostTypes/Programming.php:66 inc/PostTypes/Programming.php:68
-#: inc/PostTypes/SchoolTraining.php:71 inc/PostTypes/SchoolTraining.php:73
-msgid "Mettre une image à la une"
-msgstr ""
-
-#: inc/PostTypes/AdultTraining.php:62 inc/PostTypes/Movie.php:81
-#: inc/PostTypes/Programming.php:67 inc/PostTypes/SchoolTraining.php:72
-msgid "Retirer l'image mise en avant"
-msgstr ""
-
-#: inc/PostTypes/AdultTraining.php:64
-msgid "Insérer dans la formation adulte"
-msgstr ""
-
-#: inc/PostTypes/AdultTraining.php:65
-msgid "Ajouter à cette formation adulte"
-msgstr ""
-
-#: inc/PostTypes/AdultTraining.php:66 inc/PostTypes/SchoolTraining.php:76
-msgid "Liste des formations"
-msgstr ""
-
-#: inc/PostTypes/AdultTraining.php:67
-msgid "Navigation de liste des formations adultes"
-msgstr ""
-
-#: inc/PostTypes/AdultTraining.php:68
-msgid "Filtrer la liste des formations adultes"
-msgstr ""
-
-#: inc/PostTypes/AdultTraining.php:80
-msgid "Les formations adultes"
-msgstr ""
-
-#: inc/PostTypes/Movie.php:64
-msgctxt "Film Nom pluriel"
-msgid "Films"
-msgstr ""
-
-#: inc/PostTypes/Movie.php:65
-msgctxt "Film Nom singulier"
-msgid "Film"
-msgstr ""
-
-#: inc/PostTypes/Movie.php:66 inc/PostTypes/SchoolTraining.php:173
-msgid "Films"
-msgstr ""
-
-#: inc/PostTypes/Movie.php:67 inc/PostTypes/Programming.php:161
-msgid "Film"
-msgstr ""
-
-#: inc/PostTypes/Movie.php:68
-msgid "Tous les films"
-msgstr ""
-
-#: inc/PostTypes/Movie.php:69
-msgid "Ajouter un nouveau film"
-msgstr ""
-
-#: inc/PostTypes/Movie.php:71
-msgid "Nouveau film"
-msgstr ""
-
-#: inc/PostTypes/Movie.php:72
-msgid "Modifier le film"
-msgstr ""
-
-#: inc/PostTypes/Movie.php:73
-msgid "Mettre à jour le film"
-msgstr ""
-
-#: inc/PostTypes/Movie.php:74
-msgid "Voir le film"
-msgstr ""
-
-#: inc/PostTypes/Movie.php:75
-msgid "Voir les films"
-msgstr ""
-
-#: inc/PostTypes/Movie.php:76
-msgid "Chercher parmi les films"
-msgstr ""
-
-#: inc/PostTypes/Movie.php:77
-msgid "Aucun film trouvé."
-msgstr ""
-
-#: inc/PostTypes/Movie.php:78
-msgid "Aucun film trouvé dans la corbeille."
-msgstr ""
-
-#: inc/PostTypes/Movie.php:83
-msgid "Insérer dans le film"
-msgstr ""
-
-#: inc/PostTypes/Movie.php:84
-msgid "Ajouter à ce film"
-msgstr ""
-
-#: inc/PostTypes/Movie.php:85
-msgid "Liste des films"
-msgstr ""
-
-#: inc/PostTypes/Movie.php:86
-msgid "Navigation de liste des films"
-msgstr ""
-
-#: inc/PostTypes/Movie.php:87
-msgid "Filtrer la liste des films"
-msgstr ""
-
-#: inc/PostTypes/Movie.php:99
-msgid "Les films"
-msgstr ""
-
-#: inc/PostTypes/Movie.php:171
-msgid "Affiche"
-msgstr ""
-
-#: inc/PostTypes/Movie.php:176
-msgid "Année de sortie"
-msgstr ""
-
-#: inc/PostTypes/Movie.php:177
-msgid "Durée"
-msgstr ""
-
-#: inc/PostTypes/Page.php:85
-msgid "Couleurs"
-msgstr ""
-
-#: inc/PostTypes/Post.php:107
-msgid "Date de l'événement"
-msgstr ""
-
-#: inc/PostTypes/Programming.php:50
-msgctxt "Programmation Nom pluriel"
-msgid "Programmations"
-msgstr ""
-
-#: inc/PostTypes/Programming.php:51
-msgctxt "Programmation Nom singulier"
-msgid "Programmation"
-msgstr ""
-
-#: inc/PostTypes/Programming.php:52
-msgid "Programmations"
-msgstr ""
-
-#: inc/PostTypes/Programming.php:53 inc/Taxonomies/SchoolClass.php:100
-#: inc/Taxonomies/Season.php:54 views/partials/programming.html.twig:17
-msgid "Programmation"
-msgstr ""
-
-#: inc/PostTypes/Programming.php:54
-msgid "Toutes les programmations"
-msgstr ""
-
-#: inc/PostTypes/Programming.php:55
-msgid "Ajouter une nouvelle programmation"
-msgstr ""
-
-#: inc/PostTypes/Programming.php:57
-msgid "Nouvelle programmation"
-msgstr ""
-
-#: inc/PostTypes/Programming.php:58
-msgid "Modifier la programmation"
-msgstr ""
-
-#: inc/PostTypes/Programming.php:59
-msgid "Mettre à jour la programmation"
-msgstr ""
-
-#: inc/PostTypes/Programming.php:60
-msgid "Voir la programmation"
-msgstr ""
-
-#: inc/PostTypes/Programming.php:61
-msgid "Voir les programmations"
-msgstr ""
-
-#: inc/PostTypes/Programming.php:62
-msgid "Chercher parmi les programmations"
-msgstr ""
-
-#: inc/PostTypes/Programming.php:63
-msgid "Aucune programmation trouvée."
-msgstr ""
-
-#: inc/PostTypes/Programming.php:64
-msgid "Aucune programmation trouvée dans la corbeille."
-msgstr ""
-
-#: inc/PostTypes/Programming.php:69
-msgid "Insérer dans la programmation"
-msgstr ""
-
-#: inc/PostTypes/Programming.php:70
-msgid "Ajouter à cette programmation"
-msgstr ""
-
-#: inc/PostTypes/Programming.php:71
-msgid "Liste des programmations"
-msgstr ""
-
-#: inc/PostTypes/Programming.php:72
-msgid "Navigation de liste des programmations"
-msgstr ""
-
-#: inc/PostTypes/Programming.php:73
-msgid "Filtrer la liste des programmations"
-msgstr ""
-
-#: inc/PostTypes/Programming.php:85
-msgid "Les programmations"
-msgstr ""
-
-#: inc/PostTypes/Programming.php:159
-msgid "Trimestres"
-msgstr ""
-
-#: inc/PostTypes/SchoolTraining.php:55
-msgctxt "Formation Nom pluriel"
-msgid "Formations scolaires"
-msgstr ""
-
-#: inc/PostTypes/SchoolTraining.php:56
-msgctxt "Formation Nom singulier"
-msgid "Formation scolaire "
-msgstr ""
-
-#: inc/PostTypes/SchoolTraining.php:57
-msgid "Formations scolaires"
-msgstr ""
-
-#: inc/PostTypes/SchoolTraining.php:59
-msgid "Toutes les formations scolaires"
-msgstr ""
-
-#: inc/PostTypes/SchoolTraining.php:60
-msgid "Ajouter une nouvelle formation scolaire"
-msgstr ""
-
-#: inc/PostTypes/SchoolTraining.php:62
-msgid "Nouvelle formation scolaire"
-msgstr ""
-
-#: inc/PostTypes/SchoolTraining.php:63
-msgid "Modifier la formation scolaire"
-msgstr ""
-
-#: inc/PostTypes/SchoolTraining.php:64
-msgid "Mettre à jour la formation scolaire"
-msgstr ""
-
-#: inc/PostTypes/SchoolTraining.php:65
-msgid "Voir la formation scolaire"
-msgstr ""
-
-#: inc/PostTypes/SchoolTraining.php:66
-msgid "Voir les formations scolaires"
-msgstr ""
-
-#: inc/PostTypes/SchoolTraining.php:68
-msgid "Aucune formation scolaire trouvée."
-msgstr ""
-
-#: inc/PostTypes/SchoolTraining.php:69
-msgid "Aucune formation scolaire trouvée dans la corbeille."
-msgstr ""
-
-#: inc/PostTypes/SchoolTraining.php:74
-msgid "Insérer dans la formation scolaire"
-msgstr ""
-
-#: inc/PostTypes/SchoolTraining.php:75
-msgid "Ajouter à cette formation scolaire"
-msgstr ""
-
-#: inc/PostTypes/SchoolTraining.php:77
-msgid "Navigation de liste des formations scolaires"
-msgstr ""
-
-#: inc/PostTypes/SchoolTraining.php:78
-msgid "Filtrer la liste des formations scolaires"
-msgstr ""
-
-#: inc/PostTypes/SchoolTraining.php:90
-msgid "Les formations scolaires"
-msgstr ""
-
-#: inc/Taxonomies/AdultTrainingCategory.php:46
-msgctxt "Taxonomy General Name"
-msgid "Catégories de formation"
-msgstr ""
-
-#: inc/Taxonomies/AdultTrainingCategory.php:47
-msgctxt "Taxonomy Singular Name"
-msgid "Catégorie de formation"
-msgstr ""
-
-#: inc/Taxonomies/AdultTrainingCategory.php:48
-msgid "Catégories de formation"
-msgstr ""
-
-#: inc/Taxonomies/AdultTrainingCategory.php:49
-msgid "Toutes les catégories de formation"
-msgstr ""
-
-#: inc/Taxonomies/AdultTrainingCategory.php:50
-msgid "Catégorie de formation parente"
-msgstr ""
-
-#: inc/Taxonomies/AdultTrainingCategory.php:51
-msgid "Catégorie de formation parente :"
-msgstr ""
-
-#: inc/Taxonomies/AdultTrainingCategory.php:52
-msgid "Nom de la nouvelle catégorie de formation"
-msgstr ""
-
-#: inc/Taxonomies/AdultTrainingCategory.php:53
-msgid "Ajouter une nouvelle catégorie de formation"
-msgstr ""
-
-#: inc/Taxonomies/AdultTrainingCategory.php:54
-msgid "Éditer la catégorie de formation"
-msgstr ""
-
-#: inc/Taxonomies/AdultTrainingCategory.php:55
-msgid "Mettre à jour la catégorie de formation"
-msgstr ""
-
-#: inc/Taxonomies/AdultTrainingCategory.php:56
-msgid "Voir la catégorie de formation"
-msgstr ""
-
-#: inc/Taxonomies/AdultTrainingCategory.php:57
-msgid "Séparer les catégories de formation par des virgules"
-msgstr ""
-
-#: inc/Taxonomies/AdultTrainingCategory.php:58
-msgid "Ajouter ou supprimer une catégorie de formation"
-msgstr ""
-
-#: inc/Taxonomies/AdultTrainingCategory.php:59
-msgid "Choisir parmi les catégories de formation les plus utilisées"
-msgstr ""
-
-#: inc/Taxonomies/AdultTrainingCategory.php:60
-msgid "Catégorie de formation populaire"
-msgstr ""
-
-#: inc/Taxonomies/AdultTrainingCategory.php:61
-msgid "Catégories de formation recherchées"
-msgstr ""
-
-#: inc/Taxonomies/AdultTrainingCategory.php:62
-msgid "Aucune catégorie de formation n'a été trouvée"
-msgstr ""
-
-#: inc/Taxonomies/AdultTrainingCategory.php:63
-msgid "Pas de catégorie de formation"
-msgstr ""
-
-#: inc/Taxonomies/AdultTrainingCategory.php:64
-msgid "Liste des catégories de formation"
-msgstr ""
-
-#: inc/Taxonomies/AdultTrainingCategory.php:65
-msgid "Liste de navigation des catégories de formation"
-msgstr ""
-
-#: inc/Taxonomies/Country.php:47
-msgctxt "Taxonomy General Name"
-msgid "Pays"
-msgstr ""
-
-#: inc/Taxonomies/Country.php:48
-msgctxt "Taxonomy Singular Name"
-msgid "Pays"
-msgstr ""
-
-#: inc/Taxonomies/Country.php:49
-msgid "Pays"
-msgstr ""
-
-#: inc/Taxonomies/Country.php:50
-msgid "Tous les pays"
-msgstr ""
-
-#: inc/Taxonomies/Country.php:51
-msgid "Pays parent"
-msgstr ""
-
-#: inc/Taxonomies/Country.php:52
-msgid "Pays parent :"
-msgstr ""
-
-#: inc/Taxonomies/Country.php:53
-msgid "Nom du nouveau pays"
-msgstr ""
-
-#: inc/Taxonomies/Country.php:54
-msgid "Ajouter un nouveau pays"
-msgstr ""
-
-#: inc/Taxonomies/Country.php:55
-msgid "Éditer le pays"
-msgstr ""
-
-#: inc/Taxonomies/Country.php:56
-msgid "Mettre à jour le pays"
-msgstr ""
-
-#: inc/Taxonomies/Country.php:57
-msgid "Voir le pays"
-msgstr ""
-
-#: inc/Taxonomies/Country.php:58
-msgid "Séparer les pays par des virgules"
-msgstr ""
-
-#: inc/Taxonomies/Country.php:59
-msgid "Ajouter ou supprimer un pays"
-msgstr ""
-
-#: inc/Taxonomies/Country.php:60
-msgid "Choisir parmi les pays les plus utilisés"
-msgstr ""
-
-#: inc/Taxonomies/Country.php:61
-msgid "Pays populaire"
-msgstr ""
-
-#: inc/Taxonomies/Country.php:62
-msgid "Pays recherchés"
-msgstr ""
-
-#: inc/Taxonomies/Country.php:63
-msgid "Aucun pays n'a été trouvé"
-msgstr ""
-
-#: inc/Taxonomies/Country.php:64
-msgid "Pas de pays"
-msgstr ""
-
-#: inc/Taxonomies/Country.php:65
-msgid "Liste des pays"
-msgstr ""
-
-#: inc/Taxonomies/Country.php:66
-msgid "Liste de navigation des pays"
-msgstr ""
-
-#: inc/Taxonomies/Director.php:45
-msgctxt "Taxonomy General Name"
-msgid "Réalisateur·trice·s"
-msgstr ""
-
-#: inc/Taxonomies/Director.php:46
-msgctxt "Taxonomy Singular Name"
-msgid "Réalisateur·trice"
-msgstr ""
-
-#: inc/Taxonomies/Director.php:47
-msgid "Réalisateur·trice·s"
-msgstr ""
-
-#: inc/Taxonomies/Director.php:48
-msgid "Tous·tes les réalisateurs·trices"
-msgstr ""
-
-#: inc/Taxonomies/Director.php:49
-msgid "Réalisateur·trice parent·e"
-msgstr ""
-
-#: inc/Taxonomies/Director.php:50
-msgid "Réalisateur·trice parent·e :"
-msgstr ""
-
-#: inc/Taxonomies/Director.php:51
-msgid "Nom du·de la nouveau·elle réalisateur·trice"
-msgstr ""
-
-#: inc/Taxonomies/Director.php:52
-msgid "Ajouter un·e nouveau·elle réalisateur·trice"
-msgstr ""
-
-#: inc/Taxonomies/Director.php:53
-msgid "Éditer le·a réalisateur·trice"
-msgstr ""
-
-#: inc/Taxonomies/Director.php:54
-msgid "Mettre à jour le·a réalisateur·trice"
-msgstr ""
-
-#: inc/Taxonomies/Director.php:55
-msgid "Voir le·a réalisateur·trice"
-msgstr ""
-
-#: inc/Taxonomies/Director.php:56
-msgid "Séparer les réalisateurs·trices par des virgules"
-msgstr ""
-
-#: inc/Taxonomies/Director.php:57
-msgid "Ajouter ou supprimer un·e réalisateur·trice"
-msgstr ""
-
-#: inc/Taxonomies/Director.php:58
-msgid "Choisir parmi les réalisateurs·trices les plus utilisé·e·s"
-msgstr ""
-
-#: inc/Taxonomies/Director.php:59
-msgid "Réalisateur·trice populaire"
-msgstr ""
-
-#: inc/Taxonomies/Director.php:60
-msgid "Réalisateur·trice·s recherchés"
-msgstr ""
-
-#: inc/Taxonomies/Director.php:61
-msgid "Aucun réalisateur·trice n'a été trouvé·e"
-msgstr ""
-
-#: inc/Taxonomies/Director.php:62
-msgid "Pas de réalisateur·trice"
-msgstr ""
-
-#: inc/Taxonomies/Director.php:63
-msgid "Liste des réalisateur·trice·s"
-msgstr ""
-
-#: inc/Taxonomies/Director.php:64
-msgid "Liste de navigation des réalisateur·trice·s"
-msgstr ""
-
-#: inc/Taxonomies/SchoolClass.php:50
-msgctxt "Taxonomy General Name"
-msgid "Classes"
-msgstr ""
-
-#: inc/Taxonomies/SchoolClass.php:51
-msgctxt "Taxonomy Singular Name"
-msgid "Classe"
-msgstr ""
-
-#: inc/Taxonomies/SchoolClass.php:52
-msgid "Classes"
-msgstr ""
-
-#: inc/Taxonomies/SchoolClass.php:53
-msgid "Toutes les classes"
-msgstr ""
-
-#: inc/Taxonomies/SchoolClass.php:54
-msgid "Classe parente"
-msgstr ""
-
-#: inc/Taxonomies/SchoolClass.php:55
-msgid "Classe parente :"
-msgstr ""
-
-#: inc/Taxonomies/SchoolClass.php:56
-msgid "Nom de la nouvelle classe"
-msgstr ""
-
-#: inc/Taxonomies/SchoolClass.php:57
-msgid "Ajouter une nouvelle classe"
-msgstr ""
-
-#: inc/Taxonomies/SchoolClass.php:58
-msgid "Éditer la classe"
-msgstr ""
-
-#: inc/Taxonomies/SchoolClass.php:59
-msgid "Mettre à jour la classe"
-msgstr ""
-
-#: inc/Taxonomies/SchoolClass.php:60
-msgid "Voir la classe"
-msgstr ""
-
-#: inc/Taxonomies/SchoolClass.php:61
-msgid "Séparer les classes par des virgules"
-msgstr ""
-
-#: inc/Taxonomies/SchoolClass.php:62
-msgid "Ajouter ou supprimer une classe"
-msgstr ""
-
-#: inc/Taxonomies/SchoolClass.php:63
-msgid "Choisir parmi les classes les plus utilisées"
-msgstr ""
-
-#: inc/Taxonomies/SchoolClass.php:64
-msgid "Classe populaire"
-msgstr ""
-
-#: inc/Taxonomies/SchoolClass.php:65
-msgid "Classes recherchées"
-msgstr ""
-
-#: inc/Taxonomies/SchoolClass.php:66
-msgid "Aucune classe n'a été trouvée"
-msgstr ""
-
-#: inc/Taxonomies/SchoolClass.php:67
-msgid "Pas de classe"
-msgstr ""
-
-#: inc/Taxonomies/SchoolClass.php:68
-msgid "Liste des classes"
-msgstr ""
-
-#: inc/Taxonomies/SchoolClass.php:69
-msgid "Liste de navigation des classes"
-msgstr ""
-
-#: inc/Taxonomies/Season.php:127
-msgctxt "Taxonomy General Name"
-msgid "Saisons"
-msgstr ""
-
-#: inc/Taxonomies/Season.php:128
-msgctxt "Taxonomy Singular Name"
-msgid "Saison"
-msgstr ""
-
-#: inc/Taxonomies/Season.php:129
-msgid "Saisons"
-msgstr ""
-
-#: inc/Taxonomies/Season.php:130
-msgid "Toutes les saisons"
-msgstr ""
-
-#: inc/Taxonomies/Season.php:131
-msgid "Saison parente"
-msgstr ""
-
-#: inc/Taxonomies/Season.php:132
-msgid "Saison parente :"
-msgstr ""
-
-#: inc/Taxonomies/Season.php:133
-msgid "Nom de la nouvelle saison"
-msgstr ""
-
-#: inc/Taxonomies/Season.php:134
-msgid "Ajouter une nouvelle saison"
-msgstr ""
-
-#: inc/Taxonomies/Season.php:135
-msgid "Éditer l'saison"
-msgstr ""
-
-#: inc/Taxonomies/Season.php:136
-msgid "Mettre à jour l'saison"
-msgstr ""
-
-#: inc/Taxonomies/Season.php:137
-msgid "Voir l'saison"
-msgstr ""
-
-#: inc/Taxonomies/Season.php:138
-msgid "Séparer les saisons par des virgules"
-msgstr ""
-
-#: inc/Taxonomies/Season.php:139
-msgid "Ajouter ou supprimer une saison"
-msgstr ""
-
-#: inc/Taxonomies/Season.php:140
-msgid "Choisir parmi les saisons les plus utilisées"
-msgstr ""
-
-#: inc/Taxonomies/Season.php:141
-msgid "Saison populaire"
-msgstr ""
-
-#: inc/Taxonomies/Season.php:142
-msgid "Saisons recherchées"
-msgstr ""
-
-#: inc/Taxonomies/Season.php:143
-msgid "Aucun saison n'a été trouvée"
-msgstr ""
-
-#: inc/Taxonomies/Season.php:144
-msgid "Pas d'saison"
-msgstr ""
-
-#: inc/Taxonomies/Season.php:145
-msgid "Liste des saisons"
-msgstr ""
-
-#: inc/Taxonomies/Season.php:146
-msgid "Liste de navigation des saisons"
-msgstr ""
-
-#: inc/customizer/contact.php:21
-msgid "Coordonnées"
-msgstr ""
-
-#: inc/customizer/contact.php:22
-msgid "Réglages des coordonnées"
-msgstr ""
-
-#: inc/customizer/contact.php:38
-msgid "Adresse"
-msgstr ""
-
-#: inc/customizer/contact.php:39
-msgid "Indiquer l'adresse postale"
-msgstr ""
-
-#: inc/customizer/contact.php:58
-msgid "Adresses emails"
-msgstr ""
-
-#: inc/customizer/contact.php:59
-msgid ""
-"Indiquer les adresses emails de contact du site séparées par des virgules"
-msgstr ""
-
-#: inc/customizer/contact.php:77
-msgid "Numéro de téléphone"
-msgstr ""
-
-#: inc/customizer/contact.php:78
-msgid "Indiquer le numéro de téléphone"
-msgstr ""
-
-#: inc/customizer/contact.php:96
-msgid "Facebook"
-msgstr ""
-
-#: inc/customizer/contact.php:97
-msgid "Indiquer l'URL du compte Facebook"
-msgstr ""
-
-#: inc/customizer/contact.php:115
-msgid "Twitter"
-msgstr ""
-
-#: inc/customizer/contact.php:116
-msgid "Indiquer l'URL du compte Twitter"
-msgstr ""
-
-#: inc/customizer/contact.php:134
-msgid "Instagram"
-msgstr ""
-
-#: inc/customizer/contact.php:135
-msgid "Indiquer l'URL du compte Instagram"
-msgstr ""
-
-#: inc/customizer/contact.php:153
-msgid "Pinterest"
-msgstr ""
-
-#: inc/customizer/contact.php:154
-msgid "Indiquer l'URL du compte Pinterest"
-msgstr ""
-
-#: inc/customizer/contact.php:172
-msgid "YouTube"
-msgstr ""
-
-#: inc/customizer/contact.php:173
-msgid "Indiquer l'URL du compte YouTube"
+#: views/components/contact.html.twig:13
+msgid "All rights reserved"
 msgstr ""
 
 #: views/components/contact.html.twig:15
-msgid "Nos partenaires"
+msgid "Our partners"
 msgstr ""
 
 #: views/components/contact.html.twig:19
-msgid "Mentions légales"
+msgid "Legal Notice"
 msgstr ""
 
 #: views/components/contact.html.twig:23
-msgid "Conception :"
+msgid "Design:"
 msgstr ""
 
 #: views/components/menu.html.twig:74
 msgid "Association"
 msgstr ""
 
-#: views/components/movie.html.twig:74
-msgid "Visionner la bande annonce"
+#: views/components/movie.html.twig:40
+msgid "By"
+msgstr ""
+
+#: views/components/movie.html.twig:75
+msgid "Watch the trailer"
 msgstr ""
 
 #: views/pages/college-au-cinema-37.html.twig:70
-#: views/pages/college-au-cinema-37.html.twig:113
+#: views/pages/college-au-cinema-37.html.twig:111
 msgid ""
-"Les\n"
-"journées de\n"
-"formation\n"
+"Training\n"
+"days\n"
 msgstr ""
 
 #: views/pages/college-au-cinema-37.html.twig:88
-msgid "Toutes"
+msgid "All"
 msgstr ""
 
 #: views/pages/formations-pour-les-enseignants.html.twig:27
+msgid "Training for teachers"
+msgstr ""
+
+#: views/pages/formations-pour-les-enseignants.html.twig:31
+msgid "Professional training"
+msgstr ""
+
+#: views/pages/formations-pour-les-enseignants.html.twig:50
+msgid "Stages et formations"
+msgstr ""
+
+#: views/pages/formations-pour-les-enseignants.html.twig:83
+#: views/pages/formations-professionnelles.html.twig:110
+msgid "Registration Form"
+msgstr ""
+
+#: views/pages/formations-pour-les-enseignants.html.twig:97
+msgid ""
+"En plus de ces stages, l'association Format'Ciné offre la possibilité "
+"d'assister à la rencontre professionnelle organisée par la NEF Animation en "
+"octobre à l'abbaye de Fontevraud."
+msgstr ""
+
 #: views/pages/formations-professionnelles.html.twig:22
 msgid "Formations pour les enseignants"
 msgstr ""
 
-#: views/pages/formations-pour-les-enseignants.html.twig:31
 #: views/pages/formations-professionnelles.html.twig:25
 msgid "Formations professionnelles"
 msgstr ""
 
-#: views/pages/formations-pour-les-enseignants.html.twig:49
-msgid ""
-"Notre association organise en Touraine depuis vingt cinq ans des stages de "
-"un à trois jours dans le domaine du cinéma et de l'audiovisuel. Les "
-"enseignants hors département de l'Indre-et-Loire peuvent s'y inscrire sous "
-"certaines conditions (nous contacter)."
+#: views/pages/formations-professionnelles.html.twig:43
+msgid "Latest achievements of interns"
 msgstr ""
 
-#: views/pages/formations-pour-les-enseignants.html.twig:59
-msgid "Stages et formations"
+#: views/pages/formations-professionnelles.html.twig:50
+msgid "Internships and registrations"
 msgstr ""
 
-#: views/pages/formations-pour-les-enseignants.html.twig:94
-#: views/pages/formations-professionnelles.html.twig:126
-msgid "Formulaire d'inscription"
+#: views/pages/formations-professionnelles.html.twig:79
+msgid "days"
 msgstr ""
 
-#: views/pages/formations-professionnelles.html.twig:57
-msgid "Dernières réalisations des stagiaires"
-msgstr ""
-
-#: views/pages/formations-professionnelles.html.twig:64
-msgid "Stages et inscriptions"
-msgstr ""
-
-#: views/pages/formations-professionnelles.html.twig:105
-msgid "Contenu"
+#: views/pages/formations-professionnelles.html.twig:91
+msgid "Content"
 msgstr ""
 
 #: views/pages/front-page.html.twig:21
-msgid "De chaque côté de"
+msgid "On either side of"
 msgstr ""
 
 #: views/pages/front-page.html.twig:22
-msgid "L\\’écran"
+msgid "The screen"
 msgstr ""
 
-#: views/pages/front-page.html.twig:88 views/pages/front-page.html.twig:123
-msgid ""
-"Les\n"
-"événements"
+#: views/pages/front-page.html.twig:88 views/pages/front-page.html.twig:124
+msgid "The events"
 msgstr ""
 
-#: views/pages/front-page.html.twig:90 views/pages/front-page.html.twig:125
+#: views/pages/front-page.html.twig:90 views/pages/front-page.html.twig:126
 msgid ""
 "Toute l’année, retrouvez des manifestations organisées avec nos partenaires "
 "sur différents thèmes."
 msgstr ""
 
 #: views/pages/front-page.html.twig:115
-msgid "Tout public"
+msgid "For all"
 msgstr ""
 
 #: views/partials/adult-training-comments.html.twig:11
@@ -1001,19 +1188,15 @@ msgid "Commentaires de stagiaires"
 msgstr ""
 
 #: views/partials/tease-event.html.twig:33
-msgid "En savoir plus"
+msgid "Learn more"
 msgstr ""
 
 #: views/partials/tease-event.html.twig:42
-msgid "Aucun événement à afficher"
+msgid "There are no events to display"
 msgstr ""
 
-#: views/partials/tease-school-training.html.twig:58
-msgid "Programme"
-msgstr ""
-
-#: views/partials/tease-school-training.html.twig:70
-msgid "Aucune Journée de formation à afficher"
+#: views/partials/tease-school-training.html.twig:47
+msgid "No training days to display"
 msgstr ""
 
 #. Theme Name of the plugin/theme
@@ -1021,7 +1204,7 @@ msgid "Format'ciné"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://www.formatcine.fr"
+msgid "https://www.formatcine.fr"
 msgstr ""
 
 #. Description of the plugin/theme

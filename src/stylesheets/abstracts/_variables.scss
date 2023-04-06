@@ -116,6 +116,7 @@ $font: (
 /**
  * Base font size and base line height
  */
+$base-unit: em;
 $base-font-size: 16;
 $base-font-size-px: #{$base-font-size}px;
 $base-line-height: 20;
