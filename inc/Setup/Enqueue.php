@@ -8,7 +8,6 @@
 
 namespace FormatCine\Setup;
 
-use FormatCine\Core\{ Transients };
 use Timber\{ Timber };
 use Dotenv\{ Dotenv };
 
