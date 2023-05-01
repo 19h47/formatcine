@@ -59,7 +59,9 @@ class AdultTrainingCategory {
 		$args = array(
 			'labels'            => $labels,
 			'hierarchical'      => false,
-			'public'            => true,
+			'public'            => false,
+			'query_var'         => false,
+			'rewrite'           => false,
 			'show_ui'           => true,
 			'show_admin_column' => true,
 			'meta_box_cb'       => false,

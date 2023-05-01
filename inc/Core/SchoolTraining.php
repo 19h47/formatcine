@@ -85,7 +85,7 @@ class SchoolTraining {
 			'description'         => __( 'Les formations scolaires', 'Formatcine' ),
 			'labels'              => $labels,
 			'supports'            => array( 'thumbnail' ),
-			'taxonomies'          => array( 'school_tag', 'year' ),
+			'taxonomies'          => array( 'season', 'school_tag', 'year', 'school_class' ),
 			'hierarchical'        => false,
 			'public'              => true,
 			'show_ui'             => true,

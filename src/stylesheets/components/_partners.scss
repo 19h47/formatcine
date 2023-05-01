@@ -16,9 +16,10 @@
 		@include font(18, 29.99, 100);
 
 		color: the_color(gray, dark);
+	}
 
-		&:hover {
-			@extend %text-decoration-underline;
-		}
+	a.Partners-item:hover {
+		@extend %text-decoration-underline;
+
 	}
 }
