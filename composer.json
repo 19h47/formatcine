@@ -1,7 +1,7 @@
 {
 	"name": "19h47/formatcine",
 	"require": {
-		"timber/timber": "1.17.0",
+		"timber/timber": "1.23.1",
 		"vlucas/phpdotenv": "^4.1",
 		"cocur/slugify": "^3.0",
 		"19h47/set-glance-items": "dev-master"
