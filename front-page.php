@@ -7,7 +7,7 @@
  * @subpackage Formatcine
  */
 
-use Timber\{ Timber, Helper };
+use Timber\{ Timber, Helper };
 
 $filenems = array( 'pages/front-page.html.twig' );
 
