@@ -68,7 +68,7 @@
 		"svg-transform-loader": "^2.0.13",
 		"svgo": "^4.0.2",
 		"svgo-loader": "^5.0.0",
-		"webpack": "^5.21.2",
+		"webpack": "^5.104.1",
 		"webpack-cli": "^4.5.0",
 		"webpack-format-messages": "^2.0.6",
 		"webpack-manifest-plugin": "^3.0.0",
