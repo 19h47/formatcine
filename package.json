@@ -21,7 +21,7 @@
 	"license": "ISC",
 	"dependencies": {
 		"@19h47/architecture": "19h47/architecture",
-		"@babel/runtime": "7.12.13",
+		"@babel/runtime": "7.26.10",
 		"bootstrap": "^4.6.0",
 		"ress": "^3.0.0",
 		"slick-carousel": "^1.8.1"
