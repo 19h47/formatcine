@@ -80,8 +80,8 @@ class Programming {
 		$args = array(
 			'label'               => 'programmation',
 			'labels'              => $labels,
-			'supports'            => array( '' ),
-			'taxonomies'          => array( 'school_tag', 'year' ),
+			'supports'            => array(),
+			'taxonomies'          => array( 'season', 'school_class' ),
 			'hierarchical'        => false,
 			'public'              => true,
 			'show_ui'             => true,

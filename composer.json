@@ -1,13 +1,13 @@
 {
 	"name": "19h47/formatcine",
 	"require": {
-		"timber/timber": "1.17.0",
+		"timber/timber": "1.23.1",
 		"vlucas/phpdotenv": "^4.1",
 		"cocur/slugify": "^3.0",
 		"19h47/set-glance-items": "dev-master"
 	},
 	"require-dev": {
-		"wp-coding-standards/wpcs": "^2.2",
+		"wp-coding-standards/wpcs": "^3.4",
 		"squizlabs/php_codesniffer": "^3.5"
 	},
 	"repositories": [
@@ -30,5 +30,10 @@
 		"files": [
 			"./inc/helpers.php"
 		]
+	},
+	"config": {
+		"allow-plugins": {
+			"composer/installers": true
+		}
 	}
 }

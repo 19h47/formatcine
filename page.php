@@ -9,14 +9,14 @@
 
 use Timber\{ Timber };
 
-$filename = 'index.html.twig';
+$filenames = array( 'index.html.twig' );
 
 $data         = Timber::get_context();
 $data['post'] = Timber::get_post();
 
 // Page video.
 if ( is_page( 171 ) || is_page( 183 ) ) {
-	array_unshift( $filename, 'pages/video.html.twig' );
+	array_unshift( $filenames, 'pages/video.html.twig' );
 }
 
-Timber::render( $filename, $data );
+Timber::render( $filenames, $data );
