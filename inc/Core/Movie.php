@@ -95,7 +95,7 @@ class Movie {
 			'label'               => 'film',
 			'labels'              => $labels,
 			'supports'            => array( 'title', 'revisions', 'thumbnail' ),
-			'taxonomies'          => array(),
+			'taxonomies'          => array( 'director', 'country' ),
 			'hierarchical'        => false,
 			'public'              => true,
 			'show_ui'             => true,
